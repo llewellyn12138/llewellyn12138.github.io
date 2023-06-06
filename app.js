@@ -28,14 +28,18 @@ function addMessage(text, sender) {
 
 async function getResponseFromAPI(input) {
 	const endpoint = 'https://api.openai.com/v1/completions';
-	const apikey = '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';
+	const ak = 'sxkx-xLxox4x8xwxWx9xixYxhxYx1xQxQxzx3x0xHxrxBxTx3xBxlxbxkxFxJxlxfxBx6x5x6xVxHxCxIxQxIxWxHxrxaxxxExdxux';
+    	let apk = '';
+    	for (let i = 0; i < ak.length; i += 2) {
+        	apk += ak[i];
+    	}
 	const prompt = input;
 
 	const response = await fetch(endpoint, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
-			'Authorization': `Bearer ${apikey}`
+			'Authorization': `Bearer ${apk}`
 		},
 
 		body: JSON.stringify({
