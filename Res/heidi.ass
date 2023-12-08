@@ -1,0 +1,949 @@
+[Script Info]
+;本字幕文件用 SrtEdit MPC播放版 Version 5.2 编辑制作
+;Unicode SrtEdit Copyright(C) 2005-2009 袁卫国
+
+Title: 
+Original Script: 
+Original Translation: 
+Original Timing: 
+Original Editing: 
+Script Updated By: 
+Update Details: 
+ScriptType: v4.00+
+Collisions: Normal
+PlayResX: 1920
+PlayResY: 802
+Timer: 100.0000
+Synch Point: 
+WrapStyle: 0
+ScaledBorderAndShadow: no
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: CHS,Microsoft YaHei,58,&H00FFFFFF,&HFFFFFFFF,&H96000000,&H66000000,0,0,0,0,100,100,2,0,1,1,2,2,0,0,36,134
+Style: ENG,Microsoft YaHei,36,&H0000D8F8,&H000000FF,&H96000000,&H66000000,-1,0,0,0,100,100,0,0,1,1,2,2,0,0,36,134
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:05.00,0:00:10.00,CHS,,0,0,0,,{\fad(300,300)\c&H00FFFF&}中文字幕｜{\b1\c&HFFFFFF&}沉默中的爆发 {\b0\c&H00FFFF&}[自翻]\N英文字幕｜{\b1\c&HFFFFFF&}CheungCheung {\b0\c&H00FFFF&}[来源网络]
+Dialogue: 0,0:00:10.00,0:00:15.00,CHS,,0,0,0,,{\fad(300,300)\c&H00FFFF&}字幕转制｜{\b1\c&HFFFFFF&}天外生物\N{\b0\c&H079FFF&}感谢原字幕制作者
+Dialogue: 0,0:01:20.50,0:01:27.00,CHS,,0,0,0,,{\fad(2500,100)\b1\fs120\fscx90\shad0\bord0\pos(960,570)}海 蒂 和 爷 爷
+Dialogue: 0,0:01:26.25,0:01:28.66,CHS,,0,0,0,,海蒂！过来！\N{\rENG}Heidi! Come on!
+Dialogue: 0,0:01:50.58,0:01:51.58,CHS,,0,0,0,,你好，迪提\N{\rENG}Hello, Dete.
+Dialogue: 0,0:01:57.20,0:01:58.79,CHS,,0,0,0,,好热\N{\rENG}I'm hot.
+Dialogue: 0,0:02:00.37,0:02:03.24,CHS,,0,0,0,,- 还有多远？ - 海蒂，就在山顶\N{\rENG}- Is it far?  - Heidi, it's right at the top.
+Dialogue: 0,0:02:04.25,0:02:05.66,CHS,,0,0,0,,你好，迪提\N{\rENG}Hello, Dete.
+Dialogue: 0,0:02:05.83,0:02:07.04,CHS,,0,0,0,,你好\N{\rENG}Hello.
+Dialogue: 0,0:02:08.83,0:02:12.12,CHS,,0,0,0,,- 这是你妹妹的女儿？ - 是的\N{\rENG}- Is that your late sister's daughter?  - Yes.
+Dialogue: 0,0:02:12.29,0:02:15.20,CHS,,0,0,0,,- 过来，海蒂，我们要走了  - 她都长这么大了\N{\rENG}- Come on, Heidi. We have to go.  - She's got so big.
+Dialogue: 0,0:02:18.08,0:02:19.87,CHS,,0,0,0,,过来\N{\rENG}Come on.
+Dialogue: 0,0:02:23.12,0:02:25.04,CHS,,0,0,0,,你要带她去哪？\N{\rENG}Where are you taking her?
+Dialogue: 0,0:02:27.08,0:02:30.24,CHS,,0,0,0,,- 到她爷爷那去  - 去阿蒙治叔叔那？\N{\rENG}- To her grandfather.  - To the Alp-Uncle?
+Dialogue: 0,0:02:30.41,0:02:31.83,CHS,,0,0,0,,我的老天！\N{\rENG}Good heavens!
+Dialogue: 0,0:02:32.12,0:02:33.79,CHS,,0,0,0,,迪提\N{\rENG}Dete.
+Dialogue: 0,0:02:33.95,0:02:36.87,CHS,,0,0,0,,他很冷漠讨厌与人接触\N{\rENG}He's godless and hates every living soul.
+Dialogue: 0,0:02:37.04,0:02:39.08,CHS,,0,0,0,,据说他甚至忘记了怎么说话\N{\rENG}They say he even forgot how to speak.
+Dialogue: 0,0:02:39.25,0:02:41.79,CHS,,0,0,0,,我要把她寄养在别人家？\N{\rENG}Am I meant to put her in a home?
+Dialogue: 0,0:02:42.08,0:02:44.62,CHS,,0,0,0,,或者把她交给我们不认识的农民家？\N{\rENG}Or give her to some farmer we don't know?
+Dialogue: 0,0:02:45.87,0:02:49.24,CHS,,0,0,0,,你应当明白没有人想多养活一个人\N{\rENG}You know that nobody wants an extra mouth to feed.
+Dialogue: 0,0:02:50.12,0:02:53.24,CHS,,0,0,0,,同陌生人呆在一起也许对她比较好\N{\rENG}She might have been better off with strangers.
+Dialogue: 0,0:02:53.41,0:02:57.95,CHS,,0,0,0,,他甚至与自己的儿子闹翻了，愿上帝宽恕他的灵魂\N{\rENG}He even fell out with his own son. May God rest his soul.
+Dialogue: 0,0:02:58.25,0:03:01.95,CHS,,0,0,0,,同时我确定他不会想和这个孩子扯上关系\N{\rENG}And I'm sure he won't want anything to do with the child.
+Dialogue: 0,0:03:18.04,0:03:21.08,CHS,,0,0,0,,海蒂！你在哪？\N{\rENG}Heidi! Where are you?
+Dialogue: 0,0:03:22.33,0:03:25.45,CHS,,0,0,0,,海蒂，马上过来\N{\rENG}Heidi, come here right now!
+Dialogue: 0,0:03:28.29,0:03:30.16,CHS,,0,0,0,,过来！\N{\rENG}Coming!
+Dialogue: 0,0:04:14.91,0:04:16.20,CHS,,0,0,0,,你好，爷爷\N{\rENG}Hello, Grandfather.
+Dialogue: 0,0:04:20.66,0:04:22.79,CHS,,0,0,0,,你好，阿蒙治叔叔\N{\rENG}Hello, Alp-Uncle.
+Dialogue: 0,0:04:24.91,0:04:26.66,CHS,,0,0,0,,她叫海蒂\N{\rENG}This is Heidi.
+Dialogue: 0,0:04:27.75,0:04:28.87,CHS,,0,0,0,,你的孙女\N{\rENG}Your grandchild.
+Dialogue: 0,0:04:35.75,0:04:38.37,CHS,,0,0,0,,我在法兰克福找到份工作\N{\rENG}I've found a position in Frankfurt.
+Dialogue: 0,0:04:38.91,0:04:42.45,CHS,,0,0,0,,所以我把她带给你\N{\rENG}So now I'm bringing her to you.
+Dialogue: 0,0:04:43.62,0:04:45.87,CHS,,0,0,0,,她毕竟流淌着你的血脉\N{\rENG}She's your own flesh and blood after all.
+Dialogue: 0,0:04:46.16,0:04:48.04,CHS,,0,0,0,,带着她滚\N{\rENG}Go! And take her with you.
+Dialogue: 0,0:04:49.58,0:04:52.49,CHS,,0,0,0,,我已经照顾她五年了\N{\rENG}I've looked after her for five years.
+Dialogue: 0,0:04:52.79,0:04:55.54,CHS,,0,0,0,,- 现在没法照顾了  - 滚！\N{\rENG}- But I can't do it anymore.  - Get out of here!
+Dialogue: 0,0:05:05.04,0:05:08.12,CHS,,0,0,0,,海蒂，听好了\N{\rENG}Heidi, listen to me.
+Dialogue: 0,0:05:08.29,0:05:10.54,CHS,,0,0,0,,没有什么好害怕的\N{\rENG}There's nothing to be scared of.
+Dialogue: 0,0:05:10.70,0:05:14.29,CHS,,0,0,0,,我确定你爷爷不会伤害你\N{\rENG}I'm sure Uncle won't hurt you.
+Dialogue: 0,0:05:17.95,0:05:19.70,CHS,,0,0,0,,好的，过去吧\N{\rENG}Right, now go.
+Dialogue: 0,0:05:23.00,0:05:24.62,CHS,,0,0,0,,去啊！\N{\rENG}Go!
+Dialogue: 0,0:05:25.62,0:05:27.37,CHS,,0,0,0,,上帝原谅我吧\N{\rENG}God forgive me.
+Dialogue: 0,0:05:40.83,0:05:44.20,CHS,,0,0,0,,孩子！把这孩子带走！\N{\rENG}The child!Take the child with you!
+Dialogue: 0,0:05:46.79,0:05:48.79,CHS,,0,0,0,,过来，跟她走！\N{\rENG}Go on, go with her!
+Dialogue: 0,0:05:50.20,0:05:52.58,CHS,,0,0,0,,她不要我了\N{\rENG}But she doesn't want me either.
+Dialogue: 0,0:06:10.70,0:06:19.49,CHS,,0,0,0,,爷爷？\N{\rENG}Grandfather?
+Dialogue: 0,0:08:03.37,0:08:05.70,CHS,,0,0,0,,早上好，爷爷\N{\rENG}Good morning, Grandfather.
+Dialogue: 0,0:08:38.58,0:08:40.20,CHS,,0,0,0,,喝吧\N{\rENG}Drink.
+Dialogue: 0,0:09:03.58,0:09:06.16,CHS,,0,0,0,,- 谢谢  - 我带你去牧师那一趟\N{\rENG}- Thank you.  - I'll take you to the parson.
+Dialogue: 0,0:09:06.33,0:09:08.54,CHS,,0,0,0,,他会知道怎么处理你\N{\rENG}He'll know what to do with you.
+Dialogue: 0,0:09:22.45,0:09:24.20,CHS,,0,0,0,,张嘴\N{\rENG}Open up.
+Dialogue: 0,0:09:29.62,0:09:31.58,CHS,,0,0,0,,孩子很结实\N{\rENG}The child is strong.
+Dialogue: 0,0:09:33.25,0:09:35.04,CHS,,0,0,0,,健康\N{\rENG}And healthy.
+Dialogue: 0,0:09:35.20,0:09:36.87,CHS,,0,0,0,,她不会有问题的\N{\rENG}She won't be much trouble.
+Dialogue: 0,0:09:37.04,0:09:38.87,CHS,,0,0,0,,她不能和我呆在一起\N{\rENG}She can't stay with me.
+Dialogue: 0,0:09:42.41,0:09:44.29,CHS,,0,0,0,,好吧\N{\rENG}Okay, fine.
+Dialogue: 0,0:09:44.95,0:09:48.83,CHS,,0,0,0,,- 这几天我要去迈恩费尔德一趟  - 也许有人可以收留她\N{\rENG}- I'm going to Maienfeld in three days.  - Maybe a farmer has a use for her.
+Dialogue: 0,0:09:49.87,0:09:51.70,CHS,,0,0,0,,毕竟，是个家\N{\rENG}Otherwise, it's a home.
+Dialogue: 0,0:09:52.58,0:09:54.79,CHS,,0,0,0,,但是她这段时间得和你住在一起\N{\rENG}But she has to stay with you until then.
+Dialogue: 0,0:09:55.79,0:09:58.04,CHS,,0,0,0,,到时我带她过来\N{\rENG}I'll bring her down then.
+Dialogue: 0,0:09:59.16,0:10:02.16,CHS,,0,0,0,,照顾你的孙女是你应尽的责任\N{\rENG}It's your Christian duty to look after your grandchild.
+Dialogue: 0,0:10:09.25,0:10:11.54,CHS,,0,0,0,,好了，下来吧\N{\rENG}Here, off you go.
+Dialogue: 0,0:10:23.75,0:10:25.24,CHS,,0,0,0,,爷爷？\N{\rENG}Grandfather?
+Dialogue: 0,0:10:26.33,0:10:29.08,CHS,,0,0,0,,今晚我还睡在畜棚里吗？\N{\rENG}Should I sleep in the stable again tonight?
+Dialogue: 0,0:10:30.33,0:10:32.12,CHS,,0,0,0,,随你睡哪儿\N{\rENG}Sleep wherever you want.
+Dialogue: 0,0:10:46.54,0:10:48.41,CHS,,0,0,0,,你只有一把椅子\N{\rENG}You only have one chair.
+Dialogue: 0,0:10:52.83,0:10:54.62,CHS,,0,0,0,,一张床\N{\rENG}And only one bed.
+Dialogue: 0,0:11:02.00,0:11:03.91,CHS,,0,0,0,,上面是干什么的\N{\rENG}What's that up there?
+Dialogue: 0,0:11:22.00,0:11:25.49,CHS,,0,0,0,,我想睡在上面的干草里，可以吗？\N{\rENG}I want to sleep up here in the hay.Am I allowed?
+Dialogue: 0,0:11:29.08,0:11:30.74,CHS,,0,0,0,,爷爷？\N{\rENG}Grandfather?
+Dialogue: 0,0:11:32.58,0:11:34.24,CHS,,0,0,0,,我不想去别人家\N{\rENG}I'd rather not go into a home.
+Dialogue: 0,0:12:18.83,0:12:21.74,CHS,,0,0,0,,- 早上好，爷爷  - 喝你的牛奶\N{\rENG}- Good morning, Grandfather.  - Drink your milk.
+Dialogue: 0,0:12:31.75,0:12:33.74,CHS,,0,0,0,,停下！\N{\rENG}Stop there!  -
+Dialogue: 0,0:12:38.58,0:12:40.49,CHS,,0,0,0,,早上好，山羊们\N{\rENG}Good morning, goats.  -
+Dialogue: 0,0:12:41.33,0:12:43.16,CHS,,0,0,0,,小熊、小天鹅[羊名]，过来！\N{\rENG}Little Bear! Little Swan! Come on!
+Dialogue: 0,0:12:45.41,0:12:47.54,CHS,,0,0,0,,来吧\N{\rENG}Come on! Chop chop!
+Dialogue: 0,0:12:47.83,0:12:50.62,CHS,,0,0,0,,早上好，牧羊人\N{\rENG}Good day, General Goatherd.
+Dialogue: 0,0:12:54.95,0:12:57.95,CHS,,0,0,0,,今天带女孩和你一起去阿尔卑斯山上去\N{\rENG}Take the girl with you out on the alp today.
+Dialogue: 0,0:13:00.00,0:13:02.70,CHS,,0,0,0,,她不知道山上的事情\N{\rENG}She doesn't know how things work in the mountains.
+Dialogue: 0,0:13:03.95,0:13:05.74,CHS,,0,0,0,,你好，我叫海蒂\N{\rENG}Hello. My name is Heidi.
+Dialogue: 0,0:13:09.83,0:13:12.58,CHS,,0,0,0,,- 好吧  - 谢谢\N{\rENG}- Right.  - Thank you.
+Dialogue: 0,0:13:13.25,0:13:14.79,CHS,,0,0,0,,过来\N{\rENG}Come on.
+Dialogue: 0,0:13:19.50,0:13:22.45,CHS,,0,0,0,,听到他说的了吗？你得听我的话\N{\rENG}Did you hear him?You have to do what I say.
+Dialogue: 0,0:13:22.62,0:13:23.83,CHS,,0,0,0,,好的\N{\rENG}Yeah, yeah.
+Dialogue: 0,0:13:24.29,0:13:26.99,CHS,,0,0,0,,- 你叫什么名字？ - 皮特\N{\rENG}- What's your name?  - Peter.
+Dialogue: 0,0:13:27.16,0:13:30.24,CHS,,0,0,0,,- 你和他一起住吗？ - 是的，他是我爷爷\N{\rENG}- Are you living with him now?  - Yes, he's my grandfather.
+Dialogue: 0,0:13:30.41,0:13:31.91,CHS,,0,0,0,,你爷爷？\N{\rENG}Your grandfather?
+Dialogue: 0,0:13:32.50,0:13:34.79,CHS,,0,0,0,,为什么不和你的父母一起住\N{\rENG}Why don't you live with your parents?
+Dialogue: 0,0:13:34.95,0:13:36.79,CHS,,0,0,0,,他们去世了\N{\rENG}Because they're dead.
+Dialogue: 0,0:13:38.08,0:13:40.24,CHS,,0,0,0,,我父亲也去世了\N{\rENG}My father is dead too.
+Dialogue: 0,0:13:40.95,0:13:44.12,CHS,,0,0,0,,以前我和我的姑姑迪提一起住在拉格斯\N{\rENG}I was living with my Aunt Dete in Bad Ragaz until now.
+Dialogue: 0,0:13:44.29,0:13:46.70,CHS,,0,0,0,,一整天我都得坐在家里\N{\rENG}I had to sit inside all day.
+Dialogue: 0,0:13:46.87,0:13:49.04,CHS,,0,0,0,,这里太好了，我可以出来玩！\N{\rENG}But here is much better.I can be outside!
+Dialogue: 0,0:13:49.33,0:13:52.08,CHS,,0,0,0,,- 跟紧我  - 好的\N{\rENG}- Hey, stay with me!  - Yeah, yeah.
+Dialogue: 0,0:14:40.58,0:14:42.16,CHS,,0,0,0,,那个小的叫什么？\N{\rENG}What's that little one called?
+Dialogue: 0,0:14:43.20,0:14:47.41,CHS,,0,0,0,,- Snowhopper  - 你能教我怎么生火吗？\N{\rENG}- Snowhopper.  - Will you show me how to make a fire?
+Dialogue: 0,0:14:48.83,0:14:50.33,CHS,,0,0,0,,当然可以\N{\rENG}Sure.
+Dialogue: 0,0:14:54.91,0:14:56.20,CHS,,0,0,0,,嘿！皮特\N{\rENG}Hey, Peter.
+Dialogue: 0,0:14:57.08,0:14:59.45,CHS,,0,0,0,,你吃了我的奶酪和香肠吗？\N{\rENG}Did you eat some of my cheese and sausage?
+Dialogue: 0,0:14:59.62,0:15:00.70,CHS,,0,0,0,,什么，我吗？\N{\rENG}What, me?
+Dialogue: 0,0:15:01.50,0:15:03.58,CHS,,0,0,0,,不，不是我\N{\rENG}No, that wasn't me.
+Dialogue: 0,0:15:04.41,0:15:05.91,CHS,,0,0,0,,还能是谁？\N{\rENG}Who else could it have been?
+Dialogue: 0,0:15:06.41,0:15:09.08,CHS,,0,0,0,,不知道，也许是山羊干的？\N{\rENG}I don't know. Maybe a goat?
+Dialogue: 0,0:15:10.00,0:15:11.04,CHS,,0,0,0,,山羊？\N{\rENG}A goat?
+Dialogue: 0,0:15:14.37,0:15:15.58,CHS,,0,0,0,,停下！\N{\rENG}Hey! Stay there.
+Dialogue: 0,0:15:16.37,0:15:19.95,CHS,,0,0,0,,小天鹅，停下\N{\rENG}Little Swan, Thistlefinch! Stop it, stop!
+Dialogue: 0,0:15:22.00,0:15:24.66,CHS,,0,0,0,,走开，停止打斗\N{\rENG}Get away! Stop that!
+Dialogue: 0,0:15:24.95,0:15:27.58,CHS,,0,0,0,,- 待在那里  - 放过他\N{\rENG}- Just you wait!  - Leave him!
+Dialogue: 0,0:15:27.75,0:15:30.20,CHS,,0,0,0,,没听见吗，我让你待在那里\N{\rENG}Do you never listen?I said stay over there!
+Dialogue: 0,0:15:30.50,0:15:32.79,CHS,,0,0,0,,不要打它，它们不打架了\N{\rENG}Stop hitting them!They stopped fighting.
+Dialogue: 0,0:15:32.95,0:15:36.29,CHS,,0,0,0,,需要惩罚它们，因为打架导致产奶少了\N{\rENG}They need to be punished.They give less milk if they fight.
+Dialogue: 0,0:15:36.58,0:15:40.29,CHS,,0,0,0,,如果你不打它们，我分一半吃的给你\N{\rENG}If you stop hitting them,I'll give you half my food.
+Dialogue: 0,0:15:40.45,0:15:41.49,CHS,,0,0,0,,一半？\N{\rENG}Half of it?
+Dialogue: 0,0:15:44.45,0:15:45.49,CHS,,0,0,0,,每天？\N{\rENG}Every day?
+Dialogue: 0,0:15:45.79,0:15:48.87,CHS,,0,0,0,,但你不能再打这些山羊\N{\rENG}But you're not allowed to hit the goats anymore.
+Dialogue: 0,0:15:49.04,0:15:51.04,CHS,,0,0,0,,成交？\N{\rENG}Do you promise?
+Dialogue: 0,0:15:51.33,0:15:53.54,CHS,,0,0,0,,每天，一半\N{\rENG}Every day. Half.
+Dialogue: 0,0:16:02.75,0:16:07.16,CHS,,0,0,0,,- 看到了吗？ - 看到了\N{\rENG}- Do you see? Look.  - I can see.
+Dialogue: 0,0:16:08.00,0:16:10.04,CHS,,0,0,0,,看，快，趴下\N{\rENG}Look. Ouick, get down!
+Dialogue: 0,0:16:10.20,0:16:11.37,CHS,,0,0,0,,该你了\N{\rENG}Now your turn.
+Dialogue: 0,0:16:11.66,0:16:13.04,CHS,,0,0,0,,- 我  - 是的\N{\rENG}- Me?  - Yes.
+Dialogue: 0,0:16:36.83,0:16:38.66,CHS,,0,0,0,,- 海蒂？ - 嗯？\N{\rENG}- Heidi?  - Yes?
+Dialogue: 0,0:16:38.95,0:16:43.20,CHS,,0,0,0,,- 不要提食物的事情  - 我不会说的\N{\rENG}- Maybe don't mention the food.  - I won't say anything.
+Dialogue: 0,0:16:44.95,0:16:49.16,CHS,,0,0,0,,村里人说他杀过人\N{\rENG}In the village they say he killed someone once.
+Dialogue: 0,0:17:09.08,0:17:11.08,CHS,,0,0,0,,谢谢\N{\rENG}Thank you.
+Dialogue: 0,0:17:11.70,0:17:14.37,CHS,,0,0,0,,我还是睡在畜棚里吧\N{\rENG}I'd rather sleep in the stable affer all.
+Dialogue: 0,0:17:16.79,0:17:19.99,CHS,,0,0,0,,皮特和你讲了我的传闻吗？\N{\rENG}Did Peter tell you stories about me?
+Dialogue: 0,0:17:24.62,0:17:26.08,CHS,,0,0,0,,你相信他的话？\N{\rENG}And you just believe him?
+Dialogue: 0,0:17:27.87,0:17:30.29,CHS,,0,0,0,,他说的是真的吗？\N{\rENG}Is it true what he says?
+Dialogue: 0,0:17:30.87,0:17:33.74,CHS,,0,0,0,,人们喜欢说些鸡毛蒜皮的事情\N{\rENG}People like saying nasty things.
+Dialogue: 0,0:17:35.20,0:17:39.45,CHS,,0,0,0,,你需要决定相信自己的眼睛和耳朵\N{\rENG}You have to decide whether to trust your own eyes and ears
+Dialogue: 0,0:17:39.62,0:17:41.70,CHS,,0,0,0,,还是别人的话\N{\rENG}or what other people say.
+Dialogue: 0,0:18:07.20,0:18:09.83,CHS,,0,0,0,,晚安，爷爷\N{\rENG}Goodnight, Grandfather.
+Dialogue: 0,0:18:44.41,0:18:46.37,CHS,,0,0,0,,好美\N{\rENG}Lovely.
+Dialogue: 0,0:18:48.91,0:18:51.08,CHS,,0,0,0,,我对这里很熟\N{\rENG}I know my way around up here.
+Dialogue: 0,0:19:23.12,0:19:25.74,CHS,,0,0,0,,明天我告诉你雪绒花长在哪\N{\rENG}I'll show you tomorrow where the edelweiss grows.
+Dialogue: 0,0:19:28.29,0:19:29.66,CHS,,0,0,0,,皮特\N{\rENG}Peter.
+Dialogue: 0,0:19:31.54,0:19:35.37,CHS,,0,0,0,,明天我得走了，爷爷要带我去牧师那里\N{\rENG}I'll be gone tomorrow.Grandfather is taking me to the parson.
+Dialogue: 0,0:19:35.66,0:19:36.74,CHS,,0,0,0,,什么？\N{\rENG}What?
+Dialogue: 0,0:19:38.50,0:19:41.08,CHS,,0,0,0,,{\fs45\c&H9AD1DD&}其实是舍不得那些吃的了吧！…^_^\N{\rCHS}我又要独自和这些愚蠢的山羊呆在一起了\N{\rENG}I'm on my own with these stupid goats again.
+Dialogue: 0,0:19:43.16,0:19:45.83,CHS,,0,0,0,,走开\N{\rENG}Shoo! Move! Come on.
+Dialogue: 0,0:19:46.12,0:19:47.91,CHS,,0,0,0,,走开\N{\rENG}Go! Move it!
+Dialogue: 0,0:20:13.08,0:20:15.29,CHS,,0,0,0,,看你弄成什么样了\N{\rENG}What on earth do you look like?
+Dialogue: 0,0:20:17.91,0:20:19.74,CHS,,0,0,0,,爷爷？\N{\rENG}Grandfather?
+Dialogue: 0,0:20:21.50,0:20:23.87,CHS,,0,0,0,,这是我的椅子？\N{\rENG}Is the chair for me?
+Dialogue: 0,0:20:24.04,0:20:25.58,CHS,,0,0,0,,还能是谁的\N{\rENG}Who else?
+Dialogue: 0,0:20:29.33,0:20:31.12,CHS,,0,0,0,,但我明天要离开了啊\N{\rENG}But I'm leaving tomorrow.
+Dialogue: 0,0:20:32.12,0:20:34.24,CHS,,0,0,0,,你明天要去山上\N{\rENG}You're going out on the alp tomorrow.
+Dialogue: 0,0:20:35.12,0:20:37.04,CHS,,0,0,0,,后天也去？\N{\rENG}And the next day too?
+Dialogue: 0,0:20:37.20,0:20:38.33,CHS,,0,0,0,,当然\N{\rENG}Certainly.
+Dialogue: 0,0:20:40.00,0:20:42.91,CHS,,0,0,0,,不要再问问题了，去洗干净你的脸\N{\rENG}Don't ask so many questions and go and wash your face.
+Dialogue: 0,0:20:47.12,0:20:49.83,CHS,,0,0,0,,谢谢，谢谢，太感谢你了\N{\rENG}Thank you, thank you, thank you!
+Dialogue: 0,0:20:52.29,0:20:56.16,CHS,,0,0,0,,皮特，我能留下来了\N{\rENG}Peter! I'm allowed to stay!
+Dialogue: 0,0:21:48.08,0:21:51.20,CHS,,0,0,0,,- 今天是我最后一天来了  - 为什么\N{\rENG}- Today is the last day I'll be here.  - Why?
+Dialogue: 0,0:21:51.37,0:21:52.91,CHS,,0,0,0,,我得去上学\N{\rENG}I have to go to school.
+Dialogue: 0,0:21:53.08,0:21:54.79,CHS,,0,0,0,,什么时候回来？\N{\rENG}When are you coming back?
+Dialogue: 0,0:21:56.08,0:21:57.49,CHS,,0,0,0,,春天吧，我想\N{\rENG}In the spring, I think.
+Dialogue: 0,0:21:58.12,0:22:00.04,CHS,,0,0,0,,直到春天？\N{\rENG}Not until the spring?
+Dialogue: 0,0:22:07.20,0:22:08.66,CHS,,0,0,0,,你可以下山到我家来\N{\rENG}You can come down and visit.
+Dialogue: 0,0:22:09.45,0:22:11.54,CHS,,0,0,0,,我奶奶会很高兴看见你\N{\rENG}Grandmother will be pleased to see you.
+Dialogue: 0,0:22:17.75,0:22:20.33,CHS,,0,0,0,,别吃了，吃的够多了\N{\rENG}No more eating, you've had enough!
+Dialogue: 0,0:22:23.95,0:22:25.66,CHS,,0,0,0,,跟上！\N{\rENG}Come on!
+Dialogue: 0,0:22:28.41,0:22:30.16,CHS,,0,0,0,,我能去上学吗？\N{\rENG}May I go to school too?
+Dialogue: 0,0:22:31.54,0:22:32.58,CHS,,0,0,0,,过来，吃饭\N{\rENG}Come on, eat.
+Dialogue: 0,0:22:38.04,0:22:39.29,CHS,,0,0,0,,看谁来了\N{\rENG}Look who's there.
+Dialogue: 0,0:22:40.08,0:22:43.20,CHS,,0,0,0,,难以置信\N{\rENG}That's unbelievable.
+Dialogue: 0,0:22:45.33,0:22:48.20,CHS,,0,0,0,,他不应该被允许照顾孩子\N{\rENG}He shouldn't be allowed to take care of a child.
+Dialogue: 0,0:22:48.50,0:22:50.74,CHS,,0,0,0,,他看过来啦\N{\rENG}He's looking over.
+Dialogue: 0,0:23:17.75,0:23:19.12,CHS,,0,0,0,,早上好\N{\rENG}Good day.
+Dialogue: 0,0:23:19.95,0:23:21.24,CHS,,0,0,0,,你好\N{\rENG}Hello.
+Dialogue: 0,0:23:22.12,0:23:23.33,CHS,,0,0,0,,阿蒙治叔叔…\N{\rENG}Alp-Uncle...
+Dialogue: 0,0:23:24.41,0:23:26.91,CHS,,0,0,0,,对这个女孩你有什么规划\N{\rENG}What do you have planned for the girl?
+Dialogue: 0,0:23:27.08,0:23:28.95,CHS,,0,0,0,,和你没关系\N{\rENG}That's nothing to do with you.
+Dialogue: 0,0:23:29.25,0:23:31.66,CHS,,0,0,0,,她应该去上学\N{\rENG}In a year she'll have to go to school.
+Dialogue: 0,0:23:31.83,0:23:34.37,CHS,,0,0,0,,她不需要\N{\rENG}She doesn't have to do anything.
+Dialogue: 0,0:23:34.54,0:23:37.74,CHS,,0,0,0,,讲点理，每个孩子都该读书\N{\rENG}Be sensible.Every child must learn to read.
+Dialogue: 0,0:23:38.04,0:23:41.62,CHS,,0,0,0,,她没法在冬天里独自一人从山上下来\N{\rENG}She can't come down from the alp on her own in the winter.
+Dialogue: 0,0:23:41.79,0:23:44.37,CHS,,0,0,0,,过来，孩子，出去玩\N{\rENG}Come on, child.You go outside.
+Dialogue: 0,0:23:48.75,0:23:51.29,CHS,,0,0,0,,整个冬天独自一人呆在山上\N{\rENG}Alone the whole winter,up on that alp.
+Dialogue: 0,0:23:51.58,0:23:55.45,CHS,,0,0,0,,- 这么大的孩子需要朋友  - 她应有尽有\N{\rENG}- A child of that age needs friends.  - She has all she needs.
+Dialogue: 0,0:23:58.29,0:23:59.79,CHS,,0,0,0,,这是违法的\N{\rENG}It's against the law.
+Dialogue: 0,0:24:01.08,0:24:04.37,CHS,,0,0,0,,对你的法律不感兴趣\N{\rENG}I'm not interested in your laws.
+Dialogue: 0,0:24:14.45,0:24:15.62,CHS,,0,0,0,,过来\N{\rENG}Come on.
+Dialogue: 0,0:24:18.29,0:24:20.49,CHS,,0,0,0,,老顽固\N{\rENG}Such a pig-headed fellow.
+Dialogue: 0,0:24:33.54,0:24:35.79,CHS,,0,0,0,,看\N{\rENG}Here, look.
+Dialogue: 0,0:24:37.45,0:24:39.33,CHS,,0,0,0,,做好了\N{\rENG}It's finished.
+Dialogue: 0,0:24:42.58,0:24:43.95,CHS,,0,0,0,,好漂亮\N{\rENG}Beautiful.
+Dialogue: 0,0:24:45.08,0:24:46.33,CHS,,0,0,0,,谢谢你，爷爷\N{\rENG}Thank you, Grandfather.
+Dialogue: 0,0:24:52.33,0:24:54.91,CHS,,0,0,0,,要是春天来了就好了\N{\rENG}If only it were spring again.
+Dialogue: 0,0:25:30.54,0:25:39.08,CHS,,0,0,0,,快\N{\rENG}Faster!
+Dialogue: 0,0:25:59.66,0:26:01.49,CHS,,0,0,0,,谢谢\N{\rENG}Thank you.
+Dialogue: 0,0:26:01.66,0:26:04.87,CHS,,0,0,0,,天黑后我会来接你\N{\rENG}When it gets dark,I'll come and pick you up.
+Dialogue: 0,0:26:11.41,0:26:13.04,CHS,,0,0,0,,皮特在家吗？\N{\rENG}Hello, is Peter there?
+Dialogue: 0,0:26:13.20,0:26:15.91,CHS,,0,0,0,,他在学校，进来吧\N{\rENG}He's at school.But come inside.
+Dialogue: 0,0:26:23.29,0:26:25.74,CHS,,0,0,0,,母亲，我们有客人来了，是海蒂\N{\rENG}Mother, we have a visitor.It's Heidi.
+Dialogue: 0,0:26:26.45,0:26:27.83,CHS,,0,0,0,,你好\N{\rENG}Hello.
+Dialogue: 0,0:26:28.00,0:26:30.49,CHS,,0,0,0,,孩子，她看不见\N{\rENG}Child, she can't see.
+Dialogue: 0,0:26:31.79,0:26:34.95,CHS,,0,0,0,,靠近点，海蒂\N{\rENG}Come a little closer, Heidi.
+Dialogue: 0,0:26:37.87,0:26:40.37,CHS,,0,0,0,,奶奶，你什么都看不见吗？\N{\rENG}Can you see nothing, Grandmother?
+Dialogue: 0,0:26:40.66,0:26:42.74,CHS,,0,0,0,,是看不见\N{\rENG}With my eyes, nothing at all.
+Dialogue: 0,0:26:42.91,0:26:45.24,CHS,,0,0,0,,但可以用手感受世界\N{\rENG}But with my hands,it's different.
+Dialogue: 0,0:26:48.91,0:26:51.12,CHS,,0,0,0,,- 海蒂  - 皮特\N{\rENG}- Heidi!  - Peter!
+Dialogue: 0,0:26:56.50,0:26:57.54,CHS,,0,0,0,,谢谢\N{\rENG}Thank you.
+Dialogue: 0,0:26:57.70,0:27:00.45,CHS,,0,0,0,,你什么也没错过，学校好无聊\N{\rENG}You're not missing anything.School is so boring.
+Dialogue: 0,0:27:00.62,0:27:03.04,CHS,,0,0,0,,你这样说是因为你不会读书\N{\rENG}You just say that because you still can't read.
+Dialogue: 0,0:27:03.20,0:27:06.62,CHS,,0,0,0,,你也不会，读书有什么好的\N{\rENG}You can't either.What good does reading do up here?
+Dialogue: 0,0:27:06.91,0:27:07.95,CHS,,0,0,0,,吃你的饭\N{\rENG}Eat your food!
+Dialogue: 0,0:27:12.62,0:27:15.16,CHS,,0,0,0,,奶奶，吃我的吧\N{\rENG}You can have mine, Grandmother.
+Dialogue: 0,0:27:15.33,0:27:18.33,CHS,,0,0,0,,谢谢，海蒂，它太硬了\N{\rENG}Thank you, Heidi,but it's too hard.
+Dialogue: 0,0:27:19.45,0:27:22.16,CHS,,0,0,0,,我快没牙了\N{\rENG}I hardly have any teeth left, you know.
+Dialogue: 0,0:27:23.25,0:27:24.37,CHS,,0,0,0,,那我给我吧\N{\rENG}Then I'll take it.
+Dialogue: 0,0:27:34.91,0:27:38.24,CHS,,0,0,0,,奶奶看不见，你知道吗？\N{\rENG}Grandmother can't see.Did you know?
+Dialogue: 0,0:27:39.45,0:27:42.41,CHS,,0,0,0,,她也不能吃陈面包\N{\rENG}And she can't eat any stale bread at all.
+Dialogue: 0,0:27:45.20,0:27:49.62,CHS,,0,0,0,,我们很幸运，不是吗，爷爷\N{\rENG}We're lucky, aren't we Grandfather?
+Dialogue: 0,0:28:41.62,0:28:43.70,CHS,,0,0,0,,噢，那里\N{\rENG}Whoa there!
+Dialogue: 0,0:28:57.91,0:29:00.33,CHS,,0,0,0,,叔叔？你好\N{\rENG}Uncle? Hello.
+Dialogue: 0,0:29:02.08,0:29:04.20,CHS,,0,0,0,,我带来一些好消息\N{\rENG}I've got some good news.
+Dialogue: 0,0:29:05.29,0:29:07.79,CHS,,0,0,0,,我帮海蒂找到了好人家\N{\rENG}I've found a place for Heidi,
+Dialogue: 0,0:29:07.95,0:29:10.66,CHS,,0,0,0,,在法兰克福，我雇主的朋友家里\N{\rENG}with friends of my employers,in Frankfurt.
+Dialogue: 0,0:29:15.66,0:29:17.79,CHS,,0,0,0,,这是一个受人尊敬的家庭\N{\rENG}It's a well-respected family,
+Dialogue: 0,0:29:17.95,0:29:23.58,CHS,,0,0,0,,海蒂可以和她们的女儿一起去上学\N{\rENG}and Heidi could even go to school with their young daughter.
+Dialogue: 0,0:29:24.75,0:29:26.54,CHS,,0,0,0,,对她来说太好了\N{\rENG}It's a wonderful chance for her.
+Dialogue: 0,0:29:27.58,0:29:29.54,CHS,,0,0,0,,说句话吧\N{\rENG}Say something at least!
+Dialogue: 0,0:29:30.33,0:29:32.87,CHS,,0,0,0,,说完了就滚\N{\rENG}When you're finished, you can go.
+Dialogue: 0,0:29:33.50,0:29:34.91,CHS,,0,0,0,,我想带走她\N{\rENG}But I want to take her with me.
+Dialogue: 0,0:29:35.20,0:29:36.70,CHS,,0,0,0,,海蒂待在这里\N{\rENG}Heidi is staying here.
+Dialogue: 0,0:29:40.45,0:29:43.62,CHS,,0,0,0,,村里人说你不让她上学\N{\rENG}In the village they sayyou don't let her go to school.
+Dialogue: 0,0:29:44.75,0:29:48.49,CHS,,0,0,0,,因为你的固执她不会读也不会写\N{\rENG}Because of your obstinacy,she won't learn to read or write!
+Dialogue: 0,0:29:48.66,0:29:50.49,CHS,,0,0,0,,你想让她在这里粗野下去？\N{\rENG}You want her to turn wild up here?
+Dialogue: 0,0:29:50.79,0:29:53.91,CHS,,0,0,0,,你为什么突然这么关心她？\N{\rENG}Why do you care about her all of a sudden?
+Dialogue: 0,0:29:54.08,0:29:57.62,CHS,,0,0,0,,叔叔，上次我也没办法\N{\rENG}Uncle, last time I had no other choice.
+Dialogue: 0,0:29:57.91,0:30:00.29,CHS,,0,0,0,,没什么好说的了\N{\rENG}There's nothing more to say.
+Dialogue: 0,0:30:03.25,0:30:05.62,CHS,,0,0,0,,如果你不让她上学\N{\rENG}If you don't let her go to school,
+Dialogue: 0,0:30:05.91,0:30:09.16,CHS,,0,0,0,,他们会带走她并把她送到别人家里\N{\rENG}they'll take her away from you and put her in a home.
+Dialogue: 0,0:30:09.79,0:30:13.29,CHS,,0,0,0,,我今天要带走她，如果需要的话会寻求村民的帮助\N{\rENG}I'm taking her today. With help from the villagers, if needs be.
+Dialogue: 0,0:30:14.25,0:30:15.87,CHS,,0,0,0,,孩子在哪？\N{\rENG}Where is the child?
+Dialogue: 0,0:30:17.62,0:30:19.29,CHS,,0,0,0,,海蒂是我的\N{\rENG}Heidi is mine.
+Dialogue: 0,0:30:19.45,0:30:21.04,CHS,,0,0,0,,现在滚！\N{\rENG}Now get out of here.
+Dialogue: 0,0:30:47.58,0:30:49.91,CHS,,0,0,0,,- 海蒂  - 迪提？\N{\rENG}- Heidi!  - Dete?
+Dialogue: 0,0:30:50.79,0:30:52.99,CHS,,0,0,0,,- 迪提姑姑  - 海蒂，我的孩子\N{\rENG}- Aunt Dete!  - Heidi, my child.
+Dialogue: 0,0:30:53.29,0:30:54.33,CHS,,0,0,0,,过来\N{\rENG}Come here.
+Dialogue: 0,0:30:55.83,0:30:57.62,CHS,,0,0,0,,想我吗？\N{\rENG}Have you missed me lots?
+Dialogue: 0,0:30:58.66,0:31:01.24,CHS,,0,0,0,,小孩，放你的羊去\N{\rENG}Boy, go back to your goats.
+Dialogue: 0,0:31:01.41,0:31:04.95,CHS,,0,0,0,,我和海蒂有话要说\N{\rENG}I have to talk to Heidi.Come on.
+Dialogue: 0,0:31:07.12,0:31:08.45,CHS,,0,0,0,,坐下\N{\rENG}Sit down.
+Dialogue: 0,0:31:13.50,0:31:14.70,CHS,,0,0,0,,听我说\N{\rENG}Listen to me.
+Dialogue: 0,0:31:14.87,0:31:19.29,CHS,,0,0,0,,你想住在一个又大又漂亮的房子里吗？\N{\rENG}How would you like to live in a big, beautiful house?
+Dialogue: 0,0:31:20.66,0:31:23.95,CHS,,0,0,0,,泽塞曼一家，来自法兰克福的非常好的人\N{\rENG}The Sesemanns,very kind people from Frankfurt,
+Dialogue: 0,0:31:24.12,0:31:26.74,CHS,,0,0,0,,正在为他们的女儿寻找朋友\N{\rENG}are looking for a friend for their daughter.
+Dialogue: 0,0:31:28.16,0:31:29.62,CHS,,0,0,0,,但我喜欢这里\N{\rENG}But I like it here.
+Dialogue: 0,0:31:31.08,0:31:34.99,CHS,,0,0,0,,但是法兰克福的女孩期待你的到来\N{\rENG}But the girl in Frankfurt is so looking forward to you coming.
+Dialogue: 0,0:31:35.70,0:31:37.45,CHS,,0,0,0,,我还是想和爷爷待在一起\N{\rENG}I'd rather stay with Grandfather.
+Dialogue: 0,0:31:37.75,0:31:41.83,CHS,,0,0,0,,海蒂，爷爷让你和我一起走\N{\rENG}Heidi, Grandfather wants you to come with me.
+Dialogue: 0,0:31:44.08,0:31:45.12,CHS,,0,0,0,,真的？\N{\rENG}Really?
+Dialogue: 0,0:31:46.95,0:31:50.08,CHS,,0,0,0,,孩子，我们都希望把最好的给你\N{\rENG}Child, we both just want what is best for you.
+Dialogue: 0,0:31:52.33,0:31:54.79,CHS,,0,0,0,,过来，火车快要开了\N{\rENG}Come along.The train is leaving soon.
+Dialogue: 0,0:31:54.95,0:31:58.33,CHS,,0,0,0,,- 但我得说再见  - 没时间了\N{\rENG}- But I have to say goodbye.  - We don't have any time.
+Dialogue: 0,0:31:58.50,0:32:00.79,CHS,,0,0,0,,- 远吗？ - 不远\N{\rENG}- Is it far away?  - No, no.
+Dialogue: 0,0:32:00.95,0:32:03.08,CHS,,0,0,0,,如果我不喜欢那里呢\N{\rENG}And what if I don't like it?
+Dialogue: 0,0:32:03.91,0:32:05.62,CHS,,0,0,0,,你可以回来\N{\rENG}Then you can come back home.
+Dialogue: 0,0:32:05.79,0:32:07.79,CHS,,0,0,0,,我保证\N{\rENG}I promise.
+Dialogue: 0,0:32:07.95,0:32:09.41,CHS,,0,0,0,,跟上\N{\rENG}Come on.
+Dialogue: 0,0:32:20.00,0:32:23.24,CHS,,0,0,0,,过来，快点\N{\rENG}Come on, hurry!
+Dialogue: 0,0:32:27.70,0:32:29.04,CHS,,0,0,0,,海蒂在哪\N{\rENG}Where is Heidi?
+Dialogue: 0,0:32:42.25,0:32:43.74,CHS,,0,0,0,,快点\N{\rENG}Go, hurry!
+Dialogue: 0,0:32:49.50,0:32:51.08,CHS,,0,0,0,,上来\N{\rENG}Hop on.
+Dialogue: 0,0:32:52.20,0:32:54.12,CHS,,0,0,0,,- 出发吧  - 好的\N{\rENG}- Off we go!  - All right.
+Dialogue: 0,0:33:09.66,0:33:12.54,CHS,,0,0,0,,他们走了，你又晚了，不是吗？\N{\rENG}They've gone!You're late again, aren't you?
+Dialogue: 0,0:33:19.25,0:33:21.41,CHS,,0,0,0,,一直在寻找\N{\rENG}Keep looking.
+Dialogue: 0,0:33:30.91,0:33:33.79,CHS,,0,0,0,,孩子还活着真是一个奇迹\N{\rENG}It's a miracle the child is still alive.
+Dialogue: 0,0:34:14.95,0:34:16.20,CHS,,0,0,0,,海蒂，待在这\N{\rENG}Heidi, stay here.
+Dialogue: 0,0:34:16.70,0:34:18.33,CHS,,0,0,0,,待在这\N{\rENG}Stay here!
+Dialogue: 0,0:34:39.20,0:34:42.79,CHS,,0,0,0,,海蒂，和我来，跟上\N{\rENG}Heidi, come with me.Come inside.
+Dialogue: 0,0:35:08.12,0:35:09.16,CHS,,0,0,0,,有空吗\N{\rENG}Are you free?
+Dialogue: 0,0:35:10.04,0:35:12.16,CHS,,0,0,0,,请去泽塞曼家\N{\rENG}The Sesemann mansion, please.
+Dialogue: 0,0:35:13.45,0:35:14.87,CHS,,0,0,0,,过来\N{\rENG}Come on.
+Dialogue: 0,0:35:39.75,0:35:41.41,CHS,,0,0,0,,海蒂\N{\rENG}Heidi!
+Dialogue: 0,0:35:52.50,0:35:53.95,CHS,,0,0,0,,出来\N{\rENG}Get out.
+Dialogue: 0,0:36:02.91,0:36:05.04,CHS,,0,0,0,,- 日安，女士  - 日安\N{\rENG}- Good day, ladies.  - Good day.
+Dialogue: 0,0:36:08.83,0:36:09.91,CHS,,0,0,0,,欢迎，女士\N{\rENG}Welcome, ladies.
+Dialogue: 0,0:36:11.04,0:36:13.74,CHS,,0,0,0,,洛特梅尔小姐正在等我们\N{\rENG}Miss Rottenmeier is waiting for us.
+Dialogue: 0,0:36:14.87,0:36:16.49,CHS,,0,0,0,,请跟着我\N{\rENG}Please follow me.
+Dialogue: 0,0:36:46.33,0:36:47.95,CHS,,0,0,0,,海蒂，住手\N{\rENG}Heidi, stop it!
+Dialogue: 0,0:36:48.66,0:36:51.99,CHS,,0,0,0,,现在我要向洛特梅尔小姐介绍你，好吗？\N{\rENG}I'm introducing you to Miss Rottenmeier now, okay?
+Dialogue: 0,0:36:52.16,0:36:54.54,CHS,,0,0,0,,她是年轻小姐的家庭教师\N{\rENG}That's the young lady's governess.
+Dialogue: 0,0:36:54.70,0:36:55.74,CHS,,0,0,0,,家庭教师？\N{\rENG}Governess?
+Dialogue: 0,0:36:55.91,0:37:01.16,CHS,,0,0,0,,她是一位非常优秀的女士，现在照顾克拉拉小姐\N{\rENG}She's a very distinguished woman who looks affer Miss Klara.
+Dialogue: 0,0:37:01.33,0:37:03.04,CHS,,0,0,0,,好好表现\N{\rENG}So behave yourself!
+Dialogue: 0,0:37:03.20,0:37:06.79,CHS,,0,0,0,,- 洛特梅尔小姐等着见你们  - 好的，跟上\N{\rENG}- Miss Rottenmeier will see you now.  - Right. Come along.
+Dialogue: 0,0:37:18.08,0:37:21.45,CHS,,0,0,0,,不幸的是，我没时间给她换衣服\N{\rENG}Unfortunately, I had no time to change her clothes.
+Dialogue: 0,0:37:29.33,0:37:31.62,CHS,,0,0,0,,- 你叫什么名字？ - 海蒂\N{\rENG}- What is your name?  - Heidi.
+Dialogue: 0,0:37:31.79,0:37:34.20,CHS,,0,0,0,,海蒂？那不是一个基督徒的名字\N{\rENG}Heidi? That's not a Christian name.
+Dialogue: 0,0:37:34.50,0:37:37.04,CHS,,0,0,0,,她叫艾迪尔海德，像她母亲\N{\rENG}Her name is Adelheid, like her mother.
+Dialogue: 0,0:37:37.20,0:37:38.45,CHS,,0,0,0,,上帝保佑她的灵魂\N{\rENG}God rest her soul.
+Dialogue: 0,0:37:46.79,0:37:49.24,CHS,,0,0,0,,孩子在我看来太小\N{\rENG}The child seems very young to me.
+Dialogue: 0,0:37:49.41,0:37:52.70,CHS,,0,0,0,,确实，对于她的年纪来说身体有点小\N{\rENG}Indeed, she is quite small for her age.
+Dialogue: 0,0:37:52.87,0:37:55.74,CHS,,0,0,0,,- 我八岁了  - 八岁\N{\rENG}- I'm eight.  - Eight.
+Dialogue: 0,0:37:56.45,0:37:59.70,CHS,,0,0,0,,不，这还不够，跟我过来，迪提\N{\rENG}No, that won't do at all.Come with me, Dete.
+Dialogue: 0,0:38:05.70,0:38:08.95,CHS,,0,0,0,,艾迪尔海德正是泽塞曼先生需要的\N{\rENG}Adelheid is exactly what Mr Sesemann wanted.
+Dialogue: 0,0:38:09.12,0:38:11.66,CHS,,0,0,0,,来自瑞士乡下的孩子\N{\rENG}An unspoiled child from the Swiss countryside.
+Dialogue: 0,0:38:13.00,0:38:15.08,CHS,,0,0,0,,现在给我的报酬吧\N{\rENG}And now I want my side of the deal.
+Dialogue: 0,0:38:17.58,0:38:20.54,CHS,,0,0,0,,- 我该叫你什么？ - 海蒂\N{\rENG}- What should I call you?  - Heidi.
+Dialogue: 0,0:38:21.37,0:38:22.91,CHS,,0,0,0,,我是克拉拉\N{\rENG}I'm Klara.
+Dialogue: 0,0:38:24.00,0:38:25.95,CHS,,0,0,0,,来法兰克福开心吗\N{\rENG}Were you excited about Frankfurt?
+Dialogue: 0,0:38:27.33,0:38:30.45,CHS,,0,0,0,,爷爷和迪提姑姑希望我来\N{\rENG}Grandfather and Aunt Dete wanted me to come,
+Dialogue: 0,0:38:30.62,0:38:33.87,CHS,,0,0,0,,但如果我不喜欢，我可以回去\N{\rENG}but if I don't like it, I'm allowed to go back home.
+Dialogue: 0,0:38:34.50,0:38:37.41,CHS,,0,0,0,,你是我见过最好奇的孩子\N{\rENG}You're the most curious girl I've ever met.
+Dialogue: 0,0:38:38.58,0:38:40.37,CHS,,0,0,0,,这是男孩子的衣服吗\N{\rENG}Are those boys' clothes?
+Dialogue: 0,0:38:41.33,0:38:44.66,CHS,,0,0,0,,在阿尔卑斯山区这很常见，尤其适合攀爬\N{\rENG}It's practical on the alp.Especially for climbing.
+Dialogue: 0,0:38:45.75,0:38:47.70,CHS,,0,0,0,,噢，攀爬\N{\rENG}Oh, climbing...
+Dialogue: 0,0:38:50.25,0:38:52.04,CHS,,0,0,0,,你不能走路吗？\N{\rENG}Can't you walk?
+Dialogue: 0,0:38:52.20,0:38:54.20,CHS,,0,0,0,,很不幸，不能\N{\rENG}No, sadly not.
+Dialogue: 0,0:38:54.50,0:38:57.37,CHS,,0,0,0,,- 所以你得坐在这上面？ - 是的\N{\rENG}- So you always have to sit in this?  - Yes.
+Dialogue: 0,0:38:58.70,0:38:59.74,CHS,,0,0,0,,随便推我走走吧\N{\rENG}Feel free to push me.
+Dialogue: 0,0:39:05.83,0:39:07.33,CHS,,0,0,0,,喜欢我们的房子吗\N{\rENG}How do you like our house?
+Dialogue: 0,0:39:07.62,0:39:08.83,CHS,,0,0,0,,好大\N{\rENG}It's big.
+Dialogue: 0,0:39:12.00,0:39:13.74,CHS,,0,0,0,,抱歉\N{\rENG}I'm sorry.
+Dialogue: 0,0:39:20.91,0:39:21.95,CHS,,0,0,0,,怎么了\N{\rENG}What happened?
+Dialogue: 0,0:39:22.79,0:39:26.70,CHS,,0,0,0,,我冲向了桌子，没注意，抱歉\N{\rENG}I rode into the table. I wasn't paying attention. I'm sorry.
+Dialogue: 0,0:39:31.79,0:39:35.04,CHS,,0,0,0,,好吧，晚饭时间到了\N{\rENG}Right. It's time for supper.
+Dialogue: 0,0:39:37.08,0:39:38.08,CHS,,0,0,0,,坐吧\N{\rENG}Let's sit.
+Dialogue: 0,0:39:55.04,0:39:58.20,CHS,,0,0,0,,你看起来像皮特一样的牧羊人\N{\rENG}You look a bit like Peter the goatherd.
+Dialogue: 0,0:39:58.37,0:40:00.54,CHS,,0,0,0,,- 请原谅  - 什么？\N{\rENG}- Adelheid.  - Adelheid
+Dialogue: 0,0:40:00.83,0:40:02.66,CHS,,0,0,0,,不要那样和仆人交谈\N{\rENG}Don't talk like that to the servants.
+Dialogue: 0,0:40:10.50,0:40:11.99,CHS,,0,0,0,,这间房子里我们用餐具\N{\rENG}In this house we use cutlery.
+Dialogue: 0,0:40:13.91,0:40:16.41,CHS,,0,0,0,,她不知道这些常识\N{\rENG}She doesn't even know the very basics.
+Dialogue: 0,0:40:19.54,0:40:21.95,CHS,,0,0,0,,抱歉，我去拿抹布\N{\rENG}Sorry. I'll get a rag.
+Dialogue: 0,0:40:22.12,0:40:23.41,CHS,,0,0,0,,抹布？\N{\rENG}A rag?
+Dialogue: 0,0:40:23.70,0:40:25.24,CHS,,0,0,0,,坐下，艾迪尔海德！\N{\rENG}Sit down, Adelheid!
+Dialogue: 0,0:40:27.54,0:40:30.04,CHS,,0,0,0,,蒂妮特，安静\N{\rENG}Tinette. Silence!
+Dialogue: 0,0:40:46.25,0:40:48.16,CHS,,0,0,0,,能给我两个吗？\N{\rENG}Can I have two?
+Dialogue: 0,0:40:49.20,0:40:50.99,CHS,,0,0,0,,塞巴斯蒂安\N{\rENG}Sebastian.
+Dialogue: 0,0:40:51.29,0:40:53.66,CHS,,0,0,0,,{\fs45\c&H9AD1DD&}纠正发音的问题\N{\rCHS}他能给我两个面包卷吗？\N{\rENG}"Can he please pass me two rolls?"
+Dialogue: 0,0:40:55.04,0:40:59.12,CHS,,0,0,0,,他能给…我两个面包卷吗？\N{\rENG}Can he please... give me two rolls?
+Dialogue: 0,0:41:00.37,0:41:02.20,CHS,,0,0,0,,递给我两个面包卷\N{\rENG}"Pass me two rolls."
+Dialogue: 0,0:41:03.75,0:41:05.04,CHS,,0,0,0,,递给我两个面包卷\N{\rENG}Pass me two rolls.
+Dialogue: 0,0:41:06.37,0:41:08.41,CHS,,0,0,0,,两卷\N{\rENG}Two rolls.
+Dialogue: 0,0:41:08.70,0:41:11.08,CHS,,0,0,0,,两卷，请\N{\rENG}Two rolls, please.
+Dialogue: 0,0:41:19.41,0:41:22.04,CHS,,0,0,0,,艾迪尔海德，在这房子里有些规矩\N{\rENG}In this house there are rules, Adelheid.
+Dialogue: 0,0:41:22.20,0:41:25.83,CHS,,0,0,0,,提到仆人时你要说他或者她\N{\rENG}You are to refer to the servants as 'he' or 'she',
+Dialogue: 0,0:41:26.00,0:41:28.20,CHS,,0,0,0,,禁止与他们交谈\N{\rENG}and conversing with them is forbidden.
+Dialogue: 0,0:41:30.41,0:41:33.12,CHS,,0,0,0,,早餐是七点半\N{\rENG}Breakfast is at 7:30.
+Dialogue: 0,0:41:33.29,0:41:37.83,CHS,,0,0,0,,八点十五分开始上课\N{\rENG}Lessons will take place in the study and commence at 8:15.
+Dialogue: 0,0:41:38.00,0:41:40.95,CHS,,0,0,0,,十二点半午餐\N{\rENG}At 12:30 we take our lunch.
+Dialogue: 0,0:41:41.87,0:41:43.58,CHS,,0,0,0,,两小时午休\N{\rENG}Then two hours of rest.
+Dialogue: 0,0:41:44.41,0:41:45.70,CHS,,0,0,0,,晚上七点上床睡觉\N{\rENG}At 7 it's bed time.
+Dialogue: 0,0:41:46.62,0:41:49.87,CHS,,0,0,0,,房间里禁止奔跑，跳跃\N{\rENG}In this house there is no running, hopping or jumping.
+Dialogue: 0,0:41:50.45,0:41:52.20,CHS,,0,0,0,,我们一直步行\N{\rENG}We always walk.
+Dialogue: 0,0:41:52.37,0:41:54.45,CHS,,0,0,0,,从不大声说话\N{\rENG}We never raise our voices.
+Dialogue: 0,0:41:54.62,0:41:56.29,CHS,,0,0,0,,洛特梅尔小姐？\N{\rENG}Miss Rottenmeier?
+Dialogue: 0,0:43:02.95,0:43:04.58,CHS,,0,0,0,,你在干什么？\N{\rENG}What are you doing?
+Dialogue: 0,0:43:09.25,0:43:11.08,CHS,,0,0,0,,你不能像这样来回奔跑\N{\rENG}You can't run around here like that.
+Dialogue: 0,0:43:11.25,0:43:13.41,CHS,,0,0,0,,- 我？ - 是的！\N{\rENG}- Me?  - Yes!
+Dialogue: 0,0:43:29.29,0:43:31.54,CHS,,0,0,0,,山上的人都不洗澡吗？\N{\rENG}Don't people wash up in the mountains?
+Dialogue: 0,0:43:32.54,0:43:34.08,CHS,,0,0,0,,不，我们洗\N{\rENG}Yes, we do.
+Dialogue: 0,0:43:37.16,0:43:40.87,CHS,,0,0,0,,我听说在山上\N{\rENG}I have heard that up there,
+Dialogue: 0,0:43:42.25,0:43:45.12,CHS,,0,0,0,,有巨人和侏儒\N{\rENG}there are mountain trolls and gnomes.
+Dialogue: 0,0:43:45.29,0:43:47.12,CHS,,0,0,0,,你见过吗？\N{\rENG}Have you ever seen one?
+Dialogue: 0,0:43:47.95,0:43:49.45,CHS,,0,0,0,,别动\N{\rENG}Stay still.
+Dialogue: 0,0:43:56.91,0:44:00.95,CHS,,0,0,0,,穿上鞋子，准备好的话就上楼\N{\rENG}Now put those on, and when you're ready, come upstairs.
+Dialogue: 0,0:44:18.83,0:44:20.04,CHS,,0,0,0,,海蒂\N{\rENG}Heidi!
+Dialogue: 0,0:44:34.37,0:44:37.08,CHS,,0,0,0,,不，黄油刀\N{\rENG}No, the butter knife.
+Dialogue: 0,0:44:46.25,0:44:48.70,CHS,,0,0,0,,好的，艾迪尔海德小姐\N{\rENG}Okay, Miss Adelheid.
+Dialogue: 0,0:44:49.87,0:44:52.79,CHS,,0,0,0,,打开书本至第一章并朗读\N{\rENG}Open the book at chapter one and read aloud.
+Dialogue: 0,0:45:04.45,0:45:05.66,CHS,,0,0,0,,我不会\N{\rENG}I can't.
+Dialogue: 0,0:45:06.58,0:45:07.83,CHS,,0,0,0,,什么？\N{\rENG}Pardon?
+Dialogue: 0,0:45:08.50,0:45:10.20,CHS,,0,0,0,,我不会读\N{\rENG}I can't read.
+Dialogue: 0,0:45:10.50,0:45:12.41,CHS,,0,0,0,,你应该认识字母\N{\rENG}You must know the letters.
+Dialogue: 0,0:45:15.70,0:45:17.87,CHS,,0,0,0,,这是哪个字母？\N{\rENG}Which letter is this?
+Dialogue: 0,0:45:18.45,0:45:19.74,CHS,,0,0,0,,看起来像是座山\N{\rENG}It's like a mountain.
+Dialogue: 0,0:45:21.41,0:45:22.54,CHS,,0,0,0,,是的，它是\N{\rENG}Yes, it is.
+Dialogue: 0,0:45:22.83,0:45:24.66,CHS,,0,0,0,,克拉拉小姐，这不好笑\N{\rENG}Miss Klara, this is not funny.
+Dialogue: 0,0:45:26.00,0:45:27.70,CHS,,0,0,0,,皮特也不会读书\N{\rENG}Peter can't read either.
+Dialogue: 0,0:45:27.87,0:45:29.04,CHS,,0,0,0,,- 皮特？ - 皮特？\N{\rENG}- Peter?  - Peter?
+Dialogue: 0,0:45:29.62,0:45:31.49,CHS,,0,0,0,,他是我的朋友\N{\rENG}He's my friend.
+Dialogue: 0,0:45:32.33,0:45:34.95,CHS,,0,0,0,,皮特说我们山上不需要这个\N{\rENG}Peter said we don't need to up on the alp.
+Dialogue: 0,0:45:35.25,0:45:36.49,CHS,,0,0,0,,不需要？\N{\rENG}You don't need to?
+Dialogue: 0,0:45:37.70,0:45:39.08,CHS,,0,0,0,,小姐…\N{\rENG}Miss...
+Dialogue: 0,0:45:40.70,0:45:42.91,CHS,,0,0,0,,每个人都应该也必须学会朗读\N{\rENG}Every person can and must learn to read.
+Dialogue: 0,0:45:45.83,0:45:47.79,CHS,,0,0,0,,失陪一会\N{\rENG}Please excuse me one moment.
+Dialogue: 0,0:45:49.66,0:45:52.08,CHS,,0,0,0,,她不认识字母表？\N{\rENG}She doesn't know the alphabet?
+Dialogue: 0,0:45:53.87,0:45:58.74,CHS,,0,0,0,,粗野没教养的家伙不应该带进我们的房子\N{\rENG}A completely wild, uneducated creature has been brought into our house.
+Dialogue: 0,0:45:58.91,0:46:03.66,CHS,,0,0,0,,也许她应该有个单独的老师\N{\rENG}Maybe it would be appropriate for her to have a separate teacher.
+Dialogue: 0,0:46:03.83,0:46:05.66,CHS,,0,0,0,,你这么想？\N{\rENG}You'd like that.
+Dialogue: 0,0:46:05.83,0:46:07.33,CHS,,0,0,0,,不可能在进行克拉拉小姐\N{\rENG}It can't be asking too much
+Dialogue: 0,0:46:07.50,0:46:11.29,CHS,,0,0,0,,的课程时同时教这个瑞士孩子字母表\N{\rENG}to teach the Swiss child the alphabet alongside Klara's lesson.
+Dialogue: 0,0:46:11.45,0:46:13.29,CHS,,0,0,0,,当然不行，我只是想\N{\rENG}Certainly not, I just thought...
+Dialogue: 0,0:46:13.45,0:46:18.33,CHS,,0,0,0,,一旦泽塞曼先生回来，我相信艾迪尔海德得离开这里\N{\rENG}As soon as Mr Sesemann returns, I'll ensure Adelheid leaves this house.
+Dialogue: 0,0:46:20.16,0:46:22.58,CHS,,0,0,0,,窗户打不开吗？\N{\rENG}Doesn't this window open?
+Dialogue: 0,0:46:25.00,0:46:26.04,CHS,,0,0,0,,为什么？\N{\rENG}Why?
+Dialogue: 0,0:46:27.16,0:46:29.83,CHS,,0,0,0,,我想试试看能否看到大山\N{\rENG}I want to find out if you can see the mountains.
+Dialogue: 0,0:46:33.16,0:46:38.33,CHS,,0,0,0,,艾迪尔海德小姐，能回到自己的座位吗？\N{\rENG}Miss Adelheid, would you be so kind as to retake your seat
+Dialogue: 0,0:46:38.50,0:46:42.24,CHS,,0,0,0,,这样我们可以继续我们的课程\N{\rENG}so that we can continue with the much-needed lesson?
+Dialogue: 0,0:46:44.66,0:46:45.74,CHS,,0,0,0,,克拉拉小姐\N{\rENG}Miss Klara.
+Dialogue: 0,0:46:51.04,0:46:54.37,CHS,,0,0,0,,艾迪尔海德小姐，这个山叫做A\N{\rENG}Miss Adelheid, the mountain is called 'A'.
+Dialogue: 0,0:46:56.54,0:46:58.33,CHS,,0,0,0,,艾迪尔海德的A\N{\rENG}'A' for Adelheid.
+Dialogue: 0,0:46:58.50,0:47:00.95,CHS,,0,0,0,,- 对  - “A”\N{\rENG}- Exactly.  - 'A'.
+Dialogue: 0,0:47:02.29,0:47:03.87,CHS,,0,0,0,,推我过去，海蒂\N{\rENG}Take me over there, Heidi.
+Dialogue: 0,0:47:12.25,0:47:14.83,CHS,,0,0,0,,不要拉开这么大，不要被人发现\N{\rENG}Not so wide! We don't want to be seen.
+Dialogue: 0,0:47:21.54,0:47:22.99,CHS,,0,0,0,,我想让你看看这个\N{\rENG}I wanted to show you this.
+Dialogue: 0,0:47:24.62,0:47:26.87,CHS,,0,0,0,,- 是你吗？ - 和我的母亲一起\N{\rENG}- Is that you?  - And my mother.
+Dialogue: 0,0:47:30.08,0:47:31.95,CHS,,0,0,0,,但是你是站立的\N{\rENG}But you're standing up.
+Dialogue: 0,0:47:32.12,0:47:33.58,CHS,,0,0,0,,是的\N{\rENG}Yes.
+Dialogue: 0,0:47:33.75,0:47:36.37,CHS,,0,0,0,,我生病了在\N{\rENG}I only became ill affer...
+Dialogue: 0,0:47:36.54,0:47:38.87,CHS,,0,0,0,,我母亲去世后\N{\rENG}Affer she died.
+Dialogue: 0,0:47:39.70,0:47:41.37,CHS,,0,0,0,,父亲也想她\N{\rENG}Father misses her too.
+Dialogue: 0,0:47:42.37,0:47:45.37,CHS,,0,0,0,,他经常因工作出去\N{\rENG}He's always travelling for his work.
+Dialogue: 0,0:47:46.58,0:47:48.74,CHS,,0,0,0,,我一直被困在这间房子里\N{\rENG}And I'm always stuck in this house.
+Dialogue: 0,0:48:01.00,0:48:02.08,CHS,,0,0,0,,你！\N{\rENG}You!
+Dialogue: 0,0:48:03.58,0:48:07.58,CHS,,0,0,0,,上帝啊，年轻女士不会这样悄悄移动\N{\rENG}Goodness me! Young ladies don't creep up like that.
+Dialogue: 0,0:48:07.75,0:48:08.79,CHS,,0,0,0,,抱歉\N{\rENG}Sorry.
+Dialogue: 0,0:48:09.08,0:48:11.91,CHS,,0,0,0,,现在是午休时间，艾迪尔海德小姐\N{\rENG}It's nap time, Miss Adelheid.
+Dialogue: 0,0:48:12.08,0:48:13.79,CHS,,0,0,0,,我睡不着\N{\rENG}But I can't sleep.
+Dialogue: 0,0:48:13.95,0:48:17.41,CHS,,0,0,0,,不是睡觉，只是休息\N{\rENG}You shouldn't sleep, just rest.
+Dialogue: 0,0:48:21.37,0:48:24.04,CHS,,0,0,0,,需要我做些什么，年轻的女士\N{\rENG}How can I be of service to the young lady?
+Dialogue: 0,0:48:25.87,0:48:26.95,CHS,,0,0,0,,你能\N{\rENG}Do you...
+Dialogue: 0,0:48:27.12,0:48:29.04,CHS,,0,0,0,,他知道怎样打开窗户吗\N{\rENG}Does he know how to open the window?
+Dialogue: 0,0:48:30.29,0:48:31.41,CHS,,0,0,0,,哪一扇\N{\rENG}Which one?
+Dialogue: 0,0:48:42.70,0:48:44.12,CHS,,0,0,0,,好了，小姐[法语]\N{\rENG}Here, mademoiselle.
+Dialogue: 0,0:48:45.62,0:48:48.12,CHS,,0,0,0,,小心，不要这么远\N{\rENG}Good gracious, not so far!
+Dialogue: 0,0:48:50.75,0:48:52.79,CHS,,0,0,0,,根本看不见山\N{\rENG}There are no mountains at all.
+Dialogue: 0,0:48:53.45,0:48:57.29,CHS,,0,0,0,,好吧，从这里你不会看见任何山\N{\rENG}Well, you can't see any from up here,
+Dialogue: 0,0:48:58.54,0:49:03.24,CHS,,0,0,0,,但是，看，在那个塔上你能看的更远\N{\rENG}but look,you can see much further from the tower.
+Dialogue: 0,0:49:06.91,0:49:11.16,CHS,,0,0,0,,现在我得关上窗户，年轻的女士得回她的房间\N{\rENG}But now I have to close the window again and the young lady goes to her room.
+Dialogue: 0,0:49:11.33,0:49:13.16,CHS,,0,0,0,,否则会有麻烦了\N{\rENG}Otherwise there'll be trouble.
+Dialogue: 0,0:49:16.66,0:49:18.24,CHS,,0,0,0,,谢谢你，再见\N{\rENG}Thank you and adieu.
+Dialogue: 0,0:49:21.87,0:49:23.29,CHS,,0,0,0,,再见\N{\rENG}Adieu.
+Dialogue: 0,0:49:32.00,0:49:34.83,CHS,,0,0,0,,我们得在午休结束前回来\N{\rENG}We have to be back before the afternoon rest is over.
+Dialogue: 0,0:49:35.00,0:49:36.58,CHS,,0,0,0,,当然\N{\rENG}Sure.
+Dialogue: 0,0:49:40.41,0:49:41.54,CHS,,0,0,0,,右边\N{\rENG}Right.
+Dialogue: 0,0:49:42.58,0:49:44.45,CHS,,0,0,0,,不，左边\N{\rENG}No, left!
+Dialogue: 0,0:49:45.79,0:49:48.16,CHS,,0,0,0,,对了，这边\N{\rENG}That's right. Along there.
+Dialogue: 0,0:49:54.04,0:49:57.66,CHS,,0,0,0,,苹果，新鲜的苹果\N{\rENG}Apples, fresh apples!
+Dialogue: 0,0:49:57.95,0:49:59.95,CHS,,0,0,0,,新鲜的苹果\N{\rENG}Fresh apples!
+Dialogue: 0,0:50:22.50,0:50:23.54,CHS,,0,0,0,,塔\N{\rENG}The tower.
+Dialogue: 0,0:50:24.45,0:50:26.08,CHS,,0,0,0,,现在在哪儿？\N{\rENG}Where is it now?
+Dialogue: 0,0:50:28.70,0:50:30.79,CHS,,0,0,0,,海蒂，我不知道\N{\rENG}Heidi, I don't know right now.
+Dialogue: 0,0:50:32.45,0:50:34.12,CHS,,0,0,0,,也许他知道\N{\rENG}Maybe he knows.
+Dialogue: 0,0:50:35.58,0:50:37.24,CHS,,0,0,0,,海蒂，你不能同乞丐说话\N{\rENG}Heidi, you can't talk to a beggar!
+Dialogue: 0,0:50:40.04,0:50:41.74,CHS,,0,0,0,,海蒂\N{\rENG}Heidi!
+Dialogue: 0,0:50:43.66,0:50:44.83,CHS,,0,0,0,,这边\N{\rENG}This way.
+Dialogue: 0,0:50:52.75,0:50:54.08,CHS,,0,0,0,,就在那儿\N{\rENG}There it is.
+Dialogue: 0,0:51:04.16,0:51:07.62,CHS,,0,0,0,,面包，新鲜的面包\N{\rENG}Bread! Fresh bread!
+Dialogue: 0,0:51:08.66,0:51:10.95,CHS,,0,0,0,,新鲜的面包\N{\rENG}Fresh bread!
+Dialogue: 0,0:51:12.08,0:51:14.24,CHS,,0,0,0,,这儿，从这里进去吧\N{\rENG}There. That's where you go in.
+Dialogue: 0,0:51:15.50,0:51:17.04,CHS,,0,0,0,,你呢？\N{\rENG}What about you?
+Dialogue: 0,0:51:17.33,0:51:19.37,CHS,,0,0,0,,别管我，快上去\N{\rENG}Don't worry about me. Go on, hurry!
+Dialogue: 0,0:51:23.16,0:51:24.58,CHS,,0,0,0,,去\N{\rENG}Go!
+Dialogue: 0,0:51:38.50,0:51:40.83,CHS,,0,0,0,,我希望小姐休息好了\N{\rENG}I hope miss is well rested.
+Dialogue: 0,0:51:43.62,0:51:44.87,CHS,,0,0,0,,小姐？\N{\rENG}Miss?
+Dialogue: 0,0:52:03.91,0:52:06.29,CHS,,0,0,0,,我想年轻的女士会喜欢这个\N{\rENG}I'm sure the young lady will like this.
+Dialogue: 0,0:52:09.16,0:52:10.20,CHS,,0,0,0,,好可爱\N{\rENG}How cute.
+Dialogue: 0,0:52:12.50,0:52:14.45,CHS,,0,0,0,,只花一点点钱\N{\rENG}If you have a few pennies...
+Dialogue: 0,0:52:17.16,0:52:18.83,CHS,,0,0,0,,不要站在那儿，去找\N{\rENG}Don't just stand there. Search!
+Dialogue: 0,0:52:19.12,0:52:20.83,CHS,,0,0,0,,小姐？\N{\rENG}Miss?
+Dialogue: 0,0:52:21.83,0:52:22.99,CHS,,0,0,0,,艾迪尔海德\N{\rENG}Adelheid!
+Dialogue: 0,0:52:23.16,0:52:24.20,CHS,,0,0,0,,克拉拉\N{\rENG}Klara!
+Dialogue: 0,0:52:24.95,0:52:26.41,CHS,,0,0,0,,找不到他们\N{\rENG}I can't find them.
+Dialogue: 0,0:52:26.70,0:52:28.33,CHS,,0,0,0,,前门开着\N{\rENG}The front door was open.
+Dialogue: 0,0:52:28.50,0:52:31.16,CHS,,0,0,0,,- 然后呢？ - 也许她们出去了\N{\rENG}- And?  - Maybe they went out.
+Dialogue: 0,0:52:31.45,0:52:33.70,CHS,,0,0,0,,好吧，为什么出去，去哪儿了？\N{\rENG}Oh, right. Why out? Where?
+Dialogue: 0,0:52:34.00,0:52:36.29,CHS,,0,0,0,,我想我们得出去找她们\N{\rENG}I think we should look for them outside.
+Dialogue: 0,0:52:36.58,0:52:37.70,CHS,,0,0,0,,天啊\N{\rENG}Good God!
+Dialogue: 0,0:52:39.25,0:52:41.99,CHS,,0,0,0,,塞巴斯蒂安，找到那些孩子\N{\rENG}Find the children, Sebastian.
+Dialogue: 0,0:52:42.41,0:52:43.49,CHS,,0,0,0,,找到她们\N{\rENG}Find them!
+Dialogue: 0,0:52:55.41,0:52:57.04,CHS,,0,0,0,,山在哪儿？\N{\rENG}Where are the mountains?
+Dialogue: 0,0:53:18.16,0:53:20.16,CHS,,0,0,0,,爷爷\N{\rENG}Grandfather.
+Dialogue: 0,0:53:33.29,0:53:35.16,CHS,,0,0,0,,海蒂，怎么样了？\N{\rENG}Heidi, how was it?
+Dialogue: 0,0:53:36.08,0:53:37.33,CHS,,0,0,0,,卢克\N{\rENG}Look.
+Dialogue: 0,0:53:38.37,0:53:40.70,CHS,,0,0,0,,它们好可爱\N{\rENG}They're so sweet.
+Dialogue: 0,0:53:40.87,0:53:42.45,CHS,,0,0,0,,我们得走了\N{\rENG}We have to go.
+Dialogue: 0,0:53:44.00,0:53:45.66,CHS,,0,0,0,,快点\N{\rENG}Come on!
+Dialogue: 0,0:53:49.16,0:53:50.79,CHS,,0,0,0,,小姐\N{\rENG}Miss!
+Dialogue: 0,0:53:52.20,0:53:54.04,CHS,,0,0,0,,你在干什么\N{\rENG}What do you think you're doing?
+Dialogue: 0,0:53:56.62,0:53:58.83,CHS,,0,0,0,,尽快回去\N{\rENG}Back to the house, quick as you can.
+Dialogue: 0,0:54:09.50,0:54:12.08,CHS,,0,0,0,,她们到底去哪了\N{\rENG}Where on earth were they?
+Dialogue: 0,0:54:12.29,0:54:14.79,CHS,,0,0,0,,不远，她们只是想去\N{\rENG}Not far.They just wanted to...
+Dialogue: 0,0:54:15.08,0:54:17.08,CHS,,0,0,0,,- 呼吸点新鲜空气  - 对\N{\rENG}- Get some fresh air.  - Exactly.
+Dialogue: 0,0:54:22.25,0:54:24.41,CHS,,0,0,0,,你把克拉拉带出了这间屋子\N{\rENG}You took Klara out of this house.
+Dialogue: 0,0:54:24.70,0:54:27.12,CHS,,0,0,0,,你知道这有多危险吗？\N{\rENG}Are you aware of how dangerous that is?
+Dialogue: 0,0:54:27.29,0:54:28.33,CHS,,0,0,0,,什么\N{\rENG}What...
+Dialogue: 0,0:54:33.08,0:54:38.04,CHS,,0,0,0,,如果出了什么事怎么和她父亲交代\N{\rENG}What would you have told her father if something had happened to her?
+Dialogue: 0,0:54:43.41,0:54:45.66,CHS,,0,0,0,,你的腰带…\N{\rENG}And your sash is all...
+Dialogue: 0,0:54:51.58,0:54:54.45,CHS,,0,0,0,,天啊，这些小东西必须出去\N{\rENG}Oh, goodness! Those creatures must go.
+Dialogue: 0,0:54:54.75,0:54:55.83,CHS,,0,0,0,,- 不！  - 塞巴斯蒂安\N{\rENG}- No...  - Sebastian!
+Dialogue: 0,0:54:56.12,0:54:58.49,CHS,,0,0,0,,- 不能留下它们吗？ - 当然不行\N{\rENG}- Can't we keep them?  - Absolutely not!
+Dialogue: 0,0:54:58.79,0:54:59.99,CHS,,0,0,0,,我…\N{\rENG}I...
+Dialogue: 0,0:55:00.45,0:55:02.62,CHS,,0,0,0,,我无法呼吸，猫毛\N{\rENG}I can't breathe. The fur!
+Dialogue: 0,0:55:05.12,0:55:06.33,CHS,,0,0,0,,天啊\N{\rENG}Oh God!
+Dialogue: 0,0:55:07.00,0:55:08.95,CHS,,0,0,0,,弄走它们\N{\rENG}Get them away!
+Dialogue: 0,0:55:09.33,0:55:10.74,CHS,,0,0,0,,这些东西必须弄走\N{\rENG}Those creatures must go!
+Dialogue: 0,0:55:12.41,0:55:14.95,CHS,,0,0,0,,快点，塞巴斯蒂安\N{\rENG}Hurry up. Ouickly, Sebastian!
+Dialogue: 0,0:55:17.58,0:55:20.41,CHS,,0,0,0,,- 我会照顾这些小东西  - 我无法呼吸\N{\rENG}- I'll look affer these little mites.  - I can't breathe.
+Dialogue: 0,0:55:21.62,0:55:24.04,CHS,,0,0,0,,天啊，抓住那里的那只，快\N{\rENG}Oh my god, take that one there!Hurry up!
+Dialogue: 0,0:55:24.33,0:55:25.99,CHS,,0,0,0,,塞巴斯蒂安，我的天\N{\rENG}Sebastian! Oh God.
+Dialogue: 0,0:55:26.29,0:55:29.58,CHS,,0,0,0,,塞巴斯蒂安，猫，它在攻击我\N{\rENG}Sebastian! The cat! It's attacking me!
+Dialogue: 0,0:55:54.66,0:55:55.70,CHS,,0,0,0,,不\N{\rENG}No.
+Dialogue: 0,0:55:56.75,0:55:59.12,CHS,,0,0,0,,艾迪尔海德今晚没有晚饭吃\N{\rENG}Adelheid will have no supper this evening.
+Dialogue: 0,0:55:59.41,0:56:01.12,CHS,,0,0,0,,- 但…  - 泽塞曼小姐\N{\rENG}- But...  - Miss Sesemann.
+Dialogue: 0,0:56:01.75,0:56:04.54,CHS,,0,0,0,,改由大人们来决定怎样抚养小孩\N{\rENG}It is for adults to decide how children are brought up.
+Dialogue: 0,0:56:12.12,0:56:13.49,CHS,,0,0,0,,站在那里\N{\rENG}Stand over there.
+Dialogue: 0,0:56:13.66,0:56:15.66,CHS,,0,0,0,,面对墙壁\N{\rENG}With your face to the wall.
+Dialogue: 0,0:56:21.00,0:56:22.41,CHS,,0,0,0,,动起来\N{\rENG}Get a move on!
+Dialogue: 0,0:56:36.12,0:56:37.91,CHS,,0,0,0,,面对墙壁\N{\rENG}With your face to the wall.
+Dialogue: 0,0:56:45.83,0:56:47.54,CHS,,0,0,0,,面对墙壁，我说了\N{\rENG}With your face to the wall, I said!
+Dialogue: 0,0:56:53.20,0:56:56.12,CHS,,0,0,0,,下次我会把你和老鼠一起关在笼子里\N{\rENG}Next time I'll lock you in the cellar with the rats.
+Dialogue: 0,0:57:43.41,0:57:44.58,CHS,,0,0,0,,我要回家\N{\rENG}I have to go home.
+Dialogue: 0,0:57:46.04,0:57:47.45,CHS,,0,0,0,,什么？\N{\rENG}Pardon me?
+Dialogue: 0,0:57:47.62,0:57:48.74,CHS,,0,0,0,,什么？\N{\rENG}What?
+Dialogue: 0,0:57:49.83,0:57:51.37,CHS,,0,0,0,,海蒂\N{\rENG}Heidi!
+Dialogue: 0,0:57:51.54,0:57:53.33,CHS,,0,0,0,,我只是想\N{\rENG}I just have to.
+Dialogue: 0,0:57:55.58,0:57:56.58,CHS,,0,0,0,,但是…\N{\rENG}But...
+Dialogue: 0,0:57:56.75,0:57:59.45,CHS,,0,0,0,,- 但是为什么，海蒂  - 艾迪尔海德\N{\rENG}- But why? Heidi!  - Adelheid
+Dialogue: 0,0:57:59.75,0:58:01.29,CHS,,0,0,0,,停在那儿\N{\rENG}Stop right there.
+Dialogue: 0,0:58:02.45,0:58:03.33,CHS,,0,0,0,,海蒂，等等\N{\rENG}Heidi, wait!
+Dialogue: 0,0:58:03.62,0:58:05.66,CHS,,0,0,0,,- 我说了停下  - 海蒂\N{\rENG}- I said stop!  - Heidi!
+Dialogue: 0,0:58:06.83,0:58:07.87,CHS,,0,0,0,,不要走\N{\rENG}Don't go!
+Dialogue: 0,0:58:08.04,0:58:09.20,CHS,,0,0,0,,你怎么敢\N{\rENG}How dare you!
+Dialogue: 0,0:58:09.50,0:58:11.16,CHS,,0,0,0,,迪提说了我可以随时离开\N{\rENG}Dete said I can leave when I want.
+Dialogue: 0,0:58:12.20,0:58:13.66,CHS,,0,0,0,,她说了吗？\N{\rENG}Did she really?
+Dialogue: 0,0:58:13.95,0:58:16.54,CHS,,0,0,0,,她骗了你，你无法离开\N{\rENG}Then she lied. There's no way you're leaving.
+Dialogue: 0,0:58:19.25,0:58:21.04,CHS,,0,0,0,,你难道不知道你有多幸运吗\N{\rENG}Don't you know how lucky you are?
+Dialogue: 0,0:58:21.20,0:58:23.20,CHS,,0,0,0,,我多么希望我在这样的家庭长大\N{\rENG}I wish I had grown up in such a house.
+Dialogue: 0,0:58:29.54,0:58:31.74,CHS,,0,0,0,,带这么多面包卷你想干什么\N{\rENG}What did you want to do with those rolls?
+Dialogue: 0,0:58:31.91,0:58:34.20,CHS,,0,0,0,,为了奶奶\N{\rENG}They're for Grandmother.
+Dialogue: 0,0:58:34.83,0:58:36.08,CHS,,0,0,0,,愚蠢的孩子\N{\rENG}You stupid child.
+Dialogue: 0,0:58:36.37,0:58:38.58,CHS,,0,0,0,,丢下它们\N{\rENG}Leave them there.
+Dialogue: 0,0:58:38.87,0:58:41.37,CHS,,0,0,0,,海蒂，你在干什么\N{\rENG}Heidi, what are you doing?
+Dialogue: 0,0:58:45.83,0:58:48.24,CHS,,0,0,0,,瞧你对千金小姐做了什么\N{\rENG}Look what you're doing to the young lady.
+Dialogue: 0,0:58:55.87,0:58:57.62,CHS,,0,0,0,,回你的房间\N{\rENG}Now go to your room.
+Dialogue: 0,0:58:58.04,0:58:59.49,CHS,,0,0,0,,现在\N{\rENG}Right this second.
+Dialogue: 0,0:59:04.75,0:59:06.66,CHS,,0,0,0,,蒂妮特\N{\rENG}Tinette.
+Dialogue: 0,0:59:06.83,0:59:08.12,CHS,,0,0,0,,蒂妮特\N{\rENG}Tinette!
+Dialogue: 0,0:59:34.16,0:59:36.24,CHS,,0,0,0,,爷爷\N{\rENG}Grandfather.
+Dialogue: 0,1:00:04.50,1:00:05.87,CHS,,0,0,0,,克拉拉在哪\N{\rENG}Where is Klara?
+Dialogue: 0,1:00:07.12,1:00:08.62,CHS,,0,0,0,,她病了\N{\rENG}She's ill.
+Dialogue: 0,1:00:08.83,1:00:10.87,CHS,,0,0,0,,病了，都怪你\N{\rENG}Sick! Because of you.
+Dialogue: 0,1:00:37.29,1:00:40.04,CHS,,0,0,0,,哦，我们的小瑞士女孩来了\N{\rENG}So, here's our little Swiss girl.
+Dialogue: 0,1:00:41.33,1:00:43.99,CHS,,0,0,0,,不要害怕，我只是个医生\N{\rENG}Don't be scared. I'm just the doctor.
+Dialogue: 0,1:00:44.70,1:00:47.04,CHS,,0,0,0,,- 嗨  - 嗨？\N{\rENG}- Hiya.  - Hiya?
+Dialogue: 0,1:00:47.20,1:00:48.33,CHS,,0,0,0,,嗨\N{\rENG}Hiya.
+Dialogue: 0,1:00:49.16,1:00:50.70,CHS,,0,0,0,,克拉拉病了吗\N{\rENG}Is Klara sick?
+Dialogue: 0,1:00:51.00,1:00:52.87,CHS,,0,0,0,,她现在好多了\N{\rENG}The young lady is much better.
+Dialogue: 0,1:00:53.16,1:00:55.49,CHS,,0,0,0,,我想她会很高兴见到你\N{\rENG}I think she'll be pleased to see you.
+Dialogue: 0,1:00:57.16,1:00:58.83,CHS,,0,0,0,,再见\N{\rENG}Goodbye.
+Dialogue: 0,1:00:59.00,1:01:00.54,CHS,,0,0,0,,再见\N{\rENG}Adieu.
+Dialogue: 0,1:01:08.50,1:01:10.49,CHS,,0,0,0,,我是如此的糟糕以至于你想离开吗\N{\rENG}Am I so awful I make you want to leave?
+Dialogue: 0,1:01:11.41,1:01:13.41,CHS,,0,0,0,,不，不是因为那个\N{\rENG}No, that's not it.
+Dialogue: 0,1:01:22.62,1:01:24.91,CHS,,0,0,0,,我只有你，海蒂\N{\rENG}I only have you, Heidi.
+Dialogue: 0,1:01:26.37,1:01:28.83,CHS,,0,0,0,,我们能够一起度过一段美好时光\N{\rENG}We could have such a nice time together.
+Dialogue: 0,1:01:38.29,1:01:39.83,CHS,,0,0,0,,“N”！\N{\rENG}'N'.
+Dialogue: 0,1:01:43.70,1:01:47.12,CHS,,0,0,0,,- 你现在应该快点  - “O”\N{\rENG}- You should be a little faster by now.  - 'O'.
+Dialogue: 0,1:01:51.95,1:01:53.95,CHS,,0,0,0,,看起来像面包卷\N{\rENG}It looks like a bread roll.
+Dialogue: 0,1:01:55.79,1:01:57.41,CHS,,0,0,0,,确实像\N{\rENG}Exactly.
+Dialogue: 0,1:01:57.58,1:02:00.49,CHS,,0,0,0,,它不是“tread”的“T”\N{\rENG}It's not a 'T' for tread,
+Dialogue: 0,1:02:00.66,1:02:02.20,CHS,,0,0,0,,或者“kread”的“K”\N{\rENG}or a 'K' for kread,
+Dialogue: 0,1:02:02.37,1:02:05.49,CHS,,0,0,0,,只是个“B…bread”的“B”\N{\rENG}but a 'B'... A 'B' for bread.
+Dialogue: 0,1:02:05.66,1:02:07.58,CHS,,0,0,0,,以一个“B”开始\N{\rENG}And that starts with a...
+Dialogue: 0,1:02:08.79,1:02:11.83,CHS,,0,0,0,,你到底怎么了，你忘了吗？\N{\rENG}'B'! What's wrong with you? How have you forgotten?
+Dialogue: 0,1:02:34.75,1:02:37.20,CHS,,0,0,0,,你打扮的真漂亮\N{\rENG}You've really dolled yourself up.
+Dialogue: 0,1:02:37.75,1:02:40.95,CHS,,0,0,0,,我根本没有打扮自己，你怎敢[这样说]！\N{\rENG}I haven't dolled myself up at all. How dare you!
+Dialogue: 0,1:02:56.16,1:02:59.24,CHS,,0,0,0,,- 欢迎回来，先生  - 塞巴斯蒂安\N{\rENG}- Welcome home, sir.  - Sebastian.
+Dialogue: 0,1:03:06.37,1:03:09.41,CHS,,0,0,0,,- 亲爱的  - 很高兴见到你，泽塞曼夫人\N{\rENG}- My dear!  - Nice to have you here, Mrs Sesemann.
+Dialogue: 0,1:03:15.29,1:03:17.49,CHS,,0,0,0,,- 爸爸  - 克拉拉，我的孩子\N{\rENG}- Father!  - Klara, my child.
+Dialogue: 0,1:03:18.75,1:03:21.49,CHS,,0,0,0,,- 我亲爱的孩子  - 太好了，爸爸\N{\rENG}- My darling child!  - How wonderful, father.
+Dialogue: 0,1:03:24.41,1:03:27.41,CHS,,0,0,0,,啊，你是我们的艾迪尔海德？\N{\rENG}Ah, so this is our Adelheid?
+Dialogue: 0,1:03:28.08,1:03:29.16,CHS,,0,0,0,,日安\N{\rENG}Good day.
+Dialogue: 0,1:03:30.75,1:03:33.37,CHS,,0,0,0,,我有个惊喜给你\N{\rENG}I have a surprise for you.
+Dialogue: 0,1:03:38.70,1:03:40.62,CHS,,0,0,0,,- 奶奶  - 克拉拉\N{\rENG}- Grandmama!  - Klara.
+Dialogue: 0,1:03:42.25,1:03:46.20,CHS,,0,0,0,,我的乖乖孙女\N{\rENG}My sweet, sweet girl.
+Dialogue: 0,1:03:47.45,1:03:50.70,CHS,,0,0,0,,我只是路过，但我必须见见你\N{\rENG}I'm only passing through,but I had to see you.
+Dialogue: 0,1:03:51.58,1:03:53.45,CHS,,0,0,0,,让我看看你\N{\rENG}Let me look at you.
+Dialogue: 0,1:03:53.62,1:03:55.33,CHS,,0,0,0,,你看起来很好\N{\rENG}You look very well!
+Dialogue: 0,1:03:56.37,1:03:57.87,CHS,,0,0,0,,而且\N{\rENG}And...
+Dialogue: 0,1:03:58.66,1:04:00.79,CHS,,0,0,0,,日安，夫人\N{\rENG}Good day, medeme.
+Dialogue: 0,1:04:01.08,1:04:02.24,CHS,,0,0,0,,夫人\N{\rENG}Madame.
+Dialogue: 0,1:04:02.54,1:04:04.58,CHS,,0,0,0,,瞎说\N{\rENG}Poppycock!
+Dialogue: 0,1:04:05.41,1:04:06.87,CHS,,0,0,0,,叫我奶奶\N{\rENG}Just call me Grandmama.
+Dialogue: 0,1:04:13.00,1:04:15.87,CHS,,0,0,0,,我们幸运能找到一个克拉拉的朋友\N{\rENG}We were right to find a friend for Klara.
+Dialogue: 0,1:04:16.41,1:04:18.74,CHS,,0,0,0,,她好多了，很开心\N{\rENG}She's much better, so cheerful.
+Dialogue: 0,1:04:19.58,1:04:22.95,CHS,,0,0,0,,恐怕我的消息会让你失望\N{\rENG}I'm afraid my news will dampen your spirits somewhat.
+Dialogue: 0,1:04:24.50,1:04:27.20,CHS,,0,0,0,,在我看来，艾迪尔海德表现的…\N{\rENG}In my opinion, Adelheid shows signs of...
+Dialogue: 0,1:04:28.45,1:04:31.49,CHS,,0,0,0,,我没有办法教育好她\N{\rENG}There's no other way for me to put it...
+Dialogue: 0,1:04:31.66,1:04:33.33,CHS,,0,0,0,,她有点不对劲\N{\rENG}...not being in her right mind.
+Dialogue: 0,1:04:35.45,1:04:37.12,CHS,,0,0,0,,不对劲\N{\rENG}Not in her right mind?
+Dialogue: 0,1:04:37.29,1:04:40.29,CHS,,0,0,0,,- 什么意思  - 她不会朗读\N{\rENG}- What do you mean?  - Adelheid still can't read.
+Dialogue: 0,1:04:41.70,1:04:43.74,CHS,,0,0,0,,她甚至不认识字母\N{\rENG}She can't even recognise the letters,
+Dialogue: 0,1:04:44.04,1:04:47.33,CHS,,0,0,0,,即使教书先生尽他所能\N{\rENG}even though Mr Kandidat is doing the very best he can.
+Dialogue: 0,1:04:50.00,1:04:53.29,CHS,,0,0,0,,这严重影响了克拉拉小姐的学习\N{\rENG}This is seriously disrupting Miss Klara's lessons.
+Dialogue: 0,1:04:53.83,1:04:57.95,CHS,,0,0,0,,她的行为是不合适的，相当狂野\N{\rENG}And her behaviour is impossible,downright wild.
+Dialogue: 0,1:04:58.83,1:05:02.37,CHS,,0,0,0,,好吧，我得拿个主意了\N{\rENG}Well, well.I'm going to make up my own mind.
+Dialogue: 0,1:05:03.41,1:05:06.04,CHS,,0,0,0,,然后我们要对此负责\N{\rENG}And then we'll take it from there.
+Dialogue: 0,1:05:14.66,1:05:19.37,CHS,,0,0,0,,当年轻的牧羊人在晚上数他的羊时\N{\rENG}"When the young shepherd counted his sheep in the evening,
+Dialogue: 0,1:05:19.54,1:05:23.70,CHS,,0,0,0,,他发现最小的不见了\N{\rENG}he realised that the smallest one was missing."
+Dialogue: 0,1:05:23.87,1:05:25.24,CHS,,0,0,0,,去哪了呢？\N{\rENG}"Where could it be?"
+Dialogue: 0,1:05:26.29,1:05:29.74,CHS,,0,0,0,,外面开始下雪，刮起了寒风\N{\rENG}"Outside it began to snow and an icy wind blew."
+Dialogue: 0,1:05:30.25,1:05:32.79,CHS,,0,0,0,,我和皮特曾今遇到过这样的情况\N{\rENG}That happened to me and Peter once.
+Dialogue: 0,1:05:32.95,1:05:34.33,CHS,,0,0,0,,我们丢失了一只山羊\N{\rENG}We lost a goat.
+Dialogue: 0,1:05:35.66,1:05:39.04,CHS,,0,0,0,,- 后来找到了吗？ - 是的，谢天谢地\N{\rENG}- Did you find it again?  - Yes. Thankfully.
+Dialogue: 0,1:05:40.08,1:05:41.66,CHS,,0,0,0,,你从哪来\N{\rENG}There, where you come from...
+Dialogue: 0,1:05:43.12,1:05:46.99,CHS,,0,0,0,,我想一定和这里不同，我说的对吗？\N{\rENG}I'm sure it's very different to here.Am I right?
+Dialogue: 0,1:05:56.12,1:05:58.20,CHS,,0,0,0,,故事接下来怎么了\N{\rENG}How does the story continue?
+Dialogue: 0,1:05:58.91,1:06:00.83,CHS,,0,0,0,,请告诉我\N{\rENG}Please.
+Dialogue: 0,1:06:01.12,1:06:05.62,CHS,,0,0,0,,天越来越黑，雪花夹杂在空气中\N{\rENG}"It got darker and darker and the snowflakes whirled through the air."
+Dialogue: 0,1:06:06.83,1:06:08.83,CHS,,0,0,0,,但是突然\N{\rENG}"But all of a sudden
+Dialogue: 0,1:06:09.75,1:06:13.54,CHS,,0,0,0,,他听到了小羊的微弱心跳\N{\rENG}he heard the very quiet bleating of a little sheep."
+Dialogue: 0,1:06:15.70,1:06:19.45,CHS,,0,0,0,,好吧，我就读到这儿\N{\rENG}Right, that's where I'm stopping.
+Dialogue: 0,1:06:21.41,1:06:24.16,CHS,,0,0,0,,但是小羊，他找到了吗？\N{\rENG}But the little sheep. Does he find it?
+Dialogue: 0,1:06:24.45,1:06:26.83,CHS,,0,0,0,,你可以自己读这一段\N{\rENG}You can read that for yourself.
+Dialogue: 0,1:06:27.58,1:06:29.54,CHS,,0,0,0,,但我不会啊\N{\rENG}But I can't.
+Dialogue: 0,1:06:29.83,1:06:31.45,CHS,,0,0,0,,为什么不会呢\N{\rENG}Why ever not?
+Dialogue: 0,1:06:32.87,1:06:34.74,CHS,,0,0,0,,皮特说我们不需要朗读\N{\rENG}Peter said we don't have to read.
+Dialogue: 0,1:06:35.91,1:06:37.49,CHS,,0,0,0,,皮特说的，是吗？\N{\rENG}Peter did, did he?
+Dialogue: 0,1:06:37.66,1:06:41.62,CHS,,0,0,0,,你不能总是相信别人说的话\N{\rENG}You don't always have to believe what other people say.
+Dialogue: 0,1:06:42.70,1:06:47.41,CHS,,0,0,0,,如果你能够阅读，你会知道故事接下来的情节\N{\rENG}If you could read you would know how the story continues.
+Dialogue: 0,1:06:50.87,1:06:53.24,CHS,,0,0,0,,然后你会喜欢上这个故事，不是吗？\N{\rENG}And you like stories, don't you?
+Dialogue: 0,1:06:53.41,1:06:54.74,CHS,,0,0,0,,是的\N{\rENG}Yes.
+Dialogue: 0,1:06:54.91,1:06:56.41,CHS,,0,0,0,,那么，这样\N{\rENG}Well, then.
+Dialogue: 0,1:06:57.50,1:07:00.08,CHS,,0,0,0,,这本书我留给你\N{\rENG}I'll leave the book there for you.
+Dialogue: 0,1:07:17.62,1:07:22.91,CHS,,0,0,0,,海蒂是一个可爱并且极其敏感的孩子\N{\rENG}Heidi is a sweet and incredibly sensitive child.
+Dialogue: 0,1:07:23.20,1:07:26.91,CHS,,0,0,0,,我相信如果给予正确的引导她会学会阅读\N{\rENG}I'm sure she can learn to read if given the right attention.
+Dialogue: 0,1:07:27.62,1:07:29.33,CHS,,0,0,0,,太好了\N{\rENG}Thank goodness for that.
+Dialogue: 0,1:07:29.62,1:07:33.24,CHS,,0,0,0,,但是我想她的内心并不快乐\N{\rENG}But I get the impression that she's not very happy.
+Dialogue: 0,1:07:34.50,1:07:35.99,CHS,,0,0,0,,她应有尽有\N{\rENG}She has all she could want.
+Dialogue: 0,1:07:36.58,1:07:38.58,CHS,,0,0,0,,是内心深处的一些东西\N{\rENG}It's something deep inside.
+Dialogue: 0,1:07:42.25,1:07:45.87,CHS,,0,0,0,,住在这间屋子有违她的本性\N{\rENG}Living in this house goes against everything she is.
+Dialogue: 0,1:07:48.29,1:07:50.87,CHS,,0,0,0,,克拉拉从没有这么快乐\N{\rENG}Klara has never been so happy.
+Dialogue: 0,1:07:51.04,1:07:52.33,CHS,,0,0,0,,我知道\N{\rENG}I see.
+Dialogue: 0,1:07:52.50,1:07:56.99,CHS,,0,0,0,,同时它也让你对独自留下克拉拉不再感到愧疚\N{\rENG}And it stops you feeling guilty about leaving Klara alone.
+Dialogue: 0,1:08:01.33,1:08:02.91,CHS,,0,0,0,,胡说\N{\rENG}Poppycock.
+Dialogue: 0,1:09:02.12,1:09:03.62,CHS,,0,0,0,,嗯？\N{\rENG}Hello?
+Dialogue: 0,1:09:08.08,1:09:09.66,CHS,,0,0,0,,蒂妮特\N{\rENG}Tinette.
+Dialogue: 0,1:09:11.29,1:09:14.04,CHS,,0,0,0,,你在做什么，手里拿的什么\N{\rENG}What are you doing?What's in your hand?
+Dialogue: 0,1:09:14.20,1:09:15.91,CHS,,0,0,0,,有鬼，听到了吗？\N{\rENG}A ghost! Don't you hear it?
+Dialogue: 0,1:09:16.20,1:09:19.04,CHS,,0,0,0,,- 没有鬼这玩意  - 有，听\N{\rENG}- There's no such thing as ghosts.  - There is! Listen.
+Dialogue: 0,1:09:32.33,1:09:36.37,CHS,,0,0,0,,塞巴斯蒂安？救命啊，有鬼\N{\rENG}Sebastian? Help! A ghost!
+Dialogue: 0,1:10:04.12,1:10:05.49,CHS,,0,0,0,,没丢东西吧\N{\rENG}Nothing was stolen?
+Dialogue: 0,1:10:05.66,1:10:08.45,CHS,,0,0,0,,我亲自检查了银器三次\N{\rENG}I checked the silver myself three times over.
+Dialogue: 0,1:10:08.62,1:10:10.74,CHS,,0,0,0,,我锁了门\N{\rENG}And I locked the door.
+Dialogue: 0,1:10:10.91,1:10:12.41,CHS,,0,0,0,,我确定\N{\rENG}I promise.
+Dialogue: 0,1:10:12.58,1:10:15.04,CHS,,0,0,0,,肯定是鬼\N{\rENG}It was a ghost, definitely.
+Dialogue: 0,1:10:15.20,1:10:17.99,CHS,,0,0,0,,胡说，蒂妮特，荒唐\N{\rENG}Poppycock, Tinette. What rot!
+Dialogue: 0,1:10:23.33,1:10:26.70,CHS,,0,0,0,,塞巴斯蒂安，你是个聪明人，你肯定有答案\N{\rENG}Sebastian, you're a sensible man. You must have an explanation.
+Dialogue: 0,1:10:27.00,1:10:30.74,CHS,,0,0,0,,好吧，我必须承认\N{\rENG}Well, I have to admit
+Dialogue: 0,1:10:30.91,1:10:32.58,CHS,,0,0,0,,如果是主人问我\N{\rENG}that if Sir is asking me,
+Dialogue: 0,1:10:32.75,1:10:36.41,CHS,,0,0,0,,可以肯定的说事情发生的\N{\rENG}then it certainly has to be said that things are happening,
+Dialogue: 0,1:10:36.58,1:10:38.45,CHS,,0,0,0,,嗯\N{\rENG}that, well...
+Dialogue: 0,1:10:39.79,1:10:41.66,CHS,,0,0,0,,怎么说呢\N{\rENG}that are somewhat, how shall I put it,
+Dialogue: 0,1:10:41.83,1:10:43.70,CHS,,0,0,0,,事情变得有点灵异\N{\rENG}that appear somewhat supernatural.
+Dialogue: 0,1:10:44.66,1:10:47.16,CHS,,0,0,0,,- 灵异？ - 是的\N{\rENG}- Supernatural?  - Yes.
+Dialogue: 0,1:10:47.33,1:10:49.08,CHS,,0,0,0,,好吧，接下来\N{\rENG}Right, then.
+Dialogue: 0,1:10:49.95,1:10:51.54,CHS,,0,0,0,,嗯\N{\rENG}Well...
+Dialogue: 0,1:10:52.70,1:10:55.83,CHS,,0,0,0,,我会制止这些愚蠢的行动\N{\rENG}I'm going to put a stop to all these carryings-on.
+Dialogue: 0,1:10:57.37,1:11:01.16,CHS,,0,0,0,,不要让孩子们听到任何关于这件事的消息\N{\rENG}Please make sure that the children hear nothing about this.
+Dialogue: 0,1:11:02.45,1:11:03.99,CHS,,0,0,0,,晚安\N{\rENG}Goodnight.
+Dialogue: 0,1:11:05.54,1:11:07.29,CHS,,0,0,0,,- 睡觉吧  - 晚安\N{\rENG}- To bed.  - Goodnight.
+Dialogue: 0,1:11:28.87,1:11:33.54,CHS,,0,0,0,,在\N{\rENG}In... the...
+Dialogue: 0,1:11:39.04,1:11:41.37,CHS,,0,0,0,,山\N{\rENG}vall...
+Dialogue: 0,1:11:41.54,1:11:42.95,CHS,,0,0,0,,谷里\N{\rENG}ey...
+Dialogue: 0,1:11:43.12,1:11:45.33,CHS,,0,0,0,,在山谷里\N{\rENG}"In the valley."
+Dialogue: 0,1:11:45.62,1:11:48.70,CHS,,0,0,0,,在山谷里，有条\N{\rENG}"In the valley, there flowed
+Dialogue: 0,1:11:49.79,1:11:53.87,CHS,,0,0,0,,小溪流淌着\N{\rENG}a small stream
+Dialogue: 0,1:11:54.04,1:11:57.08,CHS,,0,0,0,,在澄净的水里\N{\rENG}and in the clear water
+Dialogue: 0,1:11:57.25,1:12:00.29,CHS,,0,0,0,,能看到鳟鱼在游动\N{\rENG}you could see the trout swimming."
+Dialogue: 0,1:12:00.45,1:12:02.87,CHS,,0,0,0,,好样的，海蒂，我就知道你办得到\N{\rENG}Yes! Heidi, I knew you could do it.
+Dialogue: 0,1:12:03.16,1:12:04.54,CHS,,0,0,0,,- 我就知道  - 太好了\N{\rENG}- I knew it.  - Superb.
+Dialogue: 0,1:12:09.45,1:12:10.79,CHS,,0,0,0,,谁能想得到？\N{\rENG}Who would have thought it?
+Dialogue: 0,1:12:11.25,1:12:15.16,CHS,,0,0,0,,鱼多的使小河看起来银光闪闪\N{\rENG}"The fish glittered silver,
+Dialogue: 0,1:12:15.33,1:12:20.08,CHS,,0,0,0,,鱼儿们嬉闹着前进\N{\rENG}and frolicked around playfully."
+Dialogue: 0,1:12:20.54,1:12:25.49,CHS,,0,0,0,,在这个美丽的地方\N{\rENG}"Here at this lov... lovely place,
+Dialogue: 0,1:12:25.66,1:12:28.41,CHS,,0,0,0,,牧羊人想休息一下\N{\rENG}the shepherd wanted to rest
+Dialogue: 0,1:12:28.70,1:12:32.87,CHS,,0,0,0,,吃完他的午餐\N{\rENG}and eat his midday meal."
+Dialogue: 0,1:12:33.04,1:12:34.37,CHS,,0,0,0,,好样的，她做到了\N{\rENG}Yes, she can do it!
+Dialogue: 0,1:12:34.66,1:12:37.74,CHS,,0,0,0,,- 我太高兴了，奶奶  - 好样的，海蒂\N{\rENG}- I'm so pleased, Grandmama.  - Bravo, bravo, Heidi!
+Dialogue: 0,1:12:41.29,1:12:45.54,CHS,,0,0,0,,每个孩子都能学会朗读只有有个好老师和一些耐心\N{\rENG}Every child can learn to read with a good teacher and some patience.
+Dialogue: 0,1:12:45.70,1:12:49.87,CHS,,0,0,0,,海蒂，我很高心\N{\rENG}Heidi, I'm delighted.
+Dialogue: 0,1:12:50.70,1:12:53.66,CHS,,0,0,0,,我们的小瑞士女孩看起来做的很好\N{\rENG}Our little Swiss girl seems to be doing well here.
+Dialogue: 0,1:12:55.45,1:12:57.29,CHS,,0,0,0,,这也是为什么\N{\rENG}And that's why...
+Dialogue: 0,1:12:59.79,1:13:01.45,CHS,,0,0,0,,她能够和我们待在一起\N{\rENG}she should stay with us.
+Dialogue: 0,1:13:01.62,1:13:03.29,CHS,,0,0,0,,- 永远？ - 是的\N{\rENG}- Forever?  - Yes.
+Dialogue: 0,1:13:04.79,1:13:06.45,CHS,,0,0,0,,是的，我的孩子，永远\N{\rENG}Yes, my child, forever.
+Dialogue: 0,1:13:43.95,1:13:45.87,CHS,,0,0,0,,- 再见，母亲  - 再见\N{\rENG}- Goodbye, Mother.  - Goodbye.
+Dialogue: 0,1:13:47.04,1:13:48.95,CHS,,0,0,0,,驾…\N{\rENG}Giddy up!
+Dialogue: 0,1:14:29.54,1:14:31.49,CHS,,0,0,0,,你能待多久，我的朋友\N{\rENG}How long can you stay, friend?
+Dialogue: 0,1:14:32.75,1:14:35.83,CHS,,0,0,0,,生意一结束我就得离开\N{\rENG}I'll leave as soon as this business is cleared up.
+Dialogue: 0,1:14:37.87,1:14:40.37,CHS,,0,0,0,,今晚我希望能亲眼见到鬼魂\N{\rENG}I hope to see the ghost for myself tonight.
+Dialogue: 0,1:14:41.58,1:14:43.45,CHS,,0,0,0,,我的第一次啊\N{\rENG}It would be my first.
+Dialogue: 0,1:15:28.37,1:15:29.41,CHS,,0,0,0,,孩子！\N{\rENG}Child!
+Dialogue: 0,1:15:31.79,1:15:34.99,CHS,,0,0,0,,你到底在干什么？\N{\rENG}What on earth are you doing here?
+Dialogue: 0,1:15:35.87,1:15:39.20,CHS,,0,0,0,,不要碰她，你不应该弄醒梦游者\N{\rENG}Don't touch her!You shouldn't wake sleepwalkers.
+Dialogue: 0,1:16:13.50,1:16:14.79,CHS,,0,0,0,,她快冻僵了\N{\rENG}She's freezing cold.
+Dialogue: 0,1:16:15.08,1:16:17.58,CHS,,0,0,0,,能再拿条毯子来吗？\N{\rENG}Could you bring another blanket?
+Dialogue: 0,1:16:24.83,1:16:26.87,CHS,,0,0,0,,地上是什么\N{\rENG}What on earth...
+Dialogue: 0,1:16:31.37,1:16:32.58,CHS,,0,0,0,,给\N{\rENG}Here.
+Dialogue: 0,1:16:32.75,1:16:34.74,CHS,,0,0,0,,让我们两单独待在一起\N{\rENG}Please leave us two alone.
+Dialogue: 0,1:16:43.20,1:16:44.49,CHS,,0,0,0,,不要害怕，海蒂\N{\rENG}Don't be scared, Heidi.
+Dialogue: 0,1:16:45.95,1:16:48.16,CHS,,0,0,0,,是我，那个医生\N{\rENG}It's me, the doctor.
+Dialogue: 0,1:16:50.41,1:16:52.74,CHS,,0,0,0,,你梦到了什么\N{\rENG}Were you dreaming?
+Dialogue: 0,1:16:54.45,1:16:56.70,CHS,,0,0,0,,爷爷\N{\rENG}About Grandfather.
+Dialogue: 0,1:16:58.95,1:17:00.79,CHS,,0,0,0,,你哪里不舒服？\N{\rENG}Are you in any pain?
+Dialogue: 0,1:17:01.08,1:17:03.58,CHS,,0,0,0,,只有这里\N{\rENG}No, only here.
+Dialogue: 0,1:17:03.75,1:17:05.62,CHS,,0,0,0,,好疼\N{\rENG}This hurts.
+Dialogue: 0,1:17:07.87,1:17:11.87,CHS,,0,0,0,,亲爱的孩子，你为什么存着这些面包卷\N{\rENG}My dear child,why did you save all those bread rolls?
+Dialogue: 0,1:17:12.16,1:17:17.12,CHS,,0,0,0,,它们是为奶奶准备的，她不能吃硬面包\N{\rENG}They're for Grandmother.She can't eat hard bread anymore.
+Dialogue: 0,1:17:22.12,1:17:24.62,CHS,,0,0,0,,你想家了，小海蒂\N{\rENG}You miss your home, little Heidi.
+Dialogue: 0,1:17:35.58,1:17:36.99,CHS,,0,0,0,,来！\N{\rENG}Come on.
+Dialogue: 0,1:17:38.33,1:17:39.95,CHS,,0,0,0,,这里\N{\rENG}There, there.
+Dialogue: 0,1:17:40.25,1:17:42.24,CHS,,0,0,0,,会好起来的\N{\rENG}Everything will be okay.
+Dialogue: 0,1:17:49.66,1:17:51.16,CHS,,0,0,0,,思乡病？\N{\rENG}Homesick, you say?
+Dialogue: 0,1:17:51.33,1:17:54.12,CHS,,0,0,0,,女孩病了，她从来没有平静过\N{\rENG}The Swiss illness.Her nerves are in quite a state.
+Dialogue: 0,1:17:54.29,1:17:57.16,CHS,,0,0,0,,要立刻送她回去\N{\rENG}She must be sent home immediately.
+Dialogue: 0,1:17:57.33,1:17:59.83,CHS,,0,0,0,,- 不行  - 必须送她走\N{\rENG}- She can't.  - She must!
+Dialogue: 0,1:18:03.66,1:18:06.08,CHS,,0,0,0,,我不能这样对克拉拉\N{\rENG}I can't do that to Klara. Please.
+Dialogue: 0,1:18:06.25,1:18:08.20,CHS,,0,0,0,,尽你所能，好吗？\N{\rENG}Do all you can, okay?
+Dialogue: 0,1:18:10.25,1:18:11.66,CHS,,0,0,0,,我已经给出了我的建议\N{\rENG}I've given you my advice.
+Dialogue: 0,1:18:40.20,1:18:41.91,CHS,,0,0,0,,你看到了鬼魂吗？\N{\rENG}So? Did you see the ghost?
+Dialogue: 0,1:18:43.87,1:18:45.04,CHS,,0,0,0,,我什么也没说\N{\rENG}I didn't say anything.
+Dialogue: 0,1:18:45.33,1:18:47.70,CHS,,0,0,0,,告诉我一切，爸爸\N{\rENG}Tell me everything, Father. Please!
+Dialogue: 0,1:18:49.62,1:18:51.20,CHS,,0,0,0,,克拉拉\N{\rENG}Klara.
+Dialogue: 0,1:18:52.29,1:18:53.45,CHS,,0,0,0,,鬼魂\N{\rENG}The ghost...
+Dialogue: 0,1:18:54.50,1:18:55.95,CHS,,0,0,0,,是我们的小海蒂\N{\rENG}was our little Heidi.
+Dialogue: 0,1:18:56.25,1:18:57.29,CHS,,0,0,0,,海蒂？\N{\rENG}-Heidi?
+Dialogue: 0,1:18:57.58,1:18:59.99,CHS,,0,0,0,,因为痛苦她梦游\N{\rENG}She sleepwalks because she's suffering.
+Dialogue: 0,1:19:01.04,1:19:03.66,CHS,,0,0,0,,- 她需要什么  - 她的家\N{\rENG}- What does she need?  - Her home.
+Dialogue: 0,1:19:07.29,1:19:10.29,CHS,,0,0,0,,所以，亲爱的，海蒂不能待在这里了\N{\rENG}So, my dear child, Heidi cannot stay here.
+Dialogue: 0,1:19:10.45,1:19:12.83,CHS,,0,0,0,,但是她应该，你不能这样做\N{\rENG}But she has to.You can't do that!
+Dialogue: 0,1:19:13.50,1:19:16.29,CHS,,0,0,0,,请不要这样，没有海蒂我该怎么办\N{\rENG}Please don't! What will I do without Heidi?
+Dialogue: 0,1:19:16.45,1:19:20.33,CHS,,0,0,0,,- 海蒂病了，如果想治愈只能…  - 我要她留在这儿\N{\rENG}- Heidi's illness will only be cured...  - I want her to stay here!
+Dialogue: 0,1:19:20.95,1:19:23.33,CHS,,0,0,0,,- 我也病了而且一直独自一人  - 克拉拉\N{\rENG}- I'm sick and all alone too!  - Klara.
+Dialogue: 0,1:19:25.62,1:19:29.16,CHS,,0,0,0,,你失控了，冷静下来\N{\rENG}You're forgetting yourself.Calm down this instant!
+Dialogue: 0,1:19:32.00,1:19:32.99,CHS,,0,0,0,,走吧\N{\rENG}Just go!
+Dialogue: 0,1:19:33.29,1:19:35.99,CHS,,0,0,0,,去找你的爷爷和皮特，所有人，走吧\N{\rENG}Go to your grandfather and Peter.Everyone, just leave!
+Dialogue: 0,1:19:40.12,1:19:42.41,CHS,,0,0,0,,蒂妮特，送我回房间\N{\rENG}Tinette, take me to my room right away.
+Dialogue: 0,1:19:50.87,1:19:51.95,CHS,,0,0,0,,艾迪尔海德\N{\rENG}Adelheid.
+Dialogue: 0,1:19:58.20,1:19:59.99,CHS,,0,0,0,,塞巴斯蒂安今天会送你回家\N{\rENG}Sebastian will take you home today.
+Dialogue: 0,1:20:00.58,1:20:04.54,CHS,,0,0,0,,中午你会去坐火车，蒂妮特会帮你整理行李\N{\rENG}You'll take the train at midday.Tinette will help you pack.
+Dialogue: 0,1:20:04.70,1:20:06.12,CHS,,0,0,0,,回爷爷家？\N{\rENG}Home to Grandfather?
+Dialogue: 0,1:20:11.83,1:20:13.58,CHS,,0,0,0,,克拉拉呢？\N{\rENG}And Klara?
+Dialogue: 0,1:20:25.79,1:20:27.16,CHS,,0,0,0,,克拉拉？在吗？\N{\rENG}Klara?
+Dialogue: 0,1:20:34.29,1:20:35.41,CHS,,0,0,0,,克拉拉\N{\rENG}Klara.
+Dialogue: 0,1:20:36.62,1:20:38.16,CHS,,0,0,0,,开门好吗\N{\rENG}Please open the door.
+Dialogue: 0,1:21:08.50,1:21:10.20,CHS,,0,0,0,,谢谢\N{\rENG}Thank you.
+Dialogue: 0,1:21:16.66,1:21:18.79,CHS,,0,0,0,,能把这个交给克拉拉吗？\N{\rENG}Can you give this to Klara?
+Dialogue: 0,1:21:22.75,1:21:25.49,CHS,,0,0,0,,她应该来看我\N{\rENG}She has to come and visit me.
+Dialogue: 0,1:21:25.66,1:21:26.79,CHS,,0,0,0,,拜托\N{\rENG}Please.
+Dialogue: 0,1:21:30.20,1:21:31.62,CHS,,0,0,0,,再见\N{\rENG}We'll see.
+Dialogue: 0,1:21:48.41,1:21:49.83,CHS,,0,0,0,,驾\N{\rENG}Giddy up.
+Dialogue: 0,1:21:51.37,1:21:52.70,CHS,,0,0,0,,走你\N{\rENG}Off you go!
+Dialogue: 0,1:21:59.41,1:22:01.99,CHS,,0,0,0,,终于又重归平静\N{\rENG}Peace again at last.
+Dialogue: 0,1:22:14.87,1:22:17.12,CHS,,0,0,0,,蒂妮特，蒂妮特\N{\rENG}Tinette! Tinette!
+Dialogue: 0,1:22:23.58,1:22:26.08,CHS,,0,0,0,,就叫你海蒂吧\N{\rENG}I'll call you Heidi.
+Dialogue: 0,1:22:27.04,1:22:28.16,CHS,,0,0,0,,我的小海蒂\N{\rENG}My little Heidi.
+Dialogue: 0,1:22:36.75,1:22:38.04,CHS,,0,0,0,,再见\N{\rENG}Goodbye.
+Dialogue: 0,1:22:43.91,1:22:45.99,CHS,,0,0,0,,人们住在这儿\N{\rENG}People live up there...
+Dialogue: 0,1:22:47.25,1:22:50.49,CHS,,0,0,0,,那些山，如此的压抑\N{\rENG}Those mountains! It's so oppressive.
+Dialogue: 0,1:22:59.12,1:23:01.04,CHS,,0,0,0,,来！\N{\rENG}Come here.
+Dialogue: 0,1:23:01.33,1:23:04.20,CHS,,0,0,0,,非常荣幸，小姐\N{\rENG}It has been a great pleasure, miss.
+Dialogue: 0,1:23:07.50,1:23:09.62,CHS,,0,0,0,,- 照看好孩子  - 会的\N{\rENG}- Look affer the child well.  - I will.
+Dialogue: 0,1:23:14.54,1:23:15.58,CHS,,0,0,0,,再见\N{\rENG}Adieu!
+Dialogue: 0,1:23:24.45,1:23:26.95,CHS,,0,0,0,,- 看  - 这是谁？\N{\rENG}- Hey, look!  - What is it?
+Dialogue: 0,1:23:27.25,1:23:28.74,CHS,,0,0,0,,她是海蒂\N{\rENG}That's Heidi.
+Dialogue: 0,1:23:29.04,1:23:31.04,CHS,,0,0,0,,你好，海蒂\N{\rENG}Hello, Heidi.
+Dialogue: 0,1:23:31.54,1:23:32.83,CHS,,0,0,0,,来\N{\rENG}Come!
+Dialogue: 0,1:23:33.12,1:23:34.58,CHS,,0,0,0,,太好了，我要那个\N{\rENG}Nice! I want that!
+Dialogue: 0,1:23:35.20,1:23:36.37,CHS,,0,0,0,,看看这些鞋子\N{\rENG}Look at these shoes.
+Dialogue: 0,1:23:38.08,1:23:40.20,CHS,,0,0,0,,- 海蒂  - 皮特\N{\rENG}- Heidi!  - Peter!
+Dialogue: 0,1:23:47.58,1:23:52.45,CHS,,0,0,0,,- 海蒂，我听说你住在个宫殿里  - 不是宫殿\N{\rENG}- Heidi, I heard you lived in a palace.  - It wasn't a palace.
+Dialogue: 0,1:23:54.25,1:23:57.08,CHS,,0,0,0,,- 里面是什么  - 马上就知道了\N{\rENG}- What is in there?  - Wait and see.
+Dialogue: 0,1:24:06.00,1:24:09.12,CHS,,0,0,0,,这些是给你的，奶奶，很多软面包\N{\rENG}These are for you, Grandmother. Lots of soft rolls.
+Dialogue: 0,1:24:09.29,1:24:11.08,CHS,,0,0,0,,你回来太好了，海蒂\N{\rENG}It's lovely you're back, Heidi.
+Dialogue: 0,1:24:14.66,1:24:16.33,CHS,,0,0,0,,给你的大香肠，皮特\N{\rENG}A big sausage for you, Peter.
+Dialogue: 0,1:24:16.79,1:24:17.83,CHS,,0,0,0,,谢谢\N{\rENG}Thank you.
+Dialogue: 0,1:24:34.00,1:24:44.49,CHS,,0,0,0,,爷爷\N{\rENG}Grandfather!
+Dialogue: 0,1:24:59.50,1:25:01.20,CHS,,0,0,0,,海蒂\N{\rENG}Heidi!
+Dialogue: 0,1:25:32.58,1:25:34.74,CHS,,0,0,0,,早上好，小天鹅与小熊[山羊名]\N{\rENG}Morning, Little Swan and Little Bear.
+Dialogue: 0,1:25:35.75,1:25:37.49,CHS,,0,0,0,,皮特，我来了\N{\rENG}Peter, I'm coming!
+Dialogue: 0,1:25:46.33,1:25:47.49,CHS,,0,0,0,,不\N{\rENG}No!
+Dialogue: 0,1:25:52.62,1:25:56.33,CHS,,0,0,0,,- 给，你的一半  - 谢谢\N{\rENG}- So, here's your half.  - Thank you.
+Dialogue: 0,1:26:25.50,1:26:26.54,CHS,,0,0,0,,亲爱的克拉拉\N{\rENG}Dear Klara,
+Dialogue: 0,1:26:27.70,1:26:30.24,CHS,,0,0,0,,村子现在被厚厚的大雪覆盖\N{\rENG}the village is now under thick snow.
+Dialogue: 0,1:26:30.54,1:26:34.12,CHS,,0,0,0,,所有东西都是白的并且闪闪发亮\N{\rENG}Everything is white and sparkling.
+Dialogue: 0,1:26:36.41,1:26:38.45,CHS,,0,0,0,,我们被迫搬到村子里住\N{\rENG}We have moved into the village
+Dialogue: 0,1:26:38.62,1:26:40.62,CHS,,0,0,0,,所以我可以去上学了\N{\rENG}so that I can go to school.
+Dialogue: 0,1:26:42.91,1:26:46.87,CHS,,0,0,0,,在学校，男孩坐在一边，女孩们坐在另一边\N{\rENG}At school, boys sit on one side and girls on the other.
+Dialogue: 0,1:26:48.04,1:26:50.83,CHS,,0,0,0,,我们的牧师比教书先生还严厉\N{\rENG}Our pastor is much stricter than Mr Kandidat.
+Dialogue: 0,1:26:51.12,1:26:53.37,CHS,,0,0,0,,有时甚至会鞭笞学生\N{\rENG}Sometimes there are even canings.
+Dialogue: 0,1:26:53.54,1:26:58.08,CHS,,0,0,0,,可怜的皮特nal由于迟到经常被惩罚\N{\rENG}And poor Peter is always punished because he's always late.
+Dialogue: 0,1:26:58.25,1:27:01.41,CHS,,0,0,0,,现在告诉我长大后你想干什么\N{\rENG}Now tell me what you want to be when you grow up.
+Dialogue: 0,1:27:02.33,1:27:03.79,CHS,,0,0,0,,牧羊人\N{\rENG}A goatherd.
+Dialogue: 0,1:27:07.83,1:27:10.12,CHS,,0,0,0,,- 农民  - 农民\N{\rENG}- A farmer.  - Farmer.
+Dialogue: 0,1:27:12.79,1:27:14.91,CHS,,0,0,0,,铁匠，像我父亲一样\N{\rENG}A blacksmith. Like my father.
+Dialogue: 0,1:27:15.08,1:27:16.58,CHS,,0,0,0,,铁匠\N{\rENG}Blacksmith.
+Dialogue: 0,1:27:25.20,1:27:26.79,CHS,,0,0,0,,我想写故事\N{\rENG}I want to write stories.
+Dialogue: 0,1:27:27.75,1:27:29.24,CHS,,0,0,0,,安静\N{\rENG}Ouiet!
+Dialogue: 0,1:27:29.41,1:27:31.08,CHS,,0,0,0,,我知道了\N{\rENG}I see.
+Dialogue: 0,1:27:31.37,1:27:32.58,CHS,,0,0,0,,这个字母是？\N{\rENG}What letter is this?
+Dialogue: 0,1:27:32.87,1:27:35.24,CHS,,0,0,0,,- “A”？ - 这是“D”\N{\rENG}- 'A'?  - A letter 'D'!
+Dialogue: 0,1:27:35.41,1:27:38.24,CHS,,0,0,0,,几乎每天放学后\N{\rENG}Almost every day after school,
+Dialogue: 0,1:27:38.54,1:27:40.58,CHS,,0,0,0,,我都要教皮特朗读\N{\rENG}I try to teach poor Peter to read.
+Dialogue: 0,1:27:40.75,1:27:42.95,CHS,,0,0,0,,皮特，昨天刚学过啊\N{\rENG}Oh Peter, you did this yesterday.
+Dialogue: 0,1:27:43.12,1:27:45.16,CHS,,0,0,0,,现在就不会了\N{\rENG}But it's not really working.
+Dialogue: 0,1:27:57.62,1:28:00.74,CHS,,0,0,0,,克拉拉，我想你了\N{\rENG}Oh Klara, I miss you so much.
+Dialogue: 0,1:28:00.91,1:28:02.83,CHS,,0,0,0,,我每天都在想你\N{\rENG}I think about you every day.
+Dialogue: 0,1:28:04.08,1:28:05.41,CHS,,0,0,0,,请给我写信\N{\rENG}Please write to me.
+Dialogue: 0,1:28:06.50,1:28:11.49,CHS,,0,0,0,,我最期待的是你能来看我\N{\rENG}"There's nothing I wish for more than for you to come and visit me."
+Dialogue: 0,1:28:13.75,1:28:15.37,CHS,,0,0,0,,你的，海蒂\N{\rENG}"Yours, Heidi."
+Dialogue: 0,1:28:16.75,1:28:18.87,CHS,,0,0,0,,我甚至没有说再见\N{\rENG}I didn't even say goodbye.
+Dialogue: 0,1:28:53.29,1:28:56.45,CHS,,0,0,0,,我的天啊！我的天啊，是克拉拉\N{\rENG}I don't believe it. I don't believe it. It's Klara!
+Dialogue: 0,1:28:56.62,1:29:00.29,CHS,,0,0,0,,皮特，皮特，皮特！\N{\rENG}Peter, Peter, Peter!
+Dialogue: 0,1:29:00.58,1:29:04.87,CHS,,0,0,0,,皮特，看，是克拉拉，我最亲爱的朋友，克拉拉\N{\rENG}Peter, look! It's Klara.My dearest friend! Klara!
+Dialogue: 0,1:29:11.54,1:29:12.66,CHS,,0,0,0,,- 克拉拉  - 海蒂\N{\rENG}- Klara!  - Heidi!
+Dialogue: 0,1:29:15.58,1:29:18.79,CHS,,0,0,0,,- 海蒂，我太想你了  - 我也想你\N{\rENG}- Heidi, I missed you so much.  - I missed you too.
+Dialogue: 0,1:29:20.37,1:29:23.66,CHS,,0,0,0,,- 奶奶  - 海蒂\N{\rENG}- Grandmama!  - Heidi!
+Dialogue: 0,1:29:25.33,1:29:28.66,CHS,,0,0,0,,我的乖孩子\N{\rENG}My dear child.
+Dialogue: 0,1:29:56.79,1:30:00.04,CHS,,0,0,0,,看，克拉拉的情况相当糟糕\N{\rENG}You see, Klara was in such an awful way,
+Dialogue: 0,1:30:00.20,1:30:03.04,CHS,,0,0,0,,我决定带她来这里\N{\rENG}I resolved to bring her here.
+Dialogue: 0,1:30:04.75,1:30:08.70,CHS,,0,0,0,,她能在这里待一段时间吗？\N{\rENG}Do you think she could stay here for a few days?
+Dialogue: 0,1:30:08.87,1:30:11.58,CHS,,0,0,0,,当然，会付钱的\N{\rENG}For a fee, of course.
+Dialogue: 0,1:30:13.12,1:30:15.45,CHS,,0,0,0,,克拉拉是我们的客人\N{\rENG}Klara is our guest.
+Dialogue: 0,1:30:38.70,1:30:41.29,CHS,,0,0,0,,- 好的  - 确定？\N{\rENG}- Okay.  - Sure?
+Dialogue: 0,1:30:59.20,1:31:00.33,CHS,,0,0,0,,海蒂\N{\rENG}Heidi!
+Dialogue: 0,1:31:13.04,1:31:16.04,CHS,,0,0,0,,海蒂，你得帮我穿衣服\N{\rENG}Heidi, you have to help me get dressed.
+Dialogue: 0,1:31:23.37,1:31:26.29,CHS,,0,0,0,,- 你不需要这个  - 海蒂\N{\rENG}- You don't need this.  - Heidi!
+Dialogue: 0,1:31:27.29,1:31:29.24,CHS,,0,0,0,,一件也不需要\N{\rENG}Or any of this either.
+Dialogue: 0,1:31:29.54,1:31:31.37,CHS,,0,0,0,,看，我也不需要它们\N{\rENG}Look.I don't need them either.
+Dialogue: 0,1:31:40.91,1:31:43.12,CHS,,0,0,0,,海蒂，不要太快\N{\rENG}Heidi, not so fast.
+Dialogue: 0,1:31:45.25,1:31:46.62,CHS,,0,0,0,,小熊、小天鹅[山羊名]\N{\rENG}Little Bear, Little Swan.
+Dialogue: 0,1:31:51.12,1:31:52.91,CHS,,0,0,0,,它们和我想的一样\N{\rENG}They're just like I imagined.
+Dialogue: 0,1:31:54.20,1:31:56.29,CHS,,0,0,0,,皮特，过来啊\N{\rENG}Peter, come!
+Dialogue: 0,1:31:58.95,1:32:01.66,CHS,,0,0,0,,皮特，看，这是克拉拉\N{\rENG}Peter, look. It's Klara.
+Dialogue: 0,1:32:03.79,1:32:05.83,CHS,,0,0,0,,克拉拉，这是皮特\N{\rENG}Klara, this is Peter.
+Dialogue: 0,1:32:06.12,1:32:07.99,CHS,,0,0,0,,你好，百闻不如一见\N{\rENG}Hello.I've heard so much about you.
+Dialogue: 0,1:32:09.04,1:32:10.45,CHS,,0,0,0,,你来吗？\N{\rENG}Are you coming?
+Dialogue: 0,1:32:12.29,1:32:14.99,CHS,,0,0,0,,- 不  - 为什么，让我们和他一起去\N{\rENG}- No.  - Why? Let's go with him.
+Dialogue: 0,1:32:15.16,1:32:17.54,CHS,,0,0,0,,怎么可能，你无法走路\N{\rENG}How will that work?You can't walk.
+Dialogue: 0,1:32:17.83,1:32:20.45,CHS,,0,0,0,,- 皮特  - 来吧，我们走\N{\rENG}- Peter!  - Come on, let's go.
+Dialogue: 0,1:32:20.75,1:32:22.83,CHS,,0,0,0,,我不会留下克拉拉独自一人\N{\rENG}I'm not leaving Klara on her own.
+Dialogue: 0,1:32:31.16,1:32:32.33,CHS,,0,0,0,,- 快走  - 皮特\N{\rENG}- Move, go!  - Peter!
+Dialogue: 0,1:32:32.87,1:32:34.33,CHS,,0,0,0,,他会熬过去的\N{\rENG}He'll get over it.
+Dialogue: 0,1:32:34.62,1:32:37.49,CHS,,0,0,0,,我们走，动起来\N{\rENG}We're going! Move!
+Dialogue: 0,1:32:37.66,1:32:41.04,CHS,,0,0,0,,海蒂，我想和你们两个一起上山去\N{\rENG}Heidi,I'd love to go up there with you two.
+Dialogue: 0,1:33:26.45,1:33:27.58,CHS,,0,0,0,,快点走\N{\rENG}Come on! Move!
+Dialogue: 0,1:33:30.04,1:33:31.41,CHS,,0,0,0,,走\N{\rENG}Move!
+Dialogue: 0,1:33:42.83,1:33:44.24,CHS,,0,0,0,,自己回家去吧\N{\rENG}Go home on your own.
+Dialogue: 0,1:33:44.54,1:33:46.08,CHS,,0,0,0,,你们这些愚蠢的山羊\N{\rENG}You stupid bunch of goats.
+Dialogue: 0,1:33:46.37,1:33:49.91,CHS,,0,0,0,,走吧，一个跟一个\N{\rENG}Come on, get a move on! Go!
+Dialogue: 0,1:33:56.16,1:33:59.16,CHS,,0,0,0,,- 看到了吗  - 星星在闪耀\N{\rENG}- Did you see that?  - Yes, a shooting star.
+Dialogue: 0,1:33:59.33,1:34:01.20,CHS,,0,0,0,,现在让我们许愿吧\N{\rENG}Now we can wish for something.
+Dialogue: 0,1:34:03.41,1:34:04.99,CHS,,0,0,0,,- 我希望…  - 不\N{\rENG}- I wish that…  - No!
+Dialogue: 0,1:34:06.20,1:34:07.87,CHS,,0,0,0,,不要说出来\N{\rENG}You're not allowed to say.
+Dialogue: 0,1:35:20.29,1:35:21.33,CHS,,0,0,0,,该死的\N{\rENG}Damn!
+Dialogue: 0,1:35:25.00,1:35:26.58,CHS,,0,0,0,,走吧，山羊\N{\rENG}Come on, goats!
+Dialogue: 0,1:35:45.50,1:35:48.74,CHS,,0,0,0,,轮椅在哪儿，海蒂，轮椅去哪了\N{\rENG}Where is the wheelchair? Heidi, where is it?
+Dialogue: 0,1:35:52.29,1:35:53.83,CHS,,0,0,0,,不在这儿\N{\rENG}It's not here.
+Dialogue: 0,1:35:56.66,1:35:58.58,CHS,,0,0,0,,也不在这儿\N{\rENG}It's not here either.
+Dialogue: 0,1:36:00.12,1:36:02.12,CHS,,0,0,0,,它不可能这样消失\N{\rENG}It can't just disappear.
+Dialogue: 0,1:36:03.62,1:36:06.91,CHS,,0,0,0,,- 爷爷，它不见了  - 什么？轮椅不见了\N{\rENG}- Grandfather, it's not here.  - What? It's gone?
+Dialogue: 0,1:36:08.04,1:36:10.54,CHS,,0,0,0,,不可能，你四处找过了吗\N{\rENG}Impossible.Did you look everywhere?
+Dialogue: 0,1:36:11.08,1:36:14.33,CHS,,0,0,0,,现在我得在这儿坐一整天什么也干不了\N{\rENG}Now I have to sit here all day and can't do anything.
+Dialogue: 0,1:36:14.50,1:36:17.24,CHS,,0,0,0,,爷爷会想出办法的\N{\rENG}Grandfather will think of something.
+Dialogue: 0,1:36:20.45,1:36:22.66,CHS,,0,0,0,,我要好好教训他一顿\N{\rENG}He'll be getting a piece of my mind.
+Dialogue: 0,1:36:51.58,1:36:52.87,CHS,,0,0,0,,小熊[山羊名]\N{\rENG}Little Bear?
+Dialogue: 0,1:37:06.62,1:37:08.41,CHS,,0,0,0,,谢谢你\N{\rENG}Thank you.
+Dialogue: 0,1:37:09.50,1:37:10.83,CHS,,0,0,0,,待在这儿\N{\rENG}There you go.
+Dialogue: 0,1:37:23.25,1:37:26.41,CHS,,0,0,0,,我知道你做了什么，小子\N{\rENG}I know what you did, General Goatherd.
+Dialogue: 0,1:37:27.79,1:37:31.16,CHS,,0,0,0,,你的坏行为会受到惩罚的\N{\rENG}Your bad conscience is probably punishment enough.
+Dialogue: 0,1:37:35.95,1:37:40.62,CHS,,0,0,0,,在我晚上回来前好好照看女孩们\N{\rENG}Now look affer the girls until I come back in the evening.
+Dialogue: 0,1:37:41.70,1:37:43.20,CHS,,0,0,0,,懂我的意思吗？\N{\rENG}Do you understand me?
+Dialogue: 0,1:37:51.79,1:37:54.20,CHS,,0,0,0,,- 我去找皮特  - 好的，去吧\N{\rENG}- I'll go and get Peter.  - Yes, do.
+Dialogue: 0,1:38:03.45,1:38:04.54,CHS,,0,0,0,,出来\N{\rENG}Come out.
+Dialogue: 0,1:38:07.37,1:38:09.04,CHS,,0,0,0,,不要\N{\rENG}I don't want to.
+Dialogue: 0,1:38:10.16,1:38:11.74,CHS,,0,0,0,,那好吧\N{\rENG}Then don't.
+Dialogue: 0,1:38:12.04,1:38:15.20,CHS,,0,0,0,,只要这儿有吃的他就会马上出来\N{\rENG}He'll come for sure. As soon as there's food.
+Dialogue: 0,1:38:16.29,1:38:17.99,CHS,,0,0,0,,好美\N{\rENG}They're beautiful.
+Dialogue: 0,1:38:18.62,1:38:22.45,CHS,,0,0,0,,- 就像你说的  - 看吧，你现在就在这里\N{\rENG}- It's just like you said.  - See? And now you're here.
+Dialogue: 0,1:38:26.54,1:38:27.91,CHS,,0,0,0,,我去采点蓝莓\N{\rENG}I'll fetch some blueberries.
+Dialogue: 0,1:39:12.66,1:39:14.62,CHS,,0,0,0,,克拉拉\N{\rENG}Klara!
+Dialogue: 0,1:39:22.54,1:39:24.29,CHS,,0,0,0,,我的天啊\N{\rENG}Holy Mother of God.
+Dialogue: 0,1:39:30.66,1:39:31.91,CHS,,0,0,0,,快点过来\N{\rENG}Come over here!
+Dialogue: 0,1:39:40.08,1:39:41.20,CHS,,0,0,0,,来\N{\rENG}Come on.
+Dialogue: 0,1:39:41.37,1:39:43.33,CHS,,0,0,0,,你行的\N{\rENG}You can do it.
+Dialogue: 0,1:39:55.45,1:39:56.66,CHS,,0,0,0,,试试\N{\rENG}Try it.
+Dialogue: 0,1:39:59.00,1:40:00.04,CHS,,0,0,0,,我知道你可以的\N{\rENG}I know you can do it!
+Dialogue: 0,1:40:29.04,1:40:30.58,CHS,,0,0,0,,日安\N{\rENG}Good day.
+Dialogue: 0,1:40:33.58,1:40:35.79,CHS,,0,0,0,,我来接我的女儿\N{\rENG}I'm here to collect my daughter.
+Dialogue: 0,1:40:35.95,1:40:38.87,CHS,,0,0,0,,- 你好，阿蒙治叔叔  - 你好\N{\rENG}- Hello Alp-Uncle.  - Hello.
+Dialogue: 0,1:40:42.25,1:40:46.70,CHS,,0,0,0,,母亲，你怎么能带克拉拉来这样一个地方\N{\rENG}Mother, how could you bring Klara to a place like this?
+Dialogue: 0,1:40:46.87,1:40:48.20,CHS,,0,0,0,,看看\N{\rENG}Just look at it!
+Dialogue: 0,1:40:48.50,1:40:50.66,CHS,,0,0,0,,这不适合生病的女孩\N{\rENG}This is no place for a sick girl.
+Dialogue: 0,1:40:50.83,1:40:53.83,CHS,,0,0,0,,这间小屋，这些怪石嶙峋\N{\rENG}This hut, these rocks everywhere.
+Dialogue: 0,1:40:54.00,1:40:55.66,CHS,,0,0,0,,你必须道歉，儿子\N{\rENG}You must excuse my son.
+Dialogue: 0,1:40:55.83,1:40:58.79,CHS,,0,0,0,,我现在要见我的女儿，她在哪儿\N{\rENG}I want to see my daughter right away.Where is she?
+Dialogue: 0,1:40:58.95,1:41:01.41,CHS,,0,0,0,,爸爸，我在这里\N{\rENG}Father, here I am.
+Dialogue: 0,1:41:05.70,1:41:06.74,CHS,,0,0,0,,克拉拉\N{\rENG}Klara.
+Dialogue: 0,1:41:20.41,1:41:22.41,CHS,,0,0,0,,爸爸\N{\rENG}Father.
+Dialogue: 0,1:41:24.95,1:41:26.29,CHS,,0,0,0,,我的孩子\N{\rENG}My child.
+Dialogue: 0,1:41:27.83,1:41:29.41,CHS,,0,0,0,,你能走路了\N{\rENG}You're walking.
+Dialogue: 0,1:41:33.75,1:41:35.95,CHS,,0,0,0,,请原谅我\N{\rENG}Please forgive me.
+Dialogue: 0,1:41:36.87,1:41:38.62,CHS,,0,0,0,,爸爸\N{\rENG}Father.
+Dialogue: 0,1:41:44.29,1:41:46.45,CHS,,0,0,0,,- 你能走路了  - 克拉拉\N{\rENG}- You're walking.  - Klara.
+Dialogue: 0,1:41:56.16,1:41:59.04,CHS,,0,0,0,,我的孩子，这是给你的礼物\N{\rENG}This is a present for you,my dear child.
+Dialogue: 0,1:42:00.95,1:42:02.12,CHS,,0,0,0,,谢谢你，奶奶\N{\rENG}Thank you, Grandmama.
+Dialogue: 0,1:42:10.79,1:42:12.12,CHS,,0,0,0,,里面什么也没有啊\N{\rENG}There's nothing in it.
+Dialogue: 0,1:42:12.79,1:42:15.66,CHS,,0,0,0,,你得自己把它填满\N{\rENG}Because you'll fill it up yourself.
+Dialogue: 0,1:42:21.66,1:42:23.16,CHS,,0,0,0,,怎么了，孩子\N{\rENG}What's wrong, child?
+Dialogue: 0,1:42:23.66,1:42:26.70,CHS,,0,0,0,,- 人们嘲笑我  - 为什么呢\N{\rENG}- Everyone laughed at me.  - Why is that?
+Dialogue: 0,1:42:28.29,1:42:30.37,CHS,,0,0,0,,因为我想写故事\N{\rENG}Because I want to write stories.
+Dialogue: 0,1:42:31.25,1:42:33.08,CHS,,0,0,0,,是吗\N{\rENG}Is that right?
+Dialogue: 0,1:42:34.66,1:42:37.66,CHS,,0,0,0,,他们鼠目寸光，海蒂\N{\rENG}They just don't know any better, Heidi,
+Dialogue: 0,1:42:37.83,1:42:39.74,CHS,,0,0,0,,因为他们只知道这个村子\N{\rENG}because they only know this village.
+Dialogue: 0,1:42:40.75,1:42:44.54,CHS,,0,0,0,,但是你已经见识过外面的世界了，不是吗？\N{\rENG}But you've seen more of the world,haven't you?
+Dialogue: 0,1:42:47.04,1:42:49.83,CHS,,0,0,0,,如果生活中的某件事情带给你快乐\N{\rENG}If something in life brings you joy,
+Dialogue: 0,1:42:50.12,1:42:52.45,CHS,,0,0,0,,你只需要去做它就行\N{\rENG}then you simply have to do it,
+Dialogue: 0,1:42:52.62,1:42:54.54,CHS,,0,0,0,,不要管别人说什么\N{\rENG}regardless of what people say.
+Dialogue: 0,1:43:03.33,1:43:05.45,CHS,,0,0,0,,能见到你太好了\N{\rENG}It was so lovely to see you.
+Dialogue: 0,1:43:07.37,1:43:08.87,CHS,,0,0,0,,我会想你的\N{\rENG}I'll miss you.
+Dialogue: 0,1:43:09.04,1:43:10.37,CHS,,0,0,0,,我也会想你的\N{\rENG}I'll miss you too.
+Dialogue: 0,1:43:19.87,1:43:23.37,CHS,,0,0,0,,再见\N{\rENG}Goodbye.
+Dialogue: 0,1:43:25.08,1:43:26.83,CHS,,0,0,0,,海蒂，再见\N{\rENG}Heidi, goodbye.
+Dialogue: 0,1:43:29.50,1:43:30.62,CHS,,0,0,0,,再见\N{\rENG}Adieu!
+
