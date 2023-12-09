@@ -1,12 +1,40 @@
 const art = new Artplayer({
     container: '.artplayer-app',
-    url: 'Res/heidi.mp4',
+    url: 'https://artplayer.org/assets/sample/video.mp4',
+    poster: 'https://artplayer.org/assets/sample/poster.jpg',
+    volume: 0.5,
+    isLive: false,
+    muted: false,
+    autoplay: false,
+    pip: true,
+    autoSize: true,
+    autoMini: true,
+    screenshot: true,
+    setting: true,
+    loop: true,
+    flip: true,
+    playbackRate: true,
+    aspectRatio: true,
+    fullscreen: true,
+    fullscreenWeb: true,
+    subtitleOffset: true,
+    miniProgressBar: true,
+    mutex: true,
+    backdrop: true,
+    playsInline: true,
+    autoPlayback: true,
+    airplay: true,
+    theme: '#23ade5',
+    // lang: navigator.language.toLowerCase(),
+    moreVideoAttr: {
+        crossOrigin: 'anonymous',
+    },
     settings: [
         {
             width: 200,
-            html: 'Subtitle',
+            html: '字幕',
             tooltip: 'Bilingual',
-            // icon: '<img width="22" heigth="22" src="/assets/img/subtitle.svg">',
+            icon: '<img width="22" heigth="22" src="https://artplayer.org/assets/img/subtitle.svg">',
             selector: [
                 {
                     html: 'Display',
@@ -20,16 +48,16 @@ const art = new Artplayer({
                 },
                 {
                     default: true,
-                    html: 'heidi',
-                    url: 'Res/heidi.ass',
+                    html: 'Bilingual',
+                    url: 'https://artplayer.org/assets/sample/subtitle.srt',
                 },
                 {
-                    html: 'ass',
-                    url: 'Res/heidi.ass',
+                    html: 'Chinese',
+                    url: 'https://artplayer.org/assets/sample/subtitle.cn.srt',
                 },
                 {
-                    html: 'srt',
-                    url: 'Res/heidi.srt',
+                    html: 'Japanese',
+                    url: 'https://artplayer.org/assets/sample/subtitle.jp.srt',
                 },
             ],
             onSelect: function (item) {
@@ -41,7 +69,7 @@ const art = new Artplayer({
         },
         {
             html: 'Switcher',
-            // icon: '<img width="22" heigth="22" src="/assets/img/state.svg">',
+            icon: '<img width="22" heigth="22" src="https://artplayer.org/assets/img/state.svg">',
             tooltip: 'OFF',
             switch: false,
             onSwitch: function (item) {
@@ -52,7 +80,7 @@ const art = new Artplayer({
         },
         {
             html: 'Slider',
-            // icon: '<img width="22" heigth="22" src="/assets/img/state.svg">',
+            icon: '<img width="22" heigth="22" src="https://artplayer.org/assets/img/state.svg">',
             tooltip: '5x',
             range: [5, 1, 10, 0.1],
             onRange: function (item) {
@@ -60,11 +88,94 @@ const art = new Artplayer({
             },
         },
     ],
-
-    subtitle:
-    {
-        url: 'Res/heidi.ass',
+    contextmenu: [
+        {
+            html: 'Custom menu',
+            click: function (contextmenu) {
+                console.info('You clicked on the custom menu');
+                contextmenu.show = false;
+            },
+        },
+    ],
+    layers: [
+        {
+            html: '<img width="100" src="https://artplayer.org/assets/sample/layer.png">',
+            click: function () {
+                window.open('https://aimu.app');
+                console.info('You clicked on the custom layer');
+            },
+            style: {
+                position: 'absolute',
+                top: '20px',
+                right: '20px',
+                opacity: '.9',
+            },
+        },
+    ],
+    quality: [
+        {
+            default: true,
+            html: 'SD 480P',
+            url: 'https://artplayer.org/assets/sample/video.mp4',
+        },
+        {
+            html: 'HD 720P',
+            url: 'https://artplayer.org/assets/sample/video.mp4',
+        },
+    ],
+    thumbnails: {
+        url: 'https://artplayer.org/assets/sample/thumbnails.png',
+        number: 60,
+        column: 10,
+    },
+    subtitle: {
+        url: 'https://artplayer.org/assets/sample/subtitle.srt',
         type: 'srt',
-        encoding: 'gbk',
+        style: {
+            color: '#fe9200',
+            fontSize: '20px',
+        },
+        encoding: 'utf-8',
+    },
+    highlight: [
+        {
+            time: 15,
+            text: 'One more chance',
+        },
+        {
+            time: 30,
+            text: '谁でもいいはずなのに',
+        },
+        {
+            time: 45,
+            text: '夏の想い出がまわる',
+        },
+        {
+            time: 60,
+            text: 'こんなとこにあるはずもないのに',
+        },
+        {
+            time: 75,
+            text: '终わり',
+        },
+    ],
+    controls: [
+        {
+            position: 'right',
+            html: 'Control',
+            index: 1,
+            tooltip: 'Control Tooltip',
+            style: {
+                marginRight: '20px',
+            },
+            click: function () {
+                console.info('You clicked on the custom control');
+            },
+        },
+    ],
+    icons: {
+        loading: '<img src="https://artplayer.org/assets/img/ploading.gif">',
+        state: '<img width="150" heigth="150" src="https://artplayer.org/assets/img/state.svg">',
+        indicator: '<img width="16" heigth="16" src="https://artplayer.org/assets/img/indicator.svg">',
     },
 });
