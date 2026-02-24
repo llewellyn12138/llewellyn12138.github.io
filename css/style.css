@@ -163,3 +163,9 @@ disabled look for disabled choices in the results dropdown
     height: 562px;
     margin: 0 auto;
 }
+
+/* Custom Responsive Utilities */
+@media (min-width: 992px) {
+  .pl-lg-5, .pl-xl-5 { padding-left: 3rem !important; }
+  .pr-lg-5, .pr-xl-5 { padding-right: 3rem !important; }
+}

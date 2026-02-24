@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
-    <title>实验室</title>
+    <title>文章阅读</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +12,45 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        .markdown-content {
+            padding: 40px 0;
+            text-align: left;
+            color: #151515;
+        }
+        .markdown-content h1, .markdown-content h2, .markdown-content h3 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            color: #151515;
+        }
+        .markdown-content p {
+            margin-bottom: 16px;
+            line-height: 1.8;
+            color: #555;
+        }
+        .markdown-content pre {
+            background: #f5f5f5;
+            padding: 16px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .markdown-content code {
+            background: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #d63384;
+        }
+        .markdown-content ul, .markdown-content ol {
+            margin-bottom: 16px;
+            padding-left: 20px;
+        }
+        .markdown-content li {
+            margin-bottom: 8px;
+            list-style: disc;
+        }
+    </style>
   </head>
   <body>
     <div class="preloader">
@@ -93,24 +132,24 @@
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="media.html">多媒体</a>
                       </li>
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="lab.html">实验室</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="lab.html">实验室</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">关于</a>
                       </li>
                     </ul>
                   </div>
                 </div>
-
               </div>
             </div>
           </nav>
         </div>
       </header>
+      
       <!-- Breadcrumbs -->
       <section class="bg-gray-7">
         <div class="breadcrumbs-custom box-transform-wrap context-dark">
           <div class="container">
-            <h3 class="breadcrumbs-custom-title">实验室</h3>
+            <h3 class="breadcrumbs-custom-title" id="article-title">Loading...</h3>
             <div class="breadcrumbs-custom-decor"></div>
           </div>
           <div class="box-transform" style="background-image: url(images/bg-1.jpg);"></div>
@@ -118,42 +157,27 @@
         <div class="container">
           <ul class="breadcrumbs-custom-path">
             <li><a href="index.html">首页</a></li>
-            <li class="active">实验室</li>
+            <li><a href="knowledge.html">知识库</a></li>
+            <li class="active" id="breadcrumb-title">文章</li>
           </ul>
         </div>
       </section>
+
       <!-- Content -->
       <section class="section section-lg bg-default">
         <div class="container">
-          <h3 class="oh-desktop"><span class="d-inline-block wow slideInDown">实验室项目</span></h3>
-          <div class="row row-md row-30">
-            <div class="col-sm-6 col-lg-4">
-              <div class="oh-desktop">
-                <article class="services-terri wow slideInUp">
-                  <div class="services-terri-figure"><a href="map.html"><img src="images/gallery-1-1200x800-original.jpg" alt="" loading="lazy"/></a></div>
-                  <div class="services-terri-caption"><span class="services-terri-icon mdi mdi-map-marker"></span>
-                    <h5 class="services-terri-title"><a href="map.html">地图服务</a></h5>
-                  </div>
-                </article>
-              </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-8">
+                    <div id="markdown-container" class="markdown-content">
+                        <div style="text-align: center;">
+                            <img src="images/loading.gif" alt="Loading..." />
+                            <p>正在加载文章内容...</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-6 col-lg-4">
-              <div class="oh-desktop">
-                <article class="services-terri wow slideInDown">
-                  <div class="services-terri-figure"><a href="#"><img src="images/gallery-2-1200x800-original.jpg" alt="" loading="lazy"/></a></div>
-                  <div class="services-terri-caption"><span class="services-terri-icon mdi mdi-toolbox"></span>
-                    <h5 class="services-terri-title"><a href="#">Web 工具箱 (即将推出)</a></h5>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
-
-
-
-
 
       <footer class="section footer-modern context-dark footer-modern-2">
         <div class="footer-modern-line">
@@ -248,6 +272,65 @@
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
-    <!-- coded by Himic-->
+    <script>
+        // Simple logic to fetch and render markdown
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const postFile = urlParams.get('post');
+            
+            if (postFile) {
+                const filePath = 'posts/' + postFile;
+                
+                fetch(filePath)
+                    .then(response => {
+                        if (!response.ok) throw new Error('Network response was not ok');
+                        return response.text();
+                    })
+                    .then(text => {
+                        // Render Markdown
+                        document.getElementById('markdown-container').innerHTML = marked.parse(text);
+                        
+                        // Try to extract title from first h1
+                        const lines = text.split('\n');
+                        let title = '文章阅读';
+                        for (let line of lines) {
+                            if (line.startsWith('# ')) {
+                                title = line.substring(2).trim();
+                                break;
+                            }
+                        }
+                        
+                        document.title = title;
+                        document.getElementById('article-title').textContent = title;
+                        document.getElementById('breadcrumb-title').textContent = title;
+                    })
+                    .catch(error => {
+                        console.error('Error loading markdown:', error);
+                        let errorMsg = '<div class="alert alert-danger">';
+                        errorMsg += '<h4>文章加载失败</h4>';
+                        errorMsg += '<p>无法加载文件: ' + filePath + '</p>';
+                        
+                        if (window.location.protocol === 'file:') {
+                            errorMsg += '<hr>';
+                            errorMsg += '<p><strong>检测到您正在使用 file:// 协议直接打开文件。</strong></p>';
+                            errorMsg += '<p>由于浏览器的安全策略 (CORS)，JavaScript 无法直接读取本地文件。</p>';
+                            errorMsg += '<p>请尝试以下方法之一：</p>';
+                            errorMsg += '<ul>';
+                            errorMsg += '<li>使用本地服务器运行 (推荐): <code>python -m http.server</code> 或 <code>npx http-server</code></li>';
+                            errorMsg += '<li>将项目部署到 GitHub Pages 后访问</li>';
+                            errorMsg += '<li>使用 VS Code 的 "Live Server" 插件预览</li>';
+                            errorMsg += '</ul>';
+                        } else {
+                            errorMsg += '<p>请检查文件名是否正确，或网络连接是否正常。</p>';
+                        }
+                        
+                        errorMsg += '</div>';
+                        document.getElementById('markdown-container').innerHTML = errorMsg;
+                    });
+            } else {
+                document.getElementById('markdown-container').innerHTML = '<div class="alert alert-warning">未指定文章文件。</div>';
+            }
+        });
+    </script>
   </body>
 </html>
