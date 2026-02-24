@@ -64,6 +64,14 @@
 			});
 		}
 
+    // Force preloader hide on page show (fixes back button issue)
+    window.addEventListener('pageshow', function (event) {
+      if (event.persisted && plugins.preloader.length) {
+        plugins.preloader.addClass('loaded');
+        $('.page').css('opacity', '1');
+      }
+    });
+
 		// Isotope
 		if (plugins.isotope.length) {
 			for (var i = 0; i < plugins.isotope.length; i++) {

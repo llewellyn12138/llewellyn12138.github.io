@@ -1,0 +1,17 @@
+
+h1, .h1 { font-size: 2.2rem; }
+h2, .h2 { font-size: 1.8rem; }
+h3, .h3 { font-size: 1.5rem; }
+h4, .h4 { font-size: 1.3rem; }
+h5, .h5 { font-size: 1.1rem; }
+h6, .h6 { font-size: 0.9rem; }
+
+/* Compact layout for services-terri cards */
+.services-terri-figure img {
+    max-height: 200px; /* Force compact height */
+    width: 100%;
+    object-fit: cover; /* Maintain aspect ratio, crop if necessary */
+}
+.services-terri-caption {
+    padding: 10px; /* Reduce padding */
+}
