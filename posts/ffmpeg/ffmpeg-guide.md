@@ -1,3 +1,11 @@
+---
+title: FFmpeg 基础命令指南
+category: ffmpeg
+date: 2023-01-02
+description: FFmpeg 常用视频转码、剪辑、合并命令详解。
+image: images/project-2-1200x800-original.jpg
+---
+
 # FFmpeg 基础命令指南
 
 FFmpeg 是一款强大的多媒体处理工具。

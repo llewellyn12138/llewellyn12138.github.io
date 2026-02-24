@@ -1,3 +1,11 @@
+---
+title: Python 编程入门：Hello World
+category: coding
+date: 2023-01-01
+description: 零基础学习 Python 编程，从环境搭建到 Hello World。
+image: images/project-3-1200x800-original.jpg
+---
+
 # Python 编程入门：Hello World
 
 ## 1. 简介

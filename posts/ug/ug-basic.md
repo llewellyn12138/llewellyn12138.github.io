@@ -1,3 +1,11 @@
+---
+title: UG NX 建模基础教程
+category: ug
+date: 2023-01-03
+description: UG NX 界面介绍与基础草图绘制教程。
+image: images/project-1-1200x800-original.jpg
+---
+
 # UG NX 建模基础教程
 
 ## 1. 界面介绍
