@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
-    <title>视频播放器</title>
+    <title>FFmpeg</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-<!-- Stylesheets-->
+    <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/artplayer.js"></script>
   </head>
   <body>
     <div class="preloader">
@@ -68,13 +67,13 @@
                       <li>
                         <div class="unit unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-phone"></span></div>
-                          <div class="unit-body"><a class="phone" href="tel:#">+86 182-2352-7205</a></div>
+                          <div class="unit-body"><a class="phone" href="tel:18223527205">+86 182-2352-7205</a></div>
                         </div>
                       </li>
                       <li>
                         <div class="unit unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-map-marker"></span></div>
-                          <div class="unit-body"><a class="address" href="#">重庆市沙坪坝区陈家桥街道</a></div>
+                          <div class="unit-body"><a class="address" href="map.html">重庆市沙坪坝区陈家桥街道</a></div>
                         </div>
                       </li>
                     </ul>
@@ -90,9 +89,9 @@
                     <ul class="rd-navbar-nav">
                       <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">首页</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="knowledge.html">知识库</a>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="knowledge.html">知识库</a>
                       </li>
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="media.html">多媒体</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="media.html">多媒体</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="lab.html">实验室</a>
                       </li>
@@ -101,6 +100,7 @@
                     </ul>
                   </div>
                 </div>
+
               </div>
             </div>
           </nav>
@@ -110,7 +110,7 @@
       <section class="bg-gray-7">
         <div class="breadcrumbs-custom box-transform-wrap context-dark">
           <div class="container">
-            <h3 class="breadcrumbs-custom-title">视频播放器</h3>
+            <h3 class="breadcrumbs-custom-title">FFmpeg</h3>
             <div class="breadcrumbs-custom-decor"></div>
           </div>
           <div class="box-transform" style="background-image: url(images/bg-1.jpg);"></div>
@@ -118,23 +118,50 @@
         <div class="container">
           <ul class="breadcrumbs-custom-path">
             <li><a href="index.html">首页</a></li>
-            <li><a href="media.html">多媒体</a></li>
-            <li class="active">视频播放器</li>
+            <li><a href="knowledge.html">知识库</a></li>
+            <li class="active">FFmpeg</li>
           </ul>
         </div>
       </section>
-      <!-- Player Section-->
-      <section class="section section-lg bg-default text-center">
+      <!-- Content -->
+      <section class="section section-lg bg-default">
         <div class="container">
-          <h3><span class="d-inline-block wow slideInDown">精彩视频</span></h3>
-          <div class="row justify-content-center">
-            <div class="col-xl-10">
-               <div class="artplayer-app"></div>
-               <script src="js/player.js"></script>
+          <h3 class="oh-desktop"><span class="d-inline-block wow slideInDown">FFmpeg 资源</span></h3>
+          <div class="row row-md row-30">
+            <div class="col-sm-6 col-lg-4">
+              <article class="services-terri wow slideInUp">
+                <div class="services-terri-figure"><a href="#"><img src="images/project-4-1200x800-original.jpg" alt=""/></a></div>
+                <div class="services-terri-caption"><span class="services-terri-icon mdi mdi-video"></span>
+                  <h5 class="services-terri-title"><a href="#">FFmpeg 基础命令 (示例)</a></h5>
+                  <p class="services-terri-text">常用视频转码、剪辑、合并命令详解。</p>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              <article class="services-terri wow slideInDown">
+                <div class="services-terri-figure"><a href="#"><img src="images/project-5-1200x800-original.jpg" alt=""/></a></div>
+                <div class="services-terri-caption"><span class="services-terri-icon mdi mdi-music-note"></span>
+                  <h5 class="services-terri-title"><a href="#">音频处理指南 (示例)</a></h5>
+                  <p class="services-terri-text">提取音频、格式转换及音量调整技巧。</p>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              <article class="services-terri wow slideInUp">
+                <div class="services-terri-figure"><a href="#"><img src="images/project-6-1200x800-original.jpg" alt=""/></a></div>
+                <div class="services-terri-caption"><span class="services-terri-icon mdi mdi-filter"></span>
+                  <h5 class="services-terri-title"><a href="#">滤镜使用进阶 (示例)</a></h5>
+                  <p class="services-terri-text">掌握水印添加、画面裁剪等高级滤镜功能。</p>
+                </div>
+              </article>
             </div>
           </div>
         </div>
       </section>
+
+
+
+
 
       <footer class="section footer-modern context-dark footer-modern-2">
         <div class="footer-modern-line">
@@ -158,7 +185,7 @@
               </div>
               <div class="col-lg-4 col-xl-5">
                 <h5 class="footer-modern-title oh-desktop"><span class="d-inline-block wow slideInLeft">Newsletter</span></h5>
-                <p class="wow fadeInRight">Sign up today for the latest news and updates. </p>
+                <p class="wow fadeInRight">Sign up today for the latest news and updates.</p>
                 <!-- RD Mailform-->
                 <form class="rd-form rd-mailform rd-form-inline rd-form-inline-sm oh-desktop" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
                   <div class="form-wrap wow slideInUp">
@@ -189,20 +216,20 @@
                   <div class="footer-modern-contacts wow slideInUp">
                     <div class="unit unit-spacing-sm align-items-center">
                       <div class="unit-left"><span class="icon icon-24 mdi mdi-phone"></span></div>
-                      <div class="unit-body"><a class="phone" href="tel:#">+86 182-2352-7205</a></div>
+                      <div class="unit-body"><a class="phone" href="tel:18223527205">+86 182-2352-7205</a></div>
                     </div>
                   </div>
                   <div class="footer-modern-contacts wow slideInDown">
                     <div class="unit unit-spacing-sm align-items-center">
                       <div class="unit-left"><span class="icon mdi mdi-email"></span></div>
-                      <div class="unit-body"><a class="mail" href="mailto:#">2725170043@qq.com</a></div>
+                      <div class="unit-body"><a class="mail" href="mailto:2725170043@qq.com">2725170043@qq.com</a></div>
                     </div>
                   </div>
                   <div class="wow slideInRight">
                     <ul class="list-inline footer-social-list footer-social-list-2 footer-social-list-3">
                       <li><a class="icon mdi mdi-facebook" href="#"></a></li>
-                      <li><a class="icon mdi mdi-twitter" href="https://twitter.com/llewellyn121225"></a></li>
                       <li><a class="icon mdi mdi-instagram" href="#"></a></li>
+                      <li><a class="icon mdi mdi-twitter" href="https://twitter.com/llewellyn121225"></a></li>
                       <li><a class="icon mdi mdi-google-plus" href="#"></a></li>
                     </ul>
                   </div>
@@ -229,5 +256,6 @@
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <!-- coded by Himic-->
   </body>
 </html>
