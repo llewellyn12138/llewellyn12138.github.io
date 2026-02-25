@@ -287,6 +287,13 @@
                         return response.text();
                     })
                     .then(text => {
+                        // Remove Frontmatter if present
+                        const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n/;
+                        const match = text.match(frontmatterRegex);
+                        if (match) {
+                            text = text.replace(frontmatterRegex, '');
+                        }
+
                         // Render Markdown
                         document.getElementById('markdown-container').innerHTML = marked.parse(text);
                         
