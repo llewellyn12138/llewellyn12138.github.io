@@ -279,7 +279,9 @@
             const postFile = urlParams.get('post');
             
             if (postFile) {
-                const filePath = 'posts/' + postFile;
+                // Ensure postFile is not URL encoded when used in file path
+                const decodedPostFile = decodeURIComponent(postFile);
+                const filePath = 'posts/' + decodedPostFile;
                 
                 fetch(filePath)
                     .then(response => {
