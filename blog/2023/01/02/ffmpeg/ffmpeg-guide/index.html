@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>FFmpeg 基础命令指南 | Llewellyn&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="FFmpeg 常用视频转码、剪辑、合并命令详解。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FFmpeg 基础命令指南">
+<meta property="og:url" content="http://localhost:4000/blog/2023/01/02/ffmpeg/ffmpeg-guide/index.html">
+<meta property="og:site_name" content="Llewellyn&#39;s Blog">
+<meta property="og:description" content="FFmpeg 常用视频转码、剪辑、合并命令详解。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-01-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-24T09:27:06.571Z">
+<meta property="article:author" content="Llewellyn">
+<meta property="article:tag" content="coding, tech, notes">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Llewellyn's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Llewellyn&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">Knowledge Base</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://localhost:4000/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-ffmpeg/ffmpeg-guide" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2023/01/02/ffmpeg/ffmpeg-guide/" class="article-date">
+  <time class="dt-published" datetime="2023-01-01T16:00:00.000Z" itemprop="datePublished">2023-01-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/ffmpeg/">ffmpeg</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      FFmpeg 基础命令指南
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="FFmpeg-基础命令指南"><a href="#FFmpeg-基础命令指南" class="headerlink" title="FFmpeg 基础命令指南"></a>FFmpeg 基础命令指南</h1><p>FFmpeg 是一款强大的多媒体处理工具。</p>
+<h2 id="1-视频转码"><a href="#1-视频转码" class="headerlink" title="1. 视频转码"></a>1. 视频转码</h2><p>将 MP4 转换为 AVI：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 output.avi</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-提取音频"><a href="#2-提取音频" class="headerlink" title="2. 提取音频"></a>2. 提取音频</h2><p>从视频中提取 MP3 音频：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i video.mp4 -vn -acodec libmp3lame -q:a 2 audio.mp3</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-视频剪切"><a href="#3-视频剪切" class="headerlink" title="3. 视频剪切"></a>3. 视频剪切</h2><p>从第 10 秒开始，剪切 20 秒：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -ss 00:00:10 -t 00:00:20 -i input.mp4 -c copy output.mp4</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-视频合并"><a href="#4-视频合并" class="headerlink" title="4. 视频合并"></a>4. 视频合并</h2><p>将多个视频合并为一个（需创建 filelist.txt）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -f concat -i filelist.txt -c copy output.mp4</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://localhost:4000/blog/2023/01/02/ffmpeg/ffmpeg-guide/" data-id="cmm1e4c4v0000rosl7ddee8gx" data-title="FFmpeg 基础命令指南" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2023/01/03/ug/ug-basic/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          UG NX 建模基础教程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2023/01/01/coding/coding-intro/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python 编程入门：Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/coding/">coding</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/ffmpeg/">ffmpeg</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/test/">test</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/ug/">ug</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2024/02/25/test/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2023/01/03/ug/ug-basic/">UG NX 建模基础教程</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2023/01/02/ffmpeg/ffmpeg-guide/">FFmpeg 基础命令指南</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2023/01/01/coding/coding-intro/">Python 编程入门：Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 Llewellyn<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
