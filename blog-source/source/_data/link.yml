@@ -1,0 +1,7 @@
+- class_name: 友情链接
+  class_desc: 那些人，那些事
+  link_list:
+    - name: Syunn
+      link: https://syunn.cn
+      avatar: http://syunn.cn/config/img/favicon.jpg
+      descr: 瞬のブログ - Enjoy the tech

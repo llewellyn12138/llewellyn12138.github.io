@@ -4,12 +4,13 @@
 
 # Site
 title: Llewellyn's Blog
-subtitle: Knowledge Base
-description: My personal knowledge base and blog
+subtitle: Cheeeeems
+description: 随便记点啥
 keywords: coding, tech, notes
 author: Llewellyn
-language: en
+language: zh-CN
 timezone: ''
+email: llewellyn@llewellyn.top
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -97,7 +98,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
