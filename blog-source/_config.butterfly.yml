@@ -10,7 +10,7 @@
 # --------------------------------------
 
 nav:
-  # 导航栏 Logo 图片
+  # 导航栏 Logo 图片sub
   logo: https://imgbed.llewellyn.top/file/1772161924541_1647477524946.gif
   display_title: true             # 是否显示标题
   display_post_title: true        # 是否在文章页显示文章标题
@@ -393,8 +393,8 @@ darkmode:
   # autoChangeMode: false 禁用自动切换
   autoChangeMode: 2
   # 设置浅色模式时间。值在 0 到 24 之间。如果未设置，默认值为 6 和 18
-  start: 22
-  end: 8
+  start: 8
+  end: 24
 
 # 在回到顶部按钮中显示滚动百分比
 rightside_scroll_percent: false
