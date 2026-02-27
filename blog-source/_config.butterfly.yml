@@ -11,7 +11,7 @@
 
 nav:
   # 导航栏 Logo 图片
-  logo: https://imgbed.llewellyn.top/file/1736148028440_menu-3-370x278.jpg
+  logo: https://imgbed.llewellyn.top/file/1772161924541_1647477524946.gif
   display_title: true             # 是否显示标题
   display_post_title: true        # 是否在文章页显示文章标题
   # 是否固定导航栏
@@ -46,12 +46,10 @@ code_blocks:
 # 格式:
 #   图标: 链接 || 描述 || 颜色
 social:
-  fab fa-github: https://github.com/llewellyn12138 || Github || '#24292e'
   fas fa-envelope: mailto:llewellyn@llewellyn.top || Email || '#4a7dbe'
   fab fa-twitter: https://twitter.com/llewellyn12138 || Twitter || '#1da1f2'
   fab fa-telegram-plane: https://t.me/llewellyn12138 || Telegram || '#0088cc'
-  fab fa-qq: https://imgbed.llewellyn.top/file/1772161761189_b_8f542b9813c2887582ca456a1bd26d79.jpg || QQ || '#00b200'
-
+  fab fa-qq: https://imgbed.llewellyn.top/file/1772161761189_b_8f542b9813c2887582ca456a1bd26d79.jpg || QQ || '#969696'
   # fab fa-github: https://github.com/xxxxx || Github || '#24292e'
   # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
 
@@ -59,7 +57,7 @@ social:
 # 图片设置
 # --------------------------------------
 
-favicon: https://imgbed.llewellyn.top/file/1772161924541_1647477524946.gif
+favicon: https://imgbed.llewellyn.top/file/1736148028440_menu-3-370x278.jpg
 
 avatar:
   img: https://imgbed.llewellyn.top/file/1736148034547_menu-6-370x278.gif
@@ -69,13 +67,13 @@ avatar:
 disable_top_img: false
 
 # 如果页面没有设置 Banner，将显示默认的 Banner
-default_top_img:
+default_top_img: https://imgbed.llewellyn.top/file/1772164006437_wallhaven-6l5wpl.png
 
 # 首页 Banner
 index_img:
 
 # 归档页 Banner
-archive_img:
+archive_img: https://imgbed.llewellyn.top/file/1772164009484_wallhaven-6d7low.jpg
 
 # 注意: 是标签页 (tag page)，不是标签列表页 (tags page)
 tag_img:
@@ -99,7 +97,7 @@ footer_img: false
 # 网站背景
 # 可以设置为颜色、图片 URL 或包含颜色和/或图片 URL 的数组
 # 如果提供数组，每次加载时将从数组中随机选择一个背景
-background:
+background: https://imgbed.llewellyn.top/file/1772176281304_wallhaven-9o6oy1.png
 
 cover:
   # 启用/禁用封面
@@ -117,7 +115,7 @@ error_img:
 
 # 简单的 404 页面
 error_404:
-  enable: false
+  enable: true
   subtitle: 'Page Not Found'
   background: /img/error-page.png
 
@@ -155,12 +153,12 @@ index_top_img_height:
 
 # 首页副标题
 subtitle:
-  enable: false
+  enable: true
   # 打字机效果
   effect: true
   # 自定义 typed.js
   # https://github.com/mattboldt/typed.js/#customization
-  typed_option:
+  typed_option: 1
   # 来源 - 调用第三方服务 API (仅限中文)
   # 它将先显示来源，然后显示 sub 的内容
   # 选择: false/1/2/3
@@ -168,7 +166,7 @@ subtitle:
   # 1 - hitokoto.cn (一言)
   # 2 - https://api.aa1.cn/doc/yiyan.html
   # 3 - jinrishici.com (今日诗词)
-  source: false
+  source: 1
   # 如果关闭打字机效果，副标题将仅显示 sub 的第一行
   sub:
 
@@ -180,7 +178,7 @@ subtitle:
 # 5: 信息显示在封面上
 # 6: 瀑布流布局 - 封面在上，信息在下
 # 7: 瀑布流布局 - 信息显示在封面上
-index_layout: 3
+index_layout: 7
 
 # 首页文章简介显示
 # 1: description (front-matter 中的描述)
@@ -208,7 +206,7 @@ toc:
 post_copyright:
   enable: true                    # 开启文章版权信息
   decode: false                   # 解码作者链接
-  author_href:                    # 作者链接
+  author_href: https://github.com/llewellyn12138
   license: CC BY-NC-SA 4.0        # 版权协议
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/ # 协议链接
 
@@ -248,15 +246,15 @@ post_pagination: 1
 
 # 显示文章过时提醒
 noticeOutdate:
-  enable: false
+  enable: true
   # 样式: simple / flat
   style: flat
   # 何时显示 (天)
   limit_day: 365
   # 位置: top / bottom
   position: top
-  message_prev: It has been
-  message_next: days since the last update, the content of the article may be outdated.
+  message_prev: 由于距离上次更新已有
+  message_next: 天，文章内容可能已过时。
 
 # --------------------------------------
 # 页脚设置
@@ -269,7 +267,7 @@ footer:
   # 主题和框架版权信息
   copyright:
     enable: true
-    version: true
+    version: false
   custom_text:                    # 自定义页脚文字
 
 # --------------------------------------
@@ -295,10 +293,10 @@ aside:
       enable: true
       icon: fab fa-github
       text: Follow Me
-      link: https://github.com/xxxxxx
+      link: https://github.com/llewellyn12138
   card_announcement:
     enable: true
-    content: This is my Blog
+    content: 夏季八写
   card_recent_post:
     enable: true
     # 如果设置为 0 将显示所有
@@ -393,10 +391,10 @@ darkmode:
   # autoChangeMode: 1  跟随系统设置，如果系统不支持深色模式，则在晚 6 点到早 6 点之间切换为深色模式
   # autoChangeMode: 2  在晚 6 点到早 6 点之间切换为深色模式
   # autoChangeMode: false 禁用自动切换
-  autoChangeMode: false
+  autoChangeMode: 2
   # 设置浅色模式时间。值在 0 到 24 之间。如果未设置，默认值为 6 和 18
-  start:
-  end:
+  start: 22
+  end: 8
 
 # 在回到顶部按钮中显示滚动百分比
 rightside_scroll_percent: false
@@ -433,9 +431,9 @@ copy:
     enable: false
     limit_count: 150
 
-# 需要安装 hexo-wordcount 插件
+ # 需要安装 hexo-wordcount 插件
 wordcount:
-  enable: false
+  enable: true
   # 在文章元数据中显示文章字数
   post_wordcount: true
   # 在文章元数据中显示阅读时长
@@ -846,7 +844,7 @@ hr_icon:
 # 打字机效果
 # https://github.com/disjukr/activate-power-mode
 activate_power_mode:
-  enable: false
+  enable: true
   colorful: true
   shake: true
   mobile: false
@@ -874,9 +872,9 @@ canvas_fluttering_ribbon:
 # canvas_nest (线条)
 # https://github.com/hustcc/canvas-nest.js
 canvas_nest:
-  enable: false
+  enable: true
   # 线条颜色, 默认: '0,0,0'; RGB 值: (R,G,B).(注意: 使用 ',' 分隔)
-  color: '0,0,255'
+  color: '249,172,230'
   # 线条透明度 (0~1)
   opacity: 0.7
   # 背景的 z-index 属性
@@ -887,7 +885,7 @@ canvas_nest:
 
 # 鼠标点击效果: 烟花
 fireworks:
-  enable: false
+  enable: true
   zIndex: 9999
   mobile: false
 
@@ -939,7 +937,7 @@ abcjs:
 # Mermaid (流程图等)
 # https://github.com/mermaid-js/mermaid
 mermaid:
-  enable: false
+  enable: true
   # 使用代码块编写 Mermaid 图表
   code_write: false
   # 内置主题: default / forest / dark / neutral
@@ -1017,7 +1015,7 @@ instantpage: false
 # Lazyload (图片懒加载)
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
-  enable: false
+  enable: true
   # 使用浏览器的原生懒加载代替 vanilla-lazyload
   native: false
   # 指定使用懒加载的字段 (site 或 post)
@@ -1065,6 +1063,8 @@ css_prefix: true
 inject:
   head:
     - <link rel="stylesheet" href="/blog/css/scrollbar.css">
+    - <link rel="stylesheet" href="/blog/css/gradient_footer.css">
+    - <link rel="stylesheet" href="/blog/css/waves.css">
   bottom:
     - <script src="/blog/js/background-slideshow.js"></script>
 

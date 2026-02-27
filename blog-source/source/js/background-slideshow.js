@@ -17,9 +17,15 @@ function preloadImages() {
 
 // 切换背景函数
 function changeBackground() {
+  // 检查是否在首页
+  // Butterfly 主题首页通常有 id="site_title" 或者 class="full_page" 的元素
+  // 或者我们可以检查 URL 路径
+  if (window.location.pathname !== '/' && window.location.pathname !== '/blog/') {
+    console.log("[Top Image Slideshow] Not homepage, skipping.");
+    return;
+  }
+
   // 获取首页顶图元素
-  // Butterfly 主题的顶图 ID 通常是 page-header
-  // 如果是文章页，也是这个 ID，但我们通常只想在首页轮播，或者全站顶图都轮播
   var page_header = document.getElementById("page-header");
 
   if (!page_header) {
@@ -54,12 +60,49 @@ function handleScrollbar() {
   }
 }
 
+// 动态注入波浪 SVG
+function injectWaves() {
+  if (window.location.pathname !== '/' && window.location.pathname !== '/blog/') {
+    return;
+  }
+
+  var page_header = document.getElementById("page-header");
+  if (!page_header) return;
+
+  // 检查是否已经注入
+  if (document.getElementById("waves-container")) return;
+
+  var waveHTML = `
+  <div id="waves-container" class="waves-area">
+    <svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+      </defs>
+      <g class="parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(152, 216, 230, 0.7)" />
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(152, 216, 230, 0.5)" />
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(152, 216, 230, 0.3)" />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="#98d8e6" />
+      </g>
+    </svg>
+  </div>
+  `;
+
+  // 插入到 page-header 内部的最后
+  page_header.insertAdjacentHTML('beforeend', waveHTML);
+}
+
 // 页面加载完成后执行
 document.addEventListener('DOMContentLoaded', function () {
   console.log("[Top Image Slideshow] Script loaded.");
-  preloadImages();
-  changeBackground(); // 初始化显示一张
-  setInterval(changeBackground, time_interval); // 定时切换
+
+  // 仅在首页执行轮播逻辑
+  if (window.location.pathname === '/' || window.location.pathname === '/blog/') {
+    preloadImages();
+    changeBackground(); // 初始化显示一张
+    setInterval(changeBackground, time_interval); // 定时切换
+    injectWaves(); // 注入波浪效果
+  }
 
   // 初始化滚动条状态
   handleScrollbar();
