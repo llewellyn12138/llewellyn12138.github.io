@@ -945,7 +945,7 @@ mermaid:
     light: default
     dark: dark
   # 启用 "在新标签页打开" 按钮以在单独窗口查看图表
-  open_in_new_tab: true
+  open_in_new_tab: false
   # 启用图表的缩放和平移交互
   zoom_pan: true
 
