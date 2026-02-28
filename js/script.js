@@ -859,25 +859,41 @@
 							} else if (activeSlideIndex === 0) {
 								activeSlideIndex = slidesCount;
 							}
-							if (swiper.slides[activeSlideIndex - 1].getAttribute("data-slide-title")) {
-								$(swiper.container).find('.swiper-button-next .title')[0].innerHTML = swiper.slides[activeSlideIndex +
-								1].getAttribute("data-slide-title");
-								$(swiper.container).find('.swiper-button-prev .title')[0].innerHTML = swiper.slides[activeSlideIndex -
-								1].getAttribute("data-slide-title");
+							
+							// Fix: Check if slide exists before accessing attributes
+							var prevSlide = swiper.slides[activeSlideIndex - 1];
+							var nextSlide = swiper.slides[activeSlideIndex + 1];
+							
+							// Handle loop mode edge cases for prev/next buttons content
+							if (!prevSlide && swiper.params.loop) {
+								prevSlide = swiper.slides[swiper.slides.length - 2];
+							}
+							if (!nextSlide && swiper.params.loop) {
+								nextSlide = swiper.slides[1];
 							}
 
-							if (swiper.slides[activeSlideIndex - 1].getAttribute("data-slide-subtitle")) {
-								$(swiper.container).find('.swiper-button-prev .subtitle')[0].innerHTML = swiper.slides[activeSlideIndex -
-								1].getAttribute("data-slide-subtitle");
-								$(swiper.container).find('.swiper-button-next .subtitle')[0].innerHTML = swiper.slides[activeSlideIndex +
-								1].getAttribute("data-slide-subtitle");
+							if (prevSlide && prevSlide.getAttribute("data-slide-title")) {
+								$(swiper.container).find('.swiper-button-prev .title').html(prevSlide.getAttribute("data-slide-title"));
 							}
+							if (nextSlide && nextSlide.getAttribute("data-slide-title")) {
+								$(swiper.container).find('.swiper-button-next .title').html(nextSlide.getAttribute("data-slide-title"));
+							}
+
+							if (prevSlide && prevSlide.getAttribute("data-slide-subtitle")) {
+								$(swiper.container).find('.swiper-button-prev .subtitle').html(prevSlide.getAttribute("data-slide-subtitle"));
+							}
+							if (nextSlide && nextSlide.getAttribute("data-slide-subtitle")) {
+								$(swiper.container).find('.swiper-button-next .subtitle').html(nextSlide.getAttribute("data-slide-subtitle"));
+							}
+
 							//Replace btn img
 							if ($(swiper.container).find('.preview__img')[0] !== undefined) {
-								$(swiper.container).find('.swiper-button-prev .preview__img').css("background-image", "url(" +
-										swiper.slides[activeSlideIndex - 1].getAttribute("data-slide-bg") + ")");
-								$(swiper.container).find('.swiper-button-next .preview__img').css("background-image", "url(" +
-										swiper.slides[activeSlideIndex + 1].getAttribute("data-slide-bg") + ")");
+								if (prevSlide) {
+									$(swiper.container).find('.swiper-button-prev .preview__img').css("background-image", "url(" + prevSlide.getAttribute("data-slide-bg") + ")");
+								}
+								if (nextSlide) {
+									$(swiper.container).find('.swiper-button-next .preview__img').css("background-image", "url(" + nextSlide.getAttribute("data-slide-bg") + ")");
+								}
 							}
 						}
 					}(s))
