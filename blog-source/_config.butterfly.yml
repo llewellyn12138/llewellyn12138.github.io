@@ -279,7 +279,7 @@ aside:
   hide: false
   # 在右下角显示隐藏侧边栏的按钮
   button: true
-  mobile: true                    # 移动端是否显示
+  mobile: false                    # 移动端是否显示
   # 位置: left / right
   position: right
   display:
