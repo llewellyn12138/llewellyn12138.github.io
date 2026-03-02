@@ -312,14 +312,14 @@ aside:
     storage: 10
     avatar: true
   card_categories:
-    enable: true
+    enable: false
     # 如果设置为 0 将显示所有
     limit: 8
     # 选择: none / true / false
     expand: none
     sort_order:
   card_tags:
-    enable: true
+    enable: false
     # 如果设置为 0 将显示所有
     limit: 40
     color: false                  # 彩色标签
@@ -330,7 +330,7 @@ aside:
     order: 1
     sort_order:
   card_archives:
-    enable: true
+    enable: false
     # 类型: monthly (按月) / yearly (按年)
     type: monthly
     # 例如: YYYY年MM月
