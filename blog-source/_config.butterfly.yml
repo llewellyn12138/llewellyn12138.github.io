@@ -283,9 +283,9 @@ aside:
   # 位置: left / right
   position: right
   display:
-    archive: true                 # 显示归档
-    tag: true                     # 显示标签
-    category: true                # 显示分类
+    archive: false                 # 显示归档
+    tag: false                     # 显示标签
+    category: false                # 显示分类
   card_author:
     enable: true
     description:
@@ -298,7 +298,7 @@ aside:
     enable: true
     content: 夏季八写
   card_recent_post:
-    enable: true
+    enable: false
     # 如果设置为 0 将显示所有
     limit: 5
     # 排序: date / updated
