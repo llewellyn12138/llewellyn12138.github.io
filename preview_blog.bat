@@ -20,6 +20,10 @@ if not exist "node_modules" (
     call npm install
 )
 
+echo Cleaning cache and generating static files...
+call npx hexo clean
+call npx hexo generate
+
 echo Starting Hexo server...
 echo You can access your blog at http://localhost:4000/blog/
 call npx hexo server

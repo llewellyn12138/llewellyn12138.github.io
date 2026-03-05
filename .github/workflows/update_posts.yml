@@ -34,22 +34,16 @@ jobs:
           # Copy all files from posts/ to blog-source/source/_posts/
           cp -r posts/* blog-source/source/_posts/
 
-      # - name: Generate Hexo Site
-      #   working-directory: blog-source
-      #   run: npx hexo generate
-
-      - name: Deploy (Commit generated files)
+      - name: Generate Static Files
+        working-directory: blog-source
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Force add the generated blog directory
-          git add blog/
-          
-          # Check for changes
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Deploy Hexo Blog [skip ci]"
-            git push
-          fi
+          npx hexo clean
+          npx hexo generate
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./blog-source/public
+          publish_branch: gh-pages
+          commit_message: ${{ github.event.head_commit.message }}

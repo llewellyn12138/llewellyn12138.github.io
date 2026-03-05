@@ -319,10 +319,10 @@ aside:
     expand: none
     sort_order:
   card_tags:
-    enable: false
+    enable: true
     # 如果设置为 0 将显示所有
     limit: 40
-    color: false                  # 彩色标签
+    color: true                  # 彩色标签
     custom_colors:
     # 标签排序, random/name/length
     orderby: random
@@ -397,7 +397,7 @@ darkmode:
   end: 24
 
 # 在回到顶部按钮中显示滚动百分比
-rightside_scroll_percent: false
+rightside_scroll_percent: true
 
 # 除非您知道如何操作，否则请勿修改以下设置
 # 选择: readmode,translate,darkmode,hideAside,toc,chat,comment
