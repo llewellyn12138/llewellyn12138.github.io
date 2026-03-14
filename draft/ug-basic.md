@@ -14,7 +14,7 @@
 
 <img src="D:\Github\llewellyn12138.github.io\posts\ug\ug-basic.assets\ugraf_163128249.png" style="zoom: 25%;" />
 
-点击右上角新建，打开新建窗口，此窗口包含UG众多模块和模板，一般默认是建模模块下的
+点击右上角新建，打开新建窗口，此窗口包含UG众多模块和模板，别慌，其他的不用管
 
 <img src="D:\Github\llewellyn12138.github.io\posts\ug\ug-basic.assets\163208azb2qv.png" style="zoom:25%;" />
 
