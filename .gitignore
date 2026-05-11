@@ -1,3 +1,31 @@
-.idea
-node_modules
-.vs
+# IDE 配置
+.idea/
+.vs/
+.vscode/
+
+# VS Code 工作区配置
+*.code-workspace
+
+# Node.js 依赖
+node_modules/
+package-lock.json
+
+# Hexo 生成文件
+blog-source/db.json
+blog-source/public/
+
+# 本地脚本
+preview_blog.bat
+
+# 日志文件
+*.log
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# 编辑器临时文件
+*~
+.#*
