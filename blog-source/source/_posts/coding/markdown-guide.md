@@ -398,17 +398,19 @@ LIMIT 10;
 
 **效果：**
 
-![cheems](https://imgbed.llewellyn.top/file/1772161761189_b_8f542b9813c2887582ca456a1bd26d79.jpg)
+![cheems](https://imgbed.llewellyn.top/file/1772161761189_b_8f542b9813c2887582ca456a1bd26d79.jpg "卡比正在吃cheems")
 
 #### 图片调整大小（HTML）
 
 ```html
-<img src="https://imgbed.llewellyn.top/file/1772161761189_b_8f542b9813c2887582ca456a1bd26d79.jpg" width="300" height="200" alt="cheems">
+<img src="https://imgbed.llewellyn.top/file/1772161761189_b_8f542b9813c2887582ca456a1bd26d79.jpg" width="300" height="300" alt="cheems">
 ```
 
 **效果：**
 
-<img src="https://imgbed.llewellyn.top/file/1772161761189_b_8f542b9813c2887582ca456a1bd26d79.jpg" width="300" height="200" alt="cheems">
+
+
+<img src="https://imgbed.llewellyn.top/file/1772161761189_b_8f542b9813c2887582ca456a1bd26d79.jpg" width="300" height="300" alt="cheems">
 
 #### 图片与文本并排
 
@@ -423,6 +425,8 @@ LIMIT 10;
 <img src="https://imgbed.llewellyn.top/file/1772161761189_b_8f542b9813c2887582ca456a1bd26d79.jpg" align="left" width="100" style="margin-right: 20px;">
 
 这是与图片并排的文本内容。可以用来写个人介绍或产品描述。
+
+<div style="clear: both;"></div>
 
 ---
 
@@ -463,6 +467,8 @@ m &\text{ 是质量} \\
 c &\text{ 是光速}
 \end{align}
 $$
+
+~~这一块我也不是很懂，，，以后再来看看能不能填坑吧，，，~~
 
 ### 脚注
 
