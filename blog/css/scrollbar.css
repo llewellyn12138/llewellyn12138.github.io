@@ -1,0 +1,12 @@
+/* 当页面处于顶部时，隐藏滚动条（使其透明） */
+body.at-top::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+body.at-top::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+/* 为了平滑过渡，可以尝试使用 transition（但 scrollbar 不支持 transition） */
+/* 所以我们只能接受突变，或者使用 opacity 技巧（但 scrollbar 很难控制 opacity） */

@@ -1,0 +1,49 @@
+/* 
+  动态渐变色背景页脚
+  Animated Gradient Background Footer
+*/
+
+#footer {
+  /* 定义渐变背景：使用 RGBA 设置透明度 (0.8) */
+  background: linear-gradient(-45deg,
+      rgba(238, 119, 82, 0.8),
+      rgba(231, 60, 126, 0.8),
+      rgba(35, 166, 213, 0.8),
+      rgba(35, 213, 171, 0.8),
+      rgba(152, 216, 230, 0.8),
+      rgba(152, 230, 169, 0.8));
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+
+  /* 添加毛玻璃效果 (可选) */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  /* 确保文字颜色为白色，方便阅读 */
+  color: #ffffff;
+}
+
+/* 链接颜色也设为白色 */
+#footer-wrap a {
+  color: #ffffff !important;
+}
+
+/* 动画关键帧 */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 去掉可能存在的默认背景遮罩 */
+#footer::before {
+  background: none !important;
+}

@@ -1,0 +1,16 @@
+{
+  "title": "工具",
+  "description": "常用在线小工具，全部本地运算",
+  "items": [
+    {
+      "name": "工具板块（预留）",
+      "description": "技术栈待定，位置已留好。计划放置编码转换、格式化、计算器等纯前端小工具。",
+      "link": "#",
+      "image": "/images/gallery-2-1200x800-original.jpg",
+      "icon": "mdi-toolbox-outline",
+      "tags": ["规划中", "纯前端"],
+      "status": "planned",
+      "external": false
+    }
+  ]
+}
