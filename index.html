@@ -1,13 +1,21 @@
 <!DOCTYPE html>
-<html class="wide wow-animation" lang="en">
+<html class="wide wow-animation" lang="zh-CN">
 
 <head>
-  <title>Llewellyn's Homepage - 知识库与实验室</title>
+  <title>Llewellyn 的个人站 - 博客 · 软件库 · 小应用 · 小游戏 · 工具</title>
+  <meta name="description" content="Llewellyn 的个人站点：技术博客、软件下载、纯前端小应用、小游戏与在线小工具。">
+  <meta name="keywords" content="Llewellyn,博客,软件库,小游戏,小应用,在线工具,Hexo,GitHub Pages">
+  <meta name="author" content="Llewellyn">
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport"
     content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8">
+  <link rel="canonical" href="https://llewellyn12138.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Llewellyn 的个人站">
+  <meta property="og:description" content="博客 · 软件库 · 小应用 · 小游戏 · 工具，一个静态站点全都有。">
+  <meta property="og:url" content="https://llewellyn12138.github.io/">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <!-- Stylesheets-->
   <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500"> -->
@@ -15,6 +23,7 @@
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/custom_fixes.css">
+  <link rel="stylesheet" href="assets/css/platform.css">
 </head>
 
 <body>
@@ -92,16 +101,13 @@
                 <div class="rd-navbar-main">
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
-                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">首页</a>
-                    </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="blog/">知识库</a>
-                    </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="media.html">多媒体</a>
-                    </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="lab.html">实验室</a>
-                    </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">关于</a>
-                    </li>
+                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">首页</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="blog/">博客</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="software/">软件库</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="games/">小游戏</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="apps/">小应用</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="tools/">工具</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">关于</a></li>
                   </ul>
                 </div>
               </div>
@@ -120,9 +126,8 @@
               <div class="row">
                 <div class="col-sm-9 col-md-8 col-lg-7 col-xl-7 offset-lg-1 offset-xxl-0">
                   <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInUp"
-                      data-caption-delay="0">欢迎来到<br>我的知识库</span></h1>
-                  <p class="big swiper-text" data-caption-animate="fadeInLeft" data-caption-delay="300">记录
-                    UG建模、FFmpeg、编程学习的点点滴滴。</p>
+                      data-caption-delay="0">欢迎来到<br>我的个人站</span></h1>
+                  <p class="big swiper-text" data-caption-animate="fadeInLeft" data-caption-delay="300">写博客、做小工具、发软件、玩点纯前端的小东西。</p>
                 </div>
               </div>
             </div>
@@ -159,53 +164,84 @@
         </div>
       </div>
     </section>
-    <!-- Featured Categories -->
-    <section class="section section-md bg-default">
+    <!-- Platform shortcuts -->
+    <section class="section section-md bg-default pf-shortcuts">
       <div class="container">
-        <h3 class="oh-desktop"><span class="d-inline-block wow slideInDown">精选分类</span></h3>
-        <div class="row row-md row-30">
-          <div class="col-sm-6 col-lg-4">
-            <div class="oh-desktop">
-              <article class="services-terri wow slideInUp">
-                <div class="services-terri-figure"><a href="blog/"><img src="images/project-1-1200x800-original.jpg"
-                      alt="知识库" loading="lazy" /></a></div>
-                <div class="services-terri-caption"><a class="services-terri-icon mdi mdi-book-open-page-variant"
-                    href="blog/"></a>
-                  <h5 class="services-terri-title"><a href="blog/">知识库</a></h5>
-                </div>
-              </article>
-            </div>
+        <h3 class="oh-desktop"><span class="d-inline-block wow slideInDown">站点板块</span></h3>
+        <div class="pf-shortcut-grid">
+          <div class="pf-shortcut">
+            <a class="pf-shortcut-inner" href="blog/">
+              <span class="pf-shortcut-icon mdi mdi-book-open-page-variant"></span>
+              <span class="pf-shortcut-title">博客</span>
+              <span class="pf-shortcut-sub">文章 / 笔记 / 教程</span>
+            </a>
           </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="oh-desktop">
-              <article class="services-terri wow slideInDown">
-                <div class="services-terri-figure"><a href="media.html"><img
-                      src="images/project-4-1200x800-original.jpg" alt="多媒体" loading="lazy" /></a></div>
-                <div class="services-terri-caption"><a class="services-terri-icon mdi mdi-play-circle-outline"
-                    href="media.html"></a>
-                  <h5 class="services-terri-title"><a href="media.html">多媒体</a></h5>
-                </div>
-              </article>
-            </div>
+          <div class="pf-shortcut">
+            <a class="pf-shortcut-inner" href="software/">
+              <span class="pf-shortcut-icon mdi mdi-package-variant-closed"></span>
+              <span class="pf-shortcut-title">软件库</span>
+              <span class="pf-shortcut-sub">下载 / Releases</span>
+            </a>
           </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="oh-desktop">
-              <article class="services-terri wow slideInUp">
-                <div class="services-terri-figure"><a href="lab.html"><img src="images/gallery-1-1200x800-original.jpg"
-                      alt="实验室" loading="lazy" /></a></div>
-                <div class="services-terri-caption"><a class="services-terri-icon mdi mdi-flask-outline"
-                    href="lab.html"></a>
-                  <h5 class="services-terri-title"><a href="lab.html">实验室</a></h5>
-                </div>
-              </article>
-            </div>
+          <div class="pf-shortcut">
+            <a class="pf-shortcut-inner" href="apps/">
+              <span class="pf-shortcut-icon mdi mdi-apps"></span>
+              <span class="pf-shortcut-title">小应用</span>
+              <span class="pf-shortcut-sub">纯前端 · 打开即用</span>
+            </a>
+          </div>
+          <div class="pf-shortcut">
+            <a class="pf-shortcut-inner" href="games/">
+              <span class="pf-shortcut-icon mdi mdi-gamepad-variant"></span>
+              <span class="pf-shortcut-title">小游戏</span>
+              <span class="pf-shortcut-sub">点开即玩</span>
+            </a>
+          </div>
+          <div class="pf-shortcut">
+            <a class="pf-shortcut-inner" href="tools/">
+              <span class="pf-shortcut-icon mdi mdi-tools"></span>
+              <span class="pf-shortcut-title">工具</span>
+              <span class="pf-shortcut-sub">在线小工具</span>
+            </a>
+          </div>
+          <div class="pf-shortcut">
+            <a class="pf-shortcut-inner" href="media.html">
+              <span class="pf-shortcut-icon mdi mdi-play-circle-outline"></span>
+              <span class="pf-shortcut-title">媒体中心</span>
+              <span class="pf-shortcut-sub">视频 / 音乐</span>
+            </a>
+          </div>
+          <div class="pf-shortcut">
+            <a class="pf-shortcut-inner" href="lab.html">
+              <span class="pf-shortcut-icon mdi mdi-flask-outline"></span>
+              <span class="pf-shortcut-title">实验室</span>
+              <span class="pf-shortcut-sub">地图 / 试验田</span>
+            </a>
+          </div>
+          <div class="pf-shortcut">
+            <a class="pf-shortcut-inner" href="about-us.html">
+              <span class="pf-shortcut-icon mdi mdi-account-outline"></span>
+              <span class="pf-shortcut-title">关于</span>
+              <span class="pf-shortcut-sub">认识一下</span>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-
-
+    <!-- Latest posts (fed by CI-generated /blog-latest.json) -->
+    <section class="pf-latest">
+      <div class="container">
+        <div class="pf-latest-head">
+          <div>
+            <h3>最新文章</h3>
+            <p>来自博客，由 Hexo 构建时自动同步。</p>
+          </div>
+          <a class="pf-latest-all" href="blog/">查看全部文章 →</a>
+        </div>
+        <div id="latest-posts"><div class="pf-loading"><span class="pf-spinner"></span>正在加载文章…</div></div>
+      </div>
+    </section>
 
 
     <footer class="section footer-modern context-dark footer-modern-2" style="padding: 15px 0 0 0;">
@@ -216,8 +252,12 @@
               <h5 class="footer-modern-title oh-desktop" style="margin-bottom: 5px;"><span
                   class="d-inline-block wow slideInLeft">快速链接</span></h5>
               <ul class="footer-modern-list d-inline-block d-sm-block wow fadeInUp">
-                <li><a href="blog/">知识库</a></li>
-                <li><a href="media.html">多媒体</a></li>
+                <li><a href="blog/">博客</a></li>
+                <li><a href="software/">软件库</a></li>
+                <li><a href="games/">小游戏</a></li>
+                <li><a href="apps/">小应用</a></li>
+                <li><a href="tools/">工具</a></li>
+                <li><a href="media.html">媒体中心</a></li>
                 <li><a href="lab.html">实验室</a></li>
                 <li><a href="about-us.html">关于我们</a></li>
                 <li><a href="contacts.html">联系我们</a></li>
@@ -263,6 +303,10 @@
   <!-- Javascript-->
   <script src="js/core.min.js"></script>
   <script src="js/script.js"></script>
+  <!-- Local data snapshot: works under file:// where fetch() is CORS-blocked -->
+  <script src="blog-latest.js"></script>
+  <script src="assets/js/registry.js"></script>
+  <script src="assets/js/latest-posts.js"></script>
   <!-- coded by Himic-->
 </body>
 

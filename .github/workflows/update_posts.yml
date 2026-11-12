@@ -1,49 +1,77 @@
-name: Deploy Hexo Blog
+name: Build and Deploy Site
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'posts/**'
       - 'blog-source/**'
+      - 'apps/**'
+      - 'games/**'
+      - 'tools/**'
+      - 'software/**'
+      - 'assets/**'
+      - 'css/**'
+      - 'js/**'
+      - 'images/**'
+      - 'fonts/**'
+      - '*.html'
+      - 'scripts/**'
+      - 'CNAME'
+      - '.nojekyll'
+      - '.gitignore'
       - '.github/workflows/update_posts.yml'
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: site-deploy
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: blog-source/package-lock.json
 
-      - name: Install Dependencies
+      - name: Install dependencies
         working-directory: blog-source
-        run: npm install
+        run: npm ci --no-audit --no-fund
 
-      - name: Sync Posts
+      # build-site.js does everything: sync posts/, hexo clean+generate,
+      # assemble dist/ (portal + /blog/ + manifests), write blog-latest.json.
+      # Same script is used locally: node scripts/build-site.js
+      - name: Build full site
+        run: node scripts/build-site.js
+
+      - name: Verify build output
         run: |
-          mkdir -p blog-source/source/_posts
-          # Clean existing posts in source to ensure deletions are synced
-          rm -rf blog-source/source/_posts/*
-          # Copy all files from posts/ to blog-source/source/_posts/
-          cp -r posts/* blog-source/source/_posts/
+          node scripts/verify-build.js
+          node scripts/scan-links.js
+          node scripts/check-file-protocol.js
 
-      - name: Generate Static Files
-        working-directory: blog-source
-        run: |
-          npx hexo clean
-          npx hexo generate
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      # Publishes the assembled static site to gh-pages.
+      # IMPORTANT: GitHub Pages must be configured with
+      #   Settings -> Pages -> Build and deployment -> Source: GitHub Actions
+      # (or Source: Deploy from a branch -> gh-pages / root).
+      # See DEPLOYMENT.md for the one-time setup and the CNAME caveat.
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./blog-source/public
+          publish_dir: ./dist
           publish_branch: gh-pages
-          commit_message: ${{ github.event.head_commit.message }}
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: ${{ github.event.head_commit.message || 'Deploy site' }}

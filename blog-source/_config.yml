@@ -24,7 +24,7 @@ pretty_urls:
 
 # 目录设置
 source_dir: source               # 资源文件夹，这个文件夹用来存放您的内容
-public_dir: ../blog              # 公共文件夹，这个文件夹用于存放生成的静态文件
+public_dir: public/blog          # 公共文件夹，这个文件夹用于存放生成的静态文件（部署到站点 /blog/ 路径）
 tag_dir: tags                    # 标签文件夹
 archive_dir: archives            # 归档文件夹
 category_dir: categories         # 分类文件夹
