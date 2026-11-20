@@ -98,4 +98,35 @@ function renderCards(items, base) {
     .join('');
 }
 
-module.exports = { esc, isExternal, localUrl, buildCard, renderCards, PLACEHOLDER_SVG };
+/**
+ * Render cards grouped by category, mirroring registry.js.
+ * Returns '' when the manifest defines no categories (flat grid is used).
+ */
+function renderGrouped(manifest, base) {
+  const items = (manifest && manifest.items) || [];
+  const categories = (manifest && manifest.categories) || [];
+  if (!categories.length || !items.length) return '';
+
+  const byName = {};
+  items.forEach((it) => {
+    const k = it.category || categories[0].name;
+    (byName[k] = byName[k] || []).push(it);
+  });
+
+  return categories
+    .filter((c) => byName[c.name] && byName[c.name].length)
+    .map((c) => {
+      const list = byName[c.name];
+      return (
+        '<section class="pf-cat">' +
+          '<h3 class="pf-cat-title"><span class="mdi ' + esc(c.icon || 'mdi-folder') + '"></span>' +
+            esc(c.name) + '<em>' + list.length + '</em></h3>' +
+          (c.desc ? '<p class="pf-cat-desc">' + esc(c.desc) + '</p>' : '') +
+          '<div class="pf-grid">' + renderCards(list, base) + '</div>' +
+        '</section>'
+      );
+    })
+    .join('');
+}
+
+module.exports = { esc, isExternal, localUrl, buildCard, renderCards, renderGrouped, PLACEHOLDER_SVG };

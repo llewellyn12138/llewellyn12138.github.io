@@ -5,13 +5,84 @@
 
 :root {
   --pf-accent: #f8931f;
+  --pf-accent-soft: rgba(248, 147, 31, .12);
+  --pf-violet: #7c5cff;
+  --pf-teal: #22c7c7;
   --pf-ink: #151515;
+  --pf-ink-soft: #2b2b2b;
   --pf-muted: #7b7b7b;
   --pf-border: #e9e9e9;
   --pf-surface: #ffffff;
-  --pf-radius: 14px;
+  --pf-radius: 16px;
+  --pf-radius-lg: 22px;
   --pf-shadow: 0 12px 34px rgba(21, 21, 21, .08);
-  --pf-shadow-hover: 0 20px 48px rgba(21, 21, 21, .16);
+  --pf-shadow-hover: 0 22px 52px rgba(21, 21, 21, .17);
+  /* The RD-Landkit template sets headings in Asfalto; keep the whole site on
+     that family so the banner title and every section heading match. */
+  --pf-font-display: "Asfalto", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --pf-font-body: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+/* Typography unified on the banner family -------------------------------- */
+.pf-shortcuts-head h3,
+.pf-latest-head h3,
+.pf-section-head h2,
+.pf-hero h1,
+.pf-card-title,
+.pf-post-title,
+.pf-shortcut-title {
+  font-family: var(--pf-font-display);
+  letter-spacing: .045em;
+}
+.pf-card-desc,
+.pf-post-desc,
+.pf-shortcut-sub,
+.pf-hero p,
+.pf-note,
+.pf-tag,
+.pf-card-foot,
+.pf-post-meta,
+.pf-pill {
+  font-family: var(--pf-font-body);
+}
+
+/* Banner kicker: small uppercase eyebrow above the H1 -------------------- */
+.pf-hero-kicker {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-family: var(--pf-font-display);
+  font-size: 12px;
+  letter-spacing: .42em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .8);
+  padding-left: .42em;
+}
+.pf-hero-kicker::after {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 2px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, var(--pf-accent), rgba(248, 147, 31, 0));
+}
+
+/* Sharper banner headline with a soft glow -------------------------------- */
+.swiper-slider-2 .swiper-title,
+.swiper-slider-3 .swiper-title {
+  font-family: var(--pf-font-display);
+  font-size: clamp(38px, 5.2vw, 68px);
+  line-height: 1.08;
+  letter-spacing: .03em;
+  text-shadow: 0 4px 40px rgba(0, 0, 0, .45);
+}
+.swiper-slider-2 .swiper-text,
+.swiper-slider-3 .swiper-text {
+  font-family: var(--pf-font-body);
+  font-size: 17px;
+  line-height: 1.75;
+  letter-spacing: .02em;
+  color: rgba(255, 255, 255, .82);
+  max-width: 34em;
 }
 
 /* Section hero / breadcrumb ------------------------------------------------ */
@@ -133,6 +204,23 @@
   box-shadow: var(--pf-shadow);
   transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
 }
+/* Gradient hairline that lights up on hover */
+.pf-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--pf-accent), var(--pf-violet) 55%, var(--pf-teal));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity .28s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+.pf-card:hover::before { opacity: .9; }
 .pf-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--pf-shadow-hover);
@@ -249,6 +337,37 @@
 .pf-card.is-planned:hover { transform: none; box-shadow: none; border-color: var(--pf-border); }
 .pf-card.is-planned .pf-card-media { opacity: .55; }
 
+/* Category groups (used by the tools page) -------------------------------- */
+.pf-grouped { display: block; }
+.pf-cat { margin-bottom: 46px; }
+.pf-cat:last-child { margin-bottom: 0; }
+.pf-cat-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--pf-font-display);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--pf-ink);
+  margin: 0 0 6px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--pf-border);
+}
+.pf-cat-title .mdi { font-size: 21px; color: var(--pf-accent); }
+.pf-cat-title em {
+  font-style: normal;
+  font-family: var(--pf-font-body);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--pf-accent);
+  border-radius: 999px;
+  padding: 2px 9px;
+  margin-left: auto;
+}
+.pf-cat-desc { margin: 10px 0 20px; font-size: 13px; color: var(--pf-muted); }
+
 .pf-loading, .pf-empty, .pf-error {
   width: 100%;
   padding: 56px 20px;
@@ -350,11 +469,11 @@
 .pf-shortcuts-head h3::after {
   content: "";
   display: block;
-  width: 40px;
+  width: 52px;
   height: 3px;
-  margin: 12px auto 0;
+  margin: 14px auto 0;
   border-radius: 2px;
-  background: var(--pf-accent);
+  background: linear-gradient(90deg, var(--pf-accent), var(--pf-violet));
 }
 .pf-shortcuts-head p { margin: 0; color: var(--pf-muted); font-size: 14px; }
 .pf-shortcut-grid { display: flex; flex-wrap: wrap; margin: 0 -15px; }
@@ -365,34 +484,86 @@
 }
 @media (min-width: 768px) { .pf-shortcut { width: 25%; } }
 .pf-shortcut-inner {
+  position: relative;
   display: block;
   height: 100%;
-  padding: 28px 20px 26px;
+  padding: 32px 20px 28px;
   text-align: center;
   background: #fff;
   border: 1px solid var(--pf-border);
-  border-radius: var(--pf-radius);
+  border-radius: var(--pf-radius-lg);
   box-shadow: var(--pf-shadow);
   text-decoration: none;
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  overflow: hidden;
+  transition: transform .3s cubic-bezier(.2, .8, .2, 1), box-shadow .3s ease, border-color .3s ease;
+}
+/* Colored wash sweeping in from the top on hover */
+.pf-shortcut-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--pf-accent), var(--pf-violet), var(--pf-teal));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .38s ease;
+}
+.pf-shortcut-inner::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -40%;
+  width: 220px;
+  height: 220px;
+  transform: translateX(-50%) scale(.6);
+  background: radial-gradient(circle, rgba(248, 147, 31, .16), transparent 66%);
+  opacity: 0;
+  transition: opacity .35s ease, transform .45s ease;
+  pointer-events: none;
 }
 .pf-shortcut-inner:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   box-shadow: var(--pf-shadow-hover);
-  border-color: rgba(248, 147, 31, .45);
+  border-color: rgba(248, 147, 31, .35);
 }
+.pf-shortcut-inner:hover::before { transform: scaleX(1); }
+.pf-shortcut-inner:hover::after { opacity: 1; transform: translateX(-50%) scale(1); }
 .pf-shortcut-icon {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 62px;
-  height: 62px;
-  border-radius: 16px;
-  font-size: 30px;
+  width: 66px;
+  height: 66px;
+  border-radius: 18px;
+  font-size: 31px;
   line-height: 1;
-  color: var(--pf-accent);
-  background: rgba(248, 147, 31, .12);
-  margin-bottom: 14px;
+  color: #fff;
+  background: linear-gradient(135deg, #ffb154, var(--pf-accent) 55%, #e0741a);
+  box-shadow: 0 10px 24px rgba(248, 147, 31, .32);
+  margin-bottom: 16px;
+  transition: transform .35s ease, box-shadow .35s ease;
 }
-.pf-shortcut-title { display: block; font-size: 16.5px; font-weight: 700; color: var(--pf-ink); }
-.pf-shortcut-sub { display: block; font-size: 12px; color: var(--pf-muted); margin-top: 5px; }
+.pf-shortcut-inner:hover .pf-shortcut-icon {
+  transform: translateY(-2px) scale(1.06) rotate(-3deg);
+  box-shadow: 0 14px 30px rgba(248, 147, 31, .42);
+}
+.pf-shortcut-title {
+  display: block;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--pf-ink);
+  transition: color .25s ease;
+}
+.pf-shortcut-inner:hover .pf-shortcut-title { color: var(--pf-accent); }
+.pf-shortcut-sub { display: block; font-size: 12.5px; color: var(--pf-muted); margin-top: 6px; }
+
+/* Staggered entrance for the four shortcut cards ------------------------- */
+.pf-shortcut:nth-child(1) .pf-shortcut-inner { animation: pfRise .55s .00s both cubic-bezier(.2,.8,.2,1); }
+.pf-shortcut:nth-child(2) .pf-shortcut-inner { animation: pfRise .55s .08s both cubic-bezier(.2,.8,.2,1); }
+.pf-shortcut:nth-child(3) .pf-shortcut-inner { animation: pfRise .55s .16s both cubic-bezier(.2,.8,.2,1); }
+.pf-shortcut:nth-child(4) .pf-shortcut-inner { animation: pfRise .55s .24s both cubic-bezier(.2,.8,.2,1); }
+@keyframes pfRise {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

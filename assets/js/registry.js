@@ -117,8 +117,48 @@
       var online = items.filter(function (i) { return i.status !== 'planned'; }).length;
       counter.innerHTML = '共 <strong>' + items.length + '</strong> 项 · 已上线 <strong>' + online + '</strong>';
     }
-    container.className = 'pf-grid';
-    container.innerHTML = items.map(function (it, i) { return buildCard(it, i, base); }).join('');
+
+    // Group into category sections when the manifest defines categories.
+    var groups = groupItems(items, data.categories);
+    container.className = groups ? 'pf-grouped' : 'pf-grid';
+    if (!groups) {
+      container.innerHTML = items.map(function (it, i) { return buildCard(it, i, base); }).join('');
+      return;
+    }
+    container.innerHTML = groups.map(function (g) {
+      return (
+        '<section class="pf-cat">' +
+          '<h3 class="pf-cat-title"><span class="mdi ' + esc(g.icon) + '"></span>' +
+            esc(g.name) + '<em>' + g.items.length + '</em></h3>' +
+          (g.desc ? '<p class="pf-cat-desc">' + esc(g.desc) + '</p>' : '') +
+          '<div class="pf-grid">' +
+            g.items.map(function (it, i) { return buildCard(it, i, base); }).join('') +
+          '</div>' +
+        '</section>'
+      );
+    }).join('');
+  }
+
+  // Split items into category groups. Returns null when the manifest has no
+  // categories (single flat grid is nicer for a handful of entries).
+  function groupItems(items, categories) {
+    if (!categories || !categories.length) return null;
+    var byName = {};
+    items.forEach(function (it) {
+      var k = it.category || (categories[0] && categories[0].name) || '其他';
+      (byName[k] = byName[k] || []).push(it);
+    });
+    var order = categories.map(function (c) { return c.name; });
+    return order.filter(function (n) { return byName[n] && byName[n].length; })
+      .map(function (n) {
+        var meta = categories.filter(function (c) { return c.name === n; })[0] || {};
+        return {
+          name: n,
+          icon: meta.icon || 'mdi-folder',
+          desc: meta.desc || '',
+          items: byName[n],
+        };
+      });
   }
 
   // True when the build already pre-rendered cards into the HTML.

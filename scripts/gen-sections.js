@@ -10,7 +10,7 @@
  */
 const fs = require('fs');
 const path = require('path');
-const { renderCards, esc } = require('./card-template');
+const { renderCards, renderGrouped, esc } = require('./card-template');
 
 const root = path.resolve(__dirname, '..');
 const P = '../';                       // section pages live one level deep
@@ -31,8 +31,10 @@ function loadStatic(dir) {
   }
   const items = Array.isArray(data.items) ? data.items : [];
   const online = items.filter((i) => i.status !== 'planned').length;
+  const grouped = renderGrouped(data, P);
   return {
-    cards: items.length ? renderCards(items, P) : '',
+    cards: grouped || (items.length ? renderCards(items, P) : ''),
+    grouped: !!grouped,
     countLabel:
       '共 <strong>' + items.length + '</strong> 项 · 已上线 <strong>' + online + '</strong>',
     title: data.title || '',
@@ -189,7 +191,7 @@ ${navHtml(s.dir)}
           </div>
           <a class="pf-latest-all" href="${P}index.html">← 返回首页</a>
         </div>
-        <div class="pf-grid" id="registry-grid" data-registry="${P}${s.dir}/manifest.json" data-registry-key="${s.dir}" data-registry-base="${P}" data-registry-head="#registry-title">${staticCards}</div>
+        <div class="${st.grouped ? 'pf-grouped' : 'pf-grid'}" id="registry-grid" data-registry="${P}${s.dir}/manifest.json" data-registry-key="${s.dir}" data-registry-base="${P}" data-registry-head="#registry-title">${staticCards}</div>
         <div class="pf-note"><strong>维护说明：</strong>${s.note}</div>
       </div>
     </section>

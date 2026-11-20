@@ -106,7 +106,16 @@ function runFor(dir) {
     ok(r.dir + ' cards rendered', cards === manifest.items.length,
       cards + '/' + manifest.items.length);
     ok(r.dir + ' no error state', !/pf-error/.test(html));
-    ok(r.dir + ' container class set', r.container.className === 'pf-grid', r.container.className);
+    // Manifests with a `categories` array render as grouped sections
+    // (pf-grouped); flat ones stay a single pf-grid.
+    const expectGrouped = Array.isArray(manifest.categories) && manifest.categories.length > 0;
+    const expectClass = expectGrouped ? 'pf-grouped' : 'pf-grid';
+    ok(r.dir + ' container class set', r.container.className === expectClass, r.container.className);
+    if (expectGrouped) {
+      const groups = (html.match(/pf-cat-title/g) || []).length;
+      ok(r.dir + ' category groups rendered', groups === manifest.categories.length,
+        groups + '/' + manifest.categories.length);
+    }
     ok(r.dir + ' counter filled', /共 <strong>/.test(r.counter.innerHTML), r.counter.innerHTML);
   }
 
