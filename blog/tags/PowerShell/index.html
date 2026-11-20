@@ -82,10 +82,7 @@
 
       const theme = saveToLocal.get('theme')
     
-          const hour = new Date().getHours()
-          const isNight = hour <= 8 || hour >= 24
-          if (theme === undefined) isNight ? activateDarkMode() : activateLightMode()
-          else theme === 'light' ? activateLightMode() : activateDarkMode()
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
         
       
       const asideStatus = saveToLocal.get('aside-status')
@@ -145,7 +142,65 @@
   isHighlightShrink: true,
   isToc: false,
   pageType: 'tag'
-}</script><link rel="stylesheet" href="/blog/css/scrollbar.css"><link rel="stylesheet" href="/blog/css/gradient_footer.css"><link rel="stylesheet" href="/blog/css/waves.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="bg-animation" id="web_bg" style="background-image: url(https://imgbed.llewellyn.top/file/1772176281304_wallhaven-9o6oy1.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imgbed.llewellyn.top/file/1736148034547_menu-6-370x278.gif" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(https://imgbed.llewellyn.top/file/1772164006437_wallhaven-6l5wpl.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/blog/"><img class="site-icon" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imgbed.llewellyn.top/file/1772161924541_1647477524946.gif" alt="Logo"><span class="site-name">Llewellyn's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">PowerShell</h1></div></header><main class="layout hide-aside" id="content-inner"><div id="tag"><div class="article-sort-title">标签 - PowerShell</div><div class="article-sort"><div class="article-sort-item year">2026</div><div class="article-sort-item"><a class="article-sort-item-img" href="/blog/2026/03/05/coding/cmd%E5%91%BD%E4%BB%A4/" title="Windows CMD &amp; PowerShell 常用命令大全"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/blog/images/project-4-1200x800-original.jpg" alt="Windows CMD &amp; PowerShell 常用命令大全" onerror="this.onerror=null;this.src='/blog/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2026-03-05T10:00:00.000Z" title="发表于 2026-03-05 10:00:00">2026-03-05</time></div><a class="article-sort-item-title" href="/blog/2026/03/05/coding/cmd%E5%91%BD%E4%BB%A4/" title="Windows CMD &amp; PowerShell 常用命令大全">Windows CMD &amp; PowerShell 常用命令大全</a></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Llewellyn</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js?v=5.5.4"></script><script src="/blog/js/main.js?v=5.5.4"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+}</script><link rel="stylesheet" href="/blog/css/scrollbar.css"><link rel="stylesheet" href="/blog/css/gradient_footer.css"><link rel="stylesheet" href="/blog/css/waves.css"><!-- hexo injector head_end start --><style>
+/* Dark-mode code blocks: Butterfly generates a light highlight theme, so we
+   re-tint the container and token colours when data-theme=dark is active. */
+html[data-theme='dark'] figure.highlight,
+html[data-theme='dark'] .highlight {
+  background: #161a21 !important;
+  border: 1px solid #232936 !important;
+}
+html[data-theme='dark'] figure.highlight table,
+html[data-theme='dark'] .highlight table {
+  background: transparent !important;
+}
+html[data-theme='dark'] figure.highlight .gutter,
+html[data-theme='dark'] .highlight .gutter {
+  background: #12161c !important;
+  border-right: 1px solid #232936 !important;
+}
+html[data-theme='dark'] figure.highlight .gutter pre,
+html[data-theme='dark'] figure.highlight .line,
+html[data-theme='dark'] .highlight .line {
+  color: #c8d0dc !important;
+  background: transparent !important;
+}
+html[data-theme='dark'] figure.highlight .code pre,
+html[data-theme='dark'] .highlight .code pre { background: transparent !important; }
+/* Token palette (GitHub-dark-ish, tuned to the site's amber accent) */
+html[data-theme='dark'] .highlight .comment,
+html[data-theme='dark'] .highlight .quote { color: #7d8797 !important; }
+html[data-theme='dark'] .highlight .keyword,
+html[data-theme='dark'] .highlight .selector-tag,
+html[data-theme='dark'] .highlight .doctag { color: #ff9d5c !important; }
+html[data-theme='dark'] .highlight .string,
+html[data-theme='dark'] .highlight .attr-value { color: #9ddc8a !important; }
+html[data-theme='dark'] .highlight .number,
+html[data-theme='dark'] .highlight .literal { color: #86c8f0 !important; }
+html[data-theme='dark'] .highlight .title,
+html[data-theme='dark'] .highlight .function .title { color: #f0c674 !important; }
+html[data-theme='dark'] .highlight .attr,
+html[data-theme='dark'] .highlight .variable,
+html[data-theme='dark'] .highlight .template-variable { color: #e0a0f0 !important; }
+html[data-theme='dark'] .highlight .built_in,
+html[data-theme='dark'] .highlight .type { color: #6fd6d6 !important; }
+html[data-theme='dark'] .highlight .meta { color: #9aa6b8 !important; }
+
+/* Inline code */
+html[data-theme='dark'] code:not(.highlight *) {
+  background: rgba(255, 255, 255, .09) !important;
+  color: #f0b47a !important;
+}
+/* Blockquote / tables / hr inside posts */
+html[data-theme='dark'] blockquote {
+  background: rgba(248, 147, 31, .08) !important;
+  border-left-color: var(--pf-accent) !important;
+  color: #b9c3d1 !important;
+}
+html[data-theme='dark'] #article-container table th { background: #1b2029 !important; }
+html[data-theme='dark'] #article-container table td,
+html[data-theme='dark'] #article-container table th { border-color: #262d3a !important; }
+</style><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div class="bg-animation" id="web_bg" style="background-image: url(https://imgbed.llewellyn.top/file/1772176281304_wallhaven-9o6oy1.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imgbed.llewellyn.top/file/1736148034547_menu-6-370x278.gif" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(https://imgbed.llewellyn.top/file/1772164006437_wallhaven-6l5wpl.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/blog/"><img class="site-icon" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imgbed.llewellyn.top/file/1772161924541_1647477524946.gif" alt="Logo"><span class="site-name">Llewellyn's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">PowerShell</h1></div></header><main class="layout hide-aside" id="content-inner"><div id="tag"><div class="article-sort-title">标签 - PowerShell</div><div class="article-sort"><div class="article-sort-item year">2026</div><div class="article-sort-item"><a class="article-sort-item-img" href="/blog/2026/03/05/coding/cmd%E5%91%BD%E4%BB%A4/" title="Windows CMD &amp; PowerShell 常用命令大全"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/blog/images/project-4-1200x800-original.jpg" alt="Windows CMD &amp; PowerShell 常用命令大全" onerror="this.onerror=null;this.src='/blog/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2026-03-05T10:00:00.000Z" title="发表于 2026-03-05 10:00:00">2026-03-05</time></div><a class="article-sort-item-title" href="/blog/2026/03/05/coding/cmd%E5%91%BD%E4%BB%A4/" title="Windows CMD &amp; PowerShell 常用命令大全">Windows CMD &amp; PowerShell 常用命令大全</a></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Llewellyn</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js?v=5.5.4"></script><script src="/blog/js/main.js?v=5.5.4"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
   const parseViewBox = viewBox => {
     if (!viewBox) return null
     const parts = viewBox.trim().split(/[\s,]+/).map(n => Number(n))
@@ -212,7 +267,43 @@
         html, body { width: 100%; height: 100%; margin: 0; display: flex; align-items: center; justify-content: center; background: ${bg}; }
         svg { max-width: 100%; max-height: 100%; height: auto; width: auto; }
       </style>
-      </head><body>${svgSource}</body></html>`
+      </head><body>${svgSource}<!-- hexo injector body_end start --><script>
+(function () {
+  'use strict';
+  var PF = 'pf-theme';
+  var BF = 'theme';
+  var html = document.documentElement;
+
+  function read(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function write(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+
+  // 1. Portal preference wins on first paint.
+  var pf = read(PF);
+  if (pf === 'dark' || pf === 'light') {
+    if (html.getAttribute('data-theme') !== pf) {
+      html.setAttribute('data-theme', pf);
+      write(BF, pf);
+      if (pf === 'dark') html.classList.add('dark');
+      else html.classList.remove('dark');
+    }
+  } else if (pf === 'auto' || !pf) {
+    // No explicit portal choice: let Butterfly's own value stand, but keep
+    // the keys in sync so the next portal visit matches.
+    var bf = read(BF);
+    if (bf === 'dark' || bf === 'light') write(PF, bf);
+  }
+
+  // 2. Mirror Butterfly's own toggle back into the portal key.
+  function mirror() {
+    var v = read(BF);
+    if (v === 'dark' || v === 'light') write(PF, v);
+  }
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    if (t && (t.closest('#darkmode') || t.closest('.darkmode'))) setTimeout(mirror, 120);
+  }, true);
+})();
+</script><!-- hexo injector body_end end --></body></html>`
     const blob = new Blob([htmlSource], { type: 'text/html;charset=utf-8' })
     const url = URL.createObjectURL(blob)
     window.open(url, '_blank', 'noopener')

@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://llewellyn12138.github.io/blog/images/project-2-1200x800-original.jpg">
 <meta property="article:published_time" content="2023-01-02T00:00:00.000Z">
-<meta property="article:modified_time" content="2026-11-20T09:18:30.982Z">
+<meta property="article:modified_time" content="2026-11-20T09:50:32.606Z">
 <meta property="article:author" content="Llewellyn">
 <meta property="article:tag" content="coding, tech, notes">
 <meta name="twitter:card" content="summary">
@@ -18,7 +18,7 @@
   "url": "https://llewellyn12138.github.io/blog/2023/01/02/ffmpeg/ffmpeg-guide/",
   "image": "https://llewellyn12138.github.io/blog/images/project-2-1200x800-original.jpg",
   "datePublished": "2023-01-02T00:00:00.000Z",
-  "dateModified": "2026-11-20T09:18:30.982Z",
+  "dateModified": "2026-11-20T09:50:32.606Z",
   "author": [
     {
       "@type": "Person",
@@ -99,10 +99,7 @@
 
       const theme = saveToLocal.get('theme')
     
-          const hour = new Date().getHours()
-          const isNight = hour <= 8 || hour >= 24
-          if (theme === undefined) isNight ? activateDarkMode() : activateLightMode()
-          else theme === 'light' ? activateLightMode() : activateDarkMode()
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
         
       
       const asideStatus = saveToLocal.get('aside-status')
@@ -162,7 +159,65 @@
   isHighlightShrink: true,
   isToc: true,
   pageType: 'post'
-}</script><link rel="stylesheet" href="/blog/css/scrollbar.css"><link rel="stylesheet" href="/blog/css/gradient_footer.css"><link rel="stylesheet" href="/blog/css/waves.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="bg-animation" id="web_bg" style="background-image: url(https://imgbed.llewellyn.top/file/1772176281304_wallhaven-9o6oy1.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imgbed.llewellyn.top/file/1736148034547_menu-6-370x278.gif" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/blog/images/project-2-1200x800-original.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/blog/"><img class="site-icon" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imgbed.llewellyn.top/file/1772161924541_1647477524946.gif" alt="Logo"><span class="site-name">Llewellyn's Blog</span></a><a class="nav-page-title" href="/blog/"><span class="site-name">FFmpeg 基础命令指南</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">FFmpeg 基础命令指南</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-02T00:00:00.000Z" title="发表于 2023-01-02 00:00:00">2023-01-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-11-20T09:18:30.982Z" title="更新于 2026-11-20 09:18:30">2026-11-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/ffmpeg/">ffmpeg</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">125</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;由于距离上次更新已有&quot;,&quot;messageNext&quot;:&quot;天，文章内容可能已过时。&quot;,&quot;postUpdate&quot;:&quot;2026-11-20 09:18:30&quot;}" hidden></div><h1 id="FFmpeg-基础命令指南"><a href="#FFmpeg-基础命令指南" class="headerlink" title="FFmpeg 基础命令指南"></a>FFmpeg 基础命令指南</h1><p>FFmpeg 是一款强大的多媒体处理工具。</p>
+}</script><link rel="stylesheet" href="/blog/css/scrollbar.css"><link rel="stylesheet" href="/blog/css/gradient_footer.css"><link rel="stylesheet" href="/blog/css/waves.css"><!-- hexo injector head_end start --><style>
+/* Dark-mode code blocks: Butterfly generates a light highlight theme, so we
+   re-tint the container and token colours when data-theme=dark is active. */
+html[data-theme='dark'] figure.highlight,
+html[data-theme='dark'] .highlight {
+  background: #161a21 !important;
+  border: 1px solid #232936 !important;
+}
+html[data-theme='dark'] figure.highlight table,
+html[data-theme='dark'] .highlight table {
+  background: transparent !important;
+}
+html[data-theme='dark'] figure.highlight .gutter,
+html[data-theme='dark'] .highlight .gutter {
+  background: #12161c !important;
+  border-right: 1px solid #232936 !important;
+}
+html[data-theme='dark'] figure.highlight .gutter pre,
+html[data-theme='dark'] figure.highlight .line,
+html[data-theme='dark'] .highlight .line {
+  color: #c8d0dc !important;
+  background: transparent !important;
+}
+html[data-theme='dark'] figure.highlight .code pre,
+html[data-theme='dark'] .highlight .code pre { background: transparent !important; }
+/* Token palette (GitHub-dark-ish, tuned to the site's amber accent) */
+html[data-theme='dark'] .highlight .comment,
+html[data-theme='dark'] .highlight .quote { color: #7d8797 !important; }
+html[data-theme='dark'] .highlight .keyword,
+html[data-theme='dark'] .highlight .selector-tag,
+html[data-theme='dark'] .highlight .doctag { color: #ff9d5c !important; }
+html[data-theme='dark'] .highlight .string,
+html[data-theme='dark'] .highlight .attr-value { color: #9ddc8a !important; }
+html[data-theme='dark'] .highlight .number,
+html[data-theme='dark'] .highlight .literal { color: #86c8f0 !important; }
+html[data-theme='dark'] .highlight .title,
+html[data-theme='dark'] .highlight .function .title { color: #f0c674 !important; }
+html[data-theme='dark'] .highlight .attr,
+html[data-theme='dark'] .highlight .variable,
+html[data-theme='dark'] .highlight .template-variable { color: #e0a0f0 !important; }
+html[data-theme='dark'] .highlight .built_in,
+html[data-theme='dark'] .highlight .type { color: #6fd6d6 !important; }
+html[data-theme='dark'] .highlight .meta { color: #9aa6b8 !important; }
+
+/* Inline code */
+html[data-theme='dark'] code:not(.highlight *) {
+  background: rgba(255, 255, 255, .09) !important;
+  color: #f0b47a !important;
+}
+/* Blockquote / tables / hr inside posts */
+html[data-theme='dark'] blockquote {
+  background: rgba(248, 147, 31, .08) !important;
+  border-left-color: var(--pf-accent) !important;
+  color: #b9c3d1 !important;
+}
+html[data-theme='dark'] #article-container table th { background: #1b2029 !important; }
+html[data-theme='dark'] #article-container table td,
+html[data-theme='dark'] #article-container table th { border-color: #262d3a !important; }
+</style><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div class="bg-animation" id="web_bg" style="background-image: url(https://imgbed.llewellyn.top/file/1772176281304_wallhaven-9o6oy1.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imgbed.llewellyn.top/file/1736148034547_menu-6-370x278.gif" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/blog/images/project-2-1200x800-original.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/blog/"><img class="site-icon" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imgbed.llewellyn.top/file/1772161924541_1647477524946.gif" alt="Logo"><span class="site-name">Llewellyn's Blog</span></a><a class="nav-page-title" href="/blog/"><span class="site-name">FFmpeg 基础命令指南</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">FFmpeg 基础命令指南</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-02T00:00:00.000Z" title="发表于 2023-01-02 00:00:00">2023-01-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-11-20T09:50:32.606Z" title="更新于 2026-11-20 09:50:32">2026-11-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/ffmpeg/">ffmpeg</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">125</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;由于距离上次更新已有&quot;,&quot;messageNext&quot;:&quot;天，文章内容可能已过时。&quot;,&quot;postUpdate&quot;:&quot;2026-11-20 09:50:32&quot;}" hidden></div><h1 id="FFmpeg-基础命令指南"><a href="#FFmpeg-基础命令指南" class="headerlink" title="FFmpeg 基础命令指南"></a>FFmpeg 基础命令指南</h1><p>FFmpeg 是一款强大的多媒体处理工具。</p>
 <h2 id="1-视频转码"><a href="#1-视频转码" class="headerlink" title="1. 视频转码"></a>1. 视频转码</h2><p>将 MP4 转换为 AVI：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 output.avi</span><br></pre></td></tr></table></figure>
 
@@ -241,7 +296,43 @@
         html, body { width: 100%; height: 100%; margin: 0; display: flex; align-items: center; justify-content: center; background: ${bg}; }
         svg { max-width: 100%; max-height: 100%; height: auto; width: auto; }
       </style>
-      </head><body>${svgSource}</body></html>`
+      </head><body>${svgSource}<!-- hexo injector body_end start --><script>
+(function () {
+  'use strict';
+  var PF = 'pf-theme';
+  var BF = 'theme';
+  var html = document.documentElement;
+
+  function read(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function write(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+
+  // 1. Portal preference wins on first paint.
+  var pf = read(PF);
+  if (pf === 'dark' || pf === 'light') {
+    if (html.getAttribute('data-theme') !== pf) {
+      html.setAttribute('data-theme', pf);
+      write(BF, pf);
+      if (pf === 'dark') html.classList.add('dark');
+      else html.classList.remove('dark');
+    }
+  } else if (pf === 'auto' || !pf) {
+    // No explicit portal choice: let Butterfly's own value stand, but keep
+    // the keys in sync so the next portal visit matches.
+    var bf = read(BF);
+    if (bf === 'dark' || bf === 'light') write(PF, bf);
+  }
+
+  // 2. Mirror Butterfly's own toggle back into the portal key.
+  function mirror() {
+    var v = read(BF);
+    if (v === 'dark' || v === 'light') write(PF, v);
+  }
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    if (t && (t.closest('#darkmode') || t.closest('.darkmode'))) setTimeout(mirror, 120);
+  }, true);
+})();
+</script><!-- hexo injector body_end end --></body></html>`
     const blob = new Blob([htmlSource], { type: 'text/html;charset=utf-8' })
     const url = URL.createObjectURL(blob)
     window.open(url, '_blank', 'noopener')
