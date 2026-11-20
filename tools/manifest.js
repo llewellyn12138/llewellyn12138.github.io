@@ -3,20 +3,190 @@
 window.PF_MANIFEST = window.PF_MANIFEST || {};
 window.PF_MANIFEST["tools"] = {
   "title": "工具",
-  "description": "常用在线小工具，全部本地运算",
+  "description": "顺手就用的网页工具，全部在外部站点运行",
+  "categories": [
+    {
+      "name": "转换",
+      "icon": "mdi-swap-horizontal",
+      "desc": "编码、进制、时间格式互转"
+    },
+    {
+      "name": "开发",
+      "icon": "mdi-code-tags",
+      "desc": "开发调试辅助"
+    },
+    {
+      "name": "媒体",
+      "icon": "mdi-filmstrip",
+      "desc": "音视频处理与封装"
+    },
+    {
+      "name": "检测",
+      "icon": "mdi-monitor",
+      "desc": "硬件与网络环境检测"
+    },
+    {
+      "name": "查询",
+      "icon": "mdi-magnify",
+      "desc": "信息速查"
+    }
+  ],
   "items": [
     {
-      "name": "工具板块（预留）",
-      "description": "技术栈待定，位置已留好。计划放置编码转换、格式化、计算器等纯前端小工具。",
-      "link": "#",
-      "image": "/images/gallery-2-1200x800-original.jpg",
-      "icon": "mdi-settings",
+      "name": "时间戳转换",
+      "description": "Unix 时间戳与日期互相转换，调试接口时最常用。",
+      "link": "https://shijianchuo.net/",
+      "icon": "mdi-clock",
       "tags": [
-        "规划中",
-        "纯前端"
+        "时间",
+        "开发"
       ],
-      "status": "planned",
-      "external": false
+      "category": "转换",
+      "status": "online",
+      "external": true
+    },
+    {
+      "name": "ToolHelper 在线工具",
+      "description": "编码、加密、进制、文本处理等一大批小工具合集。",
+      "link": "https://www.toolhelper.cn/",
+      "icon": "mdi-settings-box",
+      "tags": [
+        "编码",
+        "加密"
+      ],
+      "category": "转换",
+      "status": "online",
+      "external": true
+    },
+    {
+      "name": "Regex Vis",
+      "description": "把正则表达式可视化成流程图，读复杂规则不再靠猜。",
+      "link": "https://regex-vis.com/",
+      "icon": "mdi-code-braces",
+      "tags": [
+        "正则",
+        "可视化"
+      ],
+      "category": "开发",
+      "status": "online",
+      "external": true
+    },
+    {
+      "name": "LRC 歌词编辑器",
+      "description": "在浏览器里给音频打时间轴，导出 LRC 字幕文件。",
+      "link": "https://judes.me/lrc_editor/",
+      "icon": "mdi-music-note",
+      "tags": [
+        "歌词",
+        "字幕"
+      ],
+      "category": "媒体",
+      "status": "online",
+      "external": true
+    },
+    {
+      "name": "FFmpeg 命令参考",
+      "description": "中文 FFmpeg 手册，转码、剪辑、滤镜都有现成例子。",
+      "link": "https://crifan.github.io/media_process_ffmpeg/website/",
+      "icon": "mdi-video",
+      "tags": [
+        "FFmpeg",
+        "转码"
+      ],
+      "category": "媒体",
+      "status": "online",
+      "external": true
+    },
+    {
+      "name": "MKVToolNix 下载",
+      "description": "MKV 封装与音轨处理套件，官方发布页镜像。",
+      "link": "https://www.fosshub.com/MKVToolNix.html",
+      "icon": "mdi-package-down",
+      "tags": [
+        "MKV",
+        "封装"
+      ],
+      "category": "媒体",
+      "status": "online",
+      "external": true
+    },
+    {
+      "name": "键盘测试",
+      "description": "在线检测每个按键是否响应、有无冲突。",
+      "link": "https://www.keyboardtest.cn/",
+      "icon": "mdi-keyboard",
+      "tags": [
+        "键盘",
+        "硬件"
+      ],
+      "category": "检测",
+      "status": "online",
+      "external": true
+    },
+    {
+      "name": "显示器检测",
+      "description": "坏点、漏光、色彩均匀度检测，买屏验机用得上。",
+      "link": "https://screen.bmcx.com/#welcome",
+      "icon": "mdi-monitor",
+      "tags": [
+        "屏幕",
+        "坏点"
+      ],
+      "category": "检测",
+      "status": "online",
+      "external": true
+    },
+    {
+      "name": "IPPure 纯净度检测",
+      "description": "检测 IP 是否被标记为代理、机房或高风险。",
+      "link": "https://ippure.com/",
+      "icon": "mdi-lock",
+      "tags": [
+        "IP",
+        "风控"
+      ],
+      "category": "检测",
+      "status": "online",
+      "external": true
+    },
+    {
+      "name": "IP 地址查询",
+      "description": "查询公网 IP 归属地，以及任意域名的解析地址。",
+      "link": "https://www.ipaddress.com/",
+      "icon": "mdi-earth",
+      "tags": [
+        "IP",
+        "DNS"
+      ],
+      "category": "查询",
+      "status": "online",
+      "external": true
+    },
+    {
+      "name": "Flashinfo 闪存查询",
+      "description": "NAND Flash 颗粒型号与参数速查，U 盘 SSD 常用。",
+      "link": "https://www.flashinfo.top/",
+      "icon": "mdi-memory",
+      "tags": [
+        "闪存",
+        "硬件"
+      ],
+      "category": "查询",
+      "status": "online",
+      "external": true
+    },
+    {
+      "name": "食用手册",
+      "description": "食材能做什么菜的交叉查询，做饭时很省事。",
+      "link": "https://cook.yunyoujun.cn/",
+      "icon": "mdi-settings-box",
+      "tags": [
+        "生活",
+        "烹饪"
+      ],
+      "category": "查询",
+      "status": "online",
+      "external": true
     }
   ]
 };
