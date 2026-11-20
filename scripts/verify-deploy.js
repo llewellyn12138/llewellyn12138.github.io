@@ -36,6 +36,8 @@ const REQUIRED_FILES = [
   'games/manifest.json',
   'tools/index.html',
   'tools/manifest.json',
+  'gallery/index.html',
+  'gallery/manifest.json',
   'software/index.html',
   'software/manifest.json',
   'assets/css/platform.css',
@@ -70,10 +72,25 @@ const FORBIDDEN = [
   'scripts/build-site.js',
   'DEPLOYMENT.md',
   'player.html',
-  'CNAME',
 ];
 for (const f of FORBIDDEN) {
   ok(f + ' absent', !fs.existsSync(path.join(dist, f)));
+}
+
+// CNAME MUST be published, and must be plain ASCII with no BOM (a BOM makes
+// GitHub Pages silently ignore the custom domain).
+console.log('[custom domain]');
+{
+  const p = path.join(dist, 'CNAME');
+  const exists = fs.existsSync(p);
+  ok('CNAME published', exists);
+  if (exists) {
+    const buf = fs.readFileSync(p);
+    const hasBom = buf[0] === 0xef && buf[1] === 0xbb && buf[2] === 0xbf;
+    ok('CNAME has no BOM', !hasBom);
+    const domain = buf.toString('utf8').trim();
+    ok('CNAME is a bare domain', /^[a-z0-9.-]+\.[a-z]{2,}$/i.test(domain), domain);
+  }
 }
 
 // Sanity: dist should look like a site, not an empty dir.

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="zh-CN">
+
+<head>
+  <title>图库 - Llewellyn 的个人站</title>
+  <meta name="description" content="Llewellyn ImgHub 图床图库：点击查看大图，一键复制图片直链。">
+  <meta name="keywords" content="图库,图床,ImgHub,Llewellyn,图片直链">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="author" content="Llewellyn">
+  <link rel="canonical" href="https://llewellyn.top/gallery/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="图库 - Llewellyn 的个人站">
+  <meta property="og:description" content="Llewellyn ImgHub 图床图库。">
+  <meta property="og:url" content="https://llewellyn.top/gallery/">
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <!-- Stylesheets-->
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/fonts.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/custom_fixes.css">
+  <link rel="stylesheet" href="../assets/css/platform.css">
+</head>
+
+<body>
+  <div class="page">
+    <header class="section page-header">
+      <!-- RD Navbar-->
+      <div class="rd-navbar-wrap">
+        <nav class="rd-navbar rd-navbar-modern" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
+          data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
+          data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static"
+          data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static"
+          data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="56px" data-xl-stick-up-offset="56px"
+          data-xxl-stick-up-offset="56px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+          <div class="rd-navbar-inner-outer">
+            <div class="rd-navbar-inner">
+              <div class="rd-navbar-panel">
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                <div class="rd-navbar-brand"><a class="brand" href="../index.html"><img class="brand-logo-dark"
+                      src="../images/logo_78x66.png" alt="Llewellyn" width="74" height="66" /></a></div>
+              </div>
+              <div class="rd-navbar-right rd-navbar-nav-wrap">
+                <div class="rd-navbar-aside">
+                  <ul class="rd-navbar-contacts-2">
+                    <li>
+                      <div class="unit unit-spacing-xs">
+                        <div class="unit-left"><span class="icon mdi mdi-map-marker"></span></div>
+                        <div class="unit-body"><a class="address" href="../map.html">重庆市·沙坪坝区</a></div>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="list-share-2">
+                    <li><a class="icon mdi mdi-twitter" href="https://twitter.com/llewellyn121225"></a></li>
+                  </ul>
+                </div>
+                <div class="rd-navbar-main">
+                  <ul class="rd-navbar-nav">
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="../index.html">首页</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="../blog/">博客</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="../software/">软件库</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="../games/">小游戏</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="../tools/">工具</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="../gallery/">图库</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="../about-us.html">关于</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Section hero -->
+    <section class="pf-hero">
+      <div class="container">
+        <span class="pf-eyebrow"><span class="mdi mdi-image-multiple"></span> Gallery</span>
+        <h1>图库</h1>
+        <p>存在 Llewellyn ImgHub 上的图片。点开看大图，一键复制直链，可以直接贴进文章。</p>
+        <div class="pf-hero-meta">
+          <span class="pf-pill"><span class="mdi mdi-cloud-outline"></span> imgbed.llewellyn.top</span>
+          <span class="pf-pill" data-gallery-count>共 <strong>11</strong> 张</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="pf-section">
+      <div class="container">
+        <div class="pf-section-head">
+          <div>
+            <h2 id="page-title">全部图片</h2>
+            <p>由 <code>gallery/manifest.json</code> 驱动。</p>
+          </div>
+          <a class="pf-latest-all" href="../index.html">← 返回首页</a>
+        </div>
+        <div class="gl-grid" id="gallery-grid"></div>
+        <div class="pf-note"><strong>怎么加图片：</strong>先把图片传到
+          <a href="https://imgbed.llewellyn.top" target="_blank" rel="noopener">ImgHub</a> 并复制直链，
+          然后往 <code>gallery/manifest.json</code> 的 <code>items</code> 里加一条
+          <code>{"url": "https://imgbed.llewellyn.top/file/xxx.jpg", "title": "说明"}</code>，
+          重新构建即可。</div>
+      </div>
+    </section><section class="pf-cat"><h3 class="pf-cat-title"><span class="mdi mdi-code-tags"></span>开发<em>1</em></h3><p class="pf-cat-desc">开发调试辅助</p><div class="pf-grid"><div class="pf-card-wrap"><article class="pf-card"><div class="pf-card-media"><span class="pf-badge pf-badge-accent">外链</span><span class="pf-ext mdi mdi-open-in-new"></span><span class="pf-fallback-icon mdi mdi-code-braces"></span></div><div class="pf-card-body"><span class="pf-card-icon mdi mdi-code-braces"></span><h3 class="pf-card-title"><a href="https://regex-vis.com/" target="_blank" rel="noopener noreferrer">Regex Vis</a></h3><p class="pf-card-desc">把正则表达式可视化成流程图，读复杂规则不再靠猜。</p><div class="pf-tags"><span class="pf-tag">正则</span><span class="pf-tag">可视化</span></div><div class="pf-card-foot"><span>GitHub Releases</span><a class="pf-card-link" href="https://regex-vis.com/" target="_blank" rel="noopener noreferrer">前往 ↗</a></div></div></article></div></div></section><section class="pf-cat"><h3 class="pf-cat-title"><span class="mdi mdi-filmstrip"></span>媒体<em>3</em></h3><p class="pf-cat-desc">音视频处理与封装</p><div class="pf-grid"><div class="pf-card-wrap"><article class="pf-card"><div class="pf-card-media"><span class="pf-badge pf-badge-accent">外链</span><span class="pf-ext mdi mdi-open-in-new"></span><span class="pf-fallback-icon mdi mdi-music-note"></span></div><div class="pf-card-body"><span class="pf-card-icon mdi mdi-music-note"></span><h3 class="pf-card-title"><a href="https://judes.me/lrc_editor/" target="_blank" rel="noopener noreferrer">LRC 歌词编辑器</a></h3><p class="pf-card-desc">在浏览器里给音频打时间轴，导出 LRC 字幕文件。</p><div class="pf-tags"><span class="pf-tag">歌词</span><span class="pf-tag">字幕</span></div><div class="pf-card-foot"><span>GitHub Releases</span><a class="pf-card-link" href="https://judes.me/lrc_editor/" target="_blank" rel="noopener noreferrer">前往 ↗</a></div></div></article></div><div class="pf-card-wrap"><article class="pf-card"><div class="pf-card-media"><span class="pf-badge pf-badge-accent">外链</span><span class="pf-ext mdi mdi-open-in-new"></span><span class="pf-fallback-icon mdi mdi-video"></span></div><div class="pf-card-body"><span class="pf-card-icon mdi mdi-video"></span><h3 class="pf-card-title"><a href="https://crifan.github.io/media_process_ffmpeg/website/" target="_blank" rel="noopener noreferrer">FFmpeg 命令参考</a></h3><p class="pf-card-desc">中文 FFmpeg 手册，转码、剪辑、滤镜都有现成例子。</p><div class="pf-tags"><span class="pf-tag">FFmpeg</span><span class="pf-tag">转码</span></div><div class="pf-card-foot"><span>GitHub Releases</span><a class="pf-card-link" href="https://crifan.github.io/media_process_ffmpeg/website/" target="_blank" rel="noopener noreferrer">前往 ↗</a></div></div></article></div><div class="pf-card-wrap"><article class="pf-card"><div class="pf-card-media"><span class="pf-badge pf-badge-accent">外链</span><span class="pf-ext mdi mdi-open-in-new"></span><span class="pf-fallback-icon mdi mdi-package-down"></span></div><div class="pf-card-body"><span class="pf-card-icon mdi mdi-package-down"></span><h3 class="pf-card-title"><a href="https://www.fosshub.com/MKVToolNix.html" target="_blank" rel="noopener noreferrer">MKVToolNix 下载</a></h3><p class="pf-card-desc">MKV 封装与音轨处理套件，官方发布页镜像。</p><div class="pf-tags"><span class="pf-tag">MKV</span><span class="pf-tag">封装</span></div><div class="pf-card-foot"><span>GitHub Releases</span><a class="pf-card-link" href="https://www.fosshub.com/MKVToolNix.html" target="_blank" rel="noopener noreferrer">前往 ↗</a></div></div></article></div></div></section><section class="pf-cat"><h3 class="pf-cat-title"><span class="mdi mdi-monitor"></span>检测<em>3</em></h3><p class="pf-cat-desc">硬件与网络环境检测</p><div class="pf-grid"><div class="pf-card-wrap"><article class="pf-card"><div class="pf-card-media"><span class="pf-badge pf-badge-accent">外链</span><span class="pf-ext mdi mdi-open-in-new"></span><span class="pf-fallback-icon mdi mdi-keyboard"></span></div><div class="pf-card-body"><span class="pf-card-icon mdi mdi-keyboard"></span><h3 class="pf-card-title"><a href="https://www.keyboardtest.cn/" target="_blank" rel="noopener noreferrer">键盘测试</a></h3><p class="pf-card-desc">在线检测每个按键是否响应、有无冲突。</p><div class="pf-tags"><span class="pf-tag">键盘</span><span class="pf-tag">硬件</span></div><div class="pf-card-foot"><span>GitHub Releases</span><a class="pf-card-link" href="https://www.keyboardtest.cn/" target="_blank" rel="noopener noreferrer">前往 ↗</a></div></div></article></div><div class="pf-card-wrap"><article class="pf-card"><div class="pf-card-media"><span class="pf-badge pf-badge-accent">外链</span><span class="pf-ext mdi mdi-open-in-new"></span><span class="pf-fallback-icon mdi mdi-monitor"></span></div><div class="pf-card-body"><span class="pf-card-icon mdi mdi-monitor"></span><h3 class="pf-card-title"><a href="https://screen.bmcx.com/#welcome" target="_blank" rel="noopener noreferrer">显示器检测</a></h3><p class="pf-card-desc">坏点、漏光、色彩均匀度检测，买屏验机用得上。</p><div class="pf-tags"><span class="pf-tag">屏幕</span><span class="pf-tag">坏点</span></div><div class="pf-card-foot"><span>GitHub Releases</span><a class="pf-card-link" href="https://screen.bmcx.com/#welcome" target="_blank" rel="noopener noreferrer">前往 ↗</a></div></div></article></div><div class="pf-card-wrap"><article class="pf-card"><div class="pf-card-media"><span class="pf-badge pf-badge-accent">外链</span><span class="pf-ext mdi mdi-open-in-new"></span><span class="pf-fallback-icon mdi mdi-lock"></span></div><div class="pf-card-body"><span class="pf-card-icon mdi mdi-lock"></span><h3 class="pf-card-title"><a href="https://ippure.com/" target="_blank" rel="noopener noreferrer">IPPure 纯净度检测</a></h3><p class="pf-card-desc">检测 IP 是否被标记为代理、机房或高风险。</p><div class="pf-tags"><span class="pf-tag">IP</span><span class="pf-tag">风控</span></div><div class="pf-card-foot"><span>GitHub Releases</span><a class="pf-card-link" href="https://ippure.com/" target="_blank" rel="noopener noreferrer">前往 ↗</a></div></div></article></div></div></section><section class="pf-cat"><h3 class="pf-cat-title"><span class="mdi mdi-magnify"></span>查询<em>3</em></h3><p class="pf-cat-desc">信息速查</p><div class="pf-grid"><div class="pf-card-wrap"><article class="pf-card"><div class="pf-card-media"><span class="pf-badge pf-badge-accent">外链</span><span class="pf-ext mdi mdi-open-in-new"></span><span class="pf-fallback-icon mdi mdi-earth"></span></div><div class="pf-card-body"><span class="pf-card-icon mdi mdi-earth"></span><h3 class="pf-card-title"><a href="https://www.ipaddress.com/" target="_blank" rel="noopener noreferrer">IP 地址查询</a></h3><p class="pf-card-desc">查询公网 IP 归属地，以及任意域名的解析地址。</p><div class="pf-tags"><span class="pf-tag">IP</span><span class="pf-tag">DNS</span></div><div class="pf-card-foot"><span>GitHub Releases</span><a class="pf-card-link" href="https://www.ipaddress.com/" target="_blank" rel="noopener noreferrer">前往 ↗</a></div></div></article></div><div class="pf-card-wrap"><article class="pf-card"><div class="pf-card-media"><span class="pf-badge pf-badge-accent">外链</span><span class="pf-ext mdi mdi-open-in-new"></span><span class="pf-fallback-icon mdi mdi-memory"></span></div><div class="pf-card-body"><span class="pf-card-icon mdi mdi-memory"></span><h3 class="pf-card-title"><a href="https://www.flashinfo.top/" target="_blank" rel="noopener noreferrer">Flashinfo 闪存查询</a></h3><p class="pf-card-desc">NAND Flash 颗粒型号与参数速查，U 盘 SSD 常用。</p><div class="pf-tags"><span class="pf-tag">闪存</span><span class="pf-tag">硬件</span></div><div class="pf-card-foot"><span>GitHub Releases</span><a class="pf-card-link" href="https://www.flashinfo.top/" target="_blank" rel="noopener noreferrer">前往 ↗</a></div></div></article></div><div class="pf-card-wrap"><article class="pf-card"><div class="pf-card-media"><span class="pf-badge pf-badge-accent">外链</span><span class="pf-ext mdi mdi-open-in-new"></span><span class="pf-fallback-icon mdi mdi-settings-box"></span></div><div class="pf-card-body"><span class="pf-card-icon mdi mdi-settings-box"></span><h3 class="pf-card-title"><a href="https://cook.yunyoujun.cn/" target="_blank" rel="noopener noreferrer">食用手册</a></h3><p class="pf-card-desc">食材能做什么菜的交叉查询，做饭时很省事。</p><div class="pf-tags"><span class="pf-tag">生活</span><span class="pf-tag">烹饪</span></div><div class="pf-card-foot"><span>GitHub Releases</span><a class="pf-card-link" href="https://cook.yunyoujun.cn/" target="_blank" rel="noopener noreferrer">前往 ↗</a></div></div></article></div></div></section></div>
+        
+      </div>
+    </section>
+
+    <footer class="section footer-modern context-dark footer-modern-2" style="padding: 15px 0 0 0;">
+      <div class="footer-modern-line" style="padding-bottom: 15px;">
+        <div class="container">
+          <div class="row row-50" style="margin-bottom: 0;">
+            <div class="col-md-6 col-lg-6">
+              <h5 class="footer-modern-title oh-desktop" style="margin-bottom: 5px;"><span
+                  class="d-inline-block wow slideInLeft">快速链接</span></h5>
+              <ul class="footer-modern-list d-inline-block d-sm-block wow fadeInUp">
+                <li><a href="../blog/">博客</a></li>
+                <li><a href="../software/">软件库</a></li>
+                <li><a href="../games/">小游戏</a></li>
+                <li><a href="../tools/">工具</a></li>
+                <li><a href="../gallery/">图库</a></li>
+                <li><a href="../about-us.html">关于我们</a></li>
+                <li><a href="../contacts.html">联系我们</a></li>
+              </ul>
+            </div>
+            <div class="col-md-6 col-lg-6">
+              <div class="group-xmd group-sm-justify" style="justify-content: flex-end; align-items: center; height: 100%;">
+                <div class="wow slideInRight">
+                  <ul class="list-inline footer-social-list footer-social-list-2 footer-social-list-3">
+                    <li><a class="icon fa fa-twitter" href="https://twitter.com/llewellyn12138" title="Twitter"></a></li>
+                    <li><a class="icon fa fa-telegram" href="https://t.me/llewellyn12138" title="Telegram"></a></li>
+                    <li><a class="icon fa fa-qq" href="https://imgbed.llewellyn.top/file/1772161761189_b_8f542b9813c2887582ca456a1bd26d79.jpg" target="_blank" title="QQ"></a></li>
+                    <li><a class="icon fa fa-envelope" href="mailto:llewellyn@llewellyn.top" title="Email"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-modern-line-3">
+        <div class="container">
+          <div class="row row-10 justify-content-between">
+            <div class="col-md-6"><span>重庆市·沙坪坝区</span></div>
+            <div class="col-md-auto">
+              <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span></span><span>.&nbsp;</span><span>All Rights Reserved.</span><span> Design&nbsp;by&nbsp;<a href="https://github.com/llewellyn12138">Llewellyn</a></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div class="snackbars" id="form-output-global"></div>
+  <!-- Javascript-->
+  <script src="../js/core.min.js"></script>
+  <script src="../js/script.js"></script>
+  <!-- Local data snapshot: works under file:// where fetch() is CORS-blocked -->
+  <script src="../gallery/manifest.js"></script>
+  <script src="../assets/js/gallery.js"></script>
+</body>
+
+</html>

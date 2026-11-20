@@ -16,7 +16,7 @@ const root = path.resolve(__dirname, '..');
 // Portal + section pages that live in the source tree.
 const pages = ['index.html', 'media.html', 'lab.html', 'about-us.html', 'contacts.html', 'map.html',
   'apps/index.html', 'games/index.html', 'tools/index.html', 'software/index.html',
-  'apps/media-player/index.html'];
+  'apps/media-player/index.html', 'gallery/index.html'];
 
 // Links that intentionally point at build output and cannot resolve in the
 // raw source tree. They work once the site is built/served.
@@ -55,7 +55,7 @@ console.log('  missing           :', bad.size);
 
 // JS data snapshots used when fetch() is CORS-blocked under file://
 const required = ['games/manifest.js', 'tools/manifest.js',
-  'software/manifest.js', 'blog-latest.js', 'blog-latest.json'];
+  'software/manifest.js', 'gallery/manifest.js', 'blog-latest.js', 'blog-latest.json'];
 const missingData = required.filter((f) => !fs.existsSync(path.join(root, f)));
 missingData.forEach((f) => { console.log('  MISSING DATA', f); bad.add(f); });
 

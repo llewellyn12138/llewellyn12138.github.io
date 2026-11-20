@@ -37,6 +37,8 @@ console.log('[build] 0/6 regenerate section pages from manifests');
 // they must be regenerated whenever a manifest changes — do it every build so
 // the two can never drift apart.
 run(process.execPath, [path.join(repoRoot, 'scripts', 'gen-sections.js')], repoRoot);
+// The gallery page reuses the section shell, so it must be generated after it.
+run(process.execPath, [path.join(repoRoot, 'scripts', 'gen-gallery.js')], repoRoot);
 
 console.log('[build] 1/5 sync posts -> blog-source/source/_posts');
 const srcPosts = path.join(repoRoot, 'posts');
@@ -65,13 +67,24 @@ copyDir(blogOut, path.join(distDir, 'blog'));
 // Pages now serves gh-pages, where this build's dist/ is the single source.
 // Keeping a second copy on main only duplicated 1.5 MB of generated HTML.
 
-// NOTE: CNAME is deliberately NOT published. See DEPLOYMENT.md —
-// old.llewellyn.top is Cloudflare-proxied (A records), not a GitHub Pages
-// CNAME target; publishing it would redirect the github.io URL away.
+// CNAME binds the site to llewellyn.top. It MUST ship with the artifact,
+// otherwise GitHub Pages serves the github.io URL and ignores the custom
+// domain. build-site verifies it has no BOM (a BOM breaks domain detection).
+const cnamePath = path.join(repoRoot, 'CNAME');
+if (fs.existsSync(cnamePath)) {
+  const raw = fs.readFileSync(cnamePath);
+  if (raw[0] === 0xef && raw[1] === 0xbb && raw[2] === 0xbf) {
+    console.error('[build] CNAME starts with a UTF-8 BOM; GitHub Pages will ignore it');
+    process.exit(1);
+  }
+  fs.writeFileSync(path.join(distDir, 'CNAME'), raw);
+  console.log('[build] CNAME -> ' + raw.toString('utf8').trim());
+}
+
 ['index.html', 'about-us.html', 'contacts.html', 'map.html', 'media.html', 'lab.html'].forEach(
   copyFileIfExists
 );
-['css', 'js', 'fonts', 'images', 'assets', 'apps', 'games', 'tools', 'software'].forEach((d) =>
+['css', 'js', 'fonts', 'images', 'assets', 'apps', 'games', 'tools', 'software', 'gallery'].forEach((d) =>
   copyDir(path.join(repoRoot, d), path.join(distDir, d))
 );
 fs.writeFileSync(path.join(distDir, '.nojekyll'), '');

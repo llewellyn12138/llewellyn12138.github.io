@@ -47,6 +47,7 @@ const NAV = [
   { label: '软件库', href: P + 'software/' },
   { label: '小游戏', href: P + 'games/' },
   { label: '工具', href: P + 'tools/' },
+  { label: '图库', href: P + 'gallery/' },
   { label: '关于', href: P + 'about-us.html' },
 ];
 

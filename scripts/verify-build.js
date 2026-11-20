@@ -21,7 +21,7 @@ console.log('[icon names]');
   const iconSources = [
     'index.html', 'about-us.html', 'contacts.html', 'map.html', 'media.html', 'lab.html',
     'games/index.html', 'tools/index.html', 'software/index.html',
-    'apps/index.html', 'apps/media-player/index.html',
+    'apps/index.html', 'apps/media-player/index.html', 'gallery/index.html',
   ];
   const used = new Set();
   for (const rel of iconSources) {
@@ -47,7 +47,7 @@ console.log('[icon names]');
 console.log('[js syntax]');
 const jsFiles = [
   'assets/js/registry.js', 'assets/js/latest-posts.js',
-  'games/manifest.js', 'tools/manifest.js', 'software/manifest.js',
+  'games/manifest.js', 'tools/manifest.js', 'software/manifest.js', 'gallery/manifest.js',
   'blog-latest.js',
 ];
 for (const rel of jsFiles) {
@@ -156,7 +156,7 @@ ok('dist/.nojekyll', fs.existsSync(path.join(dist, '.nojekyll')));
 ok('dist/blog/index.html', fs.existsSync(path.join(dist, 'blog', 'index.html')));
 ok('dist/apps/media-player/index.html', fs.existsSync(path.join(dist, 'apps', 'media-player', 'index.html')));
 ok('root player.html absent from dist', !fs.existsSync(path.join(dist, 'player.html')));
-ok('dist/CNAME absent (custom-domain safety)', !fs.existsSync(path.join(dist, 'CNAME')));
+ok('dist/CNAME published', fs.existsSync(path.join(dist, 'CNAME')));
 
 console.log('\n' + totalRefs + ' local refs checked');
 console.log(fails === 0 ? 'ALL CHECKS PASSED' : fails + ' CHECK(S) FAILED');

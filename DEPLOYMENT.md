@@ -149,18 +149,52 @@ Pages 源已改为 `gh-pages`。实测确认：
 - `/blog-latest.json` 返回 JSON；`/software/`、`/apps/`、`/games/`、`/tools/` 返回列表页；
 - `/posts/...`、`/old/...` 之类的源文件路径应当 **404**（不再暴露源文件）。
 
-## ⚠️ 关于 CNAME / 自定义域名
+## 自定义域名：llewellyn.top
 
-根目录 `CNAME` 内容是 `old.llewellyn.top`，但：
+仓库根 `CNAME` 的内容是 **`llewellyn.top`**（根域名），构建时会被复制进
+`dist/CNAME` 一并发布。`build-site.js` 会检查文件头没有 UTF-8 BOM —— 有 BOM
+会导致 GitHub Pages 静默忽略该域名，所以发现 BOM 会直接让构建失败。
 
-- `old.llewellyn.top` 解析到 Cloudflare 的 A 记录（104.21.2.135 / 172.67.129.65），
-  **不是**指向 GitHub Pages 的 CNAME；
-- 当前 `gh-pages` 分支里没有 `CNAME`，线上 `old.llewellyn.top` 也是独立代理的旧站。
+### 必须先在 Cloudflare 配好 DNS
 
-因此 **构建脚本刻意不把 `CNAME` 复制进 `dist/`**：一旦发布到 `gh-pages`，
-GitHub Pages 会把 `llewellyn12138.github.io` 重定向到 `old.llewellyn.top`，
-很可能导致访问异常。若日后确实要绑定自定义域名，请先确认 DNS 与
-Cloudflare 配置，再手动把 `CNAME` 加入发布物。
+`llewellyn.top` 的 NS 是 `tate.ns.cloudflare.com` / `reza.ns.cloudflare.com`。
+当前根域**没有可用的 A 记录、只有 IPv6**，`www` 也不存在，所以要先加记录：
+
+| 类型 | 名称 | 内容 | 代理状态 |
+| --- | --- | --- | --- |
+| A | `@` | `185.199.108.153` | **DNS only（灰云）** |
+| A | `@` | `185.199.109.153` | **DNS only（灰云）** |
+| A | `@` | `185.199.110.153` | **DNS only（灰云）** |
+| A | `@` | `185.199.111.153` | **DNS only（灰云）** |
+| CNAME | `www` | `llewellyn12138.github.io` | DNS only（灰云） |
+
+⚠️ **必须用灰云（DNS only）**：橙云会让 Cloudflare 代理并接管 TLS，
+与 GitHub Pages 的证书签发冲突，容易出现 522/重定向循环。
+
+### 然后在 GitHub 设置
+
+`Settings → Pages → Custom domain` 填 `llewellyn.top`，保存后勾选
+**Enforce HTTPS**（证书签发通常需要几分钟到几小时）。
+
+### 顺带说明 old.llewellyn.top
+
+`old.llewellyn.top` 仍由 Cloudflare 代理到旧站，与新域名互不影响，
+可以保留也可以之后删掉那条 DNS 记录。
+
+## 图床（imgbed.llewellyn.top）
+
+站点上的图片托管在 **Llewellyn ImgHub**（sanyue_imghub，Vue SPA）。
+
+| 用途 | 做法 |
+| --- | --- |
+| 博客配图 | 上传后在文章里直接写图床直链 |
+| 图库页 | 把直链追加到 `gallery/manifest.json` 的 `items`，重新构建 |
+| 上传 | 网页操作；或 `IMGHUB_TOKEN=<token> node scripts/upload-to-imgbed.js <文件>` |
+
+图床的写入接口需要登录鉴权（匿名 `POST` 返回 401），所以自动化上传需要
+token，**不要把 token 提交进仓库**。
+
+图库页 `/gallery/` 会展示清单里的所有图片，支持点开大图与一键复制直链。
 
 ## 内容维护
 
@@ -169,7 +203,9 @@ Cloudflare 配置，再手动把 `CNAME` 加入发布物。
 | 写博客 | `posts/<分类>/<文件名>.md`（**只改这里**）；`blog-source/source/_posts/` 是自动同步的镜像，已 gitignore |
 | 新增小应用 / 游戏 / 工具 | 页面放 `apps/<name>/index.html` 等，再在对应 `manifest.json` 的 `items` 加一条 |
 | 软件库 | 大文件传 GitHub Releases，`manifest.json` 里 `external: true` + Releases 链接；<10 MB 单文件放 `software/files/` |
-| 改板块页外观 | `assets/css/platform.css` + `assets/js/registry.js`；四个 `index.html` 由 `node scripts/gen-sections.js` 重新生成 |
+| 改板块页外观 | `assets/css/platform.css` + `assets/js/registry.js`；板块 `index.html` 由 `node scripts/gen-sections.js` 重新生成 |
+| 图库加图 | 编辑 `gallery/manifest.json` 的 `items`，再跑 `node scripts/gen-gallery.js` |
+| 换首页 banner | 改 `scripts/gen-banners.js` 里的配色重新生成（输出到 `images/`） |
 | 改导航 / 页脚 | `scripts/unify-nav.js`（一次性脚本）或直接编辑各 HTML |
 
 `manifest.json` 字段：`name` / `description` / `link` / `image` / `icon` /
