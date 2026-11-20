@@ -79,7 +79,43 @@ console.log('[gallery isolation]');
   }
 }
 
-// 0f. Syntax-check every shipped JS file. A single bad character in a block
+// 0g. Light/dark theme wiring must be present on every page: inline bootstrap
+//     (no flash), theme.css after platform.css, and theme.js before </body>.
+console.log('[theme wiring]');
+{
+  const pages = [
+    ['index.html', ''], ['about-us.html', ''], ['contacts.html', ''], ['map.html', ''],
+    ['media.html', ''], ['lab.html', ''],
+    ['tools/index.html', '../'], ['gallery/index.html', '../'],
+    ['software/index.html', '../'], ['games/index.html', '../'],
+    ['apps/index.html', '../'], ['apps/media-player/index.html', '../../'],
+  ];
+  const css = fs.readFileSync(path.join(dist, 'assets', 'css', 'theme.css'), 'utf8');
+  ok('theme.css defines dark palette', /:root\[data-theme='dark'\]/.test(css));
+  ok('theme.css themes the navbar', /html\[data-theme='dark'\] \.rd-navbar/.test(css));
+  ok('theme.css themes cards', /html\[data-theme='dark'\] \.pf-card \{/.test(css));
+
+  const broken = [];
+  for (const [rel, prefix] of pages) {
+    const p = path.join(dist, rel);
+    if (!fs.existsSync(p)) { broken.push(rel + ' (missing)'); continue; }
+    const s = fs.readFileSync(p, 'utf8');
+    const headEnd = s.indexOf('</head>');
+    const bodyEnd = s.lastIndexOf('</body>');
+    const cssAt = s.indexOf(`href="${prefix}assets/css/theme.css"`);
+    const jsAt = s.indexOf(`src="${prefix}assets/js/theme.js"`);
+    const inlineAt = s.indexOf('pf-theme:start');
+    const platAt = s.indexOf(`href="${prefix}assets/css/platform.css"`);
+    const okPage = cssAt > 0 && cssAt < headEnd
+      && jsAt > headEnd && jsAt < bodyEnd
+      && inlineAt > 0 && inlineAt < headEnd
+      && (platAt === -1 || cssAt > platAt);
+    if (!okPage) broken.push(rel);
+  }
+  ok('all pages wired for theme', broken.length === 0, broken.join(', '));
+}
+
+// 0h. Syntax-check every shipped JS file. A single bad character in a block
 //    comment (e.g. "*/" inside prose) silently breaks the whole file and the
 //    page then hangs on its loading state — catch it here, not in production.
 console.log('[js syntax]');

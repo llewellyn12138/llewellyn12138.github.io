@@ -123,6 +123,10 @@ function page(s) {
   <link rel="stylesheet" href="${P}css/style.css">
   <link rel="stylesheet" href="${P}css/custom_fixes.css">
   <link rel="stylesheet" href="${P}assets/css/platform.css">
+  <!-- pf-theme:start -->
+  <script>(function(){try{var k="pf-theme",m=localStorage.getItem(k)||"auto";var d=m==="auto"?(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):m;var r=document.documentElement;r.setAttribute("data-theme",d);r.style.colorScheme=d;}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
+  <link rel="stylesheet" href="${P}assets/css/theme.css">
+  <!-- pf-theme:end -->
 </head>
 
 <body>
@@ -242,6 +246,9 @@ ${footerHtml()}
   <!-- Local data snapshot: works under file:// where fetch() is CORS-blocked -->
   <script src="${P}${s.dir}/manifest.js"></script>
   <script src="${P}${D}"></script>
+  <!-- pf-theme:start -->
+  <script src="${P}assets/js/theme.js"></script>
+  <!-- pf-theme:end -->
 </body>
 
 </html>

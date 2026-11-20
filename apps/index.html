@@ -12,7 +12,11 @@
   <link rel="stylesheet" href="../css/fonts.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../assets/css/platform.css">
-  <style>
+  <!-- pf-theme:start -->
+  <script>(function(){try{var k="pf-theme",m=localStorage.getItem(k)||"auto";var d=m==="auto"?(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):m;var r=document.documentElement;r.setAttribute("data-theme",d);r.style.colorScheme=d;}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <!-- pf-theme:end -->
+<style>
     body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #f6f7f9; margin: 0; }
     .jump { text-align: center; padding: 40px 24px; background: #fff; border: 1px solid #e9e9e9; border-radius: 14px; box-shadow: 0 12px 34px rgba(21,21,21,.08); }
     .jump .mdi { font-size: 42px; color: #f8931f; }
@@ -30,6 +34,9 @@
     <a href="../software/">前往软件库 →</a>
   </div>
   <script>location.replace('../software/');</script>
+<!-- pf-theme:start -->
+  <script src="../assets/js/theme.js"></script>
+  <!-- pf-theme:end -->
 </body>
 
 </html>

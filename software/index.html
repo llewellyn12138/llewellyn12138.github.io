@@ -22,6 +22,10 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/custom_fixes.css">
   <link rel="stylesheet" href="../assets/css/platform.css">
+  <!-- pf-theme:start -->
+  <script>(function(){try{var k="pf-theme",m=localStorage.getItem(k)||"auto";var d=m==="auto"?(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):m;var r=document.documentElement;r.setAttribute("data-theme",d);r.style.colorScheme=d;}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <!-- pf-theme:end -->
 </head>
 
 <body>
@@ -153,6 +157,9 @@
   <!-- Local data snapshot: works under file:// where fetch() is CORS-blocked -->
   <script src="../software/manifest.js"></script>
   <script src="../assets/js/registry.js"></script>
+<!-- pf-theme:start -->
+  <script src="../assets/js/theme.js"></script>
+  <!-- pf-theme:end -->
 </body>
 
 </html>

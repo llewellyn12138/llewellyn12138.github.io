@@ -39,6 +39,9 @@ console.log('[build] 0/6 regenerate section pages from manifests');
 run(process.execPath, [path.join(repoRoot, 'scripts', 'gen-sections.js')], repoRoot);
 // The gallery page reuses the section shell, so it must be generated after it.
 run(process.execPath, [path.join(repoRoot, 'scripts', 'gen-gallery.js')], repoRoot);
+// Re-apply the light/dark wiring last: generators rebuild section HTML and
+// would otherwise drop the injected theme tags.
+run(process.execPath, [path.join(repoRoot, 'scripts', 'inject-theme.js')], repoRoot);
 
 console.log('[build] 1/5 sync posts -> blog-source/source/_posts');
 const srcPosts = path.join(repoRoot, 'posts');
