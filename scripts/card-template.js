@@ -64,30 +64,39 @@ function buildCard(item) {
     .join('');
   const date = item.date ? esc(item.date) : '';
   const linkLabel = planned ? '待上线' : external ? '前往 ↗' : '打开 →';
+
+  // Cover: real image when provided, otherwise a generated gradient panel so
+  // the card never shows an empty grey block.
   const imgHtml = item.image
     ? '<img src="' + esc(image) + '" alt="' + esc(item.name) + '" loading="lazy" ' +
-      "onerror=\"this.onerror=null;this.style.display='none'\"/>"
+      "onerror=\"this.onerror=null;this.parentNode.classList.add('pf-media-fallback')\"/>"
     : '';
-  const fallback = '<span class="pf-fallback-icon mdi ' + esc(icon) + '"></span>';
+  const fallback =
+    '<span class="pf-fallback-icon mdi ' + esc(icon) + '"></span>';
+
+  // Whole card is clickable (title/link remain real anchors for a11y + SEO).
+  const cardOpen = planned
+    ? '<article class="pf-card is-planned">'
+    : '<a class="pf-card' + (external ? ' is-external' : '') + '" href="' + esc(href) + '"' + target + '>';
+  const cardClose = planned ? '</article>' : '</a>';
 
   return (
     '<div class="pf-card-wrap">' +
-      '<article class="pf-card' + (planned ? ' is-planned' : '') + '">' +
+      cardOpen +
         '<div class="pf-card-media">' +
           badge + extMark + imgHtml + fallback +
         '</div>' +
         '<div class="pf-card-body">' +
           '<span class="pf-card-icon mdi ' + esc(icon) + '"></span>' +
-          '<h3 class="pf-card-title"><a href="' + esc(href) + '"' + target + '>' +
-            esc(item.name) + '</a></h3>' +
+          '<h3 class="pf-card-title">' + esc(item.name) + '</h3>' +
           '<p class="pf-card-desc">' + esc(item.description || '') + '</p>' +
           (tags ? '<div class="pf-tags">' + tags + '</div>' : '') +
           '<div class="pf-card-foot">' +
-            '<span>' + (date || (external ? 'GitHub Releases' : '本站')) + '</span>' +
-            '<a class="pf-card-link" href="' + esc(href) + '"' + target + '>' + linkLabel + '</a>' +
+            '<span>' + (date || (external ? '外链' : '本站')) + '</span>' +
+            '<span class="pf-card-link">' + linkLabel + '</span>' +
           '</div>' +
         '</div>' +
-      '</article>' +
+      cardClose +
     '</div>'
   );
 }

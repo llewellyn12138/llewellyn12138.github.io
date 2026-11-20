@@ -6,6 +6,21 @@ window.PF_MANIFEST["software"] = {
   "description": "软件、小应用与下载",
   "items": [
     {
+      "name": "MKVToolNix",
+      "description": "MKV 封装与音轨处理套件。适合把多条音轨/字幕合进一个 MKV，或做无损拆封。",
+      "link": "https://www.fosshub.com/MKVToolNix.html",
+      "image": "/images/project-3-1200x800-original.jpg",
+      "icon": "mdi-package-variant",
+      "tags": [
+        "视频",
+        "封装",
+        "Windows"
+      ],
+      "status": "online",
+      "external": true,
+      "kind": "software"
+    },
+    {
       "name": "视频播放器",
       "description": "基于 ArtPlayer 的在线视频播放器，支持字幕切换、清晰度选择、缩略图预览与自定义控制栏。",
       "link": "/apps/media-player/",
