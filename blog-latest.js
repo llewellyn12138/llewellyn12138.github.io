@@ -2,6 +2,16 @@
    Over HTTP the widget fetches blog-latest.json (always fresh). */
 window.PF_LATEST_POSTS = [
   {
+    "title": "UG (NX) 建模入门：从草图到实体",
+    "url": "/blog/2026/11/20/ug/ug-modeling-basics/",
+    "date": "2026-11-20T02:00:00.000Z",
+    "description": "UG (Siemens NX) 零基础建模流程梳理：草图、拉伸、布尔运算、圆角与装配的常用操作与踩坑记录。",
+    "cover": "images/project-1-1200x800-original.jpg",
+    "categories": [
+      "ug"
+    ]
+  },
+  {
     "title": "Markdown 完全使用指南",
     "url": "/blog/2026/05/11/coding/markdown-guide/",
     "date": "2026-05-11T02:00:00.000Z",

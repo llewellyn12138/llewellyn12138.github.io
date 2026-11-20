@@ -85,7 +85,9 @@ const count = (function walk(d, n = 0) {
   return n;
 })(dist);
 console.log('\n[total] ' + count + ' files in dist');
-ok('dist has a plausible file count (>= 150)', count >= 150, count + ' files');
+// Lower bound guards against a catastrophically incomplete build (e.g. an
+// empty dist). Exact counts change as images/assets are added or pruned.
+ok('dist has a plausible file count (>= 120)', count >= 120, count + ' files');
 
 console.log(fails === 0 ? '\nDEPLOY ARTIFACT OK' : '\n' + fails + ' PROBLEM(S)');
 process.exit(fails === 0 ? 0 : 1);

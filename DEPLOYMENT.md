@@ -126,6 +126,27 @@ CSS / 图片 / 字体 / 导航都正常。`file://` 下浏览器会因 CORS 拦�
 先过 `verify-deploy.js`（检查 32 个关键入口存在、7 个不该发布的文件确实不在、
 总文件数合理），不通过就不发布。
 
+### 随时确认当前处于哪种状态
+
+```bash
+node scripts/check-pages-source.js
+```
+
+- 输出「仍在服务 main」→ 源文件仍公开，**仓库根 `blog/` 镜像必须保留**；
+- 输出「已切到 gh-pages」→ 可以安全删除仓库根 `blog/` 镜像。
+
+### ⚠️ 切换与删除 blog/ 的先后顺序
+
+**必须先切换 Pages 源，再删 `blog/`。** 顺序反了会让线上博客立刻 404。
+
+当前 `blog/` 镜像仍有存在价值（双击源码树预览 + Pages 服务 main 时的兜底），
+所以本次**保留**；等 `check-pages-source.js` 报告已切换后，再执行：
+
+```bash
+git rm -r --cached blog && rm -rf blog
+# 同时移除 build-site.js 里镜像 blog/ 的那几行
+```
+
 ### 验证是否生效
 
 - `https://llewellyn12138.github.io/` → 出现「站点板块」八宫格与「最新文章」；
