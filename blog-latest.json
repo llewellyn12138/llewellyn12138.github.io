@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-20T06:04:29.407Z",
+  "generatedAt": "2026-11-20T07:11:00.860Z",
   "posts": [
     {
-      "title": "UG (NX) 建模入门：从草图到实体",
-      "url": "/blog/2026/11/20/ug/ug-modeling-basics/",
+      "title": "UG NX 建模实战指南：从草图到实体",
+      "url": "/blog/2026/11/20/ug/ug-modeling-guide/",
       "date": "2026-11-20T10:00:00.000Z",
-      "description": "UG (Siemens NX) 零基础建模流程梳理：草图、拉伸、布尔运算、圆角与装配的常用操作与踩坑记录。",
+      "description": "简洁实用的 UG NX 建模全流程教程，涵盖草图约束、基础特征操作与同步建模技巧。",
       "cover": "images/project-1-1200x800-original.jpg",
       "categories": [
         "ug"
