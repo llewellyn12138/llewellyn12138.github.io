@@ -11,7 +11,7 @@
  * Under file:// -> fetch() is CORS-blocked, fall back to window.PF_MANIFEST[key]
  *                  loaded by the sibling <script>.
  *
- * Manifest schema: see any */manifest.json
+ * Manifest schema: see the manifest.json inside each section directory.
  * ========================================================================== */
 (function (global) {
   'use strict';
