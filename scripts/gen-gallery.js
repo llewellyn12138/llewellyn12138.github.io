@@ -58,10 +58,38 @@ html = html.replace(
     </section>`
 );
 
-// --- body: swap the registry grid for the gallery --------------------------
-html = html.replace(
-  /<div class="pf-section-head">[\s\S]*?<\/section>/,
-  `<div class="pf-section-head">
+// --- body: replace the ENTIRE card section with the gallery ----------------
+// A regex like /<div class="pf-section-head">[\s\S]*?<\/section>/ stops at the
+// first </section>, which can sit inside nested category blocks — leaving the
+// tools cards behind. Cut between two stable markers instead and keep only up
+// to the section that wraps the cards.
+const bodyStart = html.indexOf('<section class="pf-section">');
+if (bodyStart === -1) {
+  console.error('[gallery] could not locate <section class="pf-section"> in the shell');
+  process.exit(1);
+}
+// Find the </section> that closes the section containing the registry grid by
+// counting nested <section> tags from bodyStart.
+let depth = 0;
+let i = bodyStart;
+let bodyEnd = -1;
+while (i < html.length) {
+  if (html.startsWith('<section', i)) { depth++; i += 8; continue; }
+  if (html.startsWith('</section>', i)) {
+    depth--;
+    if (depth === 0) { bodyEnd = i; break; }
+    i += 10; continue;
+  }
+  i++;
+}
+if (bodyEnd === -1) {
+  console.error('[gallery] could not find the closing </section> of the card section');
+  process.exit(1);
+}
+
+const replacement = `<section class="pf-section">
+      <div class="container">
+        <div class="pf-section-head">
           <div>
             <h2 id="page-title">全部图片</h2>
             <p>由 <code>gallery/manifest.json</code> 驱动。</p>
@@ -75,12 +103,8 @@ html = html.replace(
           <code>{"url": "https://imgbed.llewellyn.top/file/xxx.jpg", "title": "说明"}</code>，
           重新构建即可。</div>
       </div>
-    </section>`
-);
-
-// Any leftover section-specific note (e.g. the tools maintenance blurb) must
-// not survive into the gallery page.
-html = html.replace(/<div class="pf-note"><strong>维护说明：<\/strong>[\s\S]*?<\/div>/, '');
+    </section>`;
+html = html.slice(0, bodyStart) + replacement + html.slice(bodyEnd + '</section>'.length);
 
 // --- scripts ---------------------------------------------------------------
 html = html
