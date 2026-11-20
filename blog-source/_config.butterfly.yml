@@ -391,7 +391,9 @@ darkmode:
   # autoChangeMode: 1  跟随系统设置，如果系统不支持深色模式，则在晚 6 点到早 6 点之间切换为深色模式
   # autoChangeMode: 2  在晚 6 点到早 6 点之间切换为深色模式
   # autoChangeMode: false 禁用自动切换
-  autoChangeMode: 2
+  # 这里用 false：博客的深浅色由门户的 pf-theme 决定（见 scripts/theme-sync.js），
+  # 若按时间强制切换，会和门户里用户显式选的主题打架。
+  autoChangeMode: false
   # 设置浅色模式时间。值在 0 到 24 之间。如果未设置，默认值为 6 和 18
   start: 8
   end: 24

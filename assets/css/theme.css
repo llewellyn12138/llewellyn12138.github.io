@@ -136,6 +136,118 @@ html[data-theme='dark'] .footer-modern-list a:hover { color: var(--pf-accent) !i
 html[data-theme='dark'] .breadcrumbs-custom { background-color: #12151b; }
 html[data-theme='dark'] .breadcrumbs-custom-path a,
 html[data-theme='dark'] .breadcrumbs-custom-path li { color: #9aa3b2; }
+html[data-theme='dark'] .breadcrumbs-custom-title { color: var(--pf-text); }
+html[data-theme='dark'] .breadcrumbs-custom-decor {
+  background-color: var(--pf-accent);
+  opacity: .9;
+}
+
+/* Legacy service / thumbnail cards (media.html, lab.html, about-us.html) */
+html[data-theme='dark'] .services-terri-title,
+html[data-theme='dark'] .services-terri-title a,
+html[data-theme='dark'] .thumbnail-creative-caption,
+html[data-theme='dark'] .thumbnail-creative-caption * {
+  color: #f2f4f7 !important;
+}
+html[data-theme='dark'] .services-terri-icon,
+html[data-theme='dark'] .thumbnail-creative-icon {
+  color: var(--pf-accent) !important;
+}
+html[data-theme='dark'] .services-terri-figure img,
+html[data-theme='dark'] .thumbnail-creative-figure img {
+  filter: brightness(.86) saturate(.92);
+  transition: filter .3s ease;
+}
+html[data-theme='dark'] .services-terri:hover .services-terri-figure img,
+html[data-theme='dark'] .thumbnail-creative:hover .thumbnail-creative-figure img {
+  filter: brightness(1) saturate(1);
+}
+
+/* Overlay strips such as bg-overlay-68 on map.html */
+html[data-theme='dark'] .bg-overlay-68::after,
+html[data-theme='dark'] .bg-mobile-overlay::after {
+  background-color: rgba(8, 10, 14, .78) !important;
+}
+
+/* Buttons: legacy template paints them white with dark text */
+html[data-theme='dark'] .button,
+html[data-theme='dark'] .button-default,
+html[data-theme='dark'] .button-secondary {
+  background-color: var(--pf-card-bg) !important;
+  color: var(--pf-text) !important;
+  border-color: var(--pf-line) !important;
+}
+html[data-theme='dark'] .button:hover,
+html[data-theme='dark'] .button-default:hover,
+html[data-theme='dark'] .button-secondary:hover {
+  background-color: var(--pf-accent) !important;
+  color: #14171d !important;
+  border-color: var(--pf-accent) !important;
+}
+
+/* Inline text styles the legacy pages set directly */
+html[data-theme='dark'] [style*="color: #151515"],
+html[data-theme='dark'] [style*="color:#151515"] { color: var(--pf-text) !important; }
+html[data-theme='dark'] [style*="background: #fff"],
+html[data-theme='dark'] [style*="background:#fff"],
+html[data-theme='dark'] [style*="background-color: #fff"] {
+  background-color: var(--pf-card-bg) !important;
+}
+
+/* Forms / inputs on contacts.html */
+html[data-theme='dark'] input,
+html[data-theme='dark'] textarea,
+html[data-theme='dark'] select {
+  background-color: #171b22 !important;
+  border-color: var(--pf-line) !important;
+  color: var(--pf-text) !important;
+}
+html[data-theme='dark'] input::placeholder,
+html[data-theme='dark'] textarea::placeholder { color: #6f7887 !important; }
+html[data-theme='dark'] input:focus,
+html[data-theme='dark'] textarea:focus {
+  border-color: var(--pf-accent) !important;
+  box-shadow: 0 0 0 3px rgba(248, 147, 31, .16) !important;
+}
+
+/* Tables (if any survive) */
+html[data-theme='dark'] table { color: var(--pf-text); }
+html[data-theme='dark'] th,
+html[data-theme='dark'] td { border-color: var(--pf-line) !important; }
+html[data-theme='dark'] th { background-color: #1b2029 !important; }
+
+/* Horizontal rules and dividers */
+html[data-theme='dark'] hr { border-color: var(--pf-line); }
+
+/* Scrollbar — keeps the dark theme from showing a bright bar */
+html[data-theme='dark'] ::-webkit-scrollbar { width: 11px; height: 11px; }
+html[data-theme='dark'] ::-webkit-scrollbar-track { background: #0f1115; }
+html[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: #2b323d;
+  border-radius: 6px;
+  border: 2px solid #0f1115;
+}
+html[data-theme='dark'] ::-webkit-scrollbar-thumb:hover { background: #3a4351; }
+html[data-theme='dark'] { scrollbar-color: #2b323d #0f1115; }
+
+/* Preloader (root page) must not flash white in dark mode */
+html[data-theme='dark'] .preloader,
+html[data-theme='dark'] .wrapper-triangle { background-color: var(--pf-bg) !important; }
+html[data-theme='dark'] .preloader .triangle { border-color: var(--pf-accent) transparent transparent; }
+
+/* Selection colour stays readable on dark backgrounds */
+html[data-theme='dark'] ::selection { background: rgba(248, 147, 31, .35); color: #fff; }
+
+/* Transitions: smooth the switch, but never on first paint */
+html.pf-theme-ready body,
+html.pf-theme-ready .pf-card,
+html.pf-theme-ready .pf-shortcut-inner,
+html.pf-theme-ready .pf-post-inner,
+html.pf-theme-ready .gl-item,
+html.pf-theme-ready .rd-navbar {
+  transition: background-color .32s ease, color .32s ease,
+              border-color .32s ease, box-shadow .32s ease;
+}
 
 /* --------------------------------------------------------- platform bits --- */
 html[data-theme='dark'] .pf-hero {

@@ -42,22 +42,35 @@
     return actual;
   }
 
-  function icon(actual) {
+  function icon(actual, mode) {
+    if (mode === 'auto') return 'mdi-theme-light-dark';
     // Show the icon of the theme you'd switch TO.
     return actual === 'dark' ? 'mdi-white-balance-sunny' : 'mdi-weather-night';
   }
 
   function paintButton(btn) {
     var actual = root.getAttribute('data-theme') || 'light';
-    btn.innerHTML = '<span class="mdi ' + icon(actual) + '"></span>';
-    btn.setAttribute('aria-label', actual === 'dark' ? '切换到白天模式' : '切换到黑夜模式');
-    btn.setAttribute('title', actual === 'dark' ? '白天模式' : '黑夜模式');
+    var mode = stored();
+    btn.innerHTML = '<span class="mdi ' + icon(actual, mode) + '"></span>';
+    var label = mode === 'auto'
+      ? '跟随系统（点击切换为黑夜）'
+      : actual === 'dark' ? '切换到白天模式' : '切换到黑夜模式';
+    btn.setAttribute('aria-label', label);
+    btn.setAttribute('title', label + ' · 右键恢复跟随系统');
     btn.setAttribute('aria-pressed', actual === 'dark' ? 'true' : 'false');
+    if (mode === 'auto') btn.setAttribute('data-mode', 'auto');
+    else btn.removeAttribute('data-mode');
   }
 
+  // Cycle: light -> dark -> auto -> light …
   function toggle() {
     var actual = root.getAttribute('data-theme') || 'light';
-    var next = actual === 'dark' ? 'light' : 'dark';
+    var mode = stored();
+    var next;
+    if (mode === 'auto') next = 'light';
+    else if (mode === 'light') next = 'dark';
+    else next = 'auto';
+
     try { localStorage.setItem(KEY, next); } catch (e) { /* private mode */ }
     apply(next);
     refresh();
@@ -66,8 +79,9 @@
       btn.classList.add('is-switching');
       setTimeout(function () { btn.classList.remove('is-switching'); }, 460);
     }
-    // Let other widgets (e.g. gallery lightbox) react if they want.
-    document.dispatchEvent(new CustomEvent('pf:themechange', { detail: { theme: next } }));
+    document.dispatchEvent(new CustomEvent('pf:themechange', {
+      detail: { theme: current(), mode: next },
+    }));
   }
 
   function set(mode) {
@@ -87,6 +101,21 @@
 
   function injectButton() {
     if (document.querySelector('.pf-theme-toggle')) return;
+
+    var wire = function (btn) {
+      btn.addEventListener('click', toggle);
+      // Right click / long press -> jump straight back to "follow system".
+      btn.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+        set('auto');
+        var b = document.querySelector('.pf-theme-toggle');
+        if (b) {
+          b.classList.add('is-switching');
+          setTimeout(function () { b.classList.remove('is-switching'); }, 460);
+        }
+      });
+    };
+
     // Preferred anchor: the navbar social icon row.
     var host = document.querySelector('.list-share-2');
     if (host) {
@@ -94,7 +123,7 @@
       var btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'pf-theme-toggle';
-      btn.addEventListener('click', toggle);
+      wire(btn);
       li.appendChild(btn);
       host.appendChild(li);
       paintButton(btn);
@@ -104,7 +133,7 @@
     var float = document.createElement('button');
     float.type = 'button';
     float.className = 'pf-theme-toggle is-floating';
-    float.addEventListener('click', toggle);
+    wire(float);
     document.body.appendChild(float);
     paintButton(float);
   }
@@ -113,6 +142,10 @@
     apply(stored());
     injectButton();
     refresh();
+    // Enable colour transitions only after first paint, so switching is smooth
+    // but the initial render never animates. A single deferred call is enough
+    // and is more reliable than nested frames across browsers.
+    setTimeout(function () { root.classList.add('pf-theme-ready'); }, 80);
     // Follow the OS while in "auto" mode.
     if (global.matchMedia) {
       var mq = global.matchMedia('(prefers-color-scheme: dark)');

@@ -68,11 +68,43 @@ CSS / 图片 / 字体 / 导航都正常。`file://` 下浏览器会因 CORS 拦�
 | `gen-blog-latest.js` | 从 Hexo `db.json` 生成首页「最新文章」数据 |
 | `gen-data-js.js` | 生成 `file://` 用的 `*.js` 数据快照 |
 | `gen-sections.js` | 重新生成四个板块的 `index.html`（含静态卡片） |
+| `gen-gallery.js` | 从图库外壳生成 `/gallery/` 页面 |
+| `inject-theme.js` | 给所有页面注入深浅色主题接线（幂等，构建时自动跑） |
 | `unify-nav.js` | 一次性把旧页面的导航/页脚统一为平台导航（已执行，留作参考） |
 | `verify-build.js` / `scan-links.js` / `check-file-protocol.js` | 构建产物完整性校验 |
 | `verify-deploy.js` | 发布前把关：关键入口齐全、源文件不泄露 |
 | `test-static-fallback.js` | 验证无 JS / 请求中 / 失败时卡片仍在 |
+| `test-theme.js` | 验证三态主题切换、右键归零、过渡门控与 CSS 覆盖 |
 | `test-live.js` | 部署后抓线上真实文件跑渲染，确认线上正常 |
+
+## 白天 / 黑夜主题
+
+全站（含博客）支持浅色与深色主题，按钮在导航栏社交图标旁。
+
+| 操作 | 效果 |
+| --- | --- |
+| 单击 | light → dark → auto 三态循环 |
+| 右键 | 直接回到 `auto`（跟随系统） |
+| 自动记忆 | 存在 localStorage 的 `pf-theme` |
+
+实现要点：
+
+- `assets/css/theme.css`：靠 `data-theme` 属性切换配色。不重写 legacy
+  `style.css`（约 290 处硬编码 `#fff`），而是覆盖真正影响观感的表面，
+  并把 `--pf-ink` / `--pf-muted` / `--pf-border` / `--pf-surface`
+  重新指向深色值，组件自动跟随。
+- `assets/js/theme.js`：切换逻辑与按钮注入（注入到 `.list-share-2`）。
+- **防闪烁**：每个页面 `<head>` 内有一段内联脚本，在首次绘制前就设好
+  `data-theme`，避免先白后黑。
+- **过渡门控**：`html.pf-theme-ready` 延迟 80ms 才加，保证首屏不播放动画，
+  之后切换才有平滑过渡。
+- 博客：`blog-source/scripts/theme-sync.js` 在门户与 Butterfly 之间双向
+  同步主题键，并为暗色模式重写代码块配色（Butterfly 的 highlight 主题是
+  构建期固定的，无法运行时切换）。`autoChangeMode` 已设为 `false`，
+  避免按时间段强制切换与用户选择冲突。
+
+改主题相关文件后跑 `node scripts/inject-theme.js` 重新接线；
+`build-site.js` 每次构建也会自动执行一次。
 
 ## GitHub Actions
 

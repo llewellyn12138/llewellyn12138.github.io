@@ -62,6 +62,7 @@ jobs:
           node scripts/check-file-protocol.js
           node scripts/test-registry-render.js
           node scripts/test-static-fallback.js
+          node scripts/test-theme.js
 
       # Gate the publish on artifact completeness: once Pages serves only
       # gh-pages, one missing file breaks the live site.
