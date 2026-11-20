@@ -40,18 +40,34 @@ CSS / 图片 / 字体 / 导航都正常。`file://` 下浏览器会因 CORS 拦�
 | `blog-latest.js` / `blog-latest.json` | 首页「最新文章」本地数据（`window.PF_LATEST_POSTS`） |
 | `blog/` | Hexo 输出的镜像，供首页「博客」链接跳转 |
 
-**改了 `manifest.json` 或写了新文章后，要重新跑一次 `build-site.js`**
-（或单独跑 `gen-data-js.js`）刷新这些快照，否则双击打开时看到的还是旧数据；
-通过 HTTP 访问则始终 `fetch()` 最新的 JSON，无需刷新。
+**改了 `manifest.json` 或写了新文章后，跑一次 `build-site.js` 即可**
+（它会自动重新生成板块页、刷新数据快照）；通过 HTTP 访问时卡片还会
+`fetch()` 最新 JSON 覆盖静态内容，无需刷新。
+
+## 静态兜底（重要）
+
+四个板块页的卡片是**在构建时直接写进 HTML** 的，不是纯靠 JS 生成：
+
+- JS 完全失效 / 被拦截 / 报错 → 页面仍然显示上一次构建的卡片（可被搜索引擎抓取）；
+- JS 正常 → `registry.js` 拉取最新 `manifest.json`，成功后才重绘；
+- 任何一步失败 → **保留静态卡片，绝不显示空白或错误横幅**。
+
+因此编辑 `manifest.json` 后如果没重新构建，页面会显示旧卡片。
+`build-site.js` 每次都会先跑 `gen-sections.js`，`verify-build.js` 还会校验
+「静态卡片数 == manifest 条目数」，不一致直接构建失败。
+
+卡片模板只有一份：[`scripts/card-template.js`](scripts/card-template.js)，
+构建期与运行期共用，避免两边样式漂移。
 
 `scripts/` 下保留的辅助脚本：
 
 | 脚本 | 作用 |
 | --- | --- |
 | `build-site.js` | 统一构建入口（本地与 CI 共用） |
+| `card-template.js` | 卡片 HTML 模板（构建期 + 运行期共用） |
 | `gen-blog-latest.js` | 从 Hexo `db.json` 生成首页「最新文章」数据 |
 | `gen-data-js.js` | 生成 `file://` 用的 `*.js` 数据快照 |
-| `gen-sections.js` | 重新生成四个板块的 `index.html`（改版式后跑） |
+| `gen-sections.js` | 重新生成四个板块的 `index.html`（含静态卡片） |
 | `unify-nav.js` | 一次性把旧页面的导航/页脚统一为平台导航（已执行，留作参考） |
 | `verify-build.js` / `scan-links.js` / `check-file-protocol.js` | 构建产物完整性校验 |
 

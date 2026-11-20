@@ -7,9 +7,12 @@
  *   <script src="../apps/manifest.js"></script>   <- file:// fallback snapshot
  *   <script src="../assets/js/registry.js"></script>
  *
- * Over HTTP  -> fetch() the live manifest.json (always fresh).
- * Under file:// -> fetch() is CORS-blocked, fall back to window.PF_MANIFEST[key]
- *                  loaded by the sibling <script>.
+ * Over HTTP  -> fetch() the live manifest.json and repaint only on success.
+ * Under file:// -> fetch is CORS-blocked; the cards pre-rendered into the
+ *                  HTML at build time are kept as-is (no "loading" flash).
+ *
+ * Resilience: section pages ship their cards pre-rendered, so they still show
+ * content even if this script fails to load, throws, or the manifest is down.
  *
  * Manifest schema: see the manifest.json inside each section directory.
  * ========================================================================== */
@@ -118,35 +121,45 @@
     container.innerHTML = items.map(function (it, i) { return buildCard(it, i, base); }).join('');
   }
 
-  function snapshot(container, key) {
-    var bank = global.PF_MANIFEST || {};
-    if (key && bank[key]) return bank[key];
-    // Last resort: any single manifest snapshot on the page
-    var keys = Object.keys(bank);
-    return keys.length === 1 ? bank[keys[0]] : null;
+  // True when the build already pre-rendered cards into the HTML.
+  function hasStaticCards(container) {
+    return /class="pf-card-wrap"/.test(container.innerHTML || '');
   }
 
   function render(container, manifestUrl) {
     if (!container) return Promise.resolve();
-    container.innerHTML =
-      '<div class="pf-loading"><span class="pf-spinner"></span>正在加载内容…</div>';
 
     var key = container.getAttribute('data-registry-key');
     var base = container.getAttribute('data-registry-base') || '';
+    var preRendered = hasStaticCards(container);
+
+    // Never blank out pre-rendered content: if anything fails, the static
+    // cards stay visible (graceful degradation).
+    if (!preRendered) {
+      container.innerHTML =
+        '<div class="pf-loading"><span class="pf-spinner"></span>正在加载内容…</div>';
+    }
+
     var fallback = function (err) {
+      if (preRendered) {
+        // Static cards are already correct for the last build; keep them.
+        if (window.console && console.debug) {
+          console.debug('[registry] using pre-rendered cards:', err && err.message);
+        }
+        return;
+      }
       var data = snapshot(container, key);
       if (data) {
         paint(container, data, base);
       } else {
         console.error('[registry] load failed:', manifestUrl, err);
-        container.innerHTML =
-          '<div class="pf-error">加载失败，请刷新重试。</div>';
+        container.innerHTML = '<div class="pf-error">加载失败，请刷新重试。</div>';
       }
     };
 
-    // file:// -> skip fetch entirely (CORS would reject it anyway)
+    // file:// -> fetch is CORS-blocked; keep the pre-rendered cards.
     if (location.protocol === 'file:') {
-      fallback(new Error('file:// uses local snapshot'));
+      fallback(new Error('file:// keeps pre-rendered cards'));
       return Promise.resolve();
     }
 

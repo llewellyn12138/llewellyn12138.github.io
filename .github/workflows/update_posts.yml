@@ -61,6 +61,7 @@ jobs:
           node scripts/scan-links.js
           node scripts/check-file-protocol.js
           node scripts/test-registry-render.js
+          node scripts/test-static-fallback.js
 
       # Publishes the assembled static site to gh-pages.
       # IMPORTANT: GitHub Pages must be configured with

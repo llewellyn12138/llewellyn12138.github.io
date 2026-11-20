@@ -82,7 +82,7 @@
         <p>不依赖后端、不收集数据的小应用：播放器、转换器、可视化页面等，全部可以直接在浏览器里跑。</p>
         <div class="pf-hero-meta">
           <span class="pf-pill"><span class="mdi mdi-apps"></span> 纯前端的小应用，打开即用</span>
-          <span class="pf-pill" data-registry-count>加载中…</span>
+          <span class="pf-pill" data-registry-count>共 <strong>2</strong> 项 · 已上线 <strong>1</strong></span>
         </div>
       </div>
     </section>
@@ -97,7 +97,7 @@
           </div>
           <a class="pf-latest-all" href="../index.html">← 返回首页</a>
         </div>
-        <div id="registry-grid" data-registry="../apps/manifest.json" data-registry-key="apps" data-registry-base="../" data-registry-head="#registry-title"></div>
+        <div class="pf-grid" id="registry-grid" data-registry="../apps/manifest.json" data-registry-key="apps" data-registry-base="../" data-registry-head="#registry-title"><div class="pf-card-wrap"><article class="pf-card"><div class="pf-card-media"><img src="../images/project-4-1200x800-original.jpg" alt="视频播放器" loading="lazy" onerror="this.onerror=null;this.style.display='none'"/><span class="pf-fallback-icon mdi mdi-play-circle-outline"></span></div><div class="pf-card-body"><span class="pf-card-icon mdi mdi-play-circle-outline"></span><h3 class="pf-card-title"><a href="../apps/media-player/">视频播放器</a></h3><p class="pf-card-desc">基于 ArtPlayer 的在线视频播放器，支持字幕切换、清晰度选择、缩略图预览与自定义控制栏。</p><div class="pf-tags"><span class="pf-tag">纯前端</span><span class="pf-tag">ArtPlayer</span><span class="pf-tag">视频</span></div><div class="pf-card-foot"><span>2026-05-01</span><a class="pf-card-link" href="../apps/media-player/">打开 →</a></div></div></article></div><div class="pf-card-wrap"><article class="pf-card is-planned"><div class="pf-card-media"><span class="pf-badge pf-badge-planned">敬请期待</span><img src="../images/project-5-1200x800-original.jpg" alt="待上线应用" loading="lazy" onerror="this.onerror=null;this.style.display='none'"/><span class="pf-fallback-icon mdi mdi-dots-horizontal"></span></div><div class="pf-card-body"><span class="pf-card-icon mdi mdi-dots-horizontal"></span><h3 class="pf-card-title"><a href="#">待上线应用</a></h3><p class="pf-card-desc">位置已预留。新增应用只需放入 apps/&lt;name&gt;/ 并在本文件登记一条记录。</p><div class="pf-tags"><span class="pf-tag">预留位</span></div><div class="pf-card-foot"><span>本站</span><a class="pf-card-link" href="#">待上线</a></div></div></article></div></div>
         <div class="pf-note"><strong>维护说明：</strong>新增应用时：把页面放到 <code>apps/&lt;name&gt;/index.html</code>，然后在 <code>apps/manifest.json</code> 里加一条记录即可。改完 manifest 后跑一次 <code>node scripts/gen-data-js.js</code> 刷新本地预览快照。技术栈建议保持零构建的原生 HTML + ESM。</div>
       </div>
     </section>

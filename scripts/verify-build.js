@@ -41,7 +41,25 @@ function exists(rel) {
   return cands.some((c) => fs.existsSync(c));
 }
 
-// 1. Every cover referenced by posts exists in dist/blog/images/
+// 1. Section pages must embed cards matching their current manifest (drift
+//    guard: someone edited manifest.json without re-running the build).
+console.log('[manifest -> static cards]');
+for (const d of ['apps', 'games', 'tools', 'software']) {
+  const htmlPath = path.join(dist, d, 'index.html');
+  const manPath = path.join(dist, d, 'manifest.json');
+  if (!fs.existsSync(htmlPath) || !fs.existsSync(manPath)) { ok(d, false, 'missing files'); continue; }
+  const html = fs.readFileSync(htmlPath, 'utf8');
+  const man = JSON.parse(fs.readFileSync(manPath, 'utf8'));
+  const cards = (html.match(/class="pf-card-wrap"/g) || []).length;
+  const expected = (man.items || []).length;
+  ok(d + ': ' + cards + '/' + expected + ' static cards', cards === expected);
+  // Every item name must appear in the pre-rendered HTML.
+  const missingNames = (man.items || []).filter((i) => !html.includes(i.name.replace(/&/g, '&amp;')));
+  ok(d + ': all item names present', missingNames.length === 0,
+    missingNames.map((i) => i.name).join(', '));
+}
+
+// 2. Every cover referenced by posts exists in dist/blog/images/
 console.log('[covers]');
 const db = JSON.parse(fs.readFileSync(path.join(root, 'blog-source', 'db.json'), 'utf8'));
 for (const p of db.models.Post) {

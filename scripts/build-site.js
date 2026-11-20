@@ -32,6 +32,12 @@ function copyFileIfExists(name) {
 
 const skipHexo = process.argv.includes('--skip-hexo');
 
+console.log('[build] 0/6 regenerate section pages from manifests');
+// Section pages embed their cards as static HTML (graceful degradation), so
+// they must be regenerated whenever a manifest changes — do it every build so
+// the two can never drift apart.
+run(process.execPath, [path.join(repoRoot, 'scripts', 'gen-sections.js')], repoRoot);
+
 console.log('[build] 1/5 sync posts -> blog-source/source/_posts');
 const srcPosts = path.join(repoRoot, 'posts');
 const dstPosts = path.join(blogDir, 'source', '_posts');

@@ -10,10 +10,34 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { renderCards, esc } = require('./card-template');
 
 const root = path.resolve(__dirname, '..');
 const P = '../';                       // section pages live one level deep
 const D = 'assets/js/registry.js';
+
+/**
+ * Read <dir>/manifest.json and pre-render its cards into static HTML.
+ * The page therefore has real content even if JS never runs; registry.js
+ * later replaces it only if a newer manifest is successfully fetched.
+ */
+function loadStatic(dir) {
+  const p = path.join(root, dir, 'manifest.json');
+  let data = { title: '', items: [] };
+  try {
+    data = JSON.parse(fs.readFileSync(p, 'utf8'));
+  } catch (e) {
+    console.warn('[sections] cannot read ' + dir + '/manifest.json: ' + e.message);
+  }
+  const items = Array.isArray(data.items) ? data.items : [];
+  const online = items.filter((i) => i.status !== 'planned').length;
+  return {
+    cards: items.length ? renderCards(items, P) : '',
+    countLabel:
+      '共 <strong>' + items.length + '</strong> 项 · 已上线 <strong>' + online + '</strong>',
+    title: data.title || '',
+  };
+}
 
 const NAV = [
   { label: '首页', href: P + 'index.html' },
@@ -79,6 +103,9 @@ function footerHtml() {
 
 function page(s) {
   const canonical = `https://llewellyn12138.github.io/${s.dir}/`;
+  const st = loadStatic(s.dir);
+  const staticCards = st.cards;
+  const countLabel = st.countLabel;
   return `<!DOCTYPE html>
 <html class="wide wow-animation" lang="zh-CN">
 
@@ -157,7 +184,7 @@ ${navHtml(s.dir)}
         <p>${s.description}</p>
         <div class="pf-hero-meta">
           <span class="pf-pill"><span class="mdi ${s.icon}"></span> ${s.subtitle}</span>
-          <span class="pf-pill" data-registry-count>加载中…</span>
+          <span class="pf-pill" data-registry-count>${countLabel}</span>
         </div>
       </div>
     </section>
@@ -172,7 +199,7 @@ ${navHtml(s.dir)}
           </div>
           <a class="pf-latest-all" href="${P}index.html">← 返回首页</a>
         </div>
-        <div id="registry-grid" data-registry="${P}${s.dir}/manifest.json" data-registry-key="${s.dir}" data-registry-base="${P}" data-registry-head="#registry-title"></div>
+        <div class="pf-grid" id="registry-grid" data-registry="${P}${s.dir}/manifest.json" data-registry-key="${s.dir}" data-registry-base="${P}" data-registry-head="#registry-title">${staticCards}</div>
         <div class="pf-note"><strong>维护说明：</strong>${s.note}</div>
       </div>
     </section>
