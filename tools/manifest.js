@@ -10,7 +10,7 @@ window.PF_MANIFEST["tools"] = {
       "description": "技术栈待定，位置已留好。计划放置编码转换、格式化、计算器等纯前端小工具。",
       "link": "#",
       "image": "/images/gallery-2-1200x800-original.jpg",
-      "icon": "mdi-toolbox-outline",
+      "icon": "mdi-settings",
       "tags": [
         "规划中",
         "纯前端"

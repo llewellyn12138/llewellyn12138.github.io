@@ -3,33 +3,35 @@
 window.PF_MANIFEST = window.PF_MANIFEST || {};
 window.PF_MANIFEST["software"] = {
   "title": "软件库",
-  "description": "软件、脚本与安装包下载",
+  "description": "软件、小应用与下载",
   "items": [
     {
-      "name": "示例：Windows 常用命令速查（PDF）",
-      "description": "演示用条目：小文件直接放在 software/files/ 由本站提供下载；大文件请改用 GitHub Releases 外链。",
-      "link": "#",
-      "image": "/images/project-2-1200x800-original.jpg",
-      "icon": "mdi-file-document-outline",
+      "name": "视频播放器",
+      "description": "基于 ArtPlayer 的在线视频播放器，支持字幕切换、清晰度选择、缩略图预览与自定义控制栏。",
+      "link": "/apps/media-player/",
+      "image": "/images/project-4-1200x800-original.jpg",
+      "icon": "mdi-play-circle-outline",
       "tags": [
-        "示例",
-        "小文件"
+        "纯前端",
+        "ArtPlayer",
+        "视频"
+      ],
+      "status": "online",
+      "external": false,
+      "date": "2026-05-01",
+      "kind": "app"
+    },
+    {
+      "name": "预留位置",
+      "description": "新增条目：把文件放进 software/files/ 或上传到 GitHub Releases，然后在 software/manifest.json 登记一条。",
+      "link": "#",
+      "image": "/images/project-5-1200x800-original.jpg",
+      "icon": "mdi-dots-horizontal",
+      "tags": [
+        "预留位"
       ],
       "status": "planned",
       "external": false
-    },
-    {
-      "name": "示例：GitHub Releases 外链",
-      "description": "演示用条目：把 link 换成 https://github.com/<user>/<repo>/releases/tag/<tag>，并设置 external: true。",
-      "link": "https://github.com/llewellyn12138",
-      "image": "/images/project-6-1200x800-original.jpg",
-      "icon": "mdi-github",
-      "tags": [
-        "示例",
-        "Releases 外链"
-      ],
-      "status": "planned",
-      "external": true
     }
   ]
 };

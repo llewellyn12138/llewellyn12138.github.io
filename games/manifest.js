@@ -10,7 +10,7 @@ window.PF_MANIFEST["games"] = {
       "description": "技术栈待定，位置已留好。计划方向：原生 HTML + ESM + Canvas，零构建，点开即玩。",
       "link": "#",
       "image": "/images/gallery-1-1200x800-original.jpg",
-      "icon": "mdi-gamepad-variant-outline",
+      "icon": "mdi-gamepad-variant",
       "tags": [
         "规划中",
         "零构建"
