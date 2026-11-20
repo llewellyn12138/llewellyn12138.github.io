@@ -70,6 +70,9 @@ CSS / 图片 / 字体 / 导航都正常。`file://` 下浏览器会因 CORS 拦�
 | `gen-sections.js` | 重新生成四个板块的 `index.html`（含静态卡片） |
 | `unify-nav.js` | 一次性把旧页面的导航/页脚统一为平台导航（已执行，留作参考） |
 | `verify-build.js` / `scan-links.js` / `check-file-protocol.js` | 构建产物完整性校验 |
+| `verify-deploy.js` | 发布前把关：关键入口齐全、源文件不泄露 |
+| `test-static-fallback.js` | 验证无 JS / 请求中 / 失败时卡片仍在 |
+| `test-live.js` | 部署后抓线上真实文件跑渲染，确认线上正常 |
 
 ## GitHub Actions
 
@@ -85,29 +88,49 @@ CSS / 图片 / 字体 / 导航都正常。`file://` 下浏览器会因 CORS 拦�
 3. `node scripts/verify-build.js` + `node scripts/scan-links.js` 做完整性校验；
 4. `peaceiris/actions-gh-pages@v4` 把 `dist/` 推到 `gh-pages` 分支。
 
-## ⚠️ 必须做的一次性设置（否则线上不会更新）
+## ⚠️ Pages 源：当前是 main，建议切到 gh-pages
 
-**当前线上站点并不是由 `gh-pages` 分支提供的。** 实测：
+**现状（已实测，2026-11）**：Pages 同时在发布 `main` 分支，
+`pages-build-deployment` 每次提交都会跑（#54/#55/#56 均成功）。
 
-- `https://llewellyn12138.github.io/posts/coding/markdown-guide.md`、`/old/knowledge-loader.js`、
-  `/blog-source/_config.yml` 都返回 200 —— 这些是 `main` 分支上的源文件；
-- `gh-pages` 分支的树（[API](https://api.github.com/repos/llewellyn12138/llewellyn12138.github.io/git/trees/gh-pages?recursive=1)）里只有 `.nojekyll`；
-- 仓库 Pages API 返回 404（无 Pages 站点配置），`/blog/` 是历史遗留的陈旧产物。
+`gh-pages` 分支也已由 CI 正常推送，内容与本地 `dist/` **完全一致**
+（208 个文件，逐文件清单比对通过）。所以两条发布路径都在工作，
+但由此带来两个问题：
 
-也就是说：**GitHub Pages 目前是把 `main` 分支根目录当作站点源直接暴露**，
-所以过去「构建成功但线上没变化」。要让新架构真正上线，二选一：
+1. **源文件被公开**：`main` 直接作为站点源，导致以下路径都能直接下载：
 
-- **推荐**：`Settings → Pages → Build and deployment → Source` 选 **GitHub Actions**
-  （本 workflow 推送 `gh-pages` 后由 Pages 部署）；或
-- 选 **Deploy from a branch** → branch `gh-pages`、folder `/ (root)`。
+   | 路径 | 状态 |
+   | --- | --- |
+   | `/posts/coding/markdown-guide.md` | 200（文章源文件） |
+   | `/old/knowledge-loader.js` | 200（旧代码） |
+   | `/blog-source/_config.yml` | 200（站点配置） |
+   | `/scripts/build-site.js` | 200（构建脚本） |
+   | `/DEPLOYMENT.md` | 200（本文档） |
+   | `/.github/workflows/*` | 404（Actions 目录本就不发布） |
 
-改完后手动跑一次 `Actions → Build and Deploy Site → Run workflow`。
+2. **内容重复发布**：同一份产物既在 `main` 又在 `gh-pages`，
+   而且 CI 的 `dist/` 校验实际上不影响线上（线上走的是 `main`）。
+
+### 建议切换
+
+`Settings → Pages → Build and deployment → Source` 选
+**Deploy from a branch** → branch `gh-pages`、folder `/ (root)`。
+
+切换后：
+
+- 只有 `dist/` 产物对外可见，上表所有源文件路径变成 404；
+- CI 的 `verify-deploy.js` 才真正起到发布前把关作用；
+- `main` 上的 `blog/` 镜像（1.47 MB）可以不再需要。
+
+切换是**低风险**的：`gh-pages` 内容已验证与 `dist/` 一致，且每次构建都会
+先过 `verify-deploy.js`（检查 32 个关键入口存在、7 个不该发布的文件确实不在、
+总文件数合理），不通过就不发布。
 
 ### 验证是否生效
 
 - `https://llewellyn12138.github.io/` → 出现「站点板块」八宫格与「最新文章」；
 - `/blog-latest.json` 返回 JSON；`/software/`、`/apps/`、`/games/`、`/tools/` 返回列表页；
-- `/posts/...` 之类的源文件路径应当 404（不再暴露源文件）。
+- `/posts/...`、`/old/...` 之类的源文件路径应当 **404**（不再暴露源文件）。
 
 ## ⚠️ 关于 CNAME / 自定义域名
 
