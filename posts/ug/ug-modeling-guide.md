@@ -1,37 +1,21 @@
 ---
 title: UG NX 建模实战指南：从草图到实体
-category: ug
-date: 2026-03-13 14:00:00        # 创建日期 (YYYY-MM-DD HH:mm:ss)
-updated: 2026-03-13 14:00:00      # 更新日期 (可选)
-tags:         # 标签 (数组格式)
+date: 2026-11-20 10:00:00
+updated: 2026-11-20 10:00:00
+tags:
   - UG
   - NX
   - 建模
   - 教程
-categories: ug  # 分类
-keywords: UG NX, 建模, 草图, 特征操作, 同步建模, 快捷键    # 关键词 (SEO)
-description: 简洁实用的 UG NX 建模全流程教程，涵盖草图约束、基础特征操作与同步建模技巧。 # 文章摘要
-image: images/project-1-1200x800-original.jpg       # 代表图/缩略图
-
-# --- Butterfly 主题特有属性 ---
-cover: images/project-1-1200x800-original.jpg       # 首页显示的缩略图 (若不设置则取 image)
-top_img:      # 文章顶部的背景图 (若为 false 则不显示)
-sticky:       # 置顶权重 (数字越大越靠前)
-comments:     # 是否显示评论 (true/false)
-toc:          # 是否显示目录 (true/false)
-toc_number:   # 目录是否显示编号
-toc_expand:   # 目录是否默认展开
-copyright:    # 是否显示版权文章 (true/false)
-copyright_author:  # 版权作者
-copyright_author_href: # 版权作者链接
-copyright_url:     # 版权文章链接
-copyright_info:    # 版权声明内容
-mathjax:      # 是否开启 MathJax
-katex:        # 是否开启 KaTeX
-aplayer:      # 是否开启 APlayer
-highlight_shrink:  # 代码块是否收缩 (true/false)
-aside:        # 是否显示侧边栏 (true/false)
-ai:           # 是否显示 AI 摘要 (部分插件支持)
+categories: ug
+keywords: UG NX, 建模, 草图, 特征操作, 同步建模, 快捷键
+description: 简洁实用的 UG NX 建模全流程教程，涵盖草图约束、基础特征操作与同步建模技巧。
+image: images/project-1-1200x800-original.jpg
+cover: images/project-1-1200x800-original.jpg
+comments: true
+toc: true
+toc_number: true
+toc_expand: false
 ---
 
 # UG NX 建模实战指南

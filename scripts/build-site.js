@@ -61,12 +61,9 @@ if (!fs.existsSync(blogOut)) {
 }
 copyDir(blogOut, path.join(distDir, 'blog'));
 
-// Mirror the fresh blog output into the repo-root blog/ as well. That dir is
-// tracked (safety net for the current "Pages serves main branch" setup) and
-// makes the source tree usable when index.html is opened via file://.
-const rootBlog = path.join(repoRoot, 'blog');
-fs.rmSync(rootBlog, { recursive: true, force: true });
-copyDir(blogOut, rootBlog);
+// NOTE: we intentionally do NOT mirror blog output into the repo-root blog/.
+// Pages now serves gh-pages, where this build's dist/ is the single source.
+// Keeping a second copy on main only duplicated 1.5 MB of generated HTML.
 
 // NOTE: CNAME is deliberately NOT published. See DEPLOYMENT.md —
 // old.llewellyn.top is Cloudflare-proxied (A records), not a GitHub Pages

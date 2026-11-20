@@ -21,8 +21,9 @@ blog-source/source/_posts/
 # 构建产物（本地预览用，不提交）
 dist/
 
-# blog/ 是构建脚本镜像出来的 Hexo 输出（跟踪它，让源码树可离线打开，
-# 也是当前 Pages 直接服务 main 分支时的兜底）
+# 草稿目录：保留在本地，但不提交未完成内容与大图
+# （ug-basic.md 只有大纲；ug-basic.assets 是本地截图）
+draft/
 
 # 本地脚本
 preview_blog.bat

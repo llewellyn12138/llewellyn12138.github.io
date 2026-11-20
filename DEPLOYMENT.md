@@ -126,26 +126,22 @@ CSS / 图片 / 字体 / 导航都正常。`file://` 下浏览器会因 CORS 拦�
 先过 `verify-deploy.js`（检查 32 个关键入口存在、7 个不该发布的文件确实不在、
 总文件数合理），不通过就不发布。
 
-### 随时确认当前处于哪种状态
+### ✅ 已完成切换
 
-```bash
-node scripts/check-pages-source.js
-```
+Pages 源已改为 `gh-pages`。实测确认：
 
-- 输出「仍在服务 main」→ 源文件仍公开，**仓库根 `blog/` 镜像必须保留**；
-- 输出「已切到 gh-pages」→ 可以安全删除仓库根 `blog/` 镜像。
+| 路径 | 状态 |
+| --- | --- |
+| `/DEPLOYMENT.md` | **404**（已不再暴露） |
+| `/scripts/build-site.js` | **404** |
+| `/posts/coding/markdown-guide.md` | **404** |
+| `/blog/index.html` | 200（正常） |
+| `/apps/media-player/index.html` | 200（正常） |
 
-### ⚠️ 切换与删除 blog/ 的先后顺序
+随之完成：仓库根 `blog/` 镜像已删除，构建不再生成第二份副本；
+`draft/` 加入 `.gitignore`（保留本地草稿与截图，不提交）。
 
-**必须先切换 Pages 源，再删 `blog/`。** 顺序反了会让线上博客立刻 404。
-
-当前 `blog/` 镜像仍有存在价值（双击源码树预览 + Pages 服务 main 时的兜底），
-所以本次**保留**；等 `check-pages-source.js` 报告已切换后，再执行：
-
-```bash
-git rm -r --cached blog && rm -rf blog
-# 同时移除 build-site.js 里镜像 blog/ 的那几行
-```
+随时可用 `node scripts/check-pages-source.js` 复查当前状态。
 
 ### 验证是否生效
 
