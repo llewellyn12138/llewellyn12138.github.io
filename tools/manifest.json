@@ -69,19 +69,6 @@
       "external": true
     },
     {
-      "name": "LRC 歌词编辑器",
-      "description": "在浏览器里给音频打时间轴，导出 LRC 字幕文件。",
-      "link": "https://judes.me/lrc_editor/",
-      "icon": "mdi-music-note",
-      "tags": [
-        "歌词",
-        "字幕"
-      ],
-      "category": "媒体",
-      "status": "online",
-      "external": true
-    },
-    {
       "name": "FFmpeg 命令参考",
       "description": "中文 FFmpeg 手册，转码、剪辑、滤镜都有现成例子。",
       "link": "https://crifan.github.io/media_process_ffmpeg/website/",
@@ -89,19 +76,6 @@
       "tags": [
         "FFmpeg",
         "转码"
-      ],
-      "category": "媒体",
-      "status": "online",
-      "external": true
-    },
-    {
-      "name": "MKVToolNix 下载",
-      "description": "MKV 封装与音轨处理套件，官方发布页镜像。",
-      "link": "https://www.fosshub.com/MKVToolNix.html",
-      "icon": "mdi-package-down",
-      "tags": [
-        "MKV",
-        "封装"
       ],
       "category": "媒体",
       "status": "online",
