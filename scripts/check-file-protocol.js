@@ -54,7 +54,7 @@ console.log('  missing           :', bad.size);
 [...bad].forEach((x) => console.log('  MISSING', x));
 
 // JS data snapshots used when fetch() is CORS-blocked under file://
-const required = ['apps/manifest.js', 'games/manifest.js', 'tools/manifest.js',
+const required = ['games/manifest.js', 'tools/manifest.js',
   'software/manifest.js', 'blog-latest.js', 'blog-latest.json'];
 const missingData = required.filter((f) => !fs.existsSync(path.join(root, f)));
 missingData.forEach((f) => { console.log('  MISSING DATA', f); bad.add(f); });

@@ -83,7 +83,7 @@ console.log('[build] 5/6 generate file:// data snapshots');
 run(process.execPath, [path.join(repoRoot, 'scripts', 'gen-data-js.js')], repoRoot);
 // The snapshot generator writes into the source tree; copy the new .js files
 // into dist/ so the deployed site has them too.
-['apps', 'games', 'tools', 'software'].forEach((d) => {
+['games', 'tools', 'software'].forEach((d) => {
   const src = path.join(repoRoot, d, 'manifest.js');
   if (fs.existsSync(src)) fs.copyFileSync(src, path.join(distDir, d, 'manifest.js'));
 });

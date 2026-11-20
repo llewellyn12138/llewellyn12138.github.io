@@ -20,7 +20,7 @@ const ok = (l, c, e) => {
   if (!c) fails++;
 };
 
-const dirs = ['apps', 'games', 'tools', 'software'];
+const dirs = ['games', 'tools', 'software'];
 
 // --- 1. Static cards present with scripts stripped -------------------------
 console.log('[static fallback: JS disabled]');
@@ -72,7 +72,7 @@ function runCase(dir, fetchImpl, staticHtml) {
 }
 
 (async () => {
-  const dir = 'apps';
+  const dir = 'software';
   const staticHtml = fs.readFileSync(path.join(dist, dir, 'index.html'), 'utf8')
     .match(/<div class="pf-grid" id="registry-grid"[^>]*>([\s\S]*?)<\/div>\s*<div class="pf-note">/)[1];
   const manifest = JSON.parse(fs.readFileSync(path.join(dist, dir, 'manifest.json'), 'utf8'));

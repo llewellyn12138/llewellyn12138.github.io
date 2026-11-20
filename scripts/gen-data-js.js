@@ -14,7 +14,7 @@ const fs = require('fs');
 const path = require('path');
 const root = path.resolve(__dirname, '..');
 
-const SECTIONS = ['apps', 'games', 'tools', 'software'];
+const SECTIONS = ['games', 'tools', 'software'];
 
 for (const name of SECTIONS) {
   const jsonPath = path.join(root, name, 'manifest.json');

@@ -88,7 +88,7 @@ function runFor(dir) {
 }
 
 (async () => {
-  const dirs = ['apps', 'games', 'tools', 'software'];
+  const dirs = ['games', 'tools', 'software'];
   const results = dirs.map((d) => ({ dir: d, ...runFor(d) }));
 
   // render() sets a loading state synchronously, then paints after the promise
@@ -110,12 +110,13 @@ function runFor(dir) {
     ok(r.dir + ' counter filled', /共 <strong>/.test(r.counter.innerHTML), r.counter.innerHTML);
   }
 
-  // Spot-check a known card and a relative image path
-  const appsHtml = results.find((r) => r.dir === 'apps').container.innerHTML;
-  ok('apps card has title', /视频播放器/.test(appsHtml));
-  ok('apps image path relative', /src="\.\.\/images\/project-4-1200x800-original\.jpg"/.test(appsHtml));
-  ok('apps link relative', /href="\.\.\/apps\/media-player\/"/.test(appsHtml));
-  ok('planned badge present', /pf-badge-planned/.test(appsHtml));
+  // Spot-check a known card and its relative paths (the media player now
+  // lives in the software library, which absorbed the old apps section).
+  const swHtml = results.find((r) => r.dir === 'software').container.innerHTML;
+  ok('software card has title', /视频播放器/.test(swHtml));
+  ok('software image path relative', /src="\.\.\/images\/project-4-1200x800-original\.jpg"/.test(swHtml));
+  ok('software link relative', /href="\.\.\/apps\/media-player\/"/.test(swHtml));
+  ok('planned badge present', /pf-badge-planned/.test(swHtml));
 
   console.log(fails === 0 ? '\nREGISTRY RENDER OK' : '\n' + fails + ' FAILURE(S)');
   process.exit(fails === 0 ? 0 : 1);

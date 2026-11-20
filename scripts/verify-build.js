@@ -12,13 +12,42 @@ function ok(label, cond, extra) {
   if (!cond) fails++;
 }
 
-// 0. Syntax-check every shipped JS file. A single bad character in a block
+// 0b. Every mdi icon referenced in HTML/manifests must exist in the bundled
+//     icon font. The font is Material Design Icons v1.4.57, which lacks many
+//     modern names — a wrong name renders as a blank box, silently.
+console.log('[icon names]');
+{
+  const css = fs.readFileSync(path.join(dist, 'css', 'fonts.css'), 'utf8');
+  const iconSources = [
+    'index.html', 'about-us.html', 'contacts.html', 'map.html', 'media.html', 'lab.html',
+    'games/index.html', 'tools/index.html', 'software/index.html',
+    'apps/index.html', 'apps/media-player/index.html',
+  ];
+  const used = new Set();
+  for (const rel of iconSources) {
+    const p = path.join(dist, rel);
+    if (!fs.existsSync(p)) continue;
+    for (const m of fs.readFileSync(p, 'utf8').matchAll(/mdi mdi-([a-z0-9-]+)/g)) used.add(m[1]);
+  }
+  // Manifest icons are rendered by JS as `mdi ${icon}`.
+  for (const d of ['games', 'tools', 'software']) {
+    const p = path.join(dist, d, 'manifest.json');
+    if (!fs.existsSync(p)) continue;
+    for (const item of JSON.parse(fs.readFileSync(p, 'utf8')).items || []) {
+      if (item.icon) used.add(String(item.icon).replace(/^mdi-/, ''));
+    }
+  }
+  const missing = [...used].filter((n) => !css.includes('.mdi-' + n + ':before'));
+  ok(used.size + ' icons all exist in font', missing.length === 0, missing.join(', '));
+}
+
+// 0c. Syntax-check every shipped JS file. A single bad character in a block
 //    comment (e.g. "*/" inside prose) silently breaks the whole file and the
 //    page then hangs on its loading state — catch it here, not in production.
 console.log('[js syntax]');
 const jsFiles = [
   'assets/js/registry.js', 'assets/js/latest-posts.js',
-  'apps/manifest.js', 'games/manifest.js', 'tools/manifest.js', 'software/manifest.js',
+  'games/manifest.js', 'tools/manifest.js', 'software/manifest.js',
   'blog-latest.js',
 ];
 for (const rel of jsFiles) {
@@ -44,7 +73,7 @@ function exists(rel) {
 // 1. Section pages must embed cards matching their current manifest (drift
 //    guard: someone edited manifest.json without re-running the build).
 console.log('[manifest -> static cards]');
-for (const d of ['apps', 'games', 'tools', 'software']) {
+for (const d of ['games', 'tools', 'software']) {
   const htmlPath = path.join(dist, d, 'index.html');
   const manPath = path.join(dist, d, 'manifest.json');
   if (!fs.existsSync(htmlPath) || !fs.existsSync(manPath)) { ok(d, false, 'missing files'); continue; }
@@ -77,7 +106,7 @@ for (const p of latest.posts) {
 
 // 3. Manifests + their .js snapshots are valid
 console.log('[manifests + snapshots]');
-for (const d of ['apps', 'games', 'tools', 'software']) {
+for (const d of ['games', 'tools', 'software']) {
   try {
     const m = JSON.parse(fs.readFileSync(path.join(dist, d, 'manifest.json'), 'utf8'));
     ok(d + '/manifest.json', Array.isArray(m.items) && m.items.length > 0, m.items.length + ' items');
@@ -117,7 +146,7 @@ for (const rel of pages) {
 // 5. Portal home essentials (relative versions)
 console.log('[portal]');
 const home = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
-['blog/', 'software/', 'games/', 'apps/', 'tools/', 'latest-posts',
+['blog/', 'software/', 'games/', 'tools/', 'latest-posts',
   'assets/js/latest-posts.js', 'assets/js/registry.js', 'blog-latest.js',
   'assets/css/platform.css', 'canonical', 'og:title'].forEach((k) =>
   ok('index.html contains ' + k, home.includes(k))

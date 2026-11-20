@@ -44,21 +44,11 @@ const NAV = [
   { label: '博客', href: P + 'blog/' },
   { label: '软件库', href: P + 'software/' },
   { label: '小游戏', href: P + 'games/' },
-  { label: '小应用', href: P + 'apps/' },
   { label: '工具', href: P + 'tools/' },
   { label: '关于', href: P + 'about-us.html' },
 ];
 
 const SECTIONS = [
-  {
-    dir: 'apps',
-    title: '小应用',
-    eyebrow: 'Apps',
-    subtitle: '纯前端的小应用，打开即用',
-    description: '不依赖后端、不收集数据的小应用：播放器、转换器、可视化页面等，全部可以直接在浏览器里跑。',
-    icon: 'mdi-apps',
-    note: '新增应用时：把页面放到 <code>apps/&lt;name&gt;/index.html</code>，然后在 <code>apps/manifest.json</code> 里加一条记录即可。改完 manifest 后跑一次 <code>node scripts/gen-data-js.js</code> 刷新本地预览快照。技术栈建议保持零构建的原生 HTML + ESM。',
-  },
   {
     dir: 'games',
     title: '小游戏',
@@ -72,19 +62,19 @@ const SECTIONS = [
     dir: 'tools',
     title: '工具',
     eyebrow: 'Tools',
-    subtitle: '常用在线小工具',
-    description: '编码转换、格式化、计算器等随手可用的网页小工具，全部本地运算。',
-    icon: 'mdi-tools',
+    subtitle: '顺手就用的网页工具',
+    description: '编码转换、格式化、计算器等随手可用的网页小工具，全部在本地运算，不上传任何数据。',
+    icon: 'mdi-screwdriver',
     note: '技术栈尚未定，位置已预留。新增工具放入 <code>tools/&lt;name&gt;/</code> 并登记到 <code>tools/manifest.json</code>。',
   },
   {
     dir: 'software',
     title: '软件库',
     eyebrow: 'Software',
-    subtitle: '我发布过的软件与下载',
-    description: '自己写的小工具、脚本与安装包。大文件走 GitHub Releases 外链，小文件直接放在本站仓库里。',
+    subtitle: '软件、小应用与下载',
+    description: '自己写的软件、小应用、脚本与安装包。大文件走 GitHub Releases 外链，小文件直接放在本站仓库里。',
     icon: 'mdi-package-variant-closed',
-    note: '分发约定：体积较大或需要版本管理的安装包上传到 <strong>GitHub Releases</strong>，在 <code>software/manifest.json</code> 里用 <code>"external": true</code> + Releases 链接登记；小于 10 MB 的单文件可以放进 <code>software/files/</code> 直接由本站提供下载。',
+    note: '分发约定：体积较大或需要版本管理的安装包上传到 <strong>GitHub Releases</strong>，在 <code>software/manifest.json</code> 里用 <code>"external": true</code> + Releases 链接登记；小于 10 MB 的单文件可以放进 <code>software/files/</code> 直接由本站提供下载。小应用（纯前端页面）也登记在这里。',
   },
 ];
 

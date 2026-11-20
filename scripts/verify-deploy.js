@@ -31,7 +31,6 @@ const REQUIRED_FILES = [
   'blog-latest.json',
   'blog-latest.js',
   'apps/index.html',
-  'apps/manifest.json',
   'apps/media-player/index.html',
   'games/index.html',
   'games/manifest.json',

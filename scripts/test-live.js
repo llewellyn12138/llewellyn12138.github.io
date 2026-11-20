@@ -25,7 +25,7 @@ function makeEl(attrs) {
 (async () => {
   const regSrc = await (await fetch(`${BASE}/assets/js/registry.js`)).text();
 
-  for (const dir of ['apps', 'games', 'tools', 'software']) {
+  for (const dir of ['games', 'tools', 'software']) {
     const manifest = await (await fetch(`${BASE}/${dir}/manifest.json`)).json();
     const container = makeEl({
       'data-registry': `../${dir}/manifest.json`,
