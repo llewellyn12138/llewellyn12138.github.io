@@ -3,12 +3,35 @@
 /* Post-build integrity checks for dist/ (relative-path aware) */
 const fs = require('fs');
 const path = require('path');
+const vm = require('vm');
 const root = path.resolve(__dirname, '..');
 const dist = path.join(root, 'dist');
 let fails = 0;
 function ok(label, cond, extra) {
   console.log((cond ? '  OK   ' : '  FAIL ') + label + (extra ? '  ' + extra : ''));
   if (!cond) fails++;
+}
+
+// 0. Syntax-check every shipped JS file. A single bad character in a block
+//    comment (e.g. "*/" inside prose) silently breaks the whole file and the
+//    page then hangs on its loading state — catch it here, not in production.
+console.log('[js syntax]');
+const jsFiles = [
+  'assets/js/registry.js', 'assets/js/latest-posts.js',
+  'apps/manifest.js', 'games/manifest.js', 'tools/manifest.js', 'software/manifest.js',
+  'blog-latest.js',
+];
+for (const rel of jsFiles) {
+  const p = path.join(dist, rel);
+  if (!fs.existsSync(p)) { ok(rel + ' exists', false); continue; }
+  try {
+    // Compile only (never run) — catches stray tokens such as an early "*/"
+    // that silently swallows the rest of the file.
+    new vm.Script(fs.readFileSync(p, 'utf8'), { filename: rel });
+    ok(rel, true);
+  } catch (e) {
+    ok(rel, false, String(e.message).split('\n')[0]);
+  }
 }
 function exists(rel) {
   let decoded;

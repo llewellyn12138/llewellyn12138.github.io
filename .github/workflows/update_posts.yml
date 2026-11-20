@@ -60,6 +60,7 @@ jobs:
           node scripts/verify-build.js
           node scripts/scan-links.js
           node scripts/check-file-protocol.js
+          node scripts/test-registry-render.js
 
       # Publishes the assembled static site to gh-pages.
       # IMPORTANT: GitHub Pages must be configured with
