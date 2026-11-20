@@ -41,7 +41,28 @@ console.log('[icon names]');
   ok(used.size + ' icons all exist in font', missing.length === 0, missing.join(', '));
 }
 
-// 0c. Syntax-check every shipped JS file. A single bad character in a block
+// 0c. Visibility guard: the RD template hides `.page` (opacity:0) and only
+//     reveals it when a `.preloader` exists. Generated pages lack one, so
+//     platform.css must explicitly restore opacity. Without this the page
+//     renders completely blank (content present but fully transparent).
+console.log('[page visibility]');
+{
+  const css = fs.readFileSync(path.join(dist, 'assets', 'css', 'platform.css'), 'utf8');
+  const revealRule = /html\s+body\s+\.page\s*\{[^}]*opacity:\s*1/.test(css);
+  ok('platform.css reveals .page', revealRule);
+  for (const rel of ['tools/index.html', 'gallery/index.html', 'software/index.html', 'games/index.html']) {
+    const p = path.join(dist, rel);
+    if (!fs.existsSync(p)) { ok(rel + ' exists', false); continue; }
+    const html = fs.readFileSync(p, 'utf8');
+    const hasPreloader = /class="preloader"/.test(html);
+    const linksPlatformCss = /assets\/css\/platform\.css/.test(html);
+    // Either the template preloader runs, or our CSS reveals the page.
+    ok(rel + ' will be visible', hasPreloader || (linksPlatformCss && revealRule),
+      hasPreloader ? 'preloader' : linksPlatformCss ? 'css override' : 'nothing reveals .page');
+  }
+}
+
+// 0d. Syntax-check every shipped JS file. A single bad character in a block
 //    comment (e.g. "*/" inside prose) silently breaks the whole file and the
 //    page then hangs on its loading state — catch it here, not in production.
 console.log('[js syntax]');

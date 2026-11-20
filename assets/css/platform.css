@@ -3,6 +3,13 @@
    Sits on top of the legacy RD-Landkit css/style.css.
    ========================================================================== */
 
+/* The RD template starts `.page` at opacity:0 and only fades it in from
+   script.js when a `.preloader` element is present. The generated section
+   pages have no preloader, so the whole page stayed invisible (blank-looking,
+   yet text was still selectable). Reveal it, without !important, so any
+   future preloader still works. Specificity: html body .page beats `.page`. */
+html body .page { opacity: 1; }
+
 :root {
   --pf-accent: #f8931f;
   --pf-accent-soft: rgba(248, 147, 31, .12);
