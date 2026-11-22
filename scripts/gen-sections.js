@@ -11,10 +11,12 @@
 const fs = require('fs');
 const path = require('path');
 const { renderCards, renderGrouped, esc } = require('./card-template');
+const chrome_ = require('./site-chrome');
 
 const root = path.resolve(__dirname, '..');
 const P = '../';                       // section pages live one level deep
 const D = 'assets/js/registry.js';
+const SITE = chrome_.SITE;
 
 /**
  * Read <dir>/manifest.json and pre-render its cards into static HTML.
@@ -41,16 +43,6 @@ function loadStatic(dir) {
   };
 }
 
-const NAV = [
-  { label: '首页', href: P + 'index.html' },
-  { label: '博客', href: P + 'blog/' },
-  { label: '软件库', href: P + 'software/' },
-  { label: '小游戏', href: P + 'games/' },
-  { label: '工具', href: P + 'tools/' },
-  { label: '图库', href: P + 'gallery/' },
-  { label: '关于', href: P + 'about-us.html' },
-];
-
 const SECTIONS = [
   {
     dir: 'games',
@@ -59,7 +51,7 @@ const SECTIONS = [
     subtitle: '纯前端小游戏，摸鱼片刻',
     description: '用 Canvas / DOM 写的小游戏，无需安装、无需登录，点开即玩。',
     icon: 'mdi-gamepad-variant',
-    note: '技术栈尚未定，位置已预留。建议长期方向：原生 HTML + ESM + Canvas，零构建。新增游戏放入 <code>games/&lt;name&gt;/</code> 并登记到 <code>games/manifest.json</code>。',
+    note: '目前还没有上线的小游戏，位置先占住。新增游戏时，把页面放进 <code>games/&lt;name&gt;/</code>，再到 <code>games/manifest.json</code> 里登记一条，列表与计数会自动更新。',
   },
   {
     dir: 'tools',
@@ -68,7 +60,7 @@ const SECTIONS = [
     subtitle: '顺手就用的网页工具',
     description: '编码转换、格式化、计算器等随手可用的网页小工具，全部在本地运算，不上传任何数据。',
     icon: 'mdi-screwdriver',
-    note: '技术栈尚未定，位置已预留。新增工具放入 <code>tools/&lt;name&gt;/</code> 并登记到 <code>tools/manifest.json</code>。',
+    note: '上面的工具多数是在线服务，点开即用，不由本站托管。写了新工具时，把页面放进 <code>tools/&lt;name&gt;/</code>，再登记到 <code>tools/manifest.json</code>。',
   },
   {
     dir: 'software',
@@ -81,21 +73,9 @@ const SECTIONS = [
   },
 ];
 
-function navHtml(active) {
-  return NAV.map((n) => {
-    const cls = 'rd-nav-item' + (n.href === P + active + '/' ? ' active' : '');
-    return `                    <li class="${cls}"><a class="rd-nav-link" href="${n.href}">${n.label}</a></li>`;
-  }).join('\n');
-}
-
-function footerHtml() {
-  return NAV.filter((n) => !n.href.endsWith('index.html'))
-    .map((n) => `                <li><a href="${n.href}">${n.label === '关于' ? '关于我们' : n.label}</a></li>`)
-    .join('\n') + `\n                <li><a href="${P}contacts.html">联系我们</a></li>`;
-}
-
 function page(s) {
-  const canonical = `https://llewellyn12138.github.io/${s.dir}/`;
+  const canonical = SITE + '/' + s.dir + '/';
+  const ogImage = chrome_.OG_IMAGE;
   const st = loadStatic(s.dir);
   const staticCards = st.cards;
   const countLabel = st.countLabel;
@@ -113,9 +93,12 @@ function page(s) {
   <meta name="author" content="Llewellyn">
   <link rel="canonical" href="${canonical}">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Llewellyn 的个人站">
   <meta property="og:title" content="${s.title} - Llewellyn 的个人站">
   <meta property="og:description" content="${s.description}">
   <meta property="og:url" content="${canonical}">
+  <meta property="og:image" content="${ogImage}">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="${P}images/favicon.ico" type="image/x-icon">
   <!-- Stylesheets-->
   <link rel="stylesheet" href="${P}css/bootstrap.css">
@@ -158,12 +141,12 @@ function page(s) {
                     </li>
                   </ul>
                   <ul class="list-share-2">
-                    <li><a class="icon mdi mdi-twitter" href="https://twitter.com/llewellyn121225"></a></li>
+${chrome_.shareHtml('                    ')}
                   </ul>
                 </div>
                 <div class="rd-navbar-main">
                   <ul class="rd-navbar-nav">
-${navHtml(s.dir)}
+${chrome_.navHtml(P, s.dir + '/', '                    ')}
                   </ul>
                 </div>
               </div>
@@ -209,17 +192,17 @@ ${navHtml(s.dir)}
               <h5 class="footer-modern-title oh-desktop" style="margin-bottom: 5px;"><span
                   class="d-inline-block wow slideInLeft">快速链接</span></h5>
               <ul class="footer-modern-list d-inline-block d-sm-block wow fadeInUp">
-${footerHtml()}
+${chrome_.footerHtml(P, '                ')}
               </ul>
             </div>
             <div class="col-md-6 col-lg-6">
               <div class="group-xmd group-sm-justify" style="justify-content: flex-end; align-items: center; height: 100%;">
                 <div class="wow slideInRight">
                   <ul class="list-inline footer-social-list footer-social-list-2 footer-social-list-3">
-                    <li><a class="icon fa fa-twitter" href="https://twitter.com/llewellyn12138" title="Twitter"></a></li>
-                    <li><a class="icon fa fa-telegram" href="https://t.me/llewellyn12138" title="Telegram"></a></li>
-                    <li><a class="icon fa fa-qq" href="https://imgbed.llewellyn.top/file/1772161761189_b_8f542b9813c2887582ca456a1bd26d79.jpg" target="_blank" title="QQ"></a></li>
-                    <li><a class="icon fa fa-envelope" href="mailto:llewellyn@llewellyn.top" title="Email"></a></li>
+                    <li><a class="icon fa fa-twitter" href="${chrome_.TWITTER}" title="Twitter"></a></li>
+                    <li><a class="icon fa fa-telegram" href="${chrome_.TELEGRAM}" title="Telegram"></a></li>
+                    <li><a class="icon fa fa-qq" href="${chrome_.QQ}" target="_blank" title="QQ"></a></li>
+                    <li><a class="icon fa fa-envelope" href="${chrome_.EMAIL}" title="Email"></a></li>
                   </ul>
                 </div>
               </div>
@@ -232,7 +215,7 @@ ${footerHtml()}
           <div class="row row-10 justify-content-between">
             <div class="col-md-6"><span>重庆市·沙坪坝区</span></div>
             <div class="col-md-auto">
-              <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span></span><span>.&nbsp;</span><span>All Rights Reserved.</span><span> Design&nbsp;by&nbsp;<a href="https://github.com/llewellyn12138">Llewellyn</a></span></p>
+              <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span></span><span>.&nbsp;</span><span>All Rights Reserved.</span><span> Design&nbsp;by&nbsp;<a href="${chrome_.GITHUB}">Llewellyn</a></span></p>
             </div>
           </div>
         </div>

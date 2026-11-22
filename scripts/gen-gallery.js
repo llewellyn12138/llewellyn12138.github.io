@@ -112,8 +112,10 @@ html = html
   .replace(/<script src="\.\.\/assets\/js\/registry\.js"><\/script>/,
     '<script src="../gallery/manifest.js"></script>\n  <script src="../assets/js/gallery.js"></script>');
 
-// The gallery is not one of the nav sections; clear any active state.
+// The gallery reuses the tools shell, so clear its active state and mark the
+// gallery entry instead.
 html = html.replace(/ class="rd-nav-item active"/g, ' class="rd-nav-item"');
+html = html.replace(/(<li class="rd-nav-item"><a class="rd-nav-link" href="\.\.\/gallery\/">)/, '<li class="rd-nav-item active"><a class="rd-nav-link" href="../gallery/">');
 
 fs.mkdirSync(path.dirname(outPath), { recursive: true });
 fs.writeFileSync(outPath, html, 'utf8');

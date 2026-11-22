@@ -14,7 +14,7 @@ email: llewellyn@llewellyn.top   # 作者邮箱
 
 # URL 设置
 ##在这里设置您的网站 url。例如，如果您使用 GitHub Page，则将 url 设置为“https://username.github.io/project”
-url: https://llewellyn12138.github.io/blog
+url: https://llewellyn.top/blog
 root: /blog/                     # 网站根目录
 permalink: :year/:month/:day/:title/ # 文章永久链接格式
 permalink_defaults:
