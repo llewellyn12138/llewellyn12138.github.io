@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /apps/index.html
+
+Sitemap: https://llewellyn.top/sitemap.xml
