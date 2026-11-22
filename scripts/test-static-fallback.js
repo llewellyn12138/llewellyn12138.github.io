@@ -74,7 +74,9 @@ function runCase(dir, fetchImpl, staticHtml) {
 (async () => {
   const dir = 'software';
   const staticHtml = fs.readFileSync(path.join(dist, dir, 'index.html'), 'utf8')
-    .match(/<div class="pf-grid" id="registry-grid"[^>]*>([\s\S]*?)<\/div>\s*<div class="pf-note">/)[1];
+    // A manifest with categories renders a "pf-grouped" container, without
+    // categories a flat "pf-grid" one - accept both.
+    .match(/<div class="pf-(?:grid|grouped)" id="registry-grid"[^>]*>([\s\S]*?)<\/div>\s*<div class="pf-note">/)[1];
   const manifest = JSON.parse(fs.readFileSync(path.join(dist, dir, 'manifest.json'), 'utf8'));
   const staticCards = (staticHtml.match(/class="pf-card-wrap"/g) || []).length;
 
