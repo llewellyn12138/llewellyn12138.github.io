@@ -55,6 +55,8 @@ const REQUIRED_FILES = [
   'images/favicon.ico',
   'images/project-1-1200x800-original.jpg',
   'images/bg-1.jpg',
+  'robots.txt',
+  'sitemap.xml',
 ];
 
 console.log('[required files]');
@@ -92,6 +94,27 @@ console.log('[custom domain]');
     ok('CNAME has no BOM', !hasBom);
     const domain = buf.toString('utf8').trim();
     ok('CNAME is a bare domain', /^[a-z0-9.-]+\.[a-z]{2,}$/i.test(domain), domain);
+  }
+}
+
+// robots.txt / sitemap.xml are easy to forget and silently 404 otherwise.
+console.log('[crawlability]');
+{
+  const robotPath = path.join(dist, 'robots.txt');
+  const sitemapPath = path.join(dist, 'sitemap.xml');
+  const hasRobots = fs.existsSync(robotPath);
+  const hasSitemap = fs.existsSync(sitemapPath);
+  ok('robots.txt published', hasRobots);
+  ok('sitemap.xml published', hasSitemap);
+  if (hasRobots) {
+    const robots = fs.readFileSync(robotPath, 'utf8');
+    ok('robots.txt points at the sitemap', /Sitemap:\s*https:\/\/llewellyn\.top\/sitemap\.xml/.test(robots));
+  }
+  if (hasSitemap) {
+    const xml = fs.readFileSync(sitemapPath, 'utf8');
+    const locs = xml.match(/<loc>([^<]+)<\/loc>/g) || [];
+    ok('sitemap lists pages', locs.length >= 10, locs.length + ' urls');
+    ok('sitemap uses the custom domain', !/llewellyn12138\.github\.io/.test(xml));
   }
 }
 

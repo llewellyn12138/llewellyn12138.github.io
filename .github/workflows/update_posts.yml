@@ -63,6 +63,7 @@ jobs:
           node scripts/test-registry-render.js
           node scripts/test-static-fallback.js
           node scripts/test-theme.js
+          node scripts/verify-chrome.js
 
       # Gate the publish on artifact completeness: once Pages serves only
       # gh-pages, one missing file breaks the live site.
@@ -77,7 +78,9 @@ jobs:
       # blog-source/ and scripts/ stay private instead of being served raw
       # from the main branch.
       #
-      # Note: CNAME is intentionally NOT published (see DEPLOYMENT.md).
+      # CNAME IS published: dist/CNAME is written by build-site.js and enforced
+      # by verify-deploy.js. Without it Pages would serve the github.io URL and
+      # ignore the llewellyn.top custom domain.
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:

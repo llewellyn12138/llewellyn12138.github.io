@@ -39,6 +39,13 @@ console.log('[build] 0/6 regenerate section pages from manifests');
 run(process.execPath, [path.join(repoRoot, 'scripts', 'gen-sections.js')], repoRoot);
 // The gallery page reuses the section shell, so it must be generated after it.
 run(process.execPath, [path.join(repoRoot, 'scripts', 'gen-gallery.js')], repoRoot);
+// The hand-written pages (index, about-us, contacts, media, lab, map and the
+// media player) share the same nav/footer/share data as the generated ones, so
+// rewrite their chrome too — otherwise the two families drift apart.
+run(process.execPath, [path.join(repoRoot, 'scripts', 'gen-chrome.js')], repoRoot);
+// robots.txt / sitemap.xml are build artifacts: the sitemap is derived from
+// blog-latest.json, so regenerate it once the section pages are settled.
+run(process.execPath, [path.join(repoRoot, 'scripts', 'gen-sitemap.js')], repoRoot);
 // Re-apply the light/dark wiring last: generators rebuild section HTML and
 // would otherwise drop the injected theme tags.
 run(process.execPath, [path.join(repoRoot, 'scripts', 'inject-theme.js')], repoRoot);
@@ -87,6 +94,12 @@ if (fs.existsSync(cnamePath)) {
 ['index.html', 'about-us.html', 'contacts.html', 'map.html', 'media.html', 'lab.html'].forEach(
   copyFileIfExists
 );
+// robots.txt and sitemap.xml must ship with the site; Pages serves them from
+// the artifact root, and search engines fetch them over the custom domain.
+['robots.txt', 'sitemap.xml'].forEach((f) => {
+  const src = path.join(repoRoot, f);
+  if (fs.existsSync(src)) fs.copyFileSync(src, path.join(distDir, f));
+});
 ['css', 'js', 'fonts', 'images', 'assets', 'apps', 'games', 'tools', 'software', 'gallery'].forEach((d) =>
   copyDir(path.join(repoRoot, d), path.join(distDir, d))
 );
