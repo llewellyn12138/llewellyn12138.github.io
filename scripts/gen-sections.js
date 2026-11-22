@@ -51,7 +51,7 @@ const SECTIONS = [
     subtitle: '纯前端小游戏，摸鱼片刻',
     description: '用 Canvas / DOM 写的小游戏，无需安装、无需登录，点开即玩。',
     icon: 'mdi-gamepad-variant',
-    note: '目前还没有上线的小游戏，位置先占住。新增游戏时，把页面放进 <code>games/&lt;name&gt;/</code>，再到 <code>games/manifest.json</code> 里登记一条，列表与计数会自动更新。',
+    note: '还没有上线的小游戏，卡片位先占着。做好的游戏放进 <code>games/&lt;name&gt;/</code>，在 <code>games/manifest.json</code> 里登记一条、把 <code>status</code> 改成 <code>online</code>，列表与计数会自动更新。',
   },
   {
     dir: 'tools',
