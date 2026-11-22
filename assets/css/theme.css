@@ -120,6 +120,35 @@ html[data-theme='dark'] .rd-navbar-toggle span::after {
   background-color: var(--pf-text-soft);
 }
 
+/* The RD template paints the navbar with two skewed white slabs
+   (.rd-navbar-panel::before and .rd-navbar-aside::before). They sit behind
+   everything at z-index:-1, so in dark mode they show up as two bright bands
+   across the top of the page. Repaint them with the navbar surface instead. */
+html[data-theme='dark'] .rd-navbar-modern.rd-navbar-static .rd-navbar-panel::before,
+html[data-theme='dark'] .rd-navbar-modern.rd-navbar-static .rd-navbar-aside::before {
+  background: #11141a !important;
+}
+/* Same slabs once the navbar is stuck / cloned while scrolling. */
+html[data-theme='dark'] .rd-navbar-static.rd-navbar--is-stuck,
+html[data-theme='dark'] .rd-navbar-static.rd-navbar--is-clone {
+  background-color: rgba(15, 17, 21, .96) !important;
+}
+/* The sticky clone inserts its own shadow; keep it subtle on dark. */
+html[data-theme='dark'] .rd-navbar-modern.rd-navbar-static.rd-navbar--is-stuck,
+html[data-theme='dark'] .rd-navbar-modern.rd-navbar-static.rd-navbar--is-clone {
+  box-shadow: 0 1px 0 var(--pf-line);
+}
+/* Mobile drawer + project panel are painted white by the template. */
+html[data-theme='dark'] .rd-navbar-fixed .rd-navbar-panel,
+html[data-theme='dark'] .rd-navbar-fixed .rd-navbar-nav-wrap,
+html[data-theme='dark'] .rd-navbar-fixed .rd-navbar-collapse,
+html[data-theme='dark'] .rd-navbar-project {
+  background-color: #11141a !important;
+}
+html[data-theme='dark'] .rd-navbar-fixed .rd-navbar-nav-wrap,
+html[data-theme='dark'] .rd-navbar-fixed .rd-navbar-panel {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, .5) !important;
+}
 /* --------------------------------------------------------------- footer --- */
 html[data-theme='dark'] .footer-modern {
   background-color: #0b0d11 !important;
@@ -306,6 +335,31 @@ html[data-theme='dark'] .pf-note {
 html[data-theme='dark'] .pf-note code { background: rgba(255, 255, 255, .08); }
 
 html[data-theme='dark'] .pf-cat-title { color: var(--pf-text); border-bottom-color: var(--pf-line); }
+/* Dark counterparts for the polish pass in platform.css ------------------- */
+html[data-theme='dark'] .pf-hero {
+  background: linear-gradient(180deg, #131720 0%, #10131a 58%, #0f1115 100%);
+}
+html[data-theme='dark'] .pf-hero::before {
+  background-image:
+    linear-gradient(rgba(190, 205, 230, .05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(190, 205, 230, .05) 1px, transparent 1px);
+}
+html[data-theme='dark'] .pf-hero::after {
+  background: radial-gradient(circle at 32% 32%, rgba(248, 147, 31, .26), transparent 66%);
+}
+html[data-theme='dark'] .pf-hero .pf-eyebrow {
+  background: rgba(248, 147, 31, .14);
+  border-color: rgba(248, 147, 31, .3);
+}
+html[data-theme='dark'] .pf-cat-title { border-bottom: 0; }
+html[data-theme='dark'] .pf-cat-title::after {
+  background: linear-gradient(90deg, var(--pf-accent), rgba(248, 147, 31, .2) 34%, transparent 78%);
+}
+html[data-theme='dark'] .pf-cat-title .mdi {
+  background: rgba(248, 147, 31, .16);
+}
+html[data-theme='dark'] .pf-section-head h2,
+html[data-theme='dark'] .pf-latest-head h3 { color: var(--pf-text); }
 html[data-theme='dark'] .pf-loading,
 html[data-theme='dark'] .pf-empty,
 html[data-theme='dark'] .pf-error { color: var(--pf-text-muted); }
