@@ -18,7 +18,7 @@ window.PF_MANIFEST["software"] = {
       ],
       "status": "online",
       "external": true,
-      "kind": "software"
+      "category": "软件"
     },
     {
       "name": "视频播放器",
@@ -34,7 +34,7 @@ window.PF_MANIFEST["software"] = {
       "status": "online",
       "external": false,
       "date": "2026-05-01",
-      "kind": "app"
+      "category": "小应用"
     },
     {
       "name": "预留位置",
@@ -46,7 +46,20 @@ window.PF_MANIFEST["software"] = {
         "预留位"
       ],
       "status": "planned",
-      "external": false
+      "external": false,
+      "category": "软件"
+    }
+  ],
+  "categories": [
+    {
+      "name": "软件",
+      "icon": "mdi-package-variant",
+      "desc": "需要安装的桌面程序"
+    },
+    {
+      "name": "小应用",
+      "icon": "mdi-apps",
+      "desc": "纯前端，点开即用"
     }
   ]
 };
