@@ -40,15 +40,25 @@ function lastmod(file) {
 }
 
 function readPosts() {
-  const snap = path.join(ROOT, 'blog-latest.json');
-  if (!fs.existsSync(snap)) return [];
-  try {
-    const data = JSON.parse(fs.readFileSync(snap, 'utf8'));
-    return Array.isArray(data.posts) ? data.posts : [];
-  } catch (err) {
-    console.warn('[sitemap] blog-latest.json unreadable, skipping posts: ' + err.message);
-    return [];
+  // Prefer the copy produced by THIS build (dist/blog-latest.json); the repo-root
+  // snapshot only exists so the homepage works under file://. Reading the root
+  // file after a build would silently drop posts that were added in the same run.
+  const candidates = [
+    path.join(ROOT, 'dist', 'blog-latest.json'),
+    path.join(ROOT, 'blog-latest.json'),
+  ];
+  for (const snap of candidates) {
+    if (!fs.existsSync(snap)) continue;
+    try {
+      const data = JSON.parse(fs.readFileSync(snap, 'utf8'));
+      const posts = Array.isArray(data.posts) ? data.posts : [];
+      console.log('[sitemap] posts from ' + path.relative(ROOT, snap) + ' (' + posts.length + ')');
+      return posts;
+    } catch (err) {
+      console.warn('[sitemap] cannot read ' + snap + ': ' + err.message);
+    }
   }
+  return [];
 }
 
 const urls = STATIC_PAGES.map(function (p) {

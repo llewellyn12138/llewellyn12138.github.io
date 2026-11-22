@@ -43,9 +43,6 @@ run(process.execPath, [path.join(repoRoot, 'scripts', 'gen-gallery.js')], repoRo
 // media player) share the same nav/footer/share data as the generated ones, so
 // rewrite their chrome too — otherwise the two families drift apart.
 run(process.execPath, [path.join(repoRoot, 'scripts', 'gen-chrome.js')], repoRoot);
-// robots.txt / sitemap.xml are build artifacts: the sitemap is derived from
-// blog-latest.json, so regenerate it once the section pages are settled.
-run(process.execPath, [path.join(repoRoot, 'scripts', 'gen-sitemap.js')], repoRoot);
 // Re-apply the light/dark wiring last: generators rebuild section HTML and
 // would otherwise drop the injected theme tags.
 run(process.execPath, [path.join(repoRoot, 'scripts', 'inject-theme.js')], repoRoot);
@@ -94,12 +91,6 @@ if (fs.existsSync(cnamePath)) {
 ['index.html', 'about-us.html', 'contacts.html', 'map.html', 'media.html', 'lab.html'].forEach(
   copyFileIfExists
 );
-// robots.txt and sitemap.xml must ship with the site; Pages serves them from
-// the artifact root, and search engines fetch them over the custom domain.
-['robots.txt', 'sitemap.xml'].forEach((f) => {
-  const src = path.join(repoRoot, f);
-  if (fs.existsSync(src)) fs.copyFileSync(src, path.join(distDir, f));
-});
 ['css', 'js', 'fonts', 'images', 'assets', 'apps', 'games', 'tools', 'software', 'gallery'].forEach((d) =>
   copyDir(path.join(repoRoot, d), path.join(distDir, d))
 );
@@ -107,6 +98,14 @@ fs.writeFileSync(path.join(distDir, '.nojekyll'), '');
 
 console.log('[build] 4/6 generate blog-latest.json');
 run(process.execPath, [path.join(repoRoot, 'scripts', 'gen-blog-latest.js')], repoRoot);
+// robots.txt / sitemap.xml depend on the post list, which only exists after
+// gen-blog-latest.js has read the fresh Hexo db.json - so generate them here,
+// then publish them with the rest of the artifact.
+run(process.execPath, [path.join(repoRoot, 'scripts', 'gen-sitemap.js')], repoRoot);
+['robots.txt', 'sitemap.xml'].forEach((f) => {
+  const src = path.join(repoRoot, f);
+  if (fs.existsSync(src)) fs.copyFileSync(src, path.join(distDir, f));
+});
 
 console.log('[build] 5/6 generate file:// data snapshots');
 run(process.execPath, [path.join(repoRoot, 'scripts', 'gen-data-js.js')], repoRoot);

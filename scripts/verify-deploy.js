@@ -115,6 +115,21 @@ console.log('[crawlability]');
     const locs = xml.match(/<loc>([^<]+)<\/loc>/g) || [];
     ok('sitemap lists pages', locs.length >= 10, locs.length + ' urls');
     ok('sitemap uses the custom domain', !/llewellyn12138\.github\.io/.test(xml));
+
+    // The sitemap is generated from dist/blog-latest.json. If the two drift,
+    // a freshly published post is missing from the sitemap and nothing else
+    // notices - so count the post URLs on both sides.
+    const blogSnap = path.join(dist, 'blog-latest.json');
+    if (fs.existsSync(blogSnap)) {
+      const posts = (JSON.parse(fs.readFileSync(blogSnap, 'utf8')).posts) || [];
+      const inSitemap = locs.filter((l) => /\/blog\/\d{4}\//.test(l)).length;
+      ok('sitemap covers every post in blog-latest.json',
+        inSitemap === posts.length, inSitemap + '/' + posts.length);
+      ok('sitemap has at least one post when the blog is not empty',
+        posts.length === 0 || inSitemap > 0, posts.length + ' post(s)');
+    } else {
+      ok('dist/blog-latest.json present for the sitemap cross-check', false);
+    }
   }
 }
 
