@@ -22,7 +22,9 @@ blog-source/source/_posts/
 dist/
 
 # 草稿目录：保留在本地，但不提交未完成内容与大图
-# （ug-basic.md 只有大纲；ug-basic.assets 是本地截图）
+# 注意：draft/ 下的 4 个文件在加入这条规则之前就已经提交过了，
+# .gitignore 只对未跟踪的文件生效，所以它们仍在版本库里。
+# 想真正去掉需要 git rm --cached（会从仓库移除但保留本地文件）。
 draft/
 
 # 本地脚本
