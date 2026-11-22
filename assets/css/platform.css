@@ -780,3 +780,187 @@ html body .page { opacity: 1; }
   from { opacity: 0; transform: translateY(22px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+/* ==========================================================================
+   Visual polish pass
+   --------------------------------------------------------------------------
+   Everything below is additive: it refines surfaces, motion and the section
+   hero, and stays inside the existing palette. All motion is disabled for
+   users who ask for reduced motion.
+   ========================================================================== */
+
+/* The legacy template sets `text-align: center` on .page, so it cascades into
+   the section hero and the card copy (everything looked centre-aligned). Scope
+   the correction to the platform blocks only, to leave the legacy footer /
+   navbar alone. Shortcut cards and empty states set their own centring. */
+.pf-hero,
+.pf-hero h1,
+.pf-hero p,
+.pf-section,
+.pf-section-head,
+.pf-cat,
+.pf-latest,
+.pf-latest-head,
+.pf-card,
+.pf-note {
+  text-align: left;
+}
+/* Richer section hero: soft light bloom + a very fine grid texture -------- */
+.pf-hero {
+  background: linear-gradient(180deg, #fff 0%, #f6f7f9 62%, #f1f3f6 100%);
+}
+.pf-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(21, 21, 21, .028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21, 21, 21, .028) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(120% 90% at 50% 0%, #000 20%, transparent 72%);
+  -webkit-mask-image: radial-gradient(120% 90% at 50% 0%, #000 20%, transparent 72%);
+  pointer-events: none;
+}
+.pf-hero > .container { position: relative; z-index: 1; }
+.pf-hero::after {
+  right: -120px;
+  top: -160px;
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(circle at 32% 32%, rgba(248, 147, 31, .22), transparent 66%);
+  filter: blur(2px);
+}
+
+/* The eyebrow gets a small pill treatment */
+.pf-hero .pf-eyebrow {
+  padding: 6px 13px;
+  border-radius: 999px;
+  background: rgba(248, 147, 31, .1);
+  border: 1px solid rgba(248, 147, 31, .22);
+}
+
+/* Category headers: a gradient hairline instead of a flat rule ----------- */
+.pf-cat-title {
+  border-bottom: 0;
+  position: relative;
+  padding-bottom: 14px;
+}
+.pf-cat-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--pf-accent), rgba(248, 147, 31, .18) 34%, transparent 78%);
+}
+.pf-cat-title .mdi {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: rgba(248, 147, 31, .12);
+}
+.pf-cat-title em {
+  background: linear-gradient(135deg, #ffb154, var(--pf-accent) 60%, #e0741a);
+  box-shadow: 0 4px 12px rgba(248, 147, 31, .32);
+}
+
+/* Cards: a touch more depth and a shine that sweeps across the cover ------ */
+.pf-card {
+  transition: transform .32s cubic-bezier(.2, .8, .2, 1),
+              box-shadow .32s ease, border-color .32s ease;
+}
+.pf-card-media::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: -70%;
+  width: 55%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .34), transparent);
+  transform: skewX(-14deg);
+  transition: left .62s cubic-bezier(.25, .8, .25, 1);
+  pointer-events: none;
+}
+.pf-card:hover .pf-card-media::before { left: 118%; }
+.pf-card-icon {
+  transition: transform .32s cubic-bezier(.2, .8, .2, 1), background .32s ease;
+}
+.pf-card:hover .pf-card-icon {
+  transform: translateY(-2px) scale(1.08);
+  background: rgba(248, 147, 31, .2);
+}
+.pf-card:hover .pf-card-title { color: var(--pf-accent); }
+.pf-card-link { color: var(--pf-accent); font-weight: 600; }
+
+/* Cards fade up in a short stagger so a section never appears all at once - */
+.pf-grid > .pf-card-wrap,
+.pf-grouped .pf-cat .pf-card-wrap {
+  animation: pfCardIn .5s both cubic-bezier(.2, .8, .2, 1);
+}
+.pf-card-wrap:nth-child(1) { animation-delay: .02s; }
+.pf-card-wrap:nth-child(2) { animation-delay: .07s; }
+.pf-card-wrap:nth-child(3) { animation-delay: .12s; }
+.pf-card-wrap:nth-child(4) { animation-delay: .17s; }
+.pf-card-wrap:nth-child(5) { animation-delay: .22s; }
+.pf-card-wrap:nth-child(6) { animation-delay: .27s; }
+.pf-card-wrap:nth-child(n + 7) { animation-delay: .3s; }
+@keyframes pfCardIn {
+  from { opacity: 0; transform: translateY(16px) scale(.985); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Latest posts + shortcuts get the same staggered treatment -------------- */
+.pf-post { animation: pfCardIn .5s both cubic-bezier(.2, .8, .2, 1); }
+.pf-post:nth-child(1) { animation-delay: .02s; }
+.pf-post:nth-child(2) { animation-delay: .09s; }
+.pf-post:nth-child(3) { animation-delay: .16s; }
+.pf-post:nth-child(4) { animation-delay: .23s; }
+.pf-post:nth-child(5) { animation-delay: .3s; }
+.pf-post:nth-child(n + 6) { animation-delay: .34s; }
+
+/* Section headings get a small gradient underline ------------------------ */
+.pf-section-head h2,
+.pf-latest-head h3 {
+  position: relative;
+  padding-bottom: 12px;
+}
+.pf-section-head h2::after,
+.pf-latest-head h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 44px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--pf-accent), var(--pf-violet));
+}
+
+/* Respect the user's motion preference ----------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .pf-card-wrap,
+  .pf-post,
+  .pf-shortcut-inner {
+    animation: none !important;
+  }
+  .pf-card,
+  .pf-card-media img,
+  .pf-card-media::before,
+  .pf-card-icon,
+  .pf-shortcut-inner,
+  .pf-post-inner {
+    transition: none !important;
+  }
+  .pf-card:hover,
+  .pf-shortcut-inner:hover,
+  .pf-post-inner:hover {
+    transform: none;
+  }
+  .pf-card:hover .pf-card-media img { transform: none; }
+  .pf-card:hover .pf-card-media::before { left: -70%; }
+}
