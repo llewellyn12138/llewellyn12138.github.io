@@ -11,8 +11,9 @@ dist/
 ├── .nojekyll
 ├── assets/                 共享 CSS / JS（platform.css、registry.js、latest-posts.js）
 ├── css/ js/ images/ fonts/ 门户壳依赖的旧资源
-├── apps/  games/  tools/  software/   四个板块（各自 index.html + manifest.json）
-│   └── apps/media-player/  原 player.html 迁入
+├── apps/                   只剩一个跳转页（/apps/ → /software/）
+│   └── apps/media-player/   原 player.html 迁入，独立播放器页
+├── games/  tools/  software/  三个板块（各自 index.html + manifest.json）
 └── blog/                   Hexo 生成的博客（url root = /blog/）
 ```
 
@@ -24,6 +25,7 @@ node scripts/build-site.js     # 同步文章 + Hexo 生成 + 组装 dist/ + 刷
 node scripts/verify-build.js   # 校验封面、链接、manifest、blog-latest.json
 node scripts/scan-links.js     # 扫描所有 HTML 的站内引用（应输出 missing = 0）
 node scripts/check-file-protocol.js  # 模拟 file:// 双击打开（应输出 missing = 0）
+node scripts/verify-chrome.js  # 校验全站导航/页脚/社交/域名一致（应输出 12 pages 共享同一套）
 ```
 
 `dist/` 已加入 `.gitignore`，不会提交。
@@ -46,7 +48,7 @@ CSS / 图片 / 字体 / 导航都正常。`file://` 下浏览器会因 CORS 拦�
 
 ## 静态兜底（重要）
 
-四个板块页的卡片是**在构建时直接写进 HTML** 的，不是纯靠 JS 生成：
+三个板块页（软件库 / 小游戏 / 工具）的卡片是**在构建时直接写进 HTML** 的，不是纯靠 JS 生成：
 
 - JS 完全失效 / 被拦截 / 报错 → 页面仍然显示上一次构建的卡片（可被搜索引擎抓取）；
 - JS 正常 → `registry.js` 拉取最新 `manifest.json`，成功后才重绘；
@@ -67,10 +69,12 @@ CSS / 图片 / 字体 / 导航都正常。`file://` 下浏览器会因 CORS 拦�
 | `card-template.js` | 卡片 HTML 模板（构建期 + 运行期共用） |
 | `gen-blog-latest.js` | 从 Hexo `db.json` 生成首页「最新文章」数据 |
 | `gen-data-js.js` | 生成 `file://` 用的 `*.js` 数据快照 |
-| `gen-sections.js` | 重新生成四个板块的 `index.html`（含静态卡片） |
+| `site-chrome.js` | 导航/页脚/社交账号的**唯一数据源**，被下面三个生成器共用 |
+| `gen-sections.js` | 重新生成三个板块的 `index.html`（含静态卡片） |
 | `gen-gallery.js` | 从图库外壳生成 `/gallery/` 页面 |
+| `gen-chrome.js` | 用手写页（首页、关于、联系方式、媒体中心、实验室、位置、播放器）套用同一份导航/页脚与 head 元数据 |
+| `gen-sitemap.js` | 生成 `robots.txt` 与 `sitemap.xml`（含当前文章列表） |
 | `inject-theme.js` | 给所有页面注入深浅色主题接线（幂等，构建时自动跑） |
-| `unify-nav.js` | 一次性把旧页面的导航/页脚统一为平台导航（已执行，留作参考） |
 | `verify-build.js` / `scan-links.js` / `check-file-protocol.js` | 构建产物完整性校验 |
 | `verify-deploy.js` | 发布前把关：关键入口齐全、源文件不泄露 |
 | `test-static-fallback.js` | 验证无 JS / 请求中 / 失败时卡片仍在 |
@@ -115,52 +119,18 @@ CSS / 图片 / 字体 / 导航都正常。`file://` 下浏览器会因 CORS 拦�
 2. `node scripts/build-site.js`：
    - 把 `posts/` 同步进 `blog-source/source/_posts/`（**唯一文章源**）；
    - `npx hexo clean && npx hexo generate`（输出到 `blog-source/public/blog`）；
-   - 把门户壳、四个板块、`assets/`、`css/js/images/fonts` 组装进 `dist/`；
+   - 把门户壳、三个板块、图库、`assets/`、`css/js/images/fonts` 组装进 `dist/`；
    - 从 `blog-source/db.json` 生成 `dist/blog-latest.json`；
 3. `node scripts/verify-build.js` + `node scripts/scan-links.js` 做完整性校验；
 4. `peaceiris/actions-gh-pages@v4` 把 `dist/` 推到 `gh-pages` 分支。
 
-## ⚠️ Pages 源：当前是 main，建议切到 gh-pages
+## Pages 源：gh-pages
 
-**现状（已实测，2026-11）**：Pages 同时在发布 `main` 分支，
-`pages-build-deployment` 每次提交都会跑（#54/#55/#56 均成功）。
-
-`gh-pages` 分支也已由 CI 正常推送，内容与本地 `dist/` **完全一致**
-（208 个文件，逐文件清单比对通过）。所以两条发布路径都在工作，
-但由此带来两个问题：
-
-1. **源文件被公开**：`main` 直接作为站点源，导致以下路径都能直接下载：
-
-   | 路径 | 状态 |
-   | --- | --- |
-   | `/posts/coding/markdown-guide.md` | 200（文章源文件） |
-   | `/old/knowledge-loader.js` | 200（旧代码） |
-   | `/blog-source/_config.yml` | 200（站点配置） |
-   | `/scripts/build-site.js` | 200（构建脚本） |
-   | `/DEPLOYMENT.md` | 200（本文档） |
-   | `/.github/workflows/*` | 404（Actions 目录本就不发布） |
-
-2. **内容重复发布**：同一份产物既在 `main` 又在 `gh-pages`，
-   而且 CI 的 `dist/` 校验实际上不影响线上（线上走的是 `main`）。
-
-### 建议切换
-
-`Settings → Pages → Build and deployment → Source` 选
-**Deploy from a branch** → branch `gh-pages`、folder `/ (root)`。
-
-切换后：
-
-- 只有 `dist/` 产物对外可见，上表所有源文件路径变成 404；
-- CI 的 `verify-deploy.js` 才真正起到发布前把关作用；
-- `main` 上的 `blog/` 镜像（1.47 MB）可以不再需要。
-
-切换是**低风险**的：`gh-pages` 内容已验证与 `dist/` 一致，且每次构建都会
-先过 `verify-deploy.js`（检查 32 个关键入口存在、7 个不该发布的文件确实不在、
-总文件数合理），不通过就不发布。
-
-### ✅ 已完成切换
-
-Pages 源已改为 `gh-pages`。实测确认：
+Pages 源已从 `main` 切到 `gh-pages`（`Settings → Pages → Build and deployment →
+Source` 选 **Deploy from a branch** → branch `gh-pages`、folder `/ (root)`）。
+此前 Pages 同时发布 `main`，导致 `posts/*.md`、`blog-source/_config.yml`、
+`scripts/build-site.js`、本文档这类源文件都能被直接下载。切到 `gh-pages` 后
+线上只剩 `dist/` 的产物，实测确认：
 
 | 路径 | 状态 |
 | --- | --- |
@@ -173,12 +143,17 @@ Pages 源已改为 `gh-pages`。实测确认：
 随之完成：仓库根 `blog/` 镜像已删除，构建不再生成第二份副本；
 `draft/` 加入 `.gitignore`（保留本地草稿与截图，不提交）。
 
+每次构建都会先过 `verify-deploy.js`：检查 39 个关键入口存在、6 个不该发布的
+文件确实不在、CNAME 存在且无 BOM、robots.txt / sitemap.xml 已发布、总文件数
+合理，不通过就不发布。
+
 随时可用 `node scripts/check-pages-source.js` 复查当前状态。
 
 ### 验证是否生效
 
-- `https://llewellyn12138.github.io/` → 出现「站点板块」八宫格与「最新文章」；
-- `/blog-latest.json` 返回 JSON；`/software/`、`/apps/`、`/games/`、`/tools/` 返回列表页；
+- `https://llewellyn.top/` → 出现「从这里逛起」五个入口与「最新文章」；
+- `/blog-latest.json` 返回 JSON；`/software/`、`/games/`、`/tools/`、`/gallery/` 返回列表页；
+- `/robots.txt` 与 `/sitemap.xml` 返回 200（不再由 GitHub Pages 的软 404 顶替）；
 - `/posts/...`、`/old/...` 之类的源文件路径应当 **404**（不再暴露源文件）。
 
 ## 自定义域名：llewellyn.top
@@ -233,12 +208,13 @@ token，**不要把 token 提交进仓库**。
 | 想做的事 | 改哪里 |
 | --- | --- |
 | 写博客 | `posts/<分类>/<文件名>.md`（**只改这里**）；`blog-source/source/_posts/` 是自动同步的镜像，已 gitignore |
-| 新增小应用 / 游戏 / 工具 | 页面放 `apps/<name>/index.html` 等，再在对应 `manifest.json` 的 `items` 加一条 |
+| 新增游戏 / 工具 | 页面放 `games/<name>/index.html` 或 `tools/<name>/index.html`，再在对应 `manifest.json` 的 `items` 加一条 |
+| 新增小应用 | 小应用已并入软件库：直接登记到 `software/manifest.json`，不要再往 `apps/` 加页面 |
 | 软件库 | 大文件传 GitHub Releases，`manifest.json` 里 `external: true` + Releases 链接；<10 MB 单文件放 `software/files/` |
 | 改板块页外观 | `assets/css/platform.css` + `assets/js/registry.js`；板块 `index.html` 由 `node scripts/gen-sections.js` 重新生成 |
+| 改导航 / 页脚 / 社交账号 | 只改 `scripts/site-chrome.js`，再跑 `node scripts/gen-sections.js && node scripts/gen-gallery.js && node scripts/gen-chrome.js`；不要手改各页 HTML，会被覆盖 |
 | 图库加图 | 编辑 `gallery/manifest.json` 的 `items`，再跑 `node scripts/gen-gallery.js` |
 | 换首页 banner | 改 `scripts/gen-banners.js` 里的配色重新生成（输出到 `images/`） |
-| 改导航 / 页脚 | `scripts/unify-nav.js`（一次性脚本）或直接编辑各 HTML |
 
 `manifest.json` 字段：`name` / `description` / `link` / `image` / `icon` /
 `tags[]` / `status`(`online`|`planned`) / `external` / `date`。
