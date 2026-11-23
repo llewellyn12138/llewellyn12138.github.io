@@ -11,6 +11,7 @@ dist/
 ├── .nojekyll
 ├── assets/                 共享 CSS / JS（platform.css、registry.js、latest-posts.js）
 ├── css/ js/ images/ fonts/ 门户壳依赖的旧资源
+├── fonts/old-maruko/      展示标题字体（OFL，子集 ~135 KB）
 ├── apps/                   只剩一个跳转页（/apps/ → /software/）
 │   └── apps/media-player/   原 player.html 迁入，独立播放器页
 ├── games/  tools/  software/  三个板块（各自 index.html + manifest.json）
@@ -203,6 +204,24 @@ token，**不要把 token 提交进仓库**。
 
 图库页 `/gallery/` 会展示清单里的所有图片，支持点开大图与一键复制直链。
 
+## 展示字体（标题用的「枯笔黑体」）
+
+大标题（首页 banner、板块页 `h1`、板块小标题 `h2`，以及「从这里逛起」「最新文章」）
+用的是 **古馬路口1號（Old Maruko 1）**：基于思源黑体改造、笔画刻意破碎并带晕染的
+字型，视觉上就是「墨不够、飞白、枯笔」，但骨架仍是黑体。授权是 SIL OFL 1.1，
+允许商用，授权原文在 `fonts/old-maruko/OFL.txt`。
+
+几点取舍，改之前先看一眼：
+
+- **只吃中文**。`unicode-range` 限定到 CJK，所以标题里的英文、数字仍然是 Asfalto，
+  和以前完全一致，不会被这套字型接管。
+- **子集化**。上游单字重约 19 MB，站点只用到标题里的那些字，所以发布的是
+  253 个字 + 标点的子集（~135 KB）。标题里出现子集之外的字不会报错，
+  会自动回落到系统黑体——看起来会「不那么枯」，重跑子集即可修好。
+- **字重区间写成 `300 800`**。这是故意的：让浏览器直接用这个字面响应 700 的字重请求，
+  而不是合成伪粗体——伪粗体会把破碎的笔画糊平，效果全没了。
+- 小于 ~24px 的标题不用这套字（会糊成一团），仍用正文黑体。
+
 ## 内容维护
 
 | 想做的事 | 改哪里 |
@@ -214,6 +233,7 @@ token，**不要把 token 提交进仓库**。
 | 改板块页外观 | `assets/css/platform.css` + `assets/js/registry.js`；板块 `index.html` 由 `node scripts/gen-sections.js` 重新生成 |
 | 改导航 / 页脚 / 社交账号 | 只改 `scripts/site-chrome.js`，再跑 `node scripts/gen-sections.js && node scripts/gen-gallery.js && node scripts/gen-chrome.js`；不要手改各页 HTML，会被覆盖 |
 | 图库加图 | 编辑 `gallery/manifest.json` 的 `items`，再跑 `node scripts/gen-gallery.js` |
+| 改展示标题字体 | 字体在 `fonts/old-maruko/`；替换或加字看该目录 `README.md`，不要直接塞上游完整字体（单字重 ~19 MB） |
 | 换首页 banner | 改 `scripts/gen-banners.js` 里的配色重新生成（输出到 `images/`） |
 
 `manifest.json` 字段：`name` / `description` / `link` / `image` / `icon` /

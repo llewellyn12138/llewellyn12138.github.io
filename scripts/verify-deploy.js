@@ -41,6 +41,8 @@ const REQUIRED_FILES = [
   'software/index.html',
   'software/manifest.json',
   'assets/css/platform.css',
+  'fonts/old-maruko/oldmaruko1-demilight-subset.woff2',
+  'fonts/old-maruko/OFL.txt',
   'assets/css/theme.css',
   'assets/js/registry.js',
   'assets/js/latest-posts.js',

@@ -232,6 +232,29 @@ ok('dist/apps/media-player/index.html', fs.existsSync(path.join(dist, 'apps', 'm
 ok('root player.html absent from dist', !fs.existsSync(path.join(dist, 'player.html')));
 ok('dist/CNAME published', fs.existsSync(path.join(dist, 'CNAME')));
 
+// 6. Display type: the ink face ships, is wired once, and is CJK-only.
+//    A missing woff2 silently degrades every heading to the system hei (the
+//    site still works), so nothing else would catch a dropped file.
+console.log('[display type]');
+{
+  const font = path.join(dist, 'fonts', 'old-maruko', 'oldmaruko1-demilight-subset.woff2');
+  const exists = fs.existsSync(font);
+  let magic = '';
+  if (exists) magic = fs.readFileSync(font).subarray(0, 4).toString('latin1');
+  ok('ink font published', exists && fs.statSync(font).size > 10000,
+    exists ? fs.statSync(font).size + ' B' : 'missing');
+  ok('ink font is a real woff2', magic === 'wOF2', magic);
+  ok('ink font license shipped', fs.existsSync(path.join(dist, 'fonts', 'old-maruko', 'OFL.txt')));
+
+  const css = fs.readFileSync(path.join(dist, 'assets', 'css', 'platform.css'), 'utf8');
+  ok('platform.css declares the ink face', /font-family:\s*"Old Maruko"/.test(css));
+  ok('ink face is limited to CJK', /unicode-range:[^;]*U\+4E00-9FFF/.test(css));
+  ok('ink face claims the heading weight', /font-weight:\s*300 800/.test(css));
+  ok('hero title uses the ink face', /\.pf-hero h1\s*\{[^}]*--pf-font-ink/.test(css)
+    || /\.pf-hero h1,[\s\S]{0,400}--pf-font-ink/.test(css));
+  ok('no leftover ink-mask hack', !/mask-image:\s*var\(--pf-ink-noise\)/.test(css));
+}
+
 console.log('\n' + totalRefs + ' local refs checked');
 console.log(fails === 0 ? 'ALL CHECKS PASSED' : fails + ' CHECK(S) FAILED');
 process.exit(fails === 0 ? 0 : 1);
