@@ -30,17 +30,54 @@ html body .page { opacity: 1; }
   --pf-font-body: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
-/* Typography unified on the banner family -------------------------------- */
+/* Display type -------------------------------------------------------------
+   Old Maruko 1 (古馬路口1號) is a Source Han Sans derivative whose strokes are
+   deliberately broken and ink-starved — a hei skeleton that looks like the
+   brush ran dry (斑驳 / 飞白 / 枯笔). It is limited to CJK by unicode-range, so
+   every Latin letter in a heading still comes from Asfalto, unchanged.
+
+   The weight range is deliberate: declared as 300–800 the face answers a 700
+   request itself, and the browser does not synthesise a fake bold that would
+   smear the broken strokes shut. */
+@font-face {
+  font-family: "Old Maruko";
+  src: url("../../fonts/old-maruko/oldmaruko1-demilight-subset.woff2") format("woff2");
+  font-weight: 300 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+2E80-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF;
+}
+:root {
+  --pf-font-ink: "Asfalto", "Old Maruko", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Poster-size headings carry the ink face; small titles stay on the body font
+   because the broken strokes turn to mush below ~24px. */
 .pf-shortcuts-head h3,
 .pf-latest-head h3,
 .pf-section-head h2,
-.pf-hero h1,
+.pf-hero h1 {
+  font-family: var(--pf-font-ink);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+/* "瘦长": the ink face is only a touch narrower than the system hei, so the
+   page title gets one more small squeeze. Left-anchored so it grows right. */
+.pf-hero h1 {
+  transform: scaleX(.955);
+  transform-origin: left center;
+}
+
 .pf-card-title,
 .pf-post-title,
 .pf-shortcut-title {
-  font-family: var(--pf-font-display);
-  letter-spacing: .045em;
+  font-family: var(--pf-font-body);
+  font-weight: 700;
+  letter-spacing: .01em;
 }
+
+
 .pf-card-desc,
 .pf-post-desc,
 .pf-shortcut-sub,
@@ -76,7 +113,7 @@ html body .page { opacity: 1; }
 /* Sharper banner headline with a soft glow -------------------------------- */
 .swiper-slider-2 .swiper-title,
 .swiper-slider-3 .swiper-title {
-  font-family: var(--pf-font-display);
+  font-family: var(--pf-font-ink);
   font-size: clamp(38px, 5.2vw, 68px);
   line-height: 1.08;
   letter-spacing: .03em;
@@ -668,23 +705,22 @@ html body .page { opacity: 1; }
 .pf-post-cat { color: var(--pf-accent); font-weight: 600; }
 
 /* Portal home: section shortcuts ------------------------------------------ */
-.pf-shortcuts { padding: 0 0 8px; }
-.pf-shortcuts-head { margin-bottom: 28px; text-align: center; }
+/* Sits directly under the full-bleed banner, so it gets its own quiet surface
+   and a generous top gap; the banner's own edge provides the separation. */
+.pf-shortcuts {
+  padding: 96px 0 40px;
+  background: var(--pf-bg);
+}
+/* No divider: a hairline there only created another hard edge under an
+   already hard-edged banner. Spacing alone separates the sections. */
+.pf-shortcuts::before { content: none; }
+.pf-shortcuts-head { margin-bottom: 32px; text-align: center; }
 .pf-shortcuts-head h3 {
-  font-size: 28px;
+  font-size: 31px;
   font-weight: 700;
   color: var(--pf-ink);
-  margin: 0 0 8px;
-  letter-spacing: .01em;
-}
-.pf-shortcuts-head h3::after {
-  content: "";
-  display: block;
-  width: 52px;
-  height: 3px;
-  margin: 14px auto 0;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--pf-accent), var(--pf-violet));
+  margin: 0 0 10px;
+  letter-spacing: 0;
 }
 .pf-shortcuts-head p { margin: 0; color: var(--pf-muted); font-size: 14px; }
 .pf-shortcut-grid { display: flex; flex-wrap: wrap; margin: 0 -15px; }
@@ -923,23 +959,7 @@ html body .page { opacity: 1; }
 .pf-post:nth-child(5) { animation-delay: .3s; }
 .pf-post:nth-child(n + 6) { animation-delay: .34s; }
 
-/* Section headings get a small gradient underline ------------------------ */
-.pf-section-head h2,
-.pf-latest-head h3 {
-  position: relative;
-  padding-bottom: 12px;
-}
-.pf-section-head h2::after,
-.pf-latest-head h3::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 44px;
-  height: 3px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--pf-accent), var(--pf-violet));
-}
+/* The ink face is the ornament: no extra rule is drawn under a heading. */
 
 /* Respect the user's motion preference ----------------------------------- */
 @media (prefers-reduced-motion: reduce) {
