@@ -68,8 +68,6 @@ for (const [rel, prefix] of PAGES) {
   const headBlock =
     `${MARK_START}\n` +
     `  ${INLINE}\n` +
-    // Self-hosted display font (@font-face with unicode-range subsets).
-    `  <link rel="stylesheet" href="${prefix}assets/css/font-display.css">\n` +
     `  <link rel="stylesheet" href="${prefix}assets/css/theme.css">\n` +
     `  <!-- pf-theme:end -->`;
 

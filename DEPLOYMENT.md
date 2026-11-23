@@ -81,23 +81,6 @@ CSS / 图片 / 字体 / 导航都正常。`file://` 下浏览器会因 CORS 拦�
 | `test-theme.js` | 验证三态主题切换、右键归零、过渡门控与 CSS 覆盖 |
 | `test-live.js` | 部署后抓线上真实文件跑渲染，确认线上正常 |
 
-## 标题字体（龙藏体 / Long Cang）
-
-板块页和首页的大标题用 **龙藏体**——笔画细、有枯笔飞白，看起来像墨没蘸够。
-正文与卡片小标题仍是普通黑体，保证可读性。
-
-| 项 | 说明 |
-| --- | --- |
-| 来源 | Google Fonts 的 Long Cang，经 @fontsource 按 unicode-range 分包 |
-| 许可 | SIL OFL 1.1，可商用；许可见 `fonts/long-cang/LICENSE.txt` |
-| 落地 | `fonts/long-cang/*.woff2`（12 个分包，共约 800 KB） |
-| 声明 | `assets/css/font-display.css`，由 `inject-theme.js` 注入到每个页面 |
-| 变量 | `--pf-font-display`（platform.css） |
-
-只保留标题实际用到的字块，浏览器也只下载当页命中的那 2–3 个分包。
-**新增大段中文标题时**，如果出现某几个字掉回默认字体，说明该字不在现有分包里，
-需要重新从 fontsource 取对应块。标题上的英文和标点会 fallback 到 Asfalto。
-
 ## 白天 / 黑夜主题
 
 全站（含博客）支持浅色与深色主题，按钮在导航栏社交图标旁。

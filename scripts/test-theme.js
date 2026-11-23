@@ -124,8 +124,7 @@ timers.filter((t) => t.ms === 80).forEach((t) => t.fn());
 ok('ready after deferral', !!rootEl._classes['pf-theme-ready']);
 
 console.log('\n[theme.css coverage]');
-const css = fs.readFileSync(path.join(root, 'assets', 'css', 'theme.css'), 'utf8')
-  + fs.readFileSync(path.join(root, 'assets', 'css', 'platform.css'), 'utf8');
+const css = fs.readFileSync(path.join(root, 'assets', 'css', 'theme.css'), 'utf8');
 [
   ['dark palette', /:root\[data-theme='dark'\]/],
   ['navbar', /html\[data-theme='dark'\] \.rd-navbar/],
@@ -137,7 +136,6 @@ const css = fs.readFileSync(path.join(root, 'assets', 'css', 'theme.css'), 'utf8
   ['scrollbar', /::-webkit-scrollbar-thumb/],
   ['inline style overrides', /\[style\*="background: #fff"\]/],
   ['transition gate', /html\.pf-theme-ready body/],
-  ['display font declared', /--pf-font-display:\s*"Long Cang"/],
 ].forEach(([label, re]) => ok(label, re.test(css)));
 
 console.log('\n' + (fails === 0 ? 'THEME TEST OK' : fails + ' FAILURE(S)'));

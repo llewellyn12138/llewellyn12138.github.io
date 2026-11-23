@@ -24,33 +24,22 @@ html body .page { opacity: 1; }
   --pf-radius-lg: 22px;
   --pf-shadow: 0 12px 34px rgba(21, 21, 21, .08);
   --pf-shadow-hover: 0 22px 52px rgba(21, 21, 21, .17);
-  /* Headings: 龙藏体 (Long Cang), a thin brush script whose strokes look like
-     the brush ran dry. It only covers the glyphs our headings actually use
-     (see assets/css/font-display.css); anything outside that subset falls
-     back to Asfalto for latin and the system CJK stack below. */
-  --pf-font-display: "Long Cang", "Asfalto", "Kaiti SC", "STKaiti", "KaiTi", serif;
-  --pf-font-body: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  /* The RD-Landkit template sets headings in Asfalto; keep the whole site on
+     that family so the banner title and every section heading match. */
+  --pf-font-display: "Asfalto", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --pf-font-body: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
-/* Big display headings: the brush script. Small card / list titles stay on
-   the body face — a thin brush stroke is decorative at 40px and illegible at
-   15px, so the split is by size, not by element name. */
-.pf-section-head h2,
-.pf-hero h1,
+/* Typography unified on the banner family -------------------------------- */
 .pf-shortcuts-head h3,
 .pf-latest-head h3,
-.pf-cat-title {
-  font-family: var(--pf-font-display);
-  letter-spacing: .06em;
-}
-
-/* Everything readable at a glance keeps a normal, high-legibility face. */
+.pf-section-head h2,
+.pf-hero h1,
 .pf-card-title,
 .pf-post-title,
 .pf-shortcut-title {
-  font-family: var(--pf-font-body);
-  letter-spacing: .01em;
-  font-weight: 700;
+  font-family: var(--pf-font-display);
+  letter-spacing: .045em;
 }
 .pf-card-desc,
 .pf-post-desc,
@@ -135,7 +124,7 @@ html body .page { opacity: 1; }
 }
 .pf-hero h1 {
   font-size: clamp(30px, 4.4vw, 46px);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.18;
   margin: 0 0 14px;
   color: var(--pf-ink);
@@ -178,7 +167,7 @@ html body .page { opacity: 1; }
 }
 .pf-section-head h2 {
   font-size: 26px;
-  font-weight: 400;
+  font-weight: 700;
   margin: 0 0 6px;
   color: var(--pf-ink);
 }
@@ -576,9 +565,6 @@ html body .page { opacity: 1; }
   padding-bottom: 12px;
   border-bottom: 1px solid var(--pf-border);
 }
-/* The brush face only has a 400 cut; force it so the template's 700 does not
-   synthesise a fake bold that thickens the dry strokes. */
-.pf-cat-title { font-weight: 400; }
 .pf-cat-title .mdi { font-size: 21px; color: var(--pf-accent); }
 .pf-cat-title em {
   font-style: normal;
@@ -623,7 +609,7 @@ html body .page { opacity: 1; }
   margin-bottom: 28px;
   flex-wrap: wrap;
 }
-.pf-latest-head h3 { font-size: 27px; font-weight: 400; margin: 0 0 6px; color: var(--pf-ink); }
+.pf-latest-head h3 { font-size: 27px; font-weight: 700; margin: 0 0 6px; color: var(--pf-ink); }
 .pf-latest-head p { margin: 0; color: var(--pf-muted); font-size: 14px; }
 .pf-latest-all { color: var(--pf-accent); font-weight: 600; font-size: 14px; text-decoration: none; }
 .pf-latest-all:hover { text-decoration: underline; }
@@ -686,7 +672,7 @@ html body .page { opacity: 1; }
 .pf-shortcuts-head { margin-bottom: 28px; text-align: center; }
 .pf-shortcuts-head h3 {
   font-size: 28px;
-  font-weight: 400;
+  font-weight: 700;
   color: var(--pf-ink);
   margin: 0 0 8px;
   letter-spacing: .01em;
