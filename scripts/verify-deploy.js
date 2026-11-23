@@ -42,6 +42,7 @@ const REQUIRED_FILES = [
   'software/manifest.json',
   'assets/css/platform.css',
   'assets/css/theme.css',
+  'assets/css/font-display.css',
   'assets/js/registry.js',
   'assets/js/latest-posts.js',
   'assets/js/theme.js',

@@ -81,6 +81,28 @@ console.log('[gallery isolation]');
 
 // 0g. Light/dark theme wiring must be present on every page: inline bootstrap
 //     (no flash), theme.css after platform.css, and theme.js before </body>.
+// 0f. The heading font ships as a self-hosted stylesheet; a missing link
+//     silently degrades every heading to the fallback stack.
+console.log('[display font]');
+{
+  const fd = path.join(dist, 'assets', 'css', 'font-display.css');
+  ok('font-display.css published', fs.existsSync(fd));
+  const platform = fs.readFileSync(path.join(dist, 'assets', 'css', 'platform.css'), 'utf8');
+  ok('headings ask for Long Cang', /--pf-font-display:\s*"Long Cang"/.test(platform));
+  const pages = ['index.html', 'tools/index.html', 'gallery/index.html'];
+  const wired = pages.filter((rel) => {
+    const p = path.join(dist, rel);
+    return fs.existsSync(p) && fs.readFileSync(p, 'utf8').includes('assets/css/font-display.css');
+  });
+  ok('pages link font-display.css', wired.length === pages.length, wired.length + '/' + pages.length);
+  if (fs.existsSync(fd)) {
+    const css = fs.readFileSync(fd, 'utf8');
+    const urls = [...css.matchAll(/url\('([^']+)'\)/g)].map((m) => m[1]);
+    const gone = urls.filter((u) => !fs.existsSync(path.join(path.dirname(fd), u)));
+    ok(urls.length + ' font subsets present', urls.length > 0 && gone.length === 0, gone.slice(0, 3).join(', '));
+  }
+}
+
 console.log('[theme wiring]');
 {
   const pages = [
